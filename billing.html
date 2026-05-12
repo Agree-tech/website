@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Billing Automation · Agree Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+.bill-mock { background: var(--navy); border-radius: 16px; padding: 24px; box-shadow: var(--shadow-pop); color:white;}
+.bill-mock .head { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; }
+.bill-mock .ttl { font-family: var(--f-display); font-size:18px; font-weight:600; }
+.bill-mock .sub { font-family: var(--f-mono); font-size:11px; letter-spacing:0.08em; color:rgba(255,255,255,0.55); margin-top:3px; text-transform:uppercase;}
+.bill-stat-row { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom: 18px;}
+.bill-stat { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;}
+.bill-stat .l { font-family:var(--f-mono); font-size:10px; letter-spacing:0.14em; color:rgba(255,255,255,0.55); text-transform:uppercase;}
+.bill-stat .v { font-family:var(--f-display); font-size:22px; font-weight:600; margin-top:4px; letter-spacing:-0.02em;}
+.bill-list { background:rgba(255,255,255,0.04); border-radius:10px; padding:6px; border:1px solid rgba(255,255,255,0.08);}
+.bill-row { display:grid; grid-template-columns: 1fr auto auto; gap:14px; align-items:center; padding:10px 12px; font-size:13px; border-radius:8px;}
+.bill-row + .bill-row { border-top:1px dashed rgba(255,255,255,0.08);}
+.bill-row .id { font-family:var(--f-mono); color:rgba(255,255,255,0.55); font-size:11.5px;}
+.bill-row .name { color:white; font-weight:500; }
+.bill-row .name small { display:block; color:rgba(255,255,255,0.55); font-weight:400; font-size:11px; font-family:var(--f-mono); margin-top:2px;}
+.bill-row .amt { font-family:var(--f-mono); color:white; font-weight:500;}
+.bill-row .pill { font-family:var(--f-mono); font-size:10px; padding:3px 8px; border-radius:99px; }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='billing'; window.AT_NAV_DARK=true;</script>
+<div id="site-nav"></div>
+
+<section class="page-hero dark">
+  <div class="container page-hero-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="dot"></span>SOLUTIONS · BILLING AUTOMATION</div>
+      <h1>Modern billing for the way B2B actually monetises.</h1>
+      <p class="lede">A flexible, enterprise-grade billing engine for recurring, usage-based, tiered and agreement-based models — with seamless integration to payment gateways and accounting systems.</p>
+      <div class="ctas">
+        <a class="btn btn-cyan btn-lg" href="contact.html">Schedule a demo</a>
+        <a class="btn btn-outline-dark btn-lg" href="platform.html">See the platform <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="bill-mock">
+      <div class="head">
+        <div>
+          <div class="ttl">Bill run · May 2026</div>
+          <div class="sub">CYCLE 05 · 1,284 INVOICES · COMPLETE</div>
+        </div>
+        <span style="background:rgba(22,163,74,0.2);color:#4ade80;padding:5px 12px;border-radius:99px;font-size:11px;font-family:var(--f-mono);letter-spacing:0.08em">● 99.98% MEDIATED</span>
+      </div>
+      <div class="bill-stat-row">
+        <div class="bill-stat"><div class="l">Billed</div><div class="v">€842,206</div></div>
+        <div class="bill-stat"><div class="l">Invoices</div><div class="v">1,284</div></div>
+        <div class="bill-stat"><div class="l">Exceptions</div><div class="v" style="color:var(--amber)">3</div></div>
+      </div>
+      <div class="bill-list">
+        <div class="bill-row">
+          <div><span class="id">INV-7814</span><div class="name">Northwind Telecom<small>recurring · monthly</small></div></div>
+          <span class="amt">€18,470.00</span>
+          <span class="pill" style="background:rgba(34,197,94,0.2);color:#4ade80">issued</span>
+        </div>
+        <div class="bill-row">
+          <div><span class="id">INV-7815</span><div class="name">Telavox Nordics<small>usage-based · voice</small></div></div>
+          <span class="amt">€42,108.32</span>
+          <span class="pill" style="background:rgba(34,197,94,0.2);color:#4ade80">issued</span>
+        </div>
+        <div class="bill-row">
+          <div><span class="id">INV-7816</span><div class="name">Kontur &amp; Co<small>tiered · mid-cycle change</small></div></div>
+          <span class="amt">€7,224.10</span>
+          <span class="pill" style="background:rgba(245,158,11,0.2);color:#fbbf24">QA review</span>
+        </div>
+        <div class="bill-row">
+          <div><span class="id">INV-7817</span><div class="name">IPVision Aps<small>agreement · proration</small></div></div>
+          <span class="amt">€2,860.00</span>
+          <span class="pill" style="background:rgba(34,197,94,0.2);color:#4ade80">issued</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="split-section">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot"></span>BILLING · CAPABILITIES</div>
+      <h2 style="margin-top:18px">Discover the billing capabilities of ATSuite.</h2>
+    </div>
+    <div class="feat-grid-3 acc-navy">
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+        <div class="num">MODELS</div>
+        <h3>Flexible billing models</h3>
+        <p>Usage-based, tiered, one-time and agreement-based — ATSuite adapts to your business logic, whether you bill for consumption, projects or fixed-price services.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 4-7 5 8"/></svg></div>
+        <div class="num">USAGE</div>
+        <h3>Real-time usage collection</h3>
+        <p>Track usage from CDRs, data services, electricity, gas and water meters. Collect and monetise high-volume data with real-time accuracy and built-in mediation.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 10h6M9 14h6"/></svg></div>
+        <div class="num">INVOICING</div>
+        <h3>Advanced invoicing</h3>
+        <p>Periodic, one-time or project-based invoices linked to pricing agreements — with automated credit notes, adjustments and prorations.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="num">ACCOUNTS</div>
+        <h3>Account management</h3>
+        <p>A 360° view of every customer — hierarchies, contracts and contact data, all tied to billing and service logic.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h6a4 4 0 0 1 4 4v6"/></svg></div>
+        <div class="num">RULES</div>
+        <h3>Rules &amp; automation</h3>
+        <p>Automate upgrades, bill-run cycles and invoice suppression. ATSuite handles crediting and proration for mid-cycle changes effortlessly.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5zM9 12l2 2 4-4"/></svg></div>
+        <div class="num">QUALITY</div>
+        <h3>Quality assurance</h3>
+        <p>A daily shadow billing environment provides proactive monitoring and internal visibility — so your billing is always accurate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security -->
+<section class="split-section alt">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>YOUR DATA IS SAFE</div>
+      <h2 style="margin-top:18px">We take your billing data seriously.</h2>
+      <p>Our platform is equipped with the latest security features to safeguard your financial information — SSL encryption, two-factor authentication, continuously monitored cloud servers, and regular backups for safety and accessibility.</p>
+      <p style="margin-top:14px">Compliant with major data protection regulations including GDPR and CCPA.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="mock-card">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:9px;background:#DBEAFE;color:var(--blue);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg></div>
+          <strong style="color:var(--navy)">SSL encryption</strong>
+        </div>
+        <p style="font-size:13.5px">End-to-end encryption protects financial information in transit and at rest.</p>
+      </div>
+      <div class="mock-card">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:9px;background:#DCFCE7;color:var(--green);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <strong style="color:var(--navy)">GDPR &amp; CCPA</strong>
+        </div>
+        <p style="font-size:13.5px">Compliant with the major European and global data protection regulations.</p>
+      </div>
+      <div class="mock-card">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:9px;background:#EDE9FE;color:var(--violet);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v6c0 5-4 8-8 9-4-1-8-4-8-9V7z"/></svg></div>
+          <strong style="color:var(--navy)">2-factor auth</strong>
+        </div>
+        <p style="font-size:13.5px">Additional layer of authentication for finance and admin users.</p>
+      </div>
+      <div class="mock-card">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+          <div style="width:36px;height:36px;border-radius:9px;background:#CFFAFE;color:var(--cyan-hover);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div>
+          <strong style="color:var(--navy)">Daily backups</strong>
+        </div>
+        <p style="font-size:13.5px">Regular, encrypted backups ensure data safety and rapid recovery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container">
+    <div class="eyebrow on-dark"><span class="dot"></span>READY FOR A BILLING UPGRADE?</div>
+    <h2 style="margin-top:18px">Modernise your billing with ATSuite.</h2>
+    <p>Walk through a real bill-run on real data in 30 minutes.</p>
+    <div class="ctas">
+      <a class="btn btn-cyan btn-lg" href="contact.html">Book a demo</a>
+      <a class="btn btn-outline-dark btn-lg" href="index.html">Back to overview</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body>
+</html>

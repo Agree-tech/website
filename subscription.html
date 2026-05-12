@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Subscription Management · Agree Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+.sub-mock {
+  background: white; border: 1px solid var(--border-soft); border-radius: 16px; padding: 22px;
+  box-shadow: var(--shadow-pop);
+}
+.sub-mock .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap: 12px; padding: 14px 0; border-top: 1px dashed var(--border-soft); align-items: center; font-size: 13.5px; }
+.sub-mock .row.head { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; border-top: 0; padding-top: 0; }
+.sub-mock .name { font-weight: 500; color: var(--navy); }
+.sub-mock .name small { display: block; color: var(--muted); font-weight: 400; font-size: 12px; margin-top: 2px; }
+.sub-mock .arr { font-family: var(--f-mono); color: var(--navy); font-weight: 500; }
+.sub-mock .pill { font-family: var(--f-mono); font-size: 10.5px; padding: 3px 9px; border-radius: 999px; }
+.pill-active { background: #DCFCE7; color: #15803D; }
+.pill-renewal { background: #DBEAFE; color: var(--blue); }
+.pill-pause { background: #FEF3C7; color: #B45309; }
+.usage-bar { height: 6px; background: var(--cloud); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+.usage-bar > span { display: block; height: 100%; background: var(--green); }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='subscription';</script>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot" style="background:var(--green)"></span>SOLUTIONS · SUBSCRIPTION MANAGEMENT</div>
+      <h1>Streamline every subscription, with predictable revenue.</h1>
+      <p class="lede">ATSuite Subscription gives you full lifecycle control, usage insights and personalised support. Automated billing and renewals reduce errors and workload — and your recurring revenue stays consistent.</p>
+      <div class="ctas">
+        <a class="btn btn-blue btn-lg" href="contact.html">Schedule a demo</a>
+        <a class="btn btn-ghost btn-lg" href="platform.html">See the platform <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="sub-mock">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px">
+        <div>
+          <div style="font-family:var(--f-display);font-weight:600;color:var(--navy);font-size:18px">Active subscriptions</div>
+          <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;margin-top:3px">142 ACCOUNTS · 23 RENEWING THIS MONTH</div>
+        </div>
+        <div style="font-family:var(--f-display);font-size:22px;font-weight:600;color:var(--green);letter-spacing:-0.02em">€2.4M ARR</div>
+      </div>
+      <div class="row head"><span>Customer</span><span>Plan</span><span>Usage</span><span>Status</span></div>
+      <div class="row">
+        <div class="name">Northwind Telecom <small>1,200 seats</small></div>
+        <div class="arr">Voice Pro</div>
+        <div><div class="arr">82%</div><div class="usage-bar"><span style="width:82%"></span></div></div>
+        <span class="pill pill-active">Active</span>
+      </div>
+      <div class="row">
+        <div class="name">Telavox Nordics <small>800 seats</small></div>
+        <div class="arr">Enterprise</div>
+        <div><div class="arr">68%</div><div class="usage-bar"><span style="width:68%"></span></div></div>
+        <span class="pill pill-renewal">Renewing</span>
+      </div>
+      <div class="row">
+        <div class="name">Kontur &amp; Co <small>240 seats</small></div>
+        <div class="arr">Standard</div>
+        <div><div class="arr">94%</div><div class="usage-bar"><span style="width:94%; background:var(--amber)"></span></div></div>
+        <span class="pill pill-active">Upsell?</span>
+      </div>
+      <div class="row">
+        <div class="name">IPVision Aps <small>140 seats</small></div>
+        <div class="arr">Voice Lite</div>
+        <div><div class="arr">22%</div><div class="usage-bar"><span style="width:22%; background:var(--muted)"></span></div></div>
+        <span class="pill pill-pause">Paused</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="split-section alt">
+  <div class="container" style="text-align:center;max-width:880px">
+    <div class="eyebrow"><span class="dot" style="background:var(--green)"></span>CUSTOMER · TELAVOX</div>
+    <blockquote style="font-family:var(--f-display);font-size:clamp(24px,2.6vw,34px);font-weight:500;color:var(--navy);letter-spacing:-0.025em;line-height:1.2;margin:24px 0 0">
+      Our enduring collaboration with Agree Technologies has been instrumental in leveraging their technology expertise. Their deep understanding of architecture and extensive knowledge of telecommunication have been invaluable.
+    </blockquote>
+    <div style="margin-top:24px;font-size:14px;color:var(--muted);font-family:var(--f-mono);letter-spacing:0.04em">
+      COLIN RUSSEL · MVNX, DIRECTOR OF SERVICE DELIVERY · TELAVOX
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="split-section">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot" style="background:var(--green)"></span>SUBSCRIPTION · CAPABILITIES</div>
+      <h2 style="margin-top:18px">Built for the entire subscription lifecycle.</h2>
+    </div>
+    <div class="feat-grid-3 acc-green">
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+        <div class="num">PLAN &amp; PACKAGE</div>
+        <h3>Plan and package management</h3>
+        <p>Customizable plans, add-ons and bundles — combine multiple services at a discounted rate, tailored to each segment.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5z"/></svg></div>
+        <div class="num">PROVISIONING</div>
+        <h3>Activation &amp; provisioning</h3>
+        <p>Simplified onboarding plus integration with network and product systems — services activated in real time.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 4-7 5 8"/></svg></div>
+        <div class="num">USAGE</div>
+        <h3>Usage tracking &amp; reporting</h3>
+        <p>Real-time monitoring, accurate billing, and detailed reports of usage patterns for customers and internal analysis.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div>
+        <div class="num">LIFECYCLE</div>
+        <h3>Renewals &amp; lifecycle</h3>
+        <p>Automated reminders and processes for renewals, upgrades, suspensions, reactivations and clean termination.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
+        <div class="num">BILLING</div>
+        <h3>Cycles &amp; invoicing</h3>
+        <p>Recurring billing on any cycle. Itemised invoices reflect services used: one-time, recurring and usage-based charges.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <div class="num">ANALYTICS</div>
+        <h3>Advanced analytics</h3>
+        <p>Customer behaviour insights and predictive models — identify upsell, cross-sell and retention opportunities early.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container">
+    <div class="eyebrow on-dark"><span class="dot"></span>YOUR BENEFITS, TODAY AND TOMORROW</div>
+    <h2 style="margin-top:18px">Elevate operations, financial management, and customer relationships.</h2>
+    <p>An indispensable tool for any business excelling in a subscription model.</p>
+    <div class="ctas">
+      <a class="btn btn-cyan btn-lg" href="contact.html">Contact us</a>
+      <a class="btn btn-outline-dark btn-lg" href="index.html">Back to overview</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body>
+</html>

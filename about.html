@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About us · Agree Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+.value-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-soft); border:1px solid var(--border-soft); border-radius:18px; overflow:hidden;}
+.value { background:white; padding:32px 28px;}
+.value .ico { width:36px; height:36px; border-radius:9px; display:grid; place-items:center; margin-bottom:18px;}
+.value h3 { font-size:18px; margin-bottom:8px;}
+.value p { font-size:14px; color:var(--slate); line-height:1.55;}
+.team-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+.team-card { background:white; border:1px solid var(--border-soft); border-radius:18px; padding:28px; display:flex; gap:22px;}
+.team-card .av { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); color:white; display:grid; place-items:center; flex:0 0 auto; font-family:var(--f-display); font-weight:600; font-size:28px;}
+.team-card.alt .av { background:linear-gradient(135deg,var(--violet),var(--blue));}
+.team-card .role { font-family:var(--f-mono); font-size:11px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; margin-bottom:4px;}
+.team-card h3 { font-size:20px; margin-bottom:6px;}
+.team-card p { font-size:14px; color:var(--slate); line-height:1.55;}
+.board-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+.board { background:white; border:1px solid var(--border-soft); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;}
+.board-photo { aspect-ratio: 4/5; background:#EEF2F7; overflow:hidden; position:relative;}
+.board-photo img { width:100%; height:100%; object-fit:cover; display:block; filter: grayscale(100%) contrast(1.02);}
+.board-body { padding:22px 22px 26px;}
+.board .role { font-family:var(--f-mono); font-size:10.5px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase;}
+.board h4 { font-family:var(--f-display); font-size:18px; color:var(--navy); margin:6px 0 10px; letter-spacing:-0.01em;}
+.board p { font-size:13.5px; color:var(--slate); line-height:1.55;}
+@media (max-width:1100px){ .board-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:900px){ .value-grid{grid-template-columns:1fr 1fr;} .team-grid{grid-template-columns:1fr;} .board-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:640px){ .board-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='about';</script>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container" style="max-width:920px">
+    <div class="eyebrow"><span class="dot"></span>OUR JOURNEY</div>
+    <h1 style="margin-top:18px">Built from a real problem. Trusted in production for years.</h1>
+    <p class="lede">It began with the opportunity to meet a pressing need. IPVision (now Dstny A/S) had a thriving business but urgently required a modern, reliable, scalable solution to manage its entire telecom operations. Leveraging extensive telecom expertise, a unique solution was developed — and evolved into ATSuite, a CPQ and Billing platform ideally suited for subscription-based B2B businesses. Six-plus years in production as a managed service later, today we help companies streamline and grow with our platform.</p>
+  </div>
+</section>
+
+<section class="split-section">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot"></span>OUR VALUES</div>
+      <h2 style="margin-top:18px">What drives Agree Technologies.</h2>
+      <p style="margin-top:14px">Innovation, accountability, diversity and sustainability — values that guide our actions, shape our culture, and define our commitment to customers, partners and community.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value">
+        <div class="ico" style="background:#DBEAFE;color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Innovation</h3><p>Always evolving the platform with new capabilities and ideas drawn from real customer needs.</p>
+      </div>
+      <div class="value">
+        <div class="ico" style="background:#DCFCE7;color:var(--green)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg></div>
+        <h3>Accountability</h3><p>We do what we say. Customers, partners and team members can rely on it.</p>
+      </div>
+      <div class="value">
+        <div class="ico" style="background:#EDE9FE;color:var(--violet)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="11" r="2.5"/><path d="M3 20c1-4 3-6 6-6s5 2 6 6M14 20c.5-2 1.5-3 3-3s2.5 1 3 3"/></svg></div>
+        <h3>Diversity</h3><p>Different perspectives make better products. We design teams and culture for it.</p>
+      </div>
+      <div class="value">
+        <div class="ico" style="background:#CFFAFE;color:var(--cyan-hover)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a7 7 0 017 7c0 5-7 11-7 11S5 15 5 10a7 7 0 017-7z"/></svg></div>
+        <h3>Sustainability</h3><p>Long-term thinking — for our software, our customers' businesses, and the planet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section alt">
+  <div class="container">
+    <div class="kicker"><div class="eyebrow"><span class="dot"></span>MANAGEMENT TEAM</div><h2 style="margin-top:18px">Meet the leaders behind ATSuite.</h2></div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="av">KB</div>
+        <div>
+          <div class="role">CEO</div>
+          <h3>Karina Buch</h3>
+          <p>Senior executive with C-level experience (CCO, COO, CIO) across Technology, Insurance and Auction industries. International leadership across Copenhagen, London, New York and San Francisco — with a global perspective and deep operational instinct.</p>
+        </div>
+      </div>
+      <div class="team-card alt">
+        <div class="av">KJ</div>
+        <div>
+          <div class="role">CTO</div>
+          <h3>Kristian Jacobsen</h3>
+          <p>20+ years in software with extensive experience in Telecom CPQ and Billing. A senior innovator leading the dynamic, flexible ATSuite roadmap and development — committed to delivering a future-proven solution to customers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section">
+  <div class="container">
+    <div class="kicker"><div class="eyebrow"><span class="dot"></span>BOARD OF DIRECTORS</div><h2 style="margin-top:18px">Meet the board.</h2></div>
+    <div class="board-grid">
+      <div class="board">
+        <div class="board-photo"><img src="assets/board-henrik.jpeg" alt="Henrik Müller" /></div>
+        <div class="board-body">
+          <div class="role">Chairman of the Board</div>
+          <h4>-</h4>
+          <p>Seasoned executive and investor with a background in telecommunications and banking. Co-founder of IP Vision in Denmark; under his leadership it became a prominent Nordic SME player, acquired by DSTNY in 2021.</p>
+        </div>
+      </div>
+      <div class="board">
+        <div class="board-photo"><img src="assets/board-peter.webp" alt="Peter Reich" /></div>
+        <div class="board-body">
+          <div class="role">Board Member</div>
+          <h4>Peter Reich</h4>
+          <p>Seasoned executive and investor with extensive telecommunications experience. Co-founded IP Vision in Denmark in 2005, scaling it to acquisition by DSTNY in 2021.</p>
+        </div>
+      </div>
+      <div class="board">
+        <div class="board-photo"><img src="assets/board-kristian.webp" alt="Kristian Jacobsen" /></div>
+        <div class="board-body">
+          <div class="role">Board Member · CTO</div>
+          <h4>Kristian Jacobsen</h4>
+          <p>CTO and investor at Agree Technologies — bringing deep technical and product perspective to the board.</p>
+        </div>
+      </div>
+      <div class="board">
+        <div class="board-photo"><img src="assets/board-karina.webp" alt="Karina Buch" /></div>
+        <div class="board-body">
+          <div class="role">Board Member · CEO</div>
+          <h4>Karina Buch</h4>
+          <p>CEO and investor at Agree Technologies — bringing operational and commercial perspective to the board.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container" style="max-width:760px">
+    <div class="eyebrow on-dark"><span class="dot"></span>BOOK A MEETING</div>
+    <h2 style="margin-top:18px">It can start with a conversation.</h2>
+    <p>Whether you need Sales, CPQ, Billing, Subscription Management or an all-in-one solution — our team is here to support. Built with comprehensive industry knowledge; experts ready to engage.</p>
+    <div class="ctas"><a class="btn btn-cyan btn-lg" href="contact.html">Contact me</a><a class="btn btn-outline-dark btn-lg" href="platform.html">See the platform</a></div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body></html>

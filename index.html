@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ATSuite — All-in-one CPQ &amp; Billing for B2B SaaS · Agree Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<style>
+  /* ============ HOME PAGE ============ */
+  .hero {
+    position: relative;
+    background: var(--navy);
+    color: var(--white);
+    overflow: hidden;
+    padding: 120px 0 0;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(800px 400px at 88% -10%, rgba(6,182,212,0.18), transparent 70%),
+      radial-gradient(700px 500px at 10% 110%, rgba(124,58,237,0.16), transparent 65%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(48px, 6.4vw, 84px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+  }
+  .hero h1 .accent {
+    color: var(--cyan-light);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero .lede {
+    color: rgba(255,255,255,0.72);
+    font-size: 19px;
+    margin-top: 26px;
+    max-width: 520px;
+    line-height: 1.55;
+  }
+  .hero .ctas { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .meta-row {
+    margin-top: 56px;
+    display: flex; gap: 36px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 28px;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-family: var(--f-mono);
+    letter-spacing: 0.04em;
+  }
+  .hero .meta-row b { color: var(--white); font-weight: 500; }
+
+  /* Hero product mock */
+  .hero-mock {
+    position: relative;
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: var(--shadow-pop);
+  }
+  .hero-mock::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(6,182,212,0.25), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .mock-tab-row {
+    display: flex; gap: 6px; align-items: center;
+    padding: 4px 6px 14px;
+  }
+  .mock-tab-row .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .mock-tab-row .d1 { background: #ef4444; } .mock-tab-row .d2 { background: #f59e0b; } .mock-tab-row .d3 { background: #22c55e; }
+  .mock-tab-row .url {
+    margin-left: 16px;
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border-radius: 7px;
+    padding: 6px 12px;
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.6);
+  }
+  .mock-body {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 22px;
+    color: var(--ink);
+  }
+  .mock-head {
+    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px;
+  }
+  .mock-head .ttl { font-family: var(--f-display); font-size: 17px; font-weight: 600; color: var(--navy); letter-spacing: -0.02em; }
+  .mock-head .sub { font-size: 12px; color: var(--muted); margin-top: 3px; font-family: var(--f-mono); letter-spacing: 0.04em; }
+  .mock-head .pill {
+    background: #DCFCE7; color: #15803D;
+    font-size: 11px; font-weight: 500;
+    padding: 4px 10px; border-radius: 999px;
+    font-family: var(--f-mono); letter-spacing: 0.06em;
+  }
+  .mock-line { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px dashed var(--border-soft); font-size: 13px; }
+  .mock-line:last-child { border: 0; }
+  .mock-line .l { color: var(--slate); }
+  .mock-line .r { font-family: var(--f-mono); color: var(--navy); font-weight: 500; }
+  .mock-total {
+    margin-top: 14px; padding: 14px 16px;
+    background: var(--navy); color: var(--white); border-radius: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .mock-total .lbl { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .mock-total .amt { font-family: var(--f-display); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+  .mock-actions { display: flex; gap: 8px; margin-top: 14px; }
+  .mock-btn {
+    flex: 1;
+    padding: 9px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 500;
+    text-align: center;
+    background: var(--blue); color: white;
+  }
+  .mock-btn.alt { background: white; color: var(--navy); border: 1px solid var(--border); }
+  /* Floating mini card */
+  .mock-float {
+    position: absolute;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 16px 32px -8px rgba(0,0,0,0.35);
+    padding: 14px 16px;
+    width: 230px;
+    border: 1px solid var(--border-soft);
+  }
+  .mock-float-1 {
+    top: 32px; right: -28px;
+  }
+  .mock-float-2 {
+    bottom: 40px; left: -38px;
+  }
+  .mock-float .ico {
+    width: 28px; height: 28px; border-radius: 7px; display: grid; place-items: center;
+    color: white; margin-bottom: 8px;
+  }
+  .mock-float .label { font-size: 11px; color: var(--muted); font-family: var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+  .mock-float .val { font-size: 18px; font-weight: 600; color: var(--navy); font-family: var(--f-display); margin-top: 2px; letter-spacing: -0.02em;}
+  .mock-float .delta { font-size: 12px; color: var(--green); font-family: var(--f-mono); margin-top: 4px; }
+
+  /* Logos */
+  .logo-strip {
+    background: var(--navy);
+    padding: 0 0 60px;
+    color: rgba(255,255,255,0.4);
+  }
+  .logo-strip .label {
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    color: rgba(255,255,255,0.4);
+  }
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: center;
+    opacity: 0.7;
+  }
+  .logos .lg {
+    text-align: center;
+    font-family: var(--f-display);
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    padding: 10px;
+  }
+  .logos .lg.serif { font-family: "Times New Roman", serif; font-style: italic; }
+  .logos .lg.mono { font-family: var(--f-mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .logos .lg.bold { font-weight: 700; }
+
+  /* Quote-to-cash strip */
+  .q2c {
+    background: var(--mist);
+    padding: 110px 0 80px;
+    border-top: 1px solid var(--border-soft);
+  }
+  .q2c-head {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .q2c-head h2 { color: var(--navy); }
+  .q2c-head .right p { font-size: 17px; color: var(--slate); margin-bottom: 22px; }
+  .q2c-head .right .ctas { display: flex; gap: 10px; }
+  .q2c-board {
+    background: var(--navy);
+    border-radius: 22px;
+    padding: 56px 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .q2c-board::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.025) 0 1px,
+      transparent 1px 18px);
+    pointer-events: none;
+  }
+  .q2c-rail {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .q2c-rail::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(6,182,212,0.6) 20%, rgba(6,182,212,0.6) 80%, transparent);
+  }
+  .q2c-stage {
+    position: relative;
+    text-align: center;
+  }
+  .q2c-stage .node {
+    width: 44px; height: 44px;
+    border-radius: 11px;
+    background: var(--navy-2);
+    border: 1px solid rgba(6,182,212,0.5);
+    display: grid; place-items: center;
+    margin: 0 auto 14px;
+    color: var(--cyan-light);
+    position: relative; z-index: 1;
+  }
+  .q2c-stage .lbl {
+    font-family: var(--f-mono);
+    font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cyan-light);
+  }
+  .q2c-cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .q2c-card {
+    background: white;
+    color: var(--ink);
+    border-radius: 14px;
+    padding: 18px;
+    min-height: 140px;
+    box-shadow: 0 12px 30px -10px rgba(0,0,0,0.5);
+  }
+  .q2c-card .ttl { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .q2c-card .num { font-family: var(--f-display); font-size: 22px; font-weight: 600; color: var(--navy); letter-spacing: -0.02em; }
+  .q2c-card .note { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--f-mono); }
+  .q2c-card .pill {
+    display: inline-block;
+    margin-top: 10px;
+    background: #DBEAFE; color: var(--blue);
+    font-size: 10px; padding: 3px 8px; border-radius: 999px;
+    font-family: var(--f-mono); letter-spacing: 0.06em;
+  }
+  .q2c-card.green .num { color: var(--green); }
+  .q2c-card .bars {
+    display: flex; gap: 4px; align-items: flex-end; height: 38px; margin-top: 10px;
+  }
+  .q2c-card .bars span {
+    flex: 1; background: var(--blue); border-radius: 2px;
+    opacity: 0.85;
+  }
+
+  /* Modules */
+  .modules {
+    padding: 110px 0;
+    background: white;
+  }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .mod {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 36px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .mod:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--border);
+  }
+  .mod .acc-stripe {
+    position: absolute; top: 0; left: 36px; right: 36px; height: 3px;
+    background: var(--acc, var(--blue));
+    border-radius: 0 0 3px 3px;
+  }
+  .mod .head {
+    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;
+  }
+  .mod .num {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .mod .ico {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: var(--acc-soft);
+    color: var(--acc);
+    display: grid; place-items: center;
+  }
+  .mod h3 { font-size: 26px; margin: 14px 0 10px; }
+  .mod p { font-size: 15px; line-height: 1.55; max-width: 520px; }
+  .mod .vis {
+    margin-top: 22px;
+    background: var(--mist);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 18px;
+    min-height: 130px;
+  }
+  .mod .more {
+    margin-top: 22px;
+    font-family: var(--f-body);
+    color: var(--acc);
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .mod .more:hover { gap: 10px; }
+
+  /* Mod-specific visuals */
+  .vis-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12.5px; border-bottom: 1px dashed var(--border-soft); }
+  .vis-row:last-child { border: 0; }
+  .vis-row .l { color: var(--slate); font-family: var(--f-mono); letter-spacing: 0.04em; font-size: 11.5px; text-transform: uppercase; }
+  .vis-row .r { color: var(--navy); font-family: var(--f-mono); font-weight: 500; }
+  .vis-row .pill { background: #DCFCE7; color: #15803D; padding: 2px 8px; border-radius: 99px; font-size: 10.5px; font-family: var(--f-mono); }
+  .vis-row .pill.blue { background: #DBEAFE; color: var(--blue); }
+  .vis-row .pill.violet { background: #EDE9FE; color: var(--violet); }
+
+  .vis-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 8px;
+    align-items: center;
+  }
+  .vis-flow .node {
+    background: white; border: 1px solid var(--border-soft); border-radius: 8px;
+    padding: 10px 12px; text-align: center;
+  }
+  .vis-flow .node .n-l { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+  .vis-flow .node .n-v { font-family: var(--f-display); font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 2px; }
+  .vis-flow .arr { color: var(--cyan); }
+
+  /* Quote */
+  .quote {
+    padding: 120px 0;
+    background: var(--mist);
+    border-top: 1px solid var(--border-soft);
+  }
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .quote blockquote {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: clamp(28px, 2.8vw, 38px);
+    line-height: 1.18;
+    color: var(--navy);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  .quote blockquote .em { color: var(--blue); font-style: italic; font-weight: 400; }
+  .quote .attr {
+    margin-top: 28px;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .quote .avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: white; display: grid; place-items: center;
+    font-family: var(--f-display); font-weight: 600;
+  }
+  .quote .who { font-weight: 500; color: var(--navy); }
+  .quote .who small { display: block; color: var(--muted); font-weight: 400; font-size: 13px; margin-top: 2px; }
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  .stat {
+    background: white;
+    padding: 36px 28px;
+  }
+  .stat .v {
+    font-family: var(--f-display);
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat .v small { font-size: 22px; color: var(--blue); margin-left: 4px; vertical-align: middle; }
+  .stat .l { font-size: 14px; color: var(--slate); margin-top: 12px; }
+
+  /* Innovate band */
+  .innovate {
+    background: var(--navy);
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .innovate::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(700px 400px at 90% 50%, rgba(124,58,237,0.18), transparent 60%),
+      radial-gradient(600px 360px at 10% 100%, rgba(6,182,212,0.15), transparent 60%);
+  }
+  .inn-grid {
+    position: relative;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+  .innovate h2 { color: white; }
+  .innovate .lede {
+    color: rgba(255,255,255,0.7); font-size: 18px; margin-top: 22px; max-width: 480px;
+  }
+  .inn-list { margin-top: 32px; }
+  .inn-list li {
+    list-style: none;
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex; gap: 14px; align-items: center;
+    font-size: 16px;
+  }
+  .inn-list li:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .inn-list .check {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(6,182,212,0.18); color: var(--cyan-light);
+    display: grid; place-items: center; flex: 0 0 auto;
+  }
+  .inn-list .check svg { width: 12px; height: 12px; }
+  .innovate .ctas { margin-top: 36px; display: flex; gap: 10px; }
+  /* Right-side analytics mock */
+  .inn-vis {
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: var(--shadow-pop);
+  }
+  .inn-vis-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
+  .inn-vis-head .t { font-family: var(--f-display); font-size: 17px; color: white; font-weight: 500; }
+  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 3px; }
+  .inn-vis-head .pill {
+    background: rgba(22,163,74,0.18); color: #4ade80;
+    padding: 4px 10px; border-radius: 99px; font-size: 11px; font-family: var(--f-mono);
+  }
+  .inn-chart {
+    height: 180px;
+    background:
+      linear-gradient(to top, rgba(6,182,212,0.18), transparent 80%);
+    border-radius: 10px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .inn-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .inn-grid-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+  .inn-stat {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 14px;
+  }
+  .inn-stat .l { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+  .inn-stat .v { font-family: var(--f-display); font-size: 22px; color: white; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
+  .inn-stat .d { font-family: var(--f-mono); font-size: 11px; color: #4ade80; margin-top: 4px; }
+
+  /* CTA close */
+  .cta-band {
+    background: white;
+    padding: 110px 0;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-size: clamp(40px, 5vw, 64px);
+  }
+  .cta-band .lede { font-size: 18px; color: var(--slate); margin-top: 22px; max-width: 600px; margin-inline: auto; }
+  .cta-band .ctas { margin-top: 36px; display: flex; gap: 10px; justify-content: center; }
+
+  @media (max-width: 1000px) {
+    .hero-grid, .q2c-head, .quote-grid, .module-grid, .inn-grid { grid-template-columns: 1fr; gap: 40px; }
+    .q2c-rail, .q2c-cards { grid-template-columns: repeat(5, 1fr); font-size: 11px; }
+    .logos { grid-template-columns: repeat(3, 1fr); }
+    .stats { grid-template-columns: 1fr; }
+    .mock-float { display: none; }
+  }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE = 'home'; window.AT_NAV_DARK = true;</script>
+<div id="site-nav"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="dot"></span>ATSUITE · QUOTE-TO-REVENUE</div>
+      <h1 style="margin-top: 22px;">The all-in-one CPQ &amp; <span class="accent">billing</span> platform for B2B SaaS.</h1>
+      <p class="lede">Automate the entire quote-to-revenue process. Manage CPQ, billing, subscriptions, and process automation in a single, European-built suite.</p>
+      <div class="ctas">
+        <a class="btn btn-cyan btn-lg" href="contact.html">Book a demo</a>
+        <a class="btn btn-outline-dark btn-lg" href="platform.html">Explore the platform <span class="arr">→</span></a>
+      </div>
+      <div class="meta-row">
+        <div><b>6+ years</b> in production</div>
+        <div><b>~100%</b> billing accuracy</div>
+        <div><b>Built in EU</b> · GDPR-native</div>
+      </div>
+    </div>
+
+    <div class="hero-mock">
+      <div class="mock-tab-row">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+        <div class="url">atsuite.app/quotes/Q-2046 · Enterprise renewal · FY26</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-head">
+          <div>
+            <div class="ttl">Quote Q-2046</div>
+            <div class="sub">Northwind Telecom · Renewal FY26</div>
+          </div>
+          <div class="pill">● Approved</div>
+        </div>
+        <div class="mock-line"><span class="l">Subscription · Voice Pro (1,200 seats)</span><span class="r">€186,400</span></div>
+        <div class="mock-line"><span class="l">Add-on · Recording &amp; QA</span><span class="r">€24,000</span></div>
+        <div class="mock-line"><span class="l">Usage · International (estimated)</span><span class="r">€12,225</span></div>
+        <div class="mock-line"><span class="l">Multi-year ramp · −7% Y2</span><span class="r" style="color:var(--green)">−€16,030</span></div>
+        <div class="mock-total">
+          <span class="lbl">Annualised</span>
+          <span class="amt">€206,595</span>
+        </div>
+        <div class="mock-actions">
+          <div class="mock-btn">Send to customer</div>
+          <div class="mock-btn alt">Edit quote</div>
+        </div>
+      </div>
+      <!-- floating cards -->
+      <div class="mock-float mock-float-1">
+        <div class="ico" style="background:var(--green)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg>
+        </div>
+        <div class="label">Renewal · auto</div>
+        <div class="val">€2.4M ARR</div>
+        <div class="delta">▲ 18% vs last year</div>
+      </div>
+      <div class="mock-float mock-float-2">
+        <div class="ico" style="background:var(--violet)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l4-4 4 4 4-6 6 8"/></svg>
+        </div>
+        <div class="label">Forecast accuracy</div>
+        <div class="val">98.7%</div>
+        <div class="delta" style="color:var(--cyan-light)">predictive · 90d</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGO STRIP merges into hero (still navy) -->
+  <div class="container">
+    <div class="logo-strip" style="padding-top: 40px;">
+      <div class="label">Trusted by leading SaaS &amp; telecom companies across Europe</div>
+      <div class="logos">
+        <div class="lg bold">DSTNY</div>
+        <div class="lg serif">Telavox</div>
+        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">IPVision</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Q2C BOARD -->
+<section class="q2c">
+  <div class="container">
+    <div class="q2c-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>ONE PLATFORM · ATSUITE</div>
+        <h2 style="margin-top: 18px;">One system for the entire quote-to-revenue process.</h2>
+      </div>
+      <div class="right">
+        <p>Replace disconnected tools with a unified suite that automates quoting, subscriptions, billing, and recognition. ATSuite empowers finance and revenue teams to accelerate cash, eliminate manual work, and gain real-time visibility.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="platform.html">Tour the platform</a>
+          <a class="btn btn-ghost" href="contact.html">Speak to an expert</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="q2c-board">
+      <div class="q2c-rail">
+        <div class="q2c-stage">
+          <div class="node"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h12M3 17h8"/></svg></div>
+          <div class="lbl">Quoting</div>
+        </div>
+        <div class="q2c-stage">
+          <div class="node"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div>
+          <div class="lbl">Subscription</div>
+        </div>
+        <div class="q2c-stage">
+          <div class="node"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 4-7 5 8"/></svg></div>
+          <div class="lbl">Usage</div>
+        </div>
+        <div class="q2c-stage">
+          <div class="node"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
+          <div class="lbl">Billing</div>
+        </div>
+        <div class="q2c-stage">
+          <div class="node"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V8m6 12V4m6 16v-8m6 8V12"/></svg></div>
+          <div class="lbl">Revenue</div>
+        </div>
+      </div>
+      <div class="q2c-cards">
+        <div class="q2c-card">
+          <div class="ttl">Quote Q-2046</div>
+          <div class="num">€206,595</div>
+          <div class="note">Renewal · 3-yr ramp</div>
+          <span class="pill">Approved</span>
+        </div>
+        <div class="q2c-card green">
+          <div class="ttl">ARR · Active</div>
+          <div class="num">€2.4M</div>
+          <div class="note">142 active subs · 2 churn</div>
+          <span class="pill" style="background:#DCFCE7;color:#15803D">Healthy</span>
+        </div>
+        <div class="q2c-card">
+          <div class="ttl">Usage · Voice Min.</div>
+          <div class="num">8.92M</div>
+          <div class="bars">
+            <span style="height:30%"></span><span style="height:55%"></span><span style="height:42%"></span>
+            <span style="height:78%"></span><span style="height:62%"></span><span style="height:90%"></span>
+            <span style="height:71%"></span>
+          </div>
+        </div>
+        <div class="q2c-card">
+          <div class="ttl">INV-7814</div>
+          <div class="num">€18,470</div>
+          <div class="note">Issued · 14 May 2026</div>
+          <span class="pill" style="background:#DBEAFE;color:var(--blue)">Auto-billed</span>
+        </div>
+        <div class="q2c-card">
+          <div class="ttl">Recognised</div>
+          <div class="num" style="color:var(--violet)">€1.86M</div>
+          <div class="bars">
+            <span style="height:36%; background:var(--violet)"></span><span style="height:48%; background:var(--violet)"></span>
+            <span style="height:64%; background:var(--violet)"></span><span style="height:72%; background:var(--violet)"></span>
+            <span style="height:81%; background:var(--violet)"></span><span style="height:88%; background:var(--violet)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot"></span>ATSUITE IN A NUTSHELL</div>
+      <h2 style="margin-top:18px;">Four modules. One revenue engine.</h2>
+      <p>Adopt the full suite or deploy module by module — each layer is built to work together, and to integrate with the systems you already run on.</p>
+    </div>
+    <div class="module-grid">
+
+      <!-- Subscription -->
+      <div class="mod acc-green">
+        <span class="acc-stripe"></span>
+        <div class="head">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>
+          </div>
+          <span class="num">01 · SUBSCRIPTION</span>
+        </div>
+        <h3>Manage every subscription lifecycle, effortlessly.</h3>
+        <p>Full control over plans, usage, renewals and invoicing — backed by automated workflows that reduce manual work and protect predictable, recurring revenue.</p>
+        <div class="vis">
+          <div class="vis-row"><span class="l">Active subs</span><span class="r">142</span></div>
+          <div class="vis-row"><span class="l">Renewing this month</span><span class="r">23 <span class="pill" style="margin-left:6px">on track</span></span></div>
+          <div class="vis-row"><span class="l">Add-ons attached</span><span class="r">87</span></div>
+          <div class="vis-row"><span class="l">Net retention</span><span class="r" style="color:var(--green)">112%</span></div>
+        </div>
+        <a class="more" href="subscription.html">Subscription Management <span>→</span></a>
+      </div>
+
+      <!-- CPQ -->
+      <div class="mod acc-blue">
+        <span class="acc-stripe"></span>
+        <div class="head">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h12M3 17h8"/></svg>
+          </div>
+          <span class="num">02 · CPQ</span>
+        </div>
+        <h3>Configure, price and quote — at speed.</h3>
+        <p>An intelligent, automated quoting engine that produces fast, consistent, precise quotes — tailored per customer with multi-language catalogs, dynamic pricing and approvals.</p>
+        <div class="vis">
+          <div class="vis-flow">
+            <div class="node"><div class="n-l">Catalog</div><div class="n-v">348 SKUs</div></div>
+            <div class="arr">→</div>
+            <div class="node"><div class="n-l">Price</div><div class="n-v">€1,820/mo</div></div>
+            <div class="arr">→</div>
+            <div class="node"><div class="n-l">Quote</div><div class="n-v">38 sec</div></div>
+          </div>
+          <div class="vis-row" style="margin-top:14px"><span class="l">Approval queue</span><span class="r"><span class="pill blue">2 pending</span></span></div>
+        </div>
+        <a class="more" href="cpq.html">Configure, Price &amp; Quote <span>→</span></a>
+      </div>
+
+      <!-- Billing -->
+      <div class="mod acc-navy">
+        <span class="acc-stripe"></span>
+        <div class="head">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+          </div>
+          <span class="num">03 · BILLING</span>
+        </div>
+        <h3>Enterprise-grade billing for any monetization model.</h3>
+        <p>Recurring, usage-based, tiered, agreement-based — ATSuite handles the complexity, runs daily shadow billing, and keeps invoices accurate to the cent.</p>
+        <div class="vis">
+          <div class="vis-row"><span class="l">Invoices · this run</span><span class="r">1,284</span></div>
+          <div class="vis-row"><span class="l">Billed</span><span class="r">€842,206.50</span></div>
+          <div class="vis-row"><span class="l">Mediation rate</span><span class="r" style="color:var(--green)">99.98%</span></div>
+          <div class="vis-row"><span class="l">Exceptions</span><span class="r"><span class="pill" style="background:#FEF3C7;color:#B45309">3 to review</span></span></div>
+        </div>
+        <a class="more" href="billing.html">Billing Automation <span>→</span></a>
+      </div>
+
+      <!-- Process -->
+      <div class="mod acc-cyan">
+        <span class="acc-stripe"></span>
+        <div class="head">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h6a4 4 0 0 1 4 4v6"/></svg>
+          </div>
+          <span class="num">04 · PROCESS</span>
+        </div>
+        <h3>Event-driven automation across every team.</h3>
+        <p>An always-on process engine that triggers tasks, approvals, orders and customer updates from real business events — with 24/7 alerting when something needs you.</p>
+        <div class="vis">
+          <div class="vis-row"><span class="l">Workflows · live</span><span class="r">42</span></div>
+          <div class="vis-row"><span class="l">Triggered today</span><span class="r">8,461</span></div>
+          <div class="vis-row"><span class="l">Avg. completion</span><span class="r">1.4s</span></div>
+          <div class="vis-row"><span class="l">Status</span><span class="r"><span class="pill">All systems normal</span></span></div>
+        </div>
+        <a class="more" href="process.html">Process Optimisation <span>→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="container quote-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>CUSTOMER · DSTNY A/S</div>
+      <blockquote style="margin-top: 22px;">
+        With ATSuite we have <span class="em">increased our sales productivity</span> and our data from sales, delivery and running business have never been better. On top of that, our billing accuracy is very close to 100%.
+      </blockquote>
+      <div class="attr">
+        <div class="avatar">CT</div>
+        <div class="who">Carsten Thomsen<small>Dstny A/S</small></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="v">~100<small>%</small></div>
+        <div class="l">Billing accuracy in production</div>
+      </div>
+      <div class="stat">
+        <div class="v">6+<small>yrs</small></div>
+        <div class="l">Operating as a managed service</div>
+      </div>
+      <div class="stat">
+        <div class="v">38<small>s</small></div>
+        <div class="l">Average quote turnaround</div>
+      </div>
+      <div class="stat">
+        <div class="v">112<small>%</small></div>
+        <div class="l">Average net revenue retention</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATE -->
+<section class="innovate">
+  <div class="container inn-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="dot"></span>INNOVATE</div>
+      <h2 style="margin-top: 22px;">Unlock your earnings potential in the global B2B market.</h2>
+      <p class="lede">We continuously add capabilities to ATSuite — guided selling, real-time collaboration, predictive analytics — so the platform you adopt today keeps compounding tomorrow.</p>
+      <ul class="inn-list">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Advanced CPQ &amp; billing capabilities, shipped continuously</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Guided-selling for a faster, more confident sales motion</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Real-time collaboration across sales, finance and ops</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Predictive analytics for renewals, upsell and forecasting</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan btn-lg" href="contact.html">Schedule a demo</a>
+        <a class="btn btn-outline-dark btn-lg" href="platform.html">See the platform</a>
+      </div>
+    </div>
+    <div class="inn-vis">
+      <div class="inn-vis-head">
+        <div>
+          <div class="t">Revenue forecast · Q3</div>
+          <div class="s">PREDICTIVE · 90D HORIZON</div>
+        </div>
+        <div class="pill">▲ 18.4%</div>
+      </div>
+      <div class="inn-chart">
+        <svg viewBox="0 0 400 180" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="lg" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 140 L40 130 L80 132 L120 110 L160 96 L200 88 L240 70 L280 62 L320 45 L360 30 L400 22"
+                fill="none" stroke="#06B6D4" stroke-width="2" />
+          <path d="M0 140 L40 130 L80 132 L120 110 L160 96 L200 88 L240 70 L280 62 L320 45 L360 30 L400 22 L400 180 L0 180 Z"
+                fill="url(#lg)" />
+          <!-- Forecast dotted -->
+          <path d="M280 62 L320 45 L360 30 L400 22"
+                fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 4" />
+          <circle cx="280" cy="62" r="4" fill="#7C3AED"/>
+          <circle cx="400" cy="22" r="4" fill="#7C3AED"/>
+        </svg>
+      </div>
+      <div class="inn-grid-row">
+        <div class="inn-stat">
+          <div class="l">ARR</div>
+          <div class="v">€2.4M</div>
+          <div class="d">▲ 18.4%</div>
+        </div>
+        <div class="inn-stat">
+          <div class="l">Renewals</div>
+          <div class="v">94%</div>
+          <div class="d">▲ 3.1 pts</div>
+        </div>
+        <div class="inn-stat">
+          <div class="l">Upsell</div>
+          <div class="v">€312K</div>
+          <div class="d">▲ 24%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA close -->
+<section class="cta-band">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span>READY WHEN YOU ARE</div>
+    <h2 style="margin-top: 22px;">Get started today and unlock your revenue.</h2>
+    <p class="lede">A 30-minute discovery call is all it takes to see how ATSuite fits into your stack.</p>
+    <div class="ctas">
+      <a class="btn btn-blue btn-lg" href="contact.html">Book a demo</a>
+      <a class="btn btn-ghost btn-lg" href="implementation.html">How implementation works <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body>
+</html>

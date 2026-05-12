@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Platform · Agree Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+  .arch { background:var(--navy); border-radius:18px; padding:36px; color:white; box-shadow:var(--shadow-pop); position:relative; overflow:hidden;}
+  .arch::before { content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 16px); pointer-events:none;}
+  .arch-row { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:10px;}
+  .arch-cell { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:14px; text-align:center;}
+  .arch-cell .l { font-family:var(--f-mono); font-size:10px; letter-spacing:0.14em; color:rgba(255,255,255,0.55); text-transform:uppercase;}
+  .arch-cell .v { font-family:var(--f-display); font-weight:600; color:white; margin-top:6px; font-size:14px;}
+  .arch-cell.lead { background:linear-gradient(135deg, rgba(37,99,235,0.25), rgba(6,182,212,0.18)); border-color:rgba(6,182,212,0.4); }
+  .arch-cell.lead .v { color:var(--cyan-light); }
+  .arch-band { font-family:var(--f-mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin:14px 0 8px; text-align:center;}
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='platform'; window.AT_NAV_DARK=true;</script>
+<div id="site-nav"></div>
+
+<section class="page-hero dark">
+  <div class="container page-hero-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="dot"></span>THE ATSUITE PLATFORM</div>
+      <h1>Configure. Launch. Go.</h1>
+      <p class="lede">A comprehensive platform for B2B enterprise. ATSuite's architecture is designed for adaptability — built on modern, future-proven technology for SaaS or hybrid deployment, kept up-to-date so no upgrade project ever stops your business.</p>
+      <div class="ctas">
+        <a class="btn btn-cyan btn-lg" href="contact.html">Speak to an expert</a>
+        <a class="btn btn-outline-dark btn-lg" href="implementation.html">How implementation works</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div class="arch-band">— PRESENTATION & APIs —</div>
+      <div class="arch-row" style="grid-template-columns:1fr 1fr">
+        <div class="arch-cell"><div class="l">Web App</div><div class="v">React · JS</div></div>
+        <div class="arch-cell"><div class="l">API Gateway</div><div class="v">REST · Spring Boot</div></div>
+      </div>
+      <div class="arch-band">— ATSUITE MODULES —</div>
+      <div class="arch-row">
+        <div class="arch-cell lead"><div class="l">CPQ</div><div class="v">Configure</div></div>
+        <div class="arch-cell lead"><div class="l">Subscription</div><div class="v">Lifecycle</div></div>
+        <div class="arch-cell lead"><div class="l">Billing</div><div class="v">Monetise</div></div>
+        <div class="arch-cell lead"><div class="l">Process</div><div class="v">Orchestrate</div></div>
+      </div>
+      <div class="arch-band">— SHARED SERVICES —</div>
+      <div class="arch-row">
+        <div class="arch-cell"><div class="l">Data Model</div><div class="v">Extensible</div></div>
+        <div class="arch-cell"><div class="l">Process Engine</div><div class="v">Event-driven</div></div>
+        <div class="arch-cell"><div class="l">Analytics</div><div class="v">Predictive</div></div>
+        <div class="arch-cell"><div class="l">Identity</div><div class="v">SSO</div></div>
+      </div>
+      <div class="arch-band">— DEPLOYMENT —</div>
+      <div class="arch-row" style="grid-template-columns:1fr 1fr">
+        <div class="arch-cell"><div class="l">Managed-as-a-Service</div><div class="v">EU regions</div></div>
+        <div class="arch-cell"><div class="l">SaaS</div><div class="v">Multi-tenant</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" id="integration">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>INTEGRATION</div>
+      <h2 style="margin-top:18px">API-driven, by design.</h2>
+      <p>Being API-driven, ATSuite offers unparalleled flexibility — integrate seamlessly with any system, automate workflows, and customise functionality to specific needs. The result: better operational efficiency, scalability and customer experience.</p>
+    </div>
+    <div class="mock-card">
+      <div class="head"><div><div class="ttl">API · v3</div><div class="sub">REST · WEBHOOKS</div></div><span style="background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono)">99.99% uptime</span></div>
+      <pre style="background:var(--navy-deep);color:#67E8F9;padding:18px;border-radius:10px;font-family:var(--f-mono);font-size:12.5px;margin:0;overflow:auto;line-height:1.6">POST /api/v3/quotes
+Authorization: Bearer ••••
+Content-Type: application/json
+
+{
+  "account": "acc_8f4j2",
+  "items": [
+    { "sku": "VOICE-PRO", "qty": 1200 }
+  ],
+  "term": "36m"
+}</pre>
+    </div>
+  </div>
+</section>
+
+<section class="split-section alt" id="data-model">
+  <div class="container split-grid flip">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>EXTENSIBLE DATA MODEL</div>
+      <h2 style="margin-top:18px">Adaptable to diverse business requirements.</h2>
+      <p>A highly adaptable data model paves the way for customising to your business, integrating with existing systems, and expanding in tandem with growth. Forward-thinking, future-proof, capable of meeting intricate, evolving B2B demands.</p>
+    </div>
+    <div class="mock-card">
+      <div class="head"><div class="ttl">Custom entity · Contract</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px">
+        <div style="padding:10px 12px;background:var(--cloud);border-radius:8px;font-family:var(--f-mono);color:var(--navy)">id <span style="color:var(--muted)">: uuid</span></div>
+        <div style="padding:10px 12px;background:var(--cloud);border-radius:8px;font-family:var(--f-mono);color:var(--navy)">term <span style="color:var(--muted)">: months</span></div>
+        <div style="padding:10px 12px;background:var(--cloud);border-radius:8px;font-family:var(--f-mono);color:var(--navy)">ramp <span style="color:var(--muted)">: schedule</span></div>
+        <div style="padding:10px 12px;background:var(--cloud);border-radius:8px;font-family:var(--f-mono);color:var(--navy)">sla <span style="color:var(--muted)">: tier</span></div>
+        <div style="padding:10px 12px;background:#DBEAFE;border-radius:8px;font-family:var(--f-mono);color:var(--blue)">+ region<span style="color:var(--muted)"> : enum</span></div>
+        <div style="padding:10px 12px;background:#DBEAFE;border-radius:8px;font-family:var(--f-mono);color:var(--blue)">+ partner_ref<span style="color:var(--muted)"> : str</span></div>
+      </div>
+      <div style="margin-top:12px;font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.04em">▲ 2 CUSTOM FIELDS — ADDED IN 4 MIN, NO DEPLOYMENT</div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" id="process">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>PROCESS ENGINE</div>
+      <h2 style="margin-top:18px">Built-in automation &amp; optimisation.</h2>
+      <p>ATSuite's process engine is a powerful tool for business efficiency — design, execute and optimise workflows through an intuitive interface. From sales and product management to billing and customer support, every workflow ships automated.</p>
+    </div>
+    <div class="mock-card" style="background:var(--mist)">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center">
+        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase">EVENT</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">Quote signed</div></div>
+        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--cyan-hover);text-transform:uppercase">RULE</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">If amt &gt; €100k</div></div>
+        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--green);text-transform:uppercase">ACTION</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">Provision + notify</div></div>
+      </div>
+      <div style="margin-top:12px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.04em"><span>42 ACTIVE WORKFLOWS</span><span>▲ 8,461 RUNS TODAY</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="split-section alt" id="analytics">
+  <div class="container split-grid flip">
+    <div>
+      <div class="eyebrow"><span class="dot" style="background:var(--violet)"></span>ANALYTICS</div>
+      <h2 style="margin-top:18px">Insight that drives decisions.</h2>
+      <p>The analytics module empowers you to harness data for informed decisions and growth. Advanced visualisation and predictive analytics support business trajectory, operational efficiency and continuous improvement.</p>
+    </div>
+    <div class="mock-card">
+      <div class="head"><div><div class="ttl">Renewal forecast</div><div class="sub">94% PREDICTIVE ACCURACY</div></div></div>
+      <svg viewBox="0 0 320 140" style="width:100%;height:auto">
+        <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7C3AED" stop-opacity="0.3"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></linearGradient></defs>
+        <path d="M0 110 L40 96 L80 88 L120 78 L160 60 L200 52 L240 38 L280 30 L320 18 L320 140 L0 140Z" fill="url(#g)"/>
+        <path d="M0 110 L40 96 L80 88 L120 78 L160 60 L200 52 L240 38 L280 30 L320 18" fill="none" stroke="#7C3AED" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="split-section" id="deployment">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>RELIABLE &amp; SECURE DEPLOYMENT</div>
+      <h2 style="margin-top:18px">Deploy how your business needs.</h2>
+      <p>ATSuite offers both Managed-as-a-Service and Software-as-a-Service models — choose the deployment strategy that aligns with your infrastructure, security requirements and operational needs. EU-hosted by default.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="mock-card"><strong style="color:var(--navy)">Managed-as-a-Service</strong><p style="margin-top:8px;font-size:13.5px">We host, monitor and operate ATSuite on your behalf in EU regions.</p></div>
+      <div class="mock-card"><strong style="color:var(--navy)">SaaS</strong><p style="margin-top:8px;font-size:13.5px">Multi-tenant cloud, continuous updates, no upgrade projects.</p></div>
+      <div class="mock-card"><strong style="color:var(--navy)">GDPR-native</strong><p style="margin-top:8px;font-size:13.5px">Data residency, retention controls and audit trails out of the box.</p></div>
+      <div class="mock-card"><strong style="color:var(--navy)">SSO</strong><p style="margin-top:8px;font-size:13.5px">Enterprise identity with SAML and OIDC for finance roles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container">
+    <div class="eyebrow on-dark"><span class="dot"></span>INNOVATE WITH AGREE TECHNOLOGIES</div>
+    <h2 style="margin-top:18px">Continuous innovation. Continuous delivery.</h2>
+    <p>Cutting-edge cloud-based CPQ and billing solutions for B2B enterprises — flexible, scalable, secure.</p>
+    <div class="ctas"><a class="btn btn-cyan btn-lg" href="contact.html">Talk to an expert</a><a class="btn btn-outline-dark btn-lg" href="implementation.html">How implementation works</a></div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body></html>

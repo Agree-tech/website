@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CPQ — Configure, Price, Quote · Agree Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+.cpq-mock {
+  background: white; border: 1px solid var(--border-soft); border-radius: 16px;
+  box-shadow: var(--shadow-pop); overflow: hidden;
+}
+.cpq-mock .bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); align-items:center; }
+.cpq-mock .bar .d { width: 9px; height: 9px; border-radius:50%; }
+.cpq-mock .bar .url { margin-left: 12px; flex:1; background: var(--cloud); border-radius: 6px; padding: 5px 10px; font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+.cpq-mock .body { padding: 22px; }
+.cpq-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px; padding: 12px 14px; align-items: center; border-bottom: 1px dashed var(--border-soft); font-size: 13px; }
+.cpq-row.head { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; padding-top: 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-soft); }
+.cpq-row .name { font-weight: 500; color: var(--navy); }
+.cpq-row .qty { font-family: var(--f-mono); color: var(--slate); }
+.cpq-row .price { font-family: var(--f-mono); color: var(--navy); font-weight: 500; text-align: right; }
+.cpq-row .disc { color: var(--green); font-family: var(--f-mono); font-size: 12px; }
+.cpq-total { display: flex; justify-content: space-between; align-items: center; padding: 18px 14px; background: var(--navy); color: white; border-radius: 10px; margin-top: 14px; }
+.cpq-total .l { font-family: var(--f-mono); letter-spacing: 0.14em; font-size: 11px; text-transform: uppercase; opacity: 0.7; }
+.cpq-total .a { font-family: var(--f-display); font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+
+.lang-pills { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+.lang-pills span { font-family: var(--f-mono); font-size: 11px; padding: 4px 10px; border-radius: 999px; background: var(--cloud); color: var(--slate); }
+.lang-pills span.on { background: var(--blue); color: white; }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='cpq';</script>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container page-hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>SOLUTIONS · CPQ</div>
+      <h1>Quote with speed, configure with precision.</h1>
+      <p class="lede">An automated CPQ that simplifies pricing and quoting — generating consistent, precise, multi-language quotes that respond to customer inquiries in seconds, not days.</p>
+      <div class="ctas">
+        <a class="btn btn-blue btn-lg" href="contact.html">Schedule a demo</a>
+        <a class="btn btn-ghost btn-lg" href="platform.html">See the platform <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="cpq-mock">
+      <div class="bar">
+        <span class="d" style="background:#ef4444"></span>
+        <span class="d" style="background:#f59e0b"></span>
+        <span class="d" style="background:#22c55e"></span>
+        <div class="url">atsuite.app/cpq/quotes/Q-2046 · Subscription quote · Northwind</div>
+      </div>
+      <div class="body">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
+          <div>
+            <div style="font-family:var(--f-display);font-weight:600;color:var(--navy);font-size:18px">Northwind Telecom · FY26</div>
+            <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;margin-top:3px">QUOTE Q-2046 · DRAFT v3</div>
+          </div>
+          <span style="background:#DBEAFE;color:var(--blue);padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono);letter-spacing:0.06em">● PENDING APPROVAL</span>
+        </div>
+        <div class="cpq-row head"><span>Product</span><span class="qty">Qty</span><span class="disc">Disc.</span><span class="price">Annual</span></div>
+        <div class="cpq-row"><span class="name">Voice Pro · per seat</span><span class="qty">1,200</span><span class="disc">−7%</span><span class="price">€186,400</span></div>
+        <div class="cpq-row"><span class="name">Recording &amp; QA</span><span class="qty">1,200</span><span class="disc">−12%</span><span class="price">€24,000</span></div>
+        <div class="cpq-row"><span class="name">SMS · usage tier</span><span class="qty">~80K/mo</span><span class="disc">tier B</span><span class="price">€9,840</span></div>
+        <div class="cpq-row" style="border-bottom:0"><span class="name">International voice · est.</span><span class="qty">~1.4M min</span><span class="disc">tier A</span><span class="price">€12,225</span></div>
+        <div class="cpq-total"><span class="l">Annualised · multi-yr ramp</span><span class="a">€206,595</span></div>
+        <div class="lang-pills">
+          <span class="on">EN</span><span>DA</span><span>DE</span><span>FR</span><span>NL</span><span>SV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="split-section">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot"></span>CPQ · CAPABILITIES</div>
+      <h2 style="margin-top:18px">Everything your sales team needs in one workspace.</h2>
+    </div>
+    <div class="feat-grid-3 acc-blue">
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div>
+        <div class="num">01 · CATALOG</div>
+        <h3>Product catalog</h3>
+        <p>Detailed, accurate product descriptions used as the basis of every quote — clarity and consistency, by default.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 8h14M5 16h14"/></svg></div>
+        <div class="num">02 · PRICING</div>
+        <h3>Dynamic pricing</h3>
+        <p>Adjust pricing, ratings, promotions and discounts across catalogs to respond to market demand strategically.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div class="num">03 · TURNAROUND</div>
+        <h3>Fast quote turnaround</h3>
+        <p>Speed up quote generation so your sales team responds to customer inquiries in minutes, not days.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l5 5L21 4"/></svg></div>
+        <div class="num">04 · EFFICIENCY</div>
+        <h3>Increase efficiency</h3>
+        <p>Automate complex pricing and quoting workflows — reduce manual work and minimise errors.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M9 18h6"/></svg></div>
+        <div class="num">05 · FLEXIBILITY</div>
+        <h3>Flexible CPQ</h3>
+        <p>Tailored configuration and commercialisation for any offering — from simple SKUs to complex bundles.</p>
+      </div>
+      <div class="f3">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <div class="num">06 · I18N</div>
+        <h3>Multi-language</h3>
+        <p>A multilingual product catalog ensures your offerings stay accessible across European and global markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Power -->
+<section class="split-section alt">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>THE TRANSFORMATIVE POWER OF CPQ</div>
+      <h2 style="margin-top:18px">Free your sales team to do what they do best — sell.</h2>
+      <p>ATSuite revolutionises the sales process. By automating and optimising the crucial parts of quoting and contract generation, your team is free to focus on relationships and revenue — not paperwork.</p>
+      <ul class="acc-blue">
+        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Faster, more consistent quotes — at any complexity</li>
+        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Approval routing aligned to your governance model</li>
+        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> Direct hand-off to subscription &amp; billing — no rekeying</li>
+      </ul>
+    </div>
+    <div class="mock-card">
+      <div class="head">
+        <div>
+          <div class="ttl">Approval flow</div>
+          <div class="sub">QUOTE Q-2046 · €206,595 · DEAL DESK</div>
+        </div>
+        <span style="background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono);letter-spacing:0.06em">2 of 3 ✓</span>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px 14px;align-items:center;font-size:14px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-size:13px">✓</div>
+        <div><b style="color:var(--navy)">Sales Manager · Anna L.</b><div style="font-size:12px;color:var(--muted);font-family:var(--f-mono)">approved 09:14</div></div>
+        <div style="font-family:var(--f-mono);font-size:12px;color:var(--green)">+0%</div>
+
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:white;display:grid;place-items:center;font-size:13px">✓</div>
+        <div><b style="color:var(--navy)">Deal Desk · Marco R.</b><div style="font-size:12px;color:var(--muted);font-family:var(--f-mono)">approved 11:02</div></div>
+        <div style="font-family:var(--f-mono);font-size:12px;color:var(--green)">−7%</div>
+
+        <div style="width:28px;height:28px;border-radius:50%;background:#FEF3C7;color:#B45309;display:grid;place-items:center;font-size:13px">●</div>
+        <div><b style="color:var(--navy)">Finance · Karina B.</b><div style="font-size:12px;color:var(--muted);font-family:var(--f-mono)">awaiting · ~2h SLA</div></div>
+        <div style="font-family:var(--f-mono);font-size:12px;color:var(--muted)">pending</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container">
+    <div class="eyebrow on-dark"><span class="dot"></span>READY TO QUOTE FASTER?</div>
+    <h2 style="margin-top:18px">See ATSuite CPQ in your stack.</h2>
+    <p>30-minute discovery — we'll show you a quote tailored to your products and pricing.</p>
+    <div class="ctas">
+      <a class="btn btn-cyan btn-lg" href="contact.html">Schedule a demo</a>
+      <a class="btn btn-outline-dark btn-lg" href="index.html">Back to overview</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body>
+</html>
