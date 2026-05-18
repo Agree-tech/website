@@ -528,12 +528,283 @@
   .cta-band .lede { font-size: 18px; color: var(--slate); margin-top: 22px; max-width: 600px; margin-inline: auto; }
   .cta-band .ctas { margin-top: 36px; display: flex; gap: 10px; justify-content: center; }
 
+  /* ============ CFO BAND ============ */
+  .cfo {
+    background: var(--mist);
+    padding: 120px 0;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .cfo::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(135deg,
+      rgba(15,23,42,0.025) 0 1px,
+      transparent 1px 16px);
+    pointer-events: none;
+  }
+  .cfo-head {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .cfo-head h2 { color: var(--navy); }
+  .cfo-head .right p {
+    font-size: 17px; color: var(--slate); line-height: 1.55;
+  }
+  .cfo-head .right p + p { margin-top: 14px; }
+  .cfo-head .right .em { color: var(--navy); font-weight: 500; }
+
+  /* Challenge / Outcome comparison */
+  .cfo-compare {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin-bottom: 36px;
+  }
+  .cfo-col {
+    background: white;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    padding: 32px 32px 28px;
+    box-shadow: var(--shadow-card);
+  }
+  .cfo-col.before {
+    border-color: #FECACA;
+    background:
+      linear-gradient(180deg, #FFF7F5 0%, white 40%);
+  }
+  .cfo-col.after {
+    border-color: #BBF7D0;
+    background:
+      linear-gradient(180deg, #F0FDF4 0%, white 40%);
+  }
+  .cfo-col .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .cfo-col.before .tag { background: #FEE2E2; color: #B91C1C; }
+  .cfo-col.after .tag { background: #DCFCE7; color: #15803D; }
+  .cfo-col .tag .ico {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .cfo-col.before .tag .ico { background: #DC2626; }
+  .cfo-col.after .tag .ico { background: #16A34A; }
+  .cfo-col h3 {
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 22px;
+    letter-spacing: -0.02em;
+  }
+  .cfo-col ul { list-style: none; margin: 0; padding: 0; }
+  .cfo-col li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0;
+    border-top: 1px dashed var(--border-soft);
+    font-size: 14.5px;
+    color: var(--slate);
+    line-height: 1.45;
+  }
+  .cfo-col li:first-of-type { border-top: 0; padding-top: 4px; }
+  .cfo-col .mk {
+    flex: 0 0 auto;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    margin-top: 1px;
+  }
+  .cfo-col.before .mk { background: #FEE2E2; color: #B91C1C; }
+  .cfo-col.after .mk { background: #DCFCE7; color: #15803D; }
+  .cfo-col .mk svg { width: 11px; height: 11px; }
+
+  .cfo-arrow {
+    display: grid; place-items: center;
+    padding: 0 22px;
+    color: var(--cyan);
+  }
+  .cfo-arrow .pipe {
+    background: white;
+    border: 1px solid var(--border);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    color: var(--navy);
+    box-shadow: var(--shadow-card);
+  }
+  .cfo-arrow .pipe svg { width: 18px; height: 18px; }
+
+  /* Visibility dashboard */
+  .vis-board {
+    position: relative;
+    background: var(--navy);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 36px 36px 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-pop);
+  }
+  .vis-board::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 320px at 90% -20%, rgba(6,182,212,0.16), transparent 70%),
+      radial-gradient(500px 280px at 0% 120%, rgba(124,58,237,0.14), transparent 70%);
+    pointer-events: none;
+  }
+  .vis-board-head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .vis-board-head .ttl {
+    font-family: var(--f-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: white;
+  }
+  .vis-board-head .sub {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cyan-light);
+    margin-top: 6px;
+  }
+  .vis-board-head .live {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(22,163,74,0.18);
+    color: #4ade80;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .vis-board-head .live .pulse {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 0 0 rgba(74,222,128,0.5);
+    animation: pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); }
+    70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+  }
+  .vis-tiles {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .vis-tile {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 14px;
+    padding: 18px 18px 16px;
+    min-height: 152px;
+    display: flex; flex-direction: column;
+  }
+  .vis-tile .l {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .vis-tile .v {
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+    margin-top: 6px;
+    line-height: 1;
+  }
+  .vis-tile .v small { font-size: 14px; color: var(--cyan-light); margin-left: 2px; font-weight: 500; }
+  .vis-tile .d {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: #4ade80;
+    margin-top: 6px;
+  }
+  .vis-tile .d.neutral { color: var(--cyan-light); }
+  .vis-tile .spark {
+    margin-top: auto;
+    height: 36px;
+  }
+  .vis-tile .spark svg { width: 100%; height: 100%; display: block; }
+  .vis-tile .bars {
+    margin-top: auto;
+    display: flex; gap: 4px; align-items: flex-end; height: 36px;
+  }
+  .vis-tile .bars span {
+    flex: 1; background: var(--cyan); border-radius: 2px; opacity: 0.85;
+  }
+  .vis-tile .donut {
+    margin-top: auto;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .vis-tile .donut svg { width: 38px; height: 38px; }
+  .vis-tile .donut .lbl { font-family: var(--f-mono); font-size: 10.5px; color: rgba(255,255,255,0.6); line-height: 1.35; }
+  .vis-tile .donut .lbl b { color: white; font-weight: 500; }
+
+  .vis-foot {
+    position: relative;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.55);
+  }
+  .vis-foot .stream {
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .vis-foot .stream .ev {
+    background: rgba(6,182,212,0.16);
+    color: var(--cyan-light);
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 10.5px; letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 1100px) {
+    .vis-tiles { grid-template-columns: repeat(3, 1fr); }
+  }
+
   @media (max-width: 1000px) {
     .hero-grid, .q2c-head, .quote-grid, .module-grid, .inn-grid { grid-template-columns: 1fr; gap: 40px; }
     .q2c-rail, .q2c-cards { grid-template-columns: repeat(5, 1fr); font-size: 11px; }
     .logos { grid-template-columns: repeat(3, 1fr); }
     .stats { grid-template-columns: 1fr; }
     .mock-float { display: none; }
+    .cfo-head { grid-template-columns: 1fr; gap: 32px; align-items: start; }
+    .cfo-compare { grid-template-columns: 1fr; }
+    .cfo-arrow { padding: 4px 0; transform: rotate(90deg); }
+    .vis-tiles { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .vis-tiles { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -798,6 +1069,181 @@
   </div>
 </section>
 
+<!-- CFO BAND -->
+<section class="cfo">
+  <div class="container">
+    <div class="cfo-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>BUILT FOR THE OFFICE OF THE CFO</div>
+        <h2 style="margin-top: 18px;">Eliminate revenue leakage. Replace manual billing risk.</h2>
+      </div>
+      <div class="right">
+        <p>As businesses move toward subscription and usage-based revenue models, <span class="em">financial precision and operational control become business-critical</span>.</p>
+        <p>ATSuite brings CPQ, subscriptions, and billing together in one unified, fully auditable platform — so every contract, every usage event, every renewal, and every pricing adjustment is automatically captured and invoiced correctly.</p>
+      </div>
+    </div>
+
+    <div class="cfo-compare">
+      <div class="cfo-col before">
+        <div class="tag"><span class="ico"></span>Today · without ATSuite</div>
+        <h3>The challenges most CFOs see</h3>
+        <ul>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            Inconsistent cash flow and unpredictable working-capital position
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            Manual billing controls and spreadsheet reconciliation
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            Limited confidence in invoice accuracy and credit-note volume
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            Complex subscription and usage-based models that outgrow legacy ERP
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            No real-time visibility into pricing performance, discounts, or margin
+          </li>
+        </ul>
+      </div>
+
+      <div class="cfo-arrow" aria-hidden="true">
+        <div class="pipe">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+
+      <div class="cfo-col after">
+        <div class="tag"><span class="ico"></span>With ATSuite</div>
+        <h3>The result, from day one</h3>
+        <ul>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>
+            More predictable cash flow and recurring revenue streams
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>
+            Near-perfect invoice accuracy across every monetization model
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>
+            Lower operational cost in finance, with automated controls
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>
+            Improved compliance and a fully auditable revenue trail
+          </li>
+          <li>
+            <span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>
+            Better reporting for management, the board, and investors
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Real-time visibility dashboard -->
+    <div class="vis-board">
+      <div class="vis-board-head">
+        <div>
+          <div class="ttl">Real-time revenue visibility</div>
+          <div class="sub">QUOTE · SUBSCRIPTION · USAGE · RENEWAL · INDEXATION</div>
+        </div>
+        <div class="live"><span class="pulse"></span>Live · streaming</div>
+      </div>
+
+      <div class="vis-tiles">
+        <div class="vis-tile">
+          <div class="l">MRR · ARR</div>
+          <div class="v">€2.4M<small>ARR</small></div>
+          <div class="d">▲ 18.4% YoY</div>
+          <div class="spark">
+            <svg viewBox="0 0 100 36" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="vg1" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 28 L14 25 L28 22 L42 18 L56 14 L70 12 L84 8 L100 4" fill="none" stroke="#06B6D4" stroke-width="1.6"/>
+              <path d="M0 28 L14 25 L28 22 L42 18 L56 14 L70 12 L84 8 L100 4 L100 36 L0 36 Z" fill="url(#vg1)"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="vis-tile">
+          <div class="l">Gross margin</div>
+          <div class="v">68.2<small>%</small></div>
+          <div class="d">▲ 2.1 pts QoQ</div>
+          <div class="donut">
+            <svg viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.12)" stroke-width="4" fill="none"/>
+              <circle cx="18" cy="18" r="14" stroke="#4ade80" stroke-width="4" fill="none"
+                stroke-dasharray="60 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+            </svg>
+            <div class="lbl"><b>€1.64M</b><br>contribution</div>
+          </div>
+        </div>
+
+        <div class="vis-tile">
+          <div class="l">Discount performance</div>
+          <div class="v">−6.4<small>%</small></div>
+          <div class="d neutral">vs. list · within policy</div>
+          <div class="bars">
+            <span style="height:42%"></span>
+            <span style="height:58%"></span>
+            <span style="height:38%"></span>
+            <span style="height:66%"></span>
+            <span style="height:48%"></span>
+            <span style="height:72%"></span>
+            <span style="height:54%"></span>
+          </div>
+        </div>
+
+        <div class="vis-tile">
+          <div class="l">Subscription &amp; usage</div>
+          <div class="v">€186K<small>/mo</small></div>
+          <div class="d">▲ 11% MoM · 142 active</div>
+          <div class="bars">
+            <span style="height:30%; background:var(--violet)"></span>
+            <span style="height:46%; background:var(--violet)"></span>
+            <span style="height:58%; background:var(--violet)"></span>
+            <span style="height:48%; background:var(--violet)"></span>
+            <span style="height:72%; background:var(--violet)"></span>
+            <span style="height:64%; background:var(--violet)"></span>
+            <span style="height:88%; background:var(--violet)"></span>
+          </div>
+        </div>
+
+        <div class="vis-tile">
+          <div class="l">Renewal &amp; indexation</div>
+          <div class="v">94<small>%</small></div>
+          <div class="d">23 renewing · CPI auto-applied</div>
+          <div class="donut">
+            <svg viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.12)" stroke-width="4" fill="none"/>
+              <circle cx="18" cy="18" r="14" stroke="#67E8F9" stroke-width="4" fill="none"
+                stroke-dasharray="82 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+            </svg>
+            <div class="lbl"><b>+3.1 pts</b><br>QoQ</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vis-foot">
+        <div class="stream">
+          <span class="ev">USAGE · INGEST</span>
+          8,461 events / minute · all queues green
+        </div>
+        <div>RUN · 14 MAY 2026 · 09:42 CET</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- QUOTE -->
 <section class="quote">
   <div class="container quote-grid">
@@ -814,15 +1260,15 @@
     <div class="stats">
       <div class="stat">
         <div class="v">~100<small>%</small></div>
-        <div class="l">Billing accuracy in production</div>
+        <div class="l">Billing accuracy across millions of transactions</div>
       </div>
       <div class="stat">
-        <div class="v">6+<small>yrs</small></div>
-        <div class="l">Operating as a managed service</div>
+        <div class="v">2019</div>
+        <div class="l">In production at Dstny — every billing run since</div>
       </div>
       <div class="stat">
-        <div class="v">38<small>s</small></div>
-        <div class="l">Average quote turnaround</div>
+        <div class="v">M+<small>/mo</small></div>
+        <div class="l">Monthly transactions processed across complex structures</div>
       </div>
       <div class="stat">
         <div class="v">112<small>%</small></div>
