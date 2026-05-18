@@ -107,6 +107,40 @@
     const footMount = document.getElementById('site-foot');
     if (footMount) footMount.outerHTML = footHTML;
 
+    // Structured data (Organization + WebSite) — injected once per page
+    if (!document.getElementById('at-jsonld')) {
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.id = 'at-jsonld';
+      ld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': 'https://www.agree-tech.com/#organization',
+            name: 'Agree Technologies',
+            legalName: 'Agree Technologies ApS',
+            url: 'https://www.agree-tech.com/',
+            logo: 'https://www.agree-tech.com/assets/logo-black.png',
+            description: 'A European revenue platform for B2B SaaS and telecom — CPQ, billing, subscription, and process automation in one suite.',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Copenhagen',
+              addressCountry: 'DK'
+            }
+          },
+          {
+            '@type': 'WebSite',
+            '@id': 'https://www.agree-tech.com/#website',
+            url: 'https://www.agree-tech.com/',
+            name: 'Agree Technologies',
+            publisher: { '@id': 'https://www.agree-tech.com/#organization' }
+          }
+        ]
+      });
+      document.head.appendChild(ld);
+    }
+
     // Active page highlight
     document.querySelectorAll('.nav-link').forEach(el => {
       const href = el.getAttribute('href');
