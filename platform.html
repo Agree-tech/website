@@ -31,6 +31,22 @@
   .arch-cell.lead { background:linear-gradient(135deg, rgba(37,99,235,0.25), rgba(6,182,212,0.18)); border-color:rgba(6,182,212,0.4); }
   .arch-cell.lead .v { color:var(--cyan-light); }
   .arch-band { font-family:var(--f-mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin:14px 0 8px; text-align:center;}
+
+  .integrations { margin-top:80px; }
+  .integrations-head { text-align:center; max-width:680px; margin:0 auto 36px; }
+  .integrations-head .eyebrow { display:inline-flex; }
+  .integrations-head h3 { font-family:var(--f-display); font-weight:600; font-size:26px; color:var(--navy); letter-spacing:-0.01em; margin:14px 0 10px;}
+  .integrations-head p { color:var(--muted); font-size:15px; line-height:1.6; }
+  .integration-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .integration-cat { background:var(--white); border:1px solid var(--border-soft); border-radius:14px; padding:22px; transition:transform .2s ease, box-shadow .2s ease;}
+  .integration-cat:hover { transform:translateY(-2px); box-shadow:0 8px 20px -10px rgba(15,23,42,0.18);}
+  .integration-cat-label { font-family:var(--f-mono); font-size:11px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .integration-cat-label::before { content:""; width:6px; height:6px; border-radius:99px; background:var(--cyan);}
+  .integration-chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .integration-chip { font-family:var(--f-display); font-weight:500; font-size:13px; color:var(--navy); background:var(--cloud); padding:6px 12px; border-radius:99px; border:1px solid var(--border-soft);}
+  .integration-foot { text-align:center; font-family:var(--f-mono); font-size:11px; color:var(--muted); letter-spacing:0.14em; margin-top:28px; text-transform:uppercase;}
+  @media (max-width:1000px) { .integration-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px) { .integration-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -42,7 +58,7 @@
     <div>
       <div class="eyebrow on-dark"><span class="dot"></span>THE ATSUITE PLATFORM</div>
       <h1>Configure. Launch. Go.</h1>
-      <p class="lede">A comprehensive platform for B2B enterprise. ATSuite's architecture is designed for adaptability — built on modern, future-proven technology for SaaS or hybrid deployment, kept up-to-date so no upgrade project ever stops your business.</p>
+      <p class="lede">A comprehensive platform for B2B enterprise. ATSuite's architecture is designed for adaptability — built on modern, future-proven technology and deployable as SaaS, managed service or fully on-premise, kept up-to-date so no upgrade project ever stops your business.</p>
       <div class="ctas">
         <a class="btn btn-cyan btn-lg" href="contact.html">Speak to an expert</a>
         <a class="btn btn-outline-dark btn-lg" href="implementation.html">How implementation works</a>
@@ -69,9 +85,10 @@
         <div class="arch-cell"><div class="l">Identity</div><div class="v">SSO</div></div>
       </div>
       <div class="arch-band">— DEPLOYMENT —</div>
-      <div class="arch-row" style="grid-template-columns:1fr 1fr">
-        <div class="arch-cell"><div class="l">Managed-as-a-Service</div><div class="v">EU regions</div></div>
+      <div class="arch-row" style="grid-template-columns:repeat(3,1fr)">
         <div class="arch-cell"><div class="l">SaaS</div><div class="v">Multi-tenant</div></div>
+        <div class="arch-cell"><div class="l">Managed Service</div><div class="v">EU regions</div></div>
+        <div class="arch-cell"><div class="l">On-Premise</div><div class="v">Your infrastructure</div></div>
       </div>
     </div>
   </div>
@@ -98,6 +115,73 @@ Content-Type: application/json
   "term": "36m"
 }</pre>
     </div>
+  </div>
+
+  <div class="container integrations">
+    <div class="integrations-head">
+      <div class="eyebrow"><span class="dot"></span>WORKS WITH YOUR STACK</div>
+      <h3>Talks to the systems you already run.</h3>
+      <p>Pre-built connectors and a documented REST API mean ATSuite slots into the ERPs, CRMs, ticketing tools and identity providers your teams already depend on — no rip-and-replace.</p>
+    </div>
+    <div class="integration-grid">
+      <div class="integration-cat">
+        <div class="integration-cat-label">ERP &amp; Finance</div>
+        <div class="integration-chips">
+          <span class="integration-chip">SAP</span>
+          <span class="integration-chip">Oracle NetSuite</span>
+          <span class="integration-chip">Microsoft Dynamics 365</span>
+          <span class="integration-chip">Sage</span>
+          <span class="integration-chip">Xero</span>
+          <span class="integration-chip">QuickBooks</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">CRM &amp; Sales</div>
+        <div class="integration-chips">
+          <span class="integration-chip">Salesforce</span>
+          <span class="integration-chip">HubSpot</span>
+          <span class="integration-chip">Dynamics 365 Sales</span>
+          <span class="integration-chip">Pipedrive</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">Service &amp; ITSM</div>
+        <div class="integration-chips">
+          <span class="integration-chip">Jira</span>
+          <span class="integration-chip">ServiceNow</span>
+          <span class="integration-chip">Zendesk</span>
+          <span class="integration-chip">Freshdesk</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">Identity &amp; SSO</div>
+        <div class="integration-chips">
+          <span class="integration-chip">Okta</span>
+          <span class="integration-chip">Microsoft Entra ID</span>
+          <span class="integration-chip">Auth0</span>
+          <span class="integration-chip">Google Workspace</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">Payments &amp; Banking</div>
+        <div class="integration-chips">
+          <span class="integration-chip">Stripe</span>
+          <span class="integration-chip">Adyen</span>
+          <span class="integration-chip">GoCardless</span>
+          <span class="integration-chip">SEPA Direct Debit</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">Data &amp; BI</div>
+        <div class="integration-chips">
+          <span class="integration-chip">Snowflake</span>
+          <span class="integration-chip">Power BI</span>
+          <span class="integration-chip">Tableau</span>
+          <span class="integration-chip">Looker</span>
+        </div>
+      </div>
+    </div>
+    <p class="integration-foot">+ anything else via REST, webhooks &amp; event streams</p>
   </div>
 </section>
 
@@ -164,11 +248,12 @@ Content-Type: application/json
     <div>
       <div class="eyebrow"><span class="dot"></span>RELIABLE &amp; SECURE DEPLOYMENT</div>
       <h2 style="margin-top:18px">Deploy how your business needs.</h2>
-      <p>ATSuite offers both Managed-as-a-Service and Software-as-a-Service models — choose the deployment strategy that aligns with your infrastructure, security requirements and operational needs. EU-hosted by default.</p>
+      <p>Unlike most modern CPQ and billing vendors, ATSuite supports the full spectrum: SaaS, Managed-as-a-Service, or fully on-premise. Choose the deployment strategy that aligns with your infrastructure, security requirements and operational needs. EU-hosted by default.</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-      <div class="mock-card"><strong style="color:var(--navy)">Managed-as-a-Service</strong><p style="margin-top:8px;font-size:13.5px">We host, monitor and operate ATSuite on your behalf in EU regions.</p></div>
       <div class="mock-card"><strong style="color:var(--navy)">SaaS</strong><p style="margin-top:8px;font-size:13.5px">Multi-tenant cloud, continuous updates, no upgrade projects.</p></div>
+      <div class="mock-card"><strong style="color:var(--navy)">Managed-as-a-Service</strong><p style="margin-top:8px;font-size:13.5px">We host, monitor and operate ATSuite on your behalf in EU regions.</p></div>
+      <div class="mock-card" style="grid-column:1 / -1;border:1px solid var(--cyan);background:linear-gradient(135deg,rgba(6,182,212,0.06),rgba(37,99,235,0.04))"><strong style="color:var(--navy)">On-Premise</strong><p style="margin-top:8px;font-size:13.5px">Deploy ATSuite inside your own data centre or private cloud — for regulated industries, sovereign-data mandates, or strict residency requirements where no public cloud will do.</p></div>
       <div class="mock-card"><strong style="color:var(--navy)">GDPR-native</strong><p style="margin-top:8px;font-size:13.5px">Data residency, retention controls and audit trails out of the box.</p></div>
       <div class="mock-card"><strong style="color:var(--navy)">SSO</strong><p style="margin-top:8px;font-size:13.5px">Enterprise identity with SAML and OIDC for finance roles.</p></div>
     </div>

@@ -3,7 +3,7 @@
   /* Brand */
   --navy: #101A3A;
   --navy-2: #1B2750;
-  --navy-deep: #0A1129;
+  --navy-deep: #101833;
   --blue: #2563EB;
   --blue-hover: #1D4ED8;
   --cyan: #06B6D4;
@@ -78,6 +78,7 @@ p { margin: 0; color: var(--slate); }
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 500;
+  align-items: center;
 }
 .eyebrow.on-dark { color: var(--cyan-light); }
 .eyebrow .dot {
