@@ -432,6 +432,11 @@
   }
   .quote .who { font-weight: 500; color: var(--navy); }
   .quote .who small { display: block; color: var(--muted); font-weight: 400; font-size: 13px; margin-top: 2px; }
+  .quote-divider {
+    height: 1px;
+    background: var(--border-soft);
+    margin: 80px 0;
+  }
   .stats {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1259,33 +1264,68 @@
 
 <!-- QUOTE -->
 <section class="quote">
-  <div class="container quote-grid">
-    <div>
-      <div class="eyebrow"><span class="dot"></span>CUSTOMER · DSTNY A/S</div>
-      <blockquote style="margin-top: 22px;">
-        With ATSuite we have <span class="em">increased our sales productivity</span> and our data from sales, delivery and running business have never been better. On top of that, our billing accuracy is very close to 100%.
-      </blockquote>
-      <div class="attr">
-        <div class="avatar">CT</div>
-        <div class="who">Carsten Thomsen<small>Dstny A/S</small></div>
+  <div class="container">
+    <div class="quote-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>CUSTOMER · DSTNY A/S</div>
+        <blockquote style="margin-top: 22px;">
+          With ATSuite we have <span class="em">increased our sales productivity</span> and our data from sales, delivery and running business have never been better. On top of that, our billing accuracy is very close to 100%.
+        </blockquote>
+        <div class="attr">
+          <div class="avatar">CT</div>
+          <div class="who">Carsten Thomsen<small>Dstny A/S</small></div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="v">~100<small>%</small></div>
+          <div class="l">Billing accuracy across millions of transactions</div>
+        </div>
+        <div class="stat">
+          <div class="v">2019</div>
+          <div class="l">In production at Dstny — every billing run since</div>
+        </div>
+        <div class="stat">
+          <div class="v">M+<small>/mo</small></div>
+          <div class="l">Monthly transactions processed across complex structures</div>
+        </div>
+        <div class="stat">
+          <div class="v">112<small>%</small></div>
+          <div class="l">Average net revenue retention</div>
+        </div>
       </div>
     </div>
-    <div class="stats">
-      <div class="stat">
-        <div class="v">~100<small>%</small></div>
-        <div class="l">Billing accuracy across millions of transactions</div>
+
+    <div class="quote-divider"></div>
+
+    <div class="quote-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>CUSTOMER · CLOUDFARMS</div>
+        <blockquote style="margin-top: 22px; font-size: clamp(22px, 2.2vw, 30px);">
+          Before ATSuite, we struggled with a CRM and ERP-system that didn't work together. It created far too many manual processes and made it difficult for us to scale our global operations across Europe, North America, Latin America, and Asia. With ATSuite, we now have <span class="em">a fully automated process from lead to quote, from quote to contract, and all the way through to subscription and billing</span>. The solution has eliminated complexity, reduced errors, and given us a unified flow that enables us to grow much faster.
+        </blockquote>
+        <div class="attr">
+          <div class="avatar">JT</div>
+          <div class="who">Jens Toppenberg<small>CEO, Cloudfarms</small></div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="v">2019</div>
-        <div class="l">In production at Dstny — every billing run since</div>
-      </div>
-      <div class="stat">
-        <div class="v">M+<small>/mo</small></div>
-        <div class="l">Monthly transactions processed across complex structures</div>
-      </div>
-      <div class="stat">
-        <div class="v">112<small>%</small></div>
-        <div class="l">Average net revenue retention</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="v">4<small>regions</small></div>
+          <div class="l">Global operations across Europe, North America, Latin America &amp; Asia</div>
+        </div>
+        <div class="stat">
+          <div class="v">1</div>
+          <div class="l">Unified platform — replacing disconnected CRM + ERP</div>
+        </div>
+        <div class="stat">
+          <div class="v">100<small>%</small></div>
+          <div class="l">Lead-to-billing — fully automated end-to-end</div>
+        </div>
+        <div class="stat">
+          <div class="v">0</div>
+          <div class="l">Manual handoffs across the revenue cycle</div>
+        </div>
       </div>
     </div>
   </div>
