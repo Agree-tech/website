@@ -18,6 +18,7 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
+const CONTENT = path.join(ROOT, 'content');
 
 /** Copied verbatim from the repo root. */
 const STATIC_FILES = [
@@ -88,14 +89,63 @@ function indent(block, spaces) {
 }
 
 /**
- * Transform a single page.
+ * Swap {{i18n:key}} placeholders for their strings.
  *
- * Phase 2: inline the nav, footer and JSON-LD that shared.js used to inject at
- * runtime, so they exist in the shipped HTML for crawlers that do not run JS.
- *
- * Phase 3 will substitute [data-i18n] keys here; Phase 4 will take a locale.
+ * Runs after the partials are inlined, so nav and footer placeholders resolve
+ * in the same pass. A missing key falls back to English and warns rather than
+ * rendering an empty element or a raw key — a half-translated locale must still
+ * be a working page.
  */
-function render(html, partials, pageFile /*, locale */) {
+/**
+ * Turn the editor-facing `*asterisk*` convention back into markup.
+ *
+ * Editors never type HTML (D3). For the handful of headlines and paragraphs
+ * that emphasise words mid-sentence, they write `CPQ & *billing* platform` and
+ * the wrapper named in the placeholder is restored here. Asterisks can move
+ * freely within the sentence, so word order stays the translator's choice.
+ */
+function applyEmphasis(value, spec) {
+  // spec is `span.accent` for a classed span, or `b` for a bare tag.
+  const [tag, cls] = spec.split('.');
+  const wrap = cls
+    ? (inner) => `<${tag} class="${cls}">${inner}</${tag}>`
+    : (inner) => `<${tag}>${inner}</${tag}>`;
+  return value.replace(/\*([^*]+)\*/g, (_, inner) => wrap(inner));
+}
+
+function localize(html, strings, fallback, missing) {
+  return html.replace(/\{\{i18n:([^}@]+)(?:@([^}]+))?\}\}/g, (raw, key, cls) => {
+    let value;
+    if (key in strings) value = strings[key];
+    else if (fallback && key in fallback) {
+      missing.add(key);
+      value = fallback[key];
+    } else {
+      missing.add(key);
+      return raw;
+    }
+
+    if (value.includes('<')) {
+      throw new Error(
+        `content value for "${key}" contains markup; values must be plain text`
+      );
+    }
+
+    // Content is stored decoded so editors never see entities. Re-escape here.
+    // Emphasis is applied afterwards, since that step introduces real markup.
+    const escaped = value.replace(/&/g, '&amp;').replace(/>/g, '&gt;');
+
+    return cls ? applyEmphasis(escaped, cls) : escaped;
+  });
+}
+
+/**
+ * Transform a single page: inline the shared partials, then localize.
+ *
+ * Phase 2 moved nav/footer/JSON-LD here from shared.js so they ship in the HTML.
+ * Phase 3 added the {{i18n:key}} substitution. Phase 4 will pass a locale.
+ */
+function render(html, partials, pageFile, strings, fallback, missing) {
   const config = readPageConfig(html);
 
   let out = html;
@@ -109,6 +159,8 @@ function render(html, partials, pageFile /*, locale */) {
     renderNav(partials.nav, config, pageFile)
   );
   out = out.replace('<div id="site-foot"></div>', partials.foot);
+
+  out = localize(out, strings, fallback, missing);
 
   return out;
 }
@@ -133,10 +185,17 @@ function build() {
     jsonld: loadPartial('_jsonld.html'),
   };
 
+  const en = JSON.parse(fs.readFileSync(path.join(CONTENT, 'en.json'), 'utf8'));
+  const missing = new Set();
+
   const pages = listPages();
   for (const page of pages) {
     const html = fs.readFileSync(path.join(SRC, page), 'utf8');
-    fs.writeFileSync(path.join(DIST, page), render(html, partials, page), 'utf8');
+    fs.writeFileSync(
+      path.join(DIST, page),
+      render(html, partials, page, en, null, missing),
+      'utf8'
+    );
   }
 
   let staticCount = 0;
@@ -158,6 +217,11 @@ function build() {
     }
     fs.cpSync(from, path.join(DIST, dir), { recursive: true });
     staticCount += fs.readdirSync(from).length;
+  }
+
+  if (missing.size) {
+    console.warn(`  ! ${missing.size} unresolved i18n keys`);
+    [...missing].slice(0, 10).forEach((k) => console.warn(`      ${k}`));
   }
 
   console.log(

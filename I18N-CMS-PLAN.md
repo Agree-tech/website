@@ -212,7 +212,32 @@ JSON-LD went from absent in source to present. Previously all of this existed on
 
 ---
 
-### Phase 3 — Extract keys into `content/en.json` · ~1 day
+### Phase 3 — Extract keys into `content/en.json` · **DONE**
+
+- ✅ **907 keys** extracted across 11 pages + both partials; `content/en.json` written.
+- ✅ 18 strings excluded (brand names, the `platform.html` schema diagram, separator glyphs).
+- ✅ **0 strings left needing manual handling** — the 18 the audit predicted are all handled automatically.
+- ✅ **Gate passed: `identical DOM : 11/11`** with all 907 keys substituted at build time.
+
+**Keys are per *text run*, not per element.** This was the decisive design change. `<div class="eyebrow"><span class="dot"></span>OUR JOURNEY</div>` holds one translatable run; keying the *element* and rewriting its inner content would have deleted the icon span. The first implementation did exactly that, and the same bug would have flattened `<b>~100%</b> billing accuracy` into plain text. Per-run placeholders leave sibling markup and whitespace untouched.
+
+The template now carries `{{i18n:key}}` placeholders instead of `data-i18n` attributes, which makes build-time substitution a single string replace with no HTML parser. The trade-off is that `src/*.html` no longer shows the English copy — that now lives in `content/en.json` and the CMS.
+
+**Emphasis (the `*asterisk*` convention) is automated.** 6 fields carry mid-sentence emphasis, marked in the template as `{{i18n:key@span.accent}}`. The editor sees:
+
+```
+The all-in-one CPQ & *billing* platform for B2B SaaS.
+```
+
+The `span.accent` / `span.em` / `b` distinction is carried explicitly, because collapsing `<span class="em">` to `em` silently emits an `<em>` tag with different styling — the DOM gate caught exactly that, along with a lost leading space.
+
+**Entities count as markup too.** 50 values contained `&amp;` or `&gt;`. Values are now stored decoded, so the editor sees `CPQ & billing`, and `build.js` re-escapes on output — DOM unchanged.
+
+The build refuses any content value containing `<`, so markup cannot reach the site through the CMS even by paste.
+
+---
+
+#### Original plan for this phase
 
 Write `extract.js` (a one-shot tool, not part of the build) that walks each `src/*.html`, assigns a key to every translatable node, rewrites the file with `data-i18n` attributes, and emits `content/en.json` from the existing copy.
 

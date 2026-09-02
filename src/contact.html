@@ -4,18 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Contact Agree Technologies — Book an ATSuite Demo</title>
-<meta name="description" content="Talk to an ATSuite expert or book a demo. See how Agree Technologies automates CPQ, billing, and subscription management for B2B SaaS and telecom teams." />
+<meta name="description" content="{{i18n:contact.meta.description}}" />
 <link rel="canonical" href="https://www.agree-tech.com/contact.html" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Agree Technologies" />
-<meta property="og:title" content="Contact Agree Technologies — Book an ATSuite Demo" />
-<meta property="og:description" content="Talk to an ATSuite expert or book a demo for CPQ, billing, and subscription management." />
+<meta property="og:title" content="{{i18n:contact.meta.og-title}}" />
+<meta property="og:description" content="{{i18n:contact.meta.og-description}}" />
 <meta property="og:url" content="https://www.agree-tech.com/contact.html" />
 <meta property="og:image" content="https://www.agree-tech.com/assets/og-default.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Contact Agree Technologies" />
-<meta name="twitter:description" content="Talk to an ATSuite expert or book a demo for CPQ, billing, and subscription management." />
+<meta name="twitter:title" content="{{i18n:contact.meta.twitter-title}}" />
+<meta name="twitter:description" content="{{i18n:contact.meta.twitter-description}}" />
 <meta name="twitter:image" content="https://www.agree-tech.com/assets/og-default.png" />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
@@ -60,9 +60,9 @@
 
 <section class="page-hero">
   <div class="container" style="max-width:920px">
-    <div class="eyebrow"><span class="dot"></span>THANK YOU FOR YOUR INTEREST</div>
-    <h1 style="margin-top:18px">Contact us.</h1>
-    <p class="lede">Tell us a bit about your company and what you'd like to explore — Sales, CPQ, Billing, Subscription Management, or the full ATSuite. We'll respond within one business day.</p>
+    <div class="eyebrow"><span class="dot"></span>{{i18n:contact.page-hero.div-thank-you-for-your}}</div>
+    <h1 style="margin-top:18px">{{i18n:contact.page-hero.h1-contact-us}}</h1>
+    <p class="lede">{{i18n:contact.page-hero.p-tell-us-a-bit}}</p>
   </div>
 </section>
 
@@ -70,7 +70,7 @@
   <div class="container contact-grid">
     <div class="form-card">
       <div class="notice">
-        <b>Please note:</b> we only reply to demo or information requests when we can validate both the business email address and the company website. — Agree Technologies
+        <b>{{i18n:contact.split-section.b-please-note}}</b> {{i18n:contact.split-section.div-we-only-reply-to}}
       </div>
       <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="07b59940-9095-4781-b372-7adf5cbe4570">
@@ -78,23 +78,23 @@
         <input type="hidden" name="from_name" value="ATSuite Website">
 
         <div class="form-row">
-          <div class="field"><label>First name <span class="req">*</span></label><input name="first_name" required placeholder="First" /></div>
-          <div class="field"><label>Last name <span class="req">*</span></label><input name="last_name" required placeholder="Last" /></div>
+          <div class="field"><label>{{i18n:contact.split-section.label-first-name}} <span class="req">*</span></label><input name="first_name" required placeholder="{{i18n:contact.meta.first-name}}" /></div>
+          <div class="field"><label>{{i18n:contact.split-section.label-last-name}} <span class="req">*</span></label><input name="last_name" required placeholder="{{i18n:contact.meta.last-name}}" /></div>
         </div>
-        <div class="field"><label>Business email <span class="req">*</span></label><input name="email" type="email" required placeholder="name@yourcompany.com" /></div>
+        <div class="field"><label>{{i18n:contact.split-section.label-business-email}} <span class="req">*</span></label><input name="email" type="email" required placeholder="{{i18n:contact.meta.email}}" /></div>
         <div class="form-row">
-          <div class="field"><label>Company name <span class="req">*</span></label><input name="company" required placeholder="Your company" /></div>
-          <div class="field"><label>Website</label><input name="website" placeholder="yourcompany.com" /></div>
+          <div class="field"><label>{{i18n:contact.split-section.label-company-name}} <span class="req">*</span></label><input name="company" required placeholder="{{i18n:contact.meta.company}}" /></div>
+          <div class="field"><label>{{i18n:contact.split-section.label-website}}</label><input name="website" placeholder="{{i18n:contact.meta.website}}" /></div>
         </div>
         <div class="form-row">
-          <div class="field"><label>Country</label>
+          <div class="field"><label>{{i18n:contact.split-section.label-country}}</label>
             <select name="country">
               <option>Denmark</option><option>Sweden</option><option>Norway</option>
               <option>Germany</option><option>Netherlands</option><option>United Kingdom</option>
               <option>Other</option>
             </select>
           </div>
-          <div class="field"><label>I'm interested in</label>
+          <div class="field"><label>{{i18n:contact.split-section.label-i-m-interested-in}}</label>
             <select name="interest">
               <option>The full ATSuite</option><option>CPQ</option>
               <option>Billing Automation</option><option>Subscription Management</option>
@@ -102,42 +102,42 @@
             </select>
           </div>
         </div>
-        <div class="field"><label>Message</label><textarea name="message" placeholder="A few words about what you're trying to solve…"></textarea></div>
+        <div class="field"><label>{{i18n:contact.split-section.label-message}}</label><textarea name="message" placeholder="{{i18n:contact.meta.message}}"></textarea></div>
         <div class="consent">
           <input type="checkbox" name="consent" id="consent" value="yes" />
-          <label for="consent" style="margin:0">I consent to receive marketing material from Agree Technologies. By submitting, you agree to AT's Privacy Policy. We occasionally send information about news and events. You can unsubscribe at any time.</label>
+          <label for="consent" style="margin:0">{{i18n:contact.split-section.label-i-consent-to-receive}}</label>
         </div>
         <input type="hidden" name="redirect" value="https://agree-tech.com/contact.html?success=true">
-        <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">Send message</button></div>
+        <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">{{i18n:contact.split-section.button-send-message}}</button></div>
       </form>
     </div>
 
     <div>
       <div class="contact-info-card">
         <div class="eyebrow on-dark" style="position:relative"><span class="dot"></span>AGREE TECHNOLOGIES APS</div>
-        <h2 style="color:white;margin-top:18px;font-size:30px;position:relative">Copenhagen · Built for Europe.</h2>
-        <p style="color:rgba(255,255,255,0.7);margin-top:14px;position:relative">A European revenue platform serving B2B SaaS and telecom across the Nordics, DACH and beyond.</p>
+        <h2 style="color:white;margin-top:18px;font-size:30px;position:relative">{{i18n:contact.split-section.h2-copenhagen-built-for-e}}</h2>
+        <p style="color:rgba(255,255,255,0.7);margin-top:14px;position:relative">{{i18n:contact.split-section.p-a-european-revenue-pla}}</p>
 
         <div class="info-row" style="margin-top:24px">
           <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg></div>
-          <div><b>info@agree-tech.com</b><p>Demo &amp; sales requests</p></div>
+          <div><b>{{i18n:contact.split-section.b-info-agree-tech-com}}</b><p>{{i18n:contact.split-section.p-demo-sales-requests}}</p></div>
         </div>
         <div class="info-row">
           <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 0114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-          <div><b>Copenhagen, Denmark</b><p>European HQ · GDPR-native by default</p></div>
+          <div><b>{{i18n:contact.split-section.b-copenhagen-denmark}}</b><p>{{i18n:contact.split-section.p-european-hq-gdpr-nativ}}</p></div>
         </div>
         <div class="info-row">
           <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
-          <div><b>Mon – Fri, 09:00 – 17:00 CET</b><p>Reply within one business day</p></div>
+          <div><b>{{i18n:contact.split-section.b-mon-fri-09-00}}</b><p>{{i18n:contact.split-section.p-reply-within-one-busin}}</p></div>
         </div>
       </div>
 
       <div style="margin-top:18px;padding:24px;background:var(--mist);border-radius:14px;border:1px solid var(--border-soft)">
-        <div class="eyebrow"><span class="dot"></span>USE THIS FORM FOR</div>
+        <div class="eyebrow"><span class="dot"></span>{{i18n:contact.split-section.div-use-this-form-for}}</div>
         <ul style="list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--slate)">
-          <li>→ A discovery call</li>
-          <li>→ Requesting a demo</li>
-          <li>→ General enquiries</li>
+          <li>{{i18n:contact.split-section.li-a-discovery-call}}</li>
+          <li>{{i18n:contact.split-section.li-requesting-a-demo}}</li>
+          <li>{{i18n:contact.split-section.li-general-enquiries}}</li>
         </ul>
       </div>
     </div>
