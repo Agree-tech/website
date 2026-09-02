@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Geist", "Inter", -apple-system, system-ui, sans-serif;
+    background: #101A3A;
+    background-image:
+      radial-gradient(1000px 520px at 82% -12%, rgba(6,182,212,0.30), transparent 62%),
+      radial-gradient(760px 460px at 8% 108%, rgba(37,99,235,0.34), transparent 60%),
+      linear-gradient(155deg, #101A3A 0%, #1B2750 100%);
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 68px 72px;
+  }
+  /* subtle grid texture */
+  body::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(120deg, #000 0%, transparent 68%);
+    -webkit-mask-image: linear-gradient(120deg, #000 0%, transparent 68%);
+  }
+  .row { position: relative; z-index: 1; }
+
+  /* stacked lockup, 350x253 source — needs height to stay legible */
+  .logo { height: 104px; display: block; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #67E8F9;
+    margin-bottom: 26px;
+  }
+  .eyebrow .dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: #06B6D4; box-shadow: 0 0 0 4px rgba(6,182,212,0.22);
+  }
+
+  h1 {
+    font-size: 62px; line-height: 1.08; font-weight: 600;
+    letter-spacing: -0.023em; max-width: 940px;
+  }
+  h1 .accent { color: #67E8F9; }
+
+  .sub {
+    margin-top: 24px; font-size: 23px; line-height: 1.45;
+    color: rgba(255,255,255,0.74); max-width: 800px; font-weight: 400;
+  }
+
+  .foot {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 17px; color: rgba(255,255,255,0.62);
+  }
+  .foot .sep { color: rgba(255,255,255,0.28); }
+  .pills { display: flex; gap: 10px; }
+  .pill {
+    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px; padding: 8px 16px;
+    font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.86);
+  }
+</style>
+</head>
+<body>
+  <div class="row">
+    <img class="logo" src="LOGO_SRC" alt="Agree Technologies" />
+  </div>
+
+  <div class="row">
+    <div class="eyebrow"><span class="dot"></span>ATSuite &middot; Quote-to-Revenue</div>
+    <h1>The all-in-one CPQ &amp; <span class="accent">billing</span> platform for B2B SaaS.</h1>
+    <p class="sub">Automate the entire quote-to-revenue process &mdash; CPQ, billing, subscriptions, and process automation in one European-built suite.</p>
+  </div>
+
+  <div class="row foot">
+    <div class="pills">
+      <span class="pill">Built in the EU</span>
+      <span class="pill">GDPR-native</span>
+      <span class="pill">6+ years in production</span>
+    </div>
+    <span class="sep">|</span>
+    <span>agree-tech.com</span>
+  </div>
+</body>
+</html>
