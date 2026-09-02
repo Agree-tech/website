@@ -21,7 +21,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const ROOT = path.join(__dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = path.join(ROOT, "dist", "en");
 
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
@@ -76,6 +76,26 @@ function canonical(html) {
       }
     }
   );
+
+  // --- things Phase 4 changes on purpose ---
+  //
+  // The gate is not asking "is the output identical" any more — it cannot be,
+  // the site is multi-locale now. It asks the narrower question that still
+  // matters: is the *content and structure* of the English page unchanged?
+  // So the deliberate URL-level changes are normalized away, and anything else
+  // that moved still fails.
+
+  // Pages moved into /en/, so canonical and og:url gained a segment.
+  out = out.split('agree-tech.com/en/').join('agree-tech.com/');
+
+  // hreflang alternates are new.
+  out = out.replace(/<link rel="alternate"[^>]*>/gi, '');
+
+  // The language switcher is new.
+  out = out.replace(/<div class="lang-switch"[\s\S]*?<\/div>/i, '');
+
+  // Assets are shared at the dist root, so their refs became absolute.
+  out = out.replace(/(href|src)="\/(styles\.css|shared\.css|subpage\.css|shared\.js|assets\/)/g, '$1="$2');
 
   out = out
     .replace(/>\s+</g, '><')

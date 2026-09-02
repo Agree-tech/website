@@ -274,7 +274,27 @@ Attributes use a separate syntax: `data-i18n-attr="content:index.meta.descriptio
 
 ---
 
-### Phase 4 — Multi-locale build · ~4h
+### Phase 4 — Multi-locale build · **DONE**
+
+- ✅ Builds `dist/en/`, `dist/da/`, `dist/pl/` from one set of templates.
+- ✅ Per-page `<html lang>`, per-locale `canonical` and `og:url`, `hreflang` alternates + `x-default`.
+- ✅ Generated `sitemap.xml` with `xhtml:link` alternates (replaces the hand-maintained file).
+- ✅ Language switcher in the nav, linking to the **current page** in each other locale.
+- ✅ `dist/index.html` redirect stub + `_redirects` with permanent 301s from all 10 old flat URLs.
+- ✅ JSON-LD `description` is now a content key, so it translates with everything else.
+- ✅ **Gate passed: `identical DOM : 11/11`** for English.
+
+**Internal links did not need rewriting.** All 79 are relative and every page of a locale lives in the same directory, so they resolve correctly as-is. Only asset references needed absolutizing (`/styles.css`, `/assets/…`), since assets are shared at the dist root rather than copied per locale.
+
+**Untranslated locales are noindexed automatically.** At 0% coverage `/da/` and `/pl/` are byte-identical English pages at separate URLs — duplicate content, not translation. Below `MIN_INDEXABLE_COVERAGE` (90%) a locale is still built and browsable so translators can preview it, but it is marked `noindex, follow`, kept out of the sitemap, and excluded from every page's `hreflang` set. Crossing the threshold flips all three automatically, with no config change.
+
+**A bug the gate caught:** `index-print.html` deliberately canonicalises to the *homepage*, not to itself. A blanket "canonical = this page's URL" rewrite silently broke that, pointing a noindex duplicate at itself. The build now moves the *existing* canonical target into the locale instead.
+
+**Reporting fix:** coverage is measured from what the locale file provides, not from keys encountered during the build. The first version counted keys on pages excluded from a locale (`index-print.html`) as translated, so empty locale files reported 13% instead of 0%.
+
+---
+
+#### Original plan for this phase
 
 Locales: `en` → `/en/`, `da` → `/dk/`, `pl` → `/pl/` (see §1.1).
 
