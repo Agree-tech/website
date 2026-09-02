@@ -1,12 +1,14 @@
 {
   "name": "agree-tech-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static marketing site for Agree Technologies (ATSuite).",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "shared.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js",
+    "verify": "node tools/verify-baseline.js",
+    "dev": "node build.js && npx --yes http-server dist -p 8000 -c-1",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
   }
 }
