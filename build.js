@@ -291,15 +291,24 @@ function writeRootRedirect() {
 }
 
 /**
- * Netlify sets CONTEXT on every build. Anything that is not the production
- * deploy is a staging URL serving pages byte-identical to production, so
- * without this it would compete with the real site in search results.
+ * Any deploy that is not the real site serves pages near-identical to it, so
+ * without this it would compete with agree-tech.com in search results.
+ *
+ * "Not the real site" is deliberately not just CONTEXT !== 'production':
+ * agree-tech.netlify.app builds in the production context too, and until the
+ * custom domain is attached it is a staging site wearing a production label.
+ * Keying on Netlify's URL instead means this switches itself off at cutover,
+ * the moment the primary domain becomes agree-tech.com — no edit required.
+ *
+ * No CONTEXT at all means a local build, which nobody can crawl.
  */
 function writeStagingHeaders() {
   const ctx = process.env.CONTEXT;
-  if (!ctx || ctx === 'production') return null;
+  if (!ctx) return null;
+  const primary = process.env.URL || '';
+  if (ctx === 'production' && primary.startsWith(SITE)) return null;
   fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex\n', 'utf8');
-  return ctx;
+  return primary ? `${ctx} @ ${primary}` : ctx;
 }
 
 function build() {
