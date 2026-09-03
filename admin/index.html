@@ -6,9 +6,13 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Content editor · Agree Technologies</title>
   <style>
-    /* Shown only until Decap paints over it, and if the CDN is unreachable. */
+    /*
+      Fixed rather than in flow: Decap appends its own root to the body instead
+      of replacing it, so a boot message that occupies layout space pushes the
+      whole editor below the fold.
+    */
     body { margin: 0; font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #101A3A; }
-    #boot { max-width: 30rem; margin: 20vh auto; padding: 0 1.5rem; text-align: center; }
+    #boot { position: fixed; inset: 0; z-index: 0; display: grid; place-content: center; text-align: center; padding: 0 1.5rem; }
     #boot h1 { font-size: 1.1rem; font-weight: 600; margin: 0 0 .5rem; }
     #boot p { margin: 0; color: #56607A; }
   </style>
@@ -27,13 +31,31 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/decap-cms@3.16.0/dist/decap-cms.js"></script>
   <script>
-    // Decap replaces the whole body once it mounts; this only matters on the
-    // path where the bundle never arrives.
-    window.addEventListener('load', function () {
-      if (!window.CMS) return;
-      var boot = document.getElementById('boot');
-      if (boot) boot.remove();
-    });
+    /*
+     * Clear the boot message once the editor has actually rendered — not on
+     * window load, which fires before Decap mounts.
+     *
+     * The test is "something other than us is on the page" rather than a Decap
+     * class name, because those are generated and change between releases.
+     * If the bundle never arrives, nothing matches and the message stays up,
+     * which is the point of it.
+     */
+    (function () {
+      var mine = /^(boot|netlify-identity)/;
+      var tries = 0;
+
+      var poll = setInterval(function () {
+        var mounted = Array.prototype.some.call(document.body.children, function (el) {
+          return el.tagName !== 'SCRIPT' && !mine.test(el.id || '');
+        });
+        if (!mounted && ++tries < 200) return;
+        clearInterval(poll);
+        if (mounted) {
+          var boot = document.getElementById('boot');
+          if (boot) boot.remove();
+        }
+      }, 100);
+    })();
   </script>
 </body>
 </html>

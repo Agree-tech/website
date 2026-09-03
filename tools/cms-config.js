@@ -168,7 +168,7 @@ function buildConfig({ contentDir, locales, defaultLocaleOnly, siteUrl, branch }
   L.push('');
   L.push('site_url: ' + yamlStr(siteUrl));
   L.push('display_url: ' + yamlStr(siteUrl));
-  L.push('logo_url: ' + yamlStr(siteUrl + '/assets/logo-black.png'));
+  L.push('logo_url: "/assets/logo-black.png"');
   L.push('');
   L.push('media_folder: "assets"');
   L.push('public_folder: "/assets"');
