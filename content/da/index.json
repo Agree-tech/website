@@ -36,6 +36,7 @@
     "li-no-real-time-visibilit": "Intet realtidsoverblik over prisperformance, rabatter eller margin",
     "p-as-businesses-move-tow": "I takt med at virksomheder bevæger sig mod abonnements- og forbrugsbaserede omsætningsmodeller, bliver *finansiel præcision og operationel kontrol forretningskritisk*.",
     "p-atsuite-brings-cpq-sub": "ATSuite samler CPQ, abonnementer og fakturering i én samlet, fuldt reviderbar platform — så hver kontrakt, hver forbrugshændelse, hver fornyelse og hver prisjustering automatisk registreres og faktureres korrekt.",
+    "small-mo": "/md",
     "span-usage-ingest": "FORBRUG · INDLÆSNING"
   },
   "cta-band": {
@@ -193,6 +194,8 @@
     "div-lead-to-billing-fully": "Fra lead til fakturering — fuldt automatiseret hele vejen",
     "div-manual-handoffs-across": "Manuelle overleveringer i hele omsætningscyklussen",
     "div-monthly-transactions-p": "Månedlige transaktioner behandlet på tværs af komplekse strukturer",
-    "div-unified-platform-repla": "Samlet platform — erstatter usammenhængende CRM + ERP"
+    "div-unified-platform-repla": "Samlet platform — erstatter usammenhængende CRM + ERP",
+    "small-ceo-cloudfarms": "CEO, Cloudfarms",
+    "small-regions": "regioner"
   }
 }

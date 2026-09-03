@@ -23,7 +23,11 @@
     "b-quote-signed": "Oferta podpisana",
     "div-solutions-process-opti": "ROZWIĄZANIA · OPTYMALIZACJA PROCESÓW",
     "h1-eliminate-manual-work-": "Wyeliminuj pracę ręczną. Działaj z prędkością maszyny.",
-    "p-atsuite-automates-manu": "ATSuite automatyzuje procesy ręczne, upraszcza przepływy pracy i płynnie integruje systemy. Dzięki automatyzacji sterowanej zdarzeniami zespoły decydują szybciej, popełniają mniej błędów i zyskują czas na pracę strategiczną i bliską klientowi."
+    "p-atsuite-automates-manu": "ATSuite automatyzuje procesy ręczne, upraszcza przepływy pracy i płynnie integruje systemy. Dzięki automatyzacji sterowanej zdarzeniami zespoły decydują szybciej, popełniają mniej błędów i zyskują czas na pracę strategiczną i bliską klientowi.",
+    "small-api-hubspot": "API · HUBSPOT",
+    "small-billing-day-1": "FAKTUROWANIE · DZIEŃ 1",
+    "small-event-cpq": "ZDARZENIE · CPQ",
+    "small-workflow-0-8s": "PRZEPŁYW · 0,8s"
   },
   "split-section": {
     "div-control": "KONTROLA",

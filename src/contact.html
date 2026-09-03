@@ -72,6 +72,7 @@
       <div class="notice">
         <b>{{i18n:contact.split-section.b-please-note}}</b> {{i18n:contact.split-section.div-we-only-reply-to}}
       </div>
+      <template id="sent-message"><b>✓ {{i18n:contact.split-section.b-message-sent}}</b> {{i18n:contact.split-section.p-we-ve-received-your-mes}}</template>
       <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="07b59940-9095-4781-b372-7adf5cbe4570">
         <input type="hidden" name="subject" value="New ATSuite Contact Form Submission">
@@ -88,17 +89,21 @@
         </div>
         <div class="form-row">
           <div class="field"><label>{{i18n:contact.split-section.label-country}}</label>
+            <!--
+              value= stays English so the submitted lead data reads the same in
+              every locale; only the visible label is translated.
+            -->
             <select name="country">
-              <option>Denmark</option><option>Sweden</option><option>Norway</option>
-              <option>Germany</option><option>Netherlands</option><option>United Kingdom</option>
-              <option>Other</option>
+              <option value="Denmark">{{i18n:contact.split-section.option-denmark}}</option><option value="Sweden">{{i18n:contact.split-section.option-sweden}}</option><option value="Norway">{{i18n:contact.split-section.option-norway}}</option>
+              <option value="Germany">{{i18n:contact.split-section.option-germany}}</option><option value="Netherlands">{{i18n:contact.split-section.option-netherlands}}</option><option value="United Kingdom">{{i18n:contact.split-section.option-united-kingdom}}</option>
+              <option value="Other">{{i18n:contact.split-section.option-other}}</option>
             </select>
           </div>
           <div class="field"><label>{{i18n:contact.split-section.label-i-m-interested-in}}</label>
             <select name="interest">
-              <option>The full ATSuite</option><option>CPQ</option>
-              <option>Billing Automation</option><option>Subscription Management</option>
-              <option>Process Optimisation</option><option>Sales</option>
+              <option value="The full ATSuite">{{i18n:contact.split-section.option-the-full-atsuite}}</option><option value="CPQ">{{i18n:contact.split-section.option-cpq}}</option>
+              <option value="Billing Automation">{{i18n:contact.split-section.option-billing-automation}}</option><option value="Subscription Management">{{i18n:contact.split-section.option-subscription-manage}}</option>
+              <option value="Process Optimisation">{{i18n:contact.split-section.option-process-optimisatio}}</option><option value="Sales">{{i18n:contact.split-section.option-sales}}</option>
             </select>
           </div>
         </div>
@@ -114,7 +119,7 @@
 
     <div>
       <div class="contact-info-card">
-        <div class="eyebrow on-dark" style="position:relative"><span class="dot"></span>AGREE TECHNOLOGIES APS</div>
+        <div class="eyebrow on-dark" style="position:relative"><span class="dot"></span>{{i18n:contact.split-section.div-agree-technologies-aps}}</div>
         <h2 style="color:white;margin-top:18px;font-size:30px;position:relative">{{i18n:contact.split-section.h2-copenhagen-built-for-e}}</h2>
         <p style="color:rgba(255,255,255,0.7);margin-top:14px;position:relative">{{i18n:contact.split-section.p-a-european-revenue-pla}}</p>
 
@@ -154,7 +159,10 @@
       notice.style.background = '#DCFCE7';
       notice.style.borderColor = '#BBF7D0';
       notice.style.color = '#15803D';
-      notice.innerHTML = '<b>✓ Message sent!</b> We've received your message and will respond within one business day.';
+      // Read from the template rather than a JS string literal: the message is
+      // translator-edited copy, and an apostrophe in it used to end the string
+      // early and throw a SyntaxError that killed this whole block.
+      notice.innerHTML = document.getElementById('sent-message').innerHTML;
     }
     // Clear URL parameter
     window.history.replaceState({}, '', window.location.pathname);

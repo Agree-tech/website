@@ -21,9 +21,11 @@
   "split-section": {
     "b-copenhagen-denmark": "Copenhagen, Denmark",
     "b-info-agree-tech-com": "info@agree-tech.com",
+    "b-message-sent": "Message sent!",
     "b-mon-fri-09-00": "Mon – Fri, 09:00 – 17:00 CET",
     "b-please-note": "Please note:",
     "button-send-message": "Send message",
+    "div-agree-technologies-aps": "AGREE TECHNOLOGIES APS",
     "div-use-this-form-for": "USE THIS FORM FOR",
     "div-we-only-reply-to": "we only reply to demo or information requests when we can validate both the business email address and the company website. — Agree Technologies",
     "h2-copenhagen-built-for-e": "Copenhagen · Built for Europe.",
@@ -39,9 +41,23 @@
     "li-a-discovery-call": "→ A discovery call",
     "li-general-enquiries": "→ General enquiries",
     "li-requesting-a-demo": "→ Requesting a demo",
+    "option-billing-automation": "Billing Automation",
+    "option-cpq": "CPQ",
+    "option-denmark": "Denmark",
+    "option-germany": "Germany",
+    "option-netherlands": "Netherlands",
+    "option-norway": "Norway",
+    "option-other": "Other",
+    "option-process-optimisatio": "Process Optimisation",
+    "option-sales": "Sales",
+    "option-subscription-manage": "Subscription Management",
+    "option-sweden": "Sweden",
+    "option-the-full-atsuite": "The full ATSuite",
+    "option-united-kingdom": "United Kingdom",
     "p-a-european-revenue-pla": "A European revenue platform serving B2B SaaS and telecom across the Nordics, DACH and beyond.",
     "p-demo-sales-requests": "Demo & sales requests",
     "p-european-hq-gdpr-nativ": "European HQ · GDPR-native by default",
-    "p-reply-within-one-busin": "Reply within one business day"
+    "p-reply-within-one-busin": "Reply within one business day",
+    "p-we-ve-received-your-mes": "We've received your message and will respond within one business day."
   }
 }

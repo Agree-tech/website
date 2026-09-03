@@ -36,6 +36,7 @@
     "li-no-real-time-visibilit": "No real-time visibility into pricing performance, discounts, or margin",
     "p-as-businesses-move-tow": "As businesses move toward subscription and usage-based revenue models, *financial precision and operational control become business-critical*.",
     "p-atsuite-brings-cpq-sub": "ATSuite brings CPQ, subscriptions, and billing together in one unified, fully auditable platform — so every contract, every usage event, every renewal, and every pricing adjustment is automatically captured and invoiced correctly.",
+    "small-mo": "/mo",
     "span-usage-ingest": "USAGE · INGEST"
   },
   "cta-band": {
@@ -193,6 +194,8 @@
     "div-lead-to-billing-fully": "Lead-to-billing — fully automated end-to-end",
     "div-manual-handoffs-across": "Manual handoffs across the revenue cycle",
     "div-monthly-transactions-p": "Monthly transactions processed across complex structures",
-    "div-unified-platform-repla": "Unified platform — replacing disconnected CRM + ERP"
+    "div-unified-platform-repla": "Unified platform — replacing disconnected CRM + ERP",
+    "small-ceo-cloudfarms": "CEO, Cloudfarms",
+    "small-regions": "regions"
   }
 }

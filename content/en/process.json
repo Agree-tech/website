@@ -23,7 +23,11 @@
     "b-quote-signed": "Quote signed",
     "div-solutions-process-opti": "SOLUTIONS · PROCESS OPTIMISATION",
     "h1-eliminate-manual-work-": "Eliminate manual work. Operate at machine speed.",
-    "p-atsuite-automates-manu": "ATSuite automates manual processes, streamlines workflows, and integrates systems seamlessly. With event-driven automation, your teams make faster decisions, reduce errors, and free time for strategic and customer-centric work."
+    "p-atsuite-automates-manu": "ATSuite automates manual processes, streamlines workflows, and integrates systems seamlessly. With event-driven automation, your teams make faster decisions, reduce errors, and free time for strategic and customer-centric work.",
+    "small-api-hubspot": "API · HUBSPOT",
+    "small-billing-day-1": "BILLING · DAY 1",
+    "small-event-cpq": "EVENT · CPQ",
+    "small-workflow-0-8s": "WORKFLOW · 0.8s"
   },
   "split-section": {
     "div-control": "CONTROL",

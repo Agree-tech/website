@@ -21,9 +21,11 @@
   "split-section": {
     "b-copenhagen-denmark": "København, Danmark",
     "b-info-agree-tech-com": "info@agree-tech.com",
+    "b-message-sent": "Beskeden er sendt!",
     "b-mon-fri-09-00": "Man – fre, 09:00 – 17:00 CET",
     "b-please-note": "Bemærk:",
     "button-send-message": "Send besked",
+    "div-agree-technologies-aps": "AGREE TECHNOLOGIES APS",
     "div-use-this-form-for": "BRUG DENNE FORMULAR TIL",
     "div-we-only-reply-to": "vi besvarer kun demo- eller informationsforespørgsler, når vi kan validere både den forretningsmæssige e-mailadresse og virksomhedens hjemmeside. — Agree Technologies",
     "h2-copenhagen-built-for-e": "København · Bygget til Europa.",
@@ -39,9 +41,23 @@
     "li-a-discovery-call": "→ En indledende samtale",
     "li-general-enquiries": "→ Generelle henvendelser",
     "li-requesting-a-demo": "→ Anmodning om en demo",
+    "option-billing-automation": "Faktureringsautomatisering",
+    "option-cpq": "CPQ",
+    "option-denmark": "Danmark",
+    "option-germany": "Tyskland",
+    "option-netherlands": "Holland",
+    "option-norway": "Norge",
+    "option-other": "Andet",
+    "option-process-optimisatio": "Procesoptimering",
+    "option-sales": "Salg",
+    "option-subscription-manage": "Abonnementsstyring",
+    "option-sweden": "Sverige",
+    "option-the-full-atsuite": "Hele ATSuite",
+    "option-united-kingdom": "Storbritannien",
     "p-a-european-revenue-pla": "En europæisk omsætningsplatform til B2B SaaS og telekom i Norden, DACH og videre.",
     "p-demo-sales-requests": "Demo- & salgsforespørgsler",
     "p-european-hq-gdpr-nativ": "Europæisk hovedkontor · GDPR-native som standard",
-    "p-reply-within-one-busin": "Svar inden for én hverdag"
+    "p-reply-within-one-busin": "Svar inden for én hverdag",
+    "p-we-ve-received-your-mes": "Vi har modtaget din besked og vender tilbage inden for én hverdag."
   }
 }

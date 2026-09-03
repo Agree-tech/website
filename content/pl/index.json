@@ -36,6 +36,7 @@
     "li-no-real-time-visibilit": "Brak bieżącego wglądu w skuteczność cen, rabaty i marżę",
     "p-as-businesses-move-tow": "W miarę jak firmy przechodzą na modele przychodów oparte na subskrypcji i zużyciu, *precyzja finansowa i kontrola operacyjna stają się krytyczne dla biznesu*.",
     "p-atsuite-brings-cpq-sub": "ATSuite łączy CPQ, subskrypcje i fakturowanie w jednej, w pełni audytowalnej platformie — dzięki czemu każda umowa, każde zdarzenie zużycia, każde odnowienie i każda korekta ceny są automatycznie rejestrowane i poprawnie fakturowane.",
+    "small-mo": "/mies.",
     "span-usage-ingest": "ZUŻYCIE · POBIERANIE"
   },
   "cta-band": {
@@ -193,6 +194,8 @@
     "div-lead-to-billing-fully": "Od leada do faktury — w pełni automatycznie, od początku do końca",
     "div-manual-handoffs-across": "Ręczne przekazania w całym cyklu przychodowym",
     "div-monthly-transactions-p": "Miesięczna liczba transakcji przetwarzanych w złożonych strukturach",
-    "div-unified-platform-repla": "Jedna platforma — zastępuje rozłączone CRM i ERP"
+    "div-unified-platform-repla": "Jedna platforma — zastępuje rozłączone CRM i ERP",
+    "small-ceo-cloudfarms": "CEO, Cloudfarms",
+    "small-regions": "regiony"
   }
 }

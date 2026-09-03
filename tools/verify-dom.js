@@ -97,6 +97,27 @@ function canonical(html) {
   // Phase 5 adds the CMS invite hop to the homepages.
   out = out.replace(/<script>[^<]*invite_token[^<]*<\/script>/gi, '');
 
+  // --- Phase 7 changes to contact.html, all deliberate ---
+  //
+  // The success message moved out of a JS string literal and into a <template>
+  // so that translated copy containing an apostrophe cannot break the script,
+  // as the English original did. Both the element and the statement that reads
+  // it are new; the assignment is reduced to a token so a *different* change to
+  // that line would still fail the gate.
+  out = out.replace(/<template id="sent-message">[\s\S]*?<\/template>/i, '');
+  out = out.replace(/notice\.innerHTML\s*=[^;]*;/, 'notice.innerHTML=SENT_MESSAGE;');
+
+  // <option> gained an explicit English value= so translating the visible
+  // label does not change what the form submits.
+  out = out.replace(/<option value="[^"]*"/g, '<option');
+
+  // Comments survive into the DOM dump but render nothing, so they are noise
+  // for a gate that asks what the reader sees. Script comments are matched
+  // only as whole lines, so a "//" inside a URL or string is left alone —
+  // and this must run before whitespace is collapsed, while newlines exist.
+  out = out.replace(/<!--[\s\S]*?-->/g, '');
+  out = out.replace(/^[ \t]*\/\/.*$/gm, '');
+
   // Assets are shared at the dist root, so their refs became absolute.
   out = out.replace(/(href|src)="\/(styles\.css|shared\.css|subpage\.css|shared\.js|assets\/)/g, '$1="$2');
 
