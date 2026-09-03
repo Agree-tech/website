@@ -311,41 +311,52 @@ Locales: `en` → `/en/`, `da` → `/dk/`, `pl` → `/pl/` (see §1.1).
 
 ---
 
-### Phase 5 — Decap CMS · ~3h
+### Phase 5 — Decap CMS · **DONE**
 
-- `admin/index.html` + `admin/config.yml`.
-- One `files` collection per page per locale (11 pages × 3 locales), fields grouped and human-labelled — an editor sees "Hero headline", not `index.hero.h1`.
-- All fields are `string` or `text` widgets. **No `markdown`/rich-text widget anywhere** — that is what would reintroduce tags, which D3 rules out.
-- The five emphasis fields get `hint:` text explaining the `*asterisk*` convention.
-- Character-count hints on headline fields, since Danish and Polish run longer (see Phase 7).
-- Backend: **depends on the Phase 0 decision** — `git-gateway` + Netlify Identity if the repo moves to GitHub (Option A), `bitbucket` with server-side OAuth if it stays (Option B). Either way, `branch: draft` so edits never touch `main`.
-- Do **not** use `auth_type: implicit` — its 1-hour token expiry can lose an editor's work mid-edit.
+- `admin/index.html` (Decap 3.16.0 + Netlify Identity, both pinned) and `dist/admin/config.yml`.
+- **The config is generated, not written.** `tools/cms-config.js` projects `content/en/` into 2,511 field definitions on every build, so adding a key to a template is all it takes for it to appear in the editor — there is no second list to keep in step. 890KB raw, 77KB gzipped.
+- Content was resplit from one flat `content/<locale>.json` into `content/<locale>/<page>.json`, nested by section. Decap edits *files*, and one file is one sidebar entry: 919 keys in a single file would have been a single 919-field form. The build flattens it straight back to the same dotted keys, so nothing downstream of the loader changed. `tools/split-content.js`, one-shot.
+- Collections: English (14 pages), Dansk (13), Polski (13) — `index-print` is English-only and excluded from the other two.
+- Every field is a `string` or `text` widget. **No `markdown`/rich-text widget anywhere** — that is what would reintroduce tags, which D3 rules out. Every field also carries `pattern: ["^[^<]*$"]`, so the CMS refuses a `<` at the point where a person can still fix it, matching the build's own rule. `>` stays legal: `platform.process` reads "If amt > €100k".
+- Labels come from the English *value*, not the key: "Paragraph · As businesses move toward subscription and usage-based…", because that is how someone actually recognises a sentence in a collapsed section.
+- **Danish and Polish fields carry the English source in the `hint`**, since Decap cannot show a reference locale beside the field. They are `required: false` with "Leave blank to fall back to English."
+- The 6 emphasis fields get `hint:` text explaining the `*asterisk*` convention; meta titles and descriptions get character-count guidance.
+- Backend `git-gateway` on `branch: draft`, so edits never touch the publishing branch. No `auth_type: implicit` — its 1-hour token expiry can lose an editor's work mid-edit.
+- **Blank values are dropped on load.** Decap writes every field of a form on save, so a translator who fills in half a page leaves the rest as empty strings; counting those as translated would publish blank elements instead of falling back to English.
+- The invite hop: Netlify mails the invite to the site root with the token in the URL *fragment*, which a server-side redirect cannot see. 130 bytes of inline JS on the homepages forwards a token to `/admin/`, rather than putting ~40KB of Identity widget on every page to serve one invite a year.
 
-**Done when:** an editor can change a headline at `/admin` and the change lands as a commit on `draft`.
+**Side finding, fixed:** page `<title>` tags were never extracted — the extractor skipped `<head>` — so every `/da/` and `/pl/` page would have carried an English title, the single most important on-page SEO element. Now keyed as `<page>.meta.title` (919 keys, up from 908).
+
+**Verified:** config parses (js-yaml, 0 malformed fields); Decap 3.16.0 boots, renders the login screen and the logo against a local `dist/`; DOM gate 11/11.
+
+**Still needs Netlify:** Identity + Git Gateway enabled, and a branch deploy for `draft`. Until then the editor cannot log in.
 
 **Note:** Decap's built-in preview pane is near-useless for flat string collections — it renders form fields, not the page. The staging URL from Phase 6 is the real preview. Do not sell the side pane to editors.
 
 ---
 
-### Phase 6 — Netlify + staging · ~2h
+### Phase 6 — Netlify + staging · **build config DONE, dashboard settings outstanding**
 
-The site is already on Netlify, so this is configuration rather than migration — the main change is that Netlify starts running a build instead of serving the repo root.
+`netlify.toml` is committed on the feature branch: `npm run build`, publish `dist`, Node 22 pinned. It lives in the repo rather than the site UI so each branch carries the settings it needs — `main` is still flat HTML with no build step and must not inherit them, which is why the file stays off `main` until cutover.
 
-- `netlify.toml`: build command, publish `dist/`.
-- Production site builds `main` → `agree-tech.com`.
-- Branch deploy builds `draft` → `draft--<site>.netlify.app`.
-- **Staging must emit `noindex` and skip canonical/sitemap** — key off Netlify's `CONTEXT` env var in `build.js`. Easy to forget, and forgetting it means Google indexes duplicate content.
-- Cut over DNS only after Phase 7 QA.
+**What went wrong first:** with no build command configured, Netlify published the repo root — which on this branch has no `index.html`, only `src/` templates. Hence a 404 on every URL, and the entire repo (`build.js`, `src/`, `tools/`, both markdown docs) served publicly. Both fixed by the same commit.
 
-**Why Netlify:** Cloudflare Pages builds from GitHub/GitLab only. Netlify supports Bitbucket. If the repo ever moves to GitHub this constraint disappears.
+**noindex is keyed off the deploy URL, not `CONTEXT`.** `agree-tech.netlify.app` is the *production* context on this site despite being staging, so a `CONTEXT !== 'production'` test would have left it indexable. `writeStagingHeaders()` emits `_headers` with `X-Robots-Tag: noindex` unless Netlify's `URL` matches the real domain — which means it switches itself off at cutover with no edit to remember.
 
-**Optional upgrade:** Decap `editorial_workflow` plus per-PR deploy previews gives a draft/review/ready board and a URL per change. Verify it works on the Bitbucket backend before promising it to editors; the `draft`-branch setup above is the fallback that always works.
+Still to do in the Netlify dashboard (see §9):
+
+- Enable Identity and Git Gateway.
+- Enable a branch deploy for `draft` → `draft--agree-tech.netlify.app`.
+- Switch the production branch from `feat/i18n-cms` to `main` before attaching the domain.
+- Cut over DNS only after Phase 7 QA. `www.agree-tech.com` currently resolves to `46.30.215.88` (One.com), **not** Netlify — the live site has been untouched throughout.
+
+**Optional upgrade:** Decap `editorial_workflow` plus per-PR deploy previews gives a draft/review/ready board and a URL per change. The `draft`-branch setup above is the fallback that always works.
 
 ---
 
 ### Phase 7 — Translation & QA · content work, not engineering
 
-**Volume: ~940 strings × 2 target languages = ~1,880 strings to translate.** This is the largest single cost in the project and it is not engineering time. Worth deciding early whether it goes to an agency (export `en.json`, hand back `da.json` / `pl.json`) or is done in the CMS by native speakers.
+**Volume: 796 strings × 2 target languages = 1,592 strings to translate.** This is the largest single cost in the project and it is not engineering time. Worth deciding early whether it goes to an agency (export `content/en/`, hand back `content/da/` and `content/pl/`) or is done in the CMS by native speakers.
 
 - QA per locale:
   - **Layout overflow.** Danish and Polish both run longer than English — Polish noticeably so. Highest-risk spots: the hero `<h1>`, the four nav items, and button labels like "Book a demo" / "Talk to an expert", which sit in a fixed-width nav bar.
@@ -373,13 +384,13 @@ The site is already on Netlify, so this is configuration rather than migration �
 | 2 Nav/footer lift | 2h |
 | 3 Key extraction | 1 day |
 | 4 Multi-locale | 4h |
-| 5 Decap CMS | 3h |
-| 6 Netlify + staging | 2h |
+| 5 Decap CMS | 3h · done |
+| 6 Netlify + staging | 2h · build config done |
 | 7 Translation QA (engineering side) | 3h |
 | 8 Cutover | 1h |
 | **Engineering total** | **~3 days** |
 
-**Not included: translating ~1,880 strings into Danish and Polish.** That is the larger cost and it is content work — see Phase 7.
+**Not included: translating 1,592 strings into Danish and Polish.** That is the larger cost and it is content work — see Phase 7.
 
 ---
 
@@ -388,7 +399,7 @@ The site is already on Netlify, so this is configuration rather than migration �
 | Risk | Impact | Mitigation |
 |------|--------|-----------|
 | ~~Decap's Bitbucket backend behaves differently from the documented GitHub path~~ | — | **Confirmed in Phase 0, and worse than expected: Git Gateway does not support Bitbucket at all.** Now an open decision, not a risk — see Phase 0 finding. Blocks Phase 5 only |
-| Translation volume (~1,880 strings) stalls the project | Site ships with two empty locales | English fallback means a half-translated site still works and is never broken. Ship locales independently rather than waiting for all three |
+| Translation volume (1,592 strings) stalls the project | Site ships with two empty locales | English fallback means a half-translated site still works and is never broken. Ship locales independently rather than waiting for all three |
 | Extraction produces subtly wrong English output | Regression on the live site | Byte-diff gate at the end of Phase 3 |
 | URL structure change loses SEO | Ranking loss | Permanent 301s from all 10 flat URLs, sitemap resubmission |
 | Danish/Polish text overflows fixed-width nav and buttons | Visual breakage | Character-count hints in the CMS, explicit QA pass in Phase 7 |
@@ -413,3 +424,20 @@ The site is already on Netlify, so this is configuration rather than migration �
 | **Client-side i18n** (`data-i18n` + `fetch` at runtime, no build) | Least work, but one indexable language, no per-locale URLs, flash of untranslated content. Rejected on SEO grounds |
 | **Astro** with built-in i18n routing | Better long-term home — real layouts, kills the duplicated inline `<style>` blocks. But it means converting 11 pages of hand-tuned markup, so a day-plus more work. Reasonable upgrade path later; the `content/*.json` files carry over unchanged |
 | **Headless CMS** (Contentful, Storyblok, Sanity) | Monthly cost, heavier setup, and still needs the same build step. Overkill for ~1,000 static labels |
+
+---
+
+## 9. What is left for you in Netlify
+
+Everything below is dashboard clicking on the existing `agree-tech` site. All of it is free: Identity is included on every credit-based plan with unlimited users, and Git Gateway carries no charge.
+
+1. **Site configuration → Identity → Enable Identity.**
+2. **Identity → Registration preferences → Invite only.** Anything else lets strangers register against the site.
+3. **Identity → Services → Git Gateway → Enable.** This is what lets the editor commit without a GitHub account.
+4. **Identity → Invite users →** `ak@agree-tech.com`. The invite arrives from Netlify, unbranded — a custom sender is the one Identity feature that needs a paid plan, and it is cosmetic.
+5. **Site configuration → Build & deploy → Branches → Add `draft`.** This is what turns a CMS save into a preview at `draft--agree-tech.netlify.app`.
+6. **Clear any build command or publish directory still set in the UI**, so `netlify.toml` is the only thing configuring the build.
+
+Before the domain is ever attached, also switch the production branch from `feat/i18n-cms` to `main` — right now the feature branch is production on that site, which is fine while it is staging and wrong the moment it is not.
+
+**The editor's loop:** edit at `/admin/` → Save → commit lands on `draft` → Netlify builds `draft--agree-tech.netlify.app` → check it → merge `draft` into the publishing branch to go live.
