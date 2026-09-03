@@ -1,5 +1,23 @@
 {
   "main": {
-    "a-about": "O nas"
+    "a-about": "O nas",
+    "a-analytics": "Analityka",
+    "a-billing": "Fakturowanie",
+    "a-contact": "Kontakt",
+    "a-cpq": "CPQ",
+    "a-extensible-model": "Rozszerzalny model",
+    "a-implementation": "Wdrożenie",
+    "a-integration": "Integracja",
+    "a-introduction": "Wprowadzenie",
+    "a-process-engine": "Silnik procesów",
+    "a-process-optimisation": "Optymalizacja procesów",
+    "a-sales": "Sprzedaż",
+    "a-secure-reliable": "Bezpieczna & niezawodna",
+    "a-subscription": "Subskrypcje",
+    "div-2026-agree-technologie": "© 2026 Agree Technologies ApS · Kopenhaga, Dania",
+    "h4-company": "Firma",
+    "h4-platform": "Platforma",
+    "h4-solutions": "Rozwiązania",
+    "p-a-european-revenue-pla": "Europejska platforma przychodowa dla B2B SaaS & telekomunikacji — CPQ, fakturowanie, subskrypcje i automatyzacja procesów w jednym pakiecie."
   }
 }

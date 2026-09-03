@@ -1,1 +1,65 @@
-{}
+{
+  "cta-band-dark": {
+    "a-contact-me": "Kontakt mig",
+    "a-see-the-platform": "Se platformen",
+    "div-book-a-meeting": "BOOK ET MØDE",
+    "h2-it-can-start-with": "Det kan starte med en samtale.",
+    "p-whether-you-need-sales": "Uanset om I har brug for Salg, CPQ, Fakturering, Abonnementsstyring eller en samlet løsning — står vores team klar til at hjælpe. Bygget på solid brancheindsigt, med eksperter der er klar til dialog."
+  },
+  "meta": {
+    "alt": "Henrik Müller",
+    "alt-2": "Peter Reich",
+    "alt-3": "Kristian Jacobsen",
+    "alt-4": "Karina Buch",
+    "description": "Mød Agree Technologies, den københavnske virksomhed bag ATSuite — en samlet platform til CPQ, fakturering og abonnementer for europæisk B2B SaaS og telekom.",
+    "og-description": "Den københavnske virksomhed bag ATSuite — en samlet platform til CPQ, fakturering og abonnementer for europæisk B2B SaaS og telekom.",
+    "og-title": "Om Agree Technologies — europæisk B2B CPQ & fakturering",
+    "title": "Om Agree Technologies — europæisk B2B CPQ & fakturering",
+    "twitter-description": "Den københavnske virksomhed bag ATSuite — CPQ, fakturering og abonnementer for europæisk B2B SaaS og telekom.",
+    "twitter-title": "Om Agree Technologies"
+  },
+  "page-hero": {
+    "div-our-journey": "VORES REJSE",
+    "h1-built-from-a-real": "Bygget ud fra et reelt problem. I drift hos kunder i årevis.",
+    "p-it-began-with-the": "Det begyndte med muligheden for at løse et presserende behov. IPVision (i dag Dstny A/S) havde en velfungerende forretning, men manglede akut en moderne, driftssikker og skalerbar løsning til at håndtere hele sin telekomdrift. Med dyb telekomekspertise blev der udviklet en unik løsning — som siden blev til ATSuite, en CPQ- og faktureringsplatform, der passer perfekt til abonnementsbaserede B2B-forretninger. Mere end seks år i produktion som managed service senere hjælper vi i dag virksomheder med at strømline og vokse med vores platform."
+  },
+  "split-section": {
+    "div-board-member": "Bestyrelsesmedlem",
+    "div-board-member-ceo": "Bestyrelsesmedlem · CEO",
+    "div-board-member-cto": "Bestyrelsesmedlem · CTO",
+    "div-board-of-directors": "BESTYRELSE",
+    "div-chairman-of-the-board": "Bestyrelsesformand",
+    "div-our-values": "VORES VÆRDIER",
+    "h2-meet-the-board": "Mød bestyrelsen.",
+    "h2-what-drives-agree-tech": "Det driver Agree Technologies.",
+    "h3-accountability": "Ansvarlighed",
+    "h3-diversity": "Mangfoldighed",
+    "h3-innovation": "Innovation",
+    "h3-sustainability": "Bæredygtighed",
+    "h4-karina-buch": "Karina Buch",
+    "h4-kenneth-andreasen": "Kenneth Andreasen",
+    "h4-kristian-hvid-jakobsen": "Kristian Hvid Jakobsen",
+    "h4-peter-reich": "Peter Reich",
+    "p-always-evolving-the-pl": "Vi udvikler hele tiden platformen med nye funktioner og idéer, der udspringer af reelle kundebehov.",
+    "p-ceo-and-investor-at": "CEO og investor i Agree Technologies — bidrager med et operationelt og kommercielt perspektiv i bestyrelsen.",
+    "p-cto-and-investor-at": "CTO og investor i Agree Technologies — bidrager med et dybt teknisk og produktmæssigt perspektiv i bestyrelsen.",
+    "p-different-perspectives": "Forskellige perspektiver giver bedre produkter. Vi bygger teams og kultur derefter.",
+    "p-innovation-accountabil": "Innovation, ansvarlighed, mangfoldighed og bæredygtighed — værdier, der styrer vores handlinger, former vores kultur og definerer vores forpligtelse over for kunder, partnere og samfund.",
+    "p-long-term-thinking-for": "Langsigtet tankegang — for vores software, vores kunders forretning og for planeten.",
+    "p-seasoned-executive-and": "Erfaren leder og investor med baggrund i telekommunikation og bankverdenen. Medstifter af IP Vision i Danmark; under hans ledelse blev virksomheden en markant nordisk SMV-spiller, opkøbt af DSTNY i 2021.",
+    "p-seasoned-executive-and-2": "Erfaren leder og investor med omfattende erfaring fra telekommunikation. Medstiftede IP Vision i Danmark i 2005 og skalerede virksomheden frem til opkøbet af DSTNY i 2021.",
+    "p-we-do-what-we": "Vi gør, hvad vi siger. Det kan kunder, partnere og kolleger regne med."
+  },
+  "split-section-alt": {
+    "div-ceo": "CEO",
+    "div-cto": "CTO",
+    "div-kb": "KB",
+    "div-kj": "KJ",
+    "div-management-team": "LEDELSEN",
+    "h2-meet-the-leaders-behin": "Mød menneskene bag ATSuite.",
+    "h3-karina-buch": "Karina Buch",
+    "h3-kristian-jacobsen": "Kristian Jacobsen",
+    "p-20-years-in-software": "20+ år i softwarebranchen med stor erfaring inden for telekom-CPQ og fakturering. En erfaren innovator, der leder ATSuites dynamiske og fleksible roadmap og udvikling — med fokus på at levere en fremtidssikret løsning til kunderne.",
+    "p-senior-executive-with-": "Erfaren topleder med C-level-erfaring (CCO, COO, CIO) på tværs af teknologi-, forsikrings- og auktionsbranchen. International ledelseserfaring fra København, London, New York og San Francisco — med globalt udsyn og stærk operationel sans."
+  }
+}

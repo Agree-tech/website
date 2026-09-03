@@ -1,1 +1,65 @@
-{}
+{
+  "cta-band-dark": {
+    "a-contact-me": "Skontaktuj się ze mną",
+    "a-see-the-platform": "Zobacz platformę",
+    "div-book-a-meeting": "UMÓW SPOTKANIE",
+    "h2-it-can-start-with": "Wszystko może zacząć się od rozmowy.",
+    "p-whether-you-need-sales": "Niezależnie od tego, czy potrzebujesz Sprzedaży, CPQ, Fakturowania, Zarządzania subskrypcjami czy rozwiązania all-in-one — nasz zespół jest do dyspozycji. Zbudowany na szerokiej wiedzy branżowej, z ekspertami gotowymi do rozmowy."
+  },
+  "meta": {
+    "alt": "Henrik Müller",
+    "alt-2": "Peter Reich",
+    "alt-3": "Kristian Jacobsen",
+    "alt-4": "Karina Buch",
+    "description": "Poznaj Agree Technologies, kopenhaską firmę stojącą za ATSuite — jedną platformą do CPQ, fakturowania i subskrypcji dla europejskiego B2B SaaS i telekomunikacji.",
+    "og-description": "Kopenhaska firma stojąca za ATSuite — jedna platforma do CPQ, fakturowania i subskrypcji dla europejskiego B2B SaaS i telekomunikacji.",
+    "og-title": "O Agree Technologies — europejskie CPQ i fakturowanie B2B",
+    "title": "O Agree Technologies — europejskie CPQ i fakturowanie B2B",
+    "twitter-description": "Kopenhaska firma stojąca za ATSuite — CPQ, fakturowanie i subskrypcje dla europejskiego B2B SaaS i telekomunikacji.",
+    "twitter-title": "O Agree Technologies"
+  },
+  "page-hero": {
+    "div-our-journey": "NASZA DROGA",
+    "h1-built-from-a-real": "Zbudowane wokół realnego problemu. Od lat sprawdzone na produkcji.",
+    "p-it-began-with-the": "Zaczęło się od szansy na zaspokojenie pilnej potrzeby. IPVision (dziś Dstny A/S) miał świetnie działający biznes, ale pilnie potrzebował nowoczesnego, niezawodnego i skalowalnego rozwiązania do obsługi całej działalności telekomunikacyjnej. W oparciu o rozległą wiedzę telekomunikacyjną powstało unikalne rozwiązanie — które przekształciło się w ATSuite, platformę CPQ i fakturowania idealnie dopasowaną do subskrypcyjnych firm B2B. Po ponad sześciu latach pracy produkcyjnej jako usługa zarządzana pomagamy dziś firmom upraszczać działanie i rosnąć razem z naszą platformą."
+  },
+  "split-section": {
+    "div-board-member": "Członek zarządu",
+    "div-board-member-ceo": "Członek zarządu · CEO",
+    "div-board-member-cto": "Członek zarządu · CTO",
+    "div-board-of-directors": "RADA NADZORCZA",
+    "div-chairman-of-the-board": "Przewodniczący rady",
+    "div-our-values": "NASZE WARTOŚCI",
+    "h2-meet-the-board": "Poznaj radę.",
+    "h2-what-drives-agree-tech": "Co napędza Agree Technologies.",
+    "h3-accountability": "Odpowiedzialność",
+    "h3-diversity": "Różnorodność",
+    "h3-innovation": "Innowacyjność",
+    "h3-sustainability": "Zrównoważony rozwój",
+    "h4-karina-buch": "Karina Buch",
+    "h4-kenneth-andreasen": "Kenneth Andreasen",
+    "h4-kristian-hvid-jakobsen": "Kristian Hvid Jakobsen",
+    "h4-peter-reich": "Peter Reich",
+    "p-always-evolving-the-pl": "Nieustannie rozwijamy platformę o nowe możliwości i pomysły wynikające z realnych potrzeb klientów.",
+    "p-ceo-and-investor-at": "CEO i inwestor w Agree Technologies — wnosi do rady perspektywę operacyjną i handlową.",
+    "p-cto-and-investor-at": "CTO i inwestor w Agree Technologies — wnosi do rady głęboką perspektywę technologiczną i produktową.",
+    "p-different-perspectives": "Różne perspektywy dają lepsze produkty. Tak projektujemy zespoły i kulturę pracy.",
+    "p-innovation-accountabil": "Innowacyjność, odpowiedzialność, różnorodność i zrównoważony rozwój — wartości, które kierują naszymi działaniami, kształtują kulturę i definiują nasze zobowiązanie wobec klientów, partnerów i otoczenia.",
+    "p-long-term-thinking-for": "Myślenie długofalowe — o naszym oprogramowaniu, biznesie naszych klientów i o planecie.",
+    "p-seasoned-executive-and": "Doświadczony menedżer i inwestor z doświadczeniem w telekomunikacji i bankowości. Współzałożyciel IP Vision w Danii; pod jego kierownictwem firma stała się znaczącym nordyckim graczem w segmencie MŚP, przejętym przez DSTNY w 2021 roku.",
+    "p-seasoned-executive-and-2": "Doświadczony menedżer i inwestor z rozległym doświadczeniem w telekomunikacji. W 2005 roku współzałożył IP Vision w Danii i rozwinął ją aż do przejęcia przez DSTNY w 2021 roku.",
+    "p-we-do-what-we": "Robimy to, co mówimy. Klienci, partnerzy i zespół mogą na tym polegać."
+  },
+  "split-section-alt": {
+    "div-ceo": "CEO",
+    "div-cto": "CTO",
+    "div-kb": "KB",
+    "div-kj": "KJ",
+    "div-management-team": "ZESPÓŁ ZARZĄDZAJĄCY",
+    "h2-meet-the-leaders-behin": "Poznaj ludzi, którzy tworzą ATSuite.",
+    "h3-karina-buch": "Karina Buch",
+    "h3-kristian-jacobsen": "Kristian Jacobsen",
+    "p-20-years-in-software": "Ponad 20 lat w branży software, z bogatym doświadczeniem w CPQ i fakturowaniu dla telekomunikacji. Doświadczona innowatorka prowadząca dynamiczny, elastyczny roadmap i rozwój ATSuite — z myślą o rozwiązaniu gotowym na przyszłość.",
+    "p-senior-executive-with-": "Doświadczony menedżer z doświadczeniem na poziomie C-level (CCO, COO, CIO) w branży technologicznej, ubezpieczeniowej i aukcyjnej. Międzynarodowe przywództwo w Kopenhadze, Londynie, Nowym Jorku i San Francisco — z globalną perspektywą i wyczuciem operacyjnym."
+  }
+}

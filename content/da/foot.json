@@ -1,1 +1,23 @@
-{}
+{
+  "main": {
+    "a-about": "Om os",
+    "a-analytics": "Analyse",
+    "a-billing": "Fakturering",
+    "a-contact": "Kontakt",
+    "a-cpq": "CPQ",
+    "a-extensible-model": "Udvidbar model",
+    "a-implementation": "Implementering",
+    "a-integration": "Integration",
+    "a-introduction": "Introduktion",
+    "a-process-engine": "Procesmotor",
+    "a-process-optimisation": "Procesoptimering",
+    "a-sales": "Salg",
+    "a-secure-reliable": "Sikker & pålidelig",
+    "a-subscription": "Abonnement",
+    "div-2026-agree-technologie": "© 2026 Agree Technologies ApS · København, Danmark",
+    "h4-company": "Virksomhed",
+    "h4-platform": "Platform",
+    "h4-solutions": "Løsninger",
+    "p-a-european-revenue-pla": "En europæisk omsætningsplatform til B2B SaaS & telekom — CPQ, fakturering, abonnement og procesautomatisering i én samlet suite."
+  }
+}

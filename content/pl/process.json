@@ -1,1 +1,50 @@
-{}
+{
+  "cta-band-dark": {
+    "a-back-to-overview": "Wróć do przeglądu",
+    "a-schedule-a-demo": "Umów demo",
+    "div-operational-efficiency": "ZARZĄDZANIE EFEKTYWNOŚCIĄ OPERACYJNĄ",
+    "h2-streamline-processes-r": "Uprość procesy. Ogranicz marnotrawstwo. Zwielokrotnij produktywność.",
+    "p-by-leveraging-atsuite-": "Dzięki automatyzacji procesów w ATSuite ograniczasz opóźnienia, obniżasz koszty i lepiej wykorzystujesz zasoby — a zespoły mogą skupić się na pracy, która tworzy wartość."
+  },
+  "meta": {
+    "description": "Optymalizacja procesów ATSuite wnosi automatyzację sterowaną zdarzeniami do revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
+    "og-description": "Automatyzacja procesów sterowana zdarzeniami dla revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
+    "og-title": "Optymalizacja procesów i automatyzacja workflow",
+    "title": "Optymalizacja procesów i automatyzacja workflow · Agree Technologies",
+    "twitter-description": "Automatyzacja procesów sterowana zdarzeniami dla revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
+    "twitter-title": "Optymalizacja procesów i automatyzacja workflow"
+  },
+  "page-hero": {
+    "a-schedule-a-demo": "Umów demo",
+    "a-see-the-platform": "Zobacz platformę",
+    "b-generate-invoice": "Wystaw fakturę",
+    "b-notify-crm": "Powiadom CRM",
+    "b-provision-service": "Uruchom usługę",
+    "b-quote-signed": "Oferta podpisana",
+    "div-solutions-process-opti": "ROZWIĄZANIA · OPTYMALIZACJA PROCESÓW",
+    "h1-eliminate-manual-work-": "Wyeliminuj pracę ręczną. Działaj z prędkością maszyny.",
+    "p-atsuite-automates-manu": "ATSuite automatyzuje procesy ręczne, upraszcza przepływy pracy i płynnie integruje systemy. Dzięki automatyzacji sterowanej zdarzeniami zespoły decydują szybciej, popełniają mniej błędów i zyskują czas na pracę strategiczną i bliską klientowi."
+  },
+  "split-section": {
+    "div-control": "KONTROLA",
+    "div-efficiency": "EFEKTYWNOŚĆ",
+    "div-events": "ZDARZENIA",
+    "div-integration": "INTEGRACJA",
+    "div-process-capabilities": "PROCESY · MOŻLIWOŚCI",
+    "div-scale": "SKALA",
+    "div-workflows": "PRZEPŁYWY PRACY",
+    "h2-discover-the-process-m": "Poznaj funkcje zarządzania procesami.",
+    "h3-be-in-control": "Zachowaj kontrolę",
+    "h3-become-event-driven": "Postaw na zdarzenia",
+    "h3-create-workflows": "Twórz przepływy pracy",
+    "h3-increase-efficiency": "Zwiększ efektywność",
+    "h3-scale-your-business": "Skaluj swój biznes",
+    "h3-seamless-integration": "Płynna integracja",
+    "p-automation-of-daily-ta": "Automatyzacja codziennych zadań zwiększa skalowalność wewnątrz firmy i pozwala szybko obsługiwać zgłoszenia klientów oraz budować ich lojalność.",
+    "p-connect-systems-and-ap": "Łącz systemy i aplikacje, pobieraj i wysyłaj dane — korzystając z naszych mikrousług i API.",
+    "p-let-well-defined-event": "Pozwól, by dobrze zdefiniowane zdarzenia uruchamiały zadania, akceptacje, zamówienia i powiadomienia dla klientów — automatycznie.",
+    "p-stop-wasting-time-on": "Przestań tracić czas na obowiązki administracyjne — przeznacz go na inicjatywy strategiczne skupione na kliencie.",
+    "p-the-atsuite-process-en": "Silnik procesów ATSuite działa 24/7 i natychmiast informuje, gdy coś wymaga Twojej uwagi.",
+    "p-use-the-process-tool": "Używaj narzędzia procesowego do automatyzacji zadań biznesowych — i rozwijaj je wraz ze wzrostem lub zmianami w firmie."
+  }
+}

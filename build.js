@@ -397,12 +397,25 @@ function build() {
   const en = content.en;
   const totalKeys = Object.keys(en).length;
 
+  /**
+   * Keys belonging to pages this locale never builds. index-print is English
+   * only, so its keys are unreachable for da and pl — counting them in the
+   * denominator caps a fully translated locale at 87% and leaves it noindex
+   * forever. Coverage has to be measured against what the locale can actually
+   * translate, not against every key in the project.
+   */
+  const unreachable = new Set(
+    Object.keys(en).filter((k) => DEFAULT_LOCALE_ONLY.has(`${k.split('.')[0]}.html`))
+  );
+
   // Coverage decides indexability, so it has to be known before rendering.
   for (const locale of LOCALES) {
+    const translatable = locale.isDefault ? totalKeys : totalKeys - unreachable.size;
     const provided = Object.keys(content[locale.code]).filter((k) => k in en).length;
     locale.translated = provided;
+    locale.translatable = translatable;
     locale.indexable =
-      locale.isDefault || (totalKeys > 0 && provided / totalKeys >= MIN_INDEXABLE_COVERAGE);
+      locale.isDefault || (translatable > 0 && provided / translatable >= MIN_INDEXABLE_COVERAGE);
   }
   const indexable = LOCALES.filter((l) => l.indexable);
 
@@ -471,10 +484,12 @@ function build() {
   const cmsFields = writeAdmin();
 
   for (const c of coverage) {
-    const pct = totalKeys ? Math.round((c.translated / totalKeys) * 100) : 0;
+    const total = c.locale.translatable;
+    const pct = total ? Math.round((c.translated / total) * 100) : 0;
+    const index = c.locale.indexable ? 'indexed' : 'noindex';
     const note = c.fellBack
-      ? `${c.translated}/${totalKeys} translated (${pct}%) — ${c.fellBack} fell back to English`
-      : `${c.translated}/${totalKeys} translated (${pct}%)`;
+      ? `${c.translated}/${total} translated (${pct}%, ${index}) — ${c.fellBack} fell back to English`
+      : `${c.translated}/${total} translated (${pct}%, ${index})`;
     console.log(`  ${c.locale.code}  ${String(c.written).padStart(2)} pages  ${note}`);
   }
 

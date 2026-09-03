@@ -1,1 +1,50 @@
-{}
+{
+  "cta-band-dark": {
+    "a-back-to-overview": "Tilbage til oversigten",
+    "a-schedule-a-demo": "Book en demo",
+    "div-operational-efficiency": "STYRING AF OPERATIONEL EFFEKTIVITET",
+    "h2-streamline-processes-r": "Strømlin processer. Reducer spild. Løft produktiviteten.",
+    "p-by-leveraging-atsuite-": "Med ATSuites workflowautomatisering minimerer du forsinkelser, sænker omkostningerne og optimerer ressourceudnyttelsen — så teams kan fokusere på værdiskabende arbejde."
+  },
+  "meta": {
+    "description": "ATSuite Procesoptimering bringer hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
+    "og-description": "Hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
+    "og-title": "Procesoptimering & workflowautomatisering",
+    "title": "Procesoptimering & workflowautomatisering · Agree Technologies",
+    "twitter-description": "Hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
+    "twitter-title": "Procesoptimering & workflowautomatisering"
+  },
+  "page-hero": {
+    "a-schedule-a-demo": "Book en demo",
+    "a-see-the-platform": "Se platformen",
+    "b-generate-invoice": "Dan faktura",
+    "b-notify-crm": "Notificér CRM",
+    "b-provision-service": "Opret service",
+    "b-quote-signed": "Tilbud underskrevet",
+    "div-solutions-process-opti": "LØSNINGER · PROCESOPTIMERING",
+    "h1-eliminate-manual-work-": "Fjern manuelt arbejde. Kør i maskinhastighed.",
+    "p-atsuite-automates-manu": "ATSuite automatiserer manuelle processer, strømliner workflows og integrerer systemer gnidningsfrit. Med hændelsesdrevet automatisering træffer jeres teams hurtigere beslutninger, laver færre fejl og får tid til strategisk og kundenært arbejde."
+  },
+  "split-section": {
+    "div-control": "KONTROL",
+    "div-efficiency": "EFFEKTIVITET",
+    "div-events": "HÆNDELSER",
+    "div-integration": "INTEGRATION",
+    "div-process-capabilities": "PROCES · FUNKTIONER",
+    "div-scale": "SKALERING",
+    "div-workflows": "WORKFLOWS",
+    "h2-discover-the-process-m": "Se funktionerne til procesledelse.",
+    "h3-be-in-control": "Hav styringen",
+    "h3-become-event-driven": "Bliv hændelsesdrevet",
+    "h3-create-workflows": "Byg workflows",
+    "h3-increase-efficiency": "Øg effektiviteten",
+    "h3-scale-your-business": "Skalér forretningen",
+    "h3-seamless-integration": "Gnidningsfri integration",
+    "p-automation-of-daily-ta": "Automatisering af daglige opgaver øger den interne skalerbarhed og hjælper jer med at besvare kundehenvendelser hurtigt og fastholde loyaliteten.",
+    "p-connect-systems-and-ap": "Forbind systemer og applikationer, og hent eller send data — via vores microservices og API'er.",
+    "p-let-well-defined-event": "Lad veldefinerede hændelser udløse opgaver, godkendelser, ordrer og kundeopdateringer — automatisk.",
+    "p-stop-wasting-time-on": "Stop med at bruge tid på administration — brug tiden på strategiske, kundefokuserede initiativer.",
+    "p-the-atsuite-process-en": "ATSuites procesmotor kører 24/7 og giver besked med det samme, når noget kræver jeres opmærksomhed.",
+    "p-use-the-process-tool": "Brug procesværktøjet til at automatisere forretningsopgaver — og forbedr dem løbende, efterhånden som forretningen vokser eller ændrer sig."
+  }
+}

@@ -1,1 +1,47 @@
-{}
+{
+  "meta": {
+    "company": "Din virksomhed",
+    "description": "Tal med en ATSuite-ekspert eller book en demo. Se, hvordan Agree Technologies automatiserer CPQ, fakturering og abonnementsstyring for B2B SaaS- og telekomteams.",
+    "email": "navn@dinvirksomhed.com",
+    "first-name": "Fornavn",
+    "last-name": "Efternavn",
+    "message": "Et par ord om, hvad du prøver at løse…",
+    "og-description": "Tal med en ATSuite-ekspert eller book en demo om CPQ, fakturering og abonnementsstyring.",
+    "og-title": "Kontakt Agree Technologies — book en ATSuite-demo",
+    "title": "Kontakt Agree Technologies — book en ATSuite-demo",
+    "twitter-description": "Tal med en ATSuite-ekspert eller book en demo om CPQ, fakturering og abonnementsstyring.",
+    "twitter-title": "Kontakt Agree Technologies",
+    "website": "dinvirksomhed.com"
+  },
+  "page-hero": {
+    "div-thank-you-for-your": "TAK FOR DIN INTERESSE",
+    "h1-contact-us": "Kontakt os.",
+    "p-tell-us-a-bit": "Fortæl os lidt om din virksomhed, og hvad du gerne vil udforske — Salg, CPQ, Fakturering, Abonnementsstyring eller hele ATSuite. Vi svarer inden for én hverdag."
+  },
+  "split-section": {
+    "b-copenhagen-denmark": "København, Danmark",
+    "b-info-agree-tech-com": "info@agree-tech.com",
+    "b-mon-fri-09-00": "Man – fre, 09:00 – 17:00 CET",
+    "b-please-note": "Bemærk:",
+    "button-send-message": "Send besked",
+    "div-use-this-form-for": "BRUG DENNE FORMULAR TIL",
+    "div-we-only-reply-to": "vi besvarer kun demo- eller informationsforespørgsler, når vi kan validere både den forretningsmæssige e-mailadresse og virksomhedens hjemmeside. — Agree Technologies",
+    "h2-copenhagen-built-for-e": "København · Bygget til Europa.",
+    "label-business-email": "Arbejdsmail",
+    "label-company-name": "Virksomhedsnavn",
+    "label-country": "Land",
+    "label-first-name": "Fornavn",
+    "label-i-consent-to-receive": "Jeg giver samtykke til at modtage markedsføringsmateriale fra Agree Technologies. Ved at indsende accepterer du ATs privatlivspolitik. Vi sender lejlighedsvis information om nyheder og arrangementer. Du kan til enhver tid framelde dig.",
+    "label-i-m-interested-in": "Jeg er interesseret i",
+    "label-last-name": "Efternavn",
+    "label-message": "Besked",
+    "label-website": "Hjemmeside",
+    "li-a-discovery-call": "→ En indledende samtale",
+    "li-general-enquiries": "→ Generelle henvendelser",
+    "li-requesting-a-demo": "→ Anmodning om en demo",
+    "p-a-european-revenue-pla": "En europæisk omsætningsplatform til B2B SaaS og telekom i Norden, DACH og videre.",
+    "p-demo-sales-requests": "Demo- & salgsforespørgsler",
+    "p-european-hq-gdpr-nativ": "Europæisk hovedkontor · GDPR-native som standard",
+    "p-reply-within-one-busin": "Svar inden for én hverdag"
+  }
+}

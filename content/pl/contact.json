@@ -1,1 +1,47 @@
-{}
+{
+  "meta": {
+    "company": "Twoja firma",
+    "description": "Porozmawiaj z ekspertem ATSuite lub umów demo. Zobacz, jak Agree Technologies automatyzuje CPQ, fakturowanie i zarządzanie subskrypcjami dla zespołów B2B SaaS i telekomunikacyjnych.",
+    "email": "imie@twojafirma.com",
+    "first-name": "Imię",
+    "last-name": "Nazwisko",
+    "message": "Kilka słów o tym, co chcesz rozwiązać…",
+    "og-description": "Porozmawiaj z ekspertem ATSuite lub umów demo dotyczące CPQ, fakturowania i zarządzania subskrypcjami.",
+    "og-title": "Kontakt z Agree Technologies — umów demo ATSuite",
+    "title": "Kontakt z Agree Technologies — umów demo ATSuite",
+    "twitter-description": "Porozmawiaj z ekspertem ATSuite lub umów demo dotyczące CPQ, fakturowania i zarządzania subskrypcjami.",
+    "twitter-title": "Kontakt z Agree Technologies",
+    "website": "twojafirma.com"
+  },
+  "page-hero": {
+    "div-thank-you-for-your": "DZIĘKUJEMY ZA ZAINTERESOWANIE",
+    "h1-contact-us": "Skontaktuj się z nami.",
+    "p-tell-us-a-bit": "Opowiedz nam krótko o swojej firmie i o tym, co chcesz poznać — Sprzedaż, CPQ, Fakturowanie, Zarządzanie subskrypcjami lub cały ATSuite. Odpowiemy w ciągu jednego dnia roboczego."
+  },
+  "split-section": {
+    "b-copenhagen-denmark": "Kopenhaga, Dania",
+    "b-info-agree-tech-com": "info@agree-tech.com",
+    "b-mon-fri-09-00": "Pon – pt, 09:00 – 17:00 CET",
+    "b-please-note": "Uwaga:",
+    "button-send-message": "Wyślij wiadomość",
+    "div-use-this-form-for": "UŻYJ TEGO FORMULARZA DO",
+    "div-we-only-reply-to": "odpowiadamy na prośby o demo lub informacje tylko wtedy, gdy możemy zweryfikować zarówno firmowy adres e-mail, jak i stronę firmy. — Agree Technologies",
+    "h2-copenhagen-built-for-e": "Kopenhaga · Stworzone dla Europy.",
+    "label-business-email": "Firmowy e-mail",
+    "label-company-name": "Nazwa firmy",
+    "label-country": "Kraj",
+    "label-first-name": "Imię",
+    "label-i-consent-to-receive": "Wyrażam zgodę na otrzymywanie materiałów marketingowych od Agree Technologies. Wysyłając formularz, akceptujesz Politykę prywatności AT. Od czasu do czasu wysyłamy informacje o nowościach i wydarzeniach. W każdej chwili możesz zrezygnować.",
+    "label-i-m-interested-in": "Interesuje mnie",
+    "label-last-name": "Nazwisko",
+    "label-message": "Wiadomość",
+    "label-website": "Strona internetowa",
+    "li-a-discovery-call": "→ Rozmowa wstępna",
+    "li-general-enquiries": "→ Pytania ogólne",
+    "li-requesting-a-demo": "→ Prośba o demo",
+    "p-a-european-revenue-pla": "Europejska platforma przychodowa dla B2B SaaS i telekomunikacji w regionie nordyckim, DACH i nie tylko.",
+    "p-demo-sales-requests": "Zapytania o demo i sprzedaż",
+    "p-european-hq-gdpr-nativ": "Europejska siedziba · zgodność z RODO od podstaw",
+    "p-reply-within-one-busin": "Odpowiedź w ciągu jednego dnia roboczego"
+  }
+}

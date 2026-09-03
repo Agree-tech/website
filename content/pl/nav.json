@@ -1,6 +1,25 @@
 {
   "main": {
     "a-about-us": "O nas",
-    "a-book-a-demo": "Umów się"
+    "a-book-a-demo": "Umów się",
+    "a-implementation": "Wdrożenie",
+    "a-platform": "Platforma",
+    "a-talk-to-an-expert": "Porozmawiaj z ekspertem",
+    "div-solutions": "Rozwiązania"
+  },
+  "meta": {
+    "aria-label": "Główna"
+  },
+  "mm-solutions": {
+    "div-billing-automation": "Automatyzacja fakturowania",
+    "div-configure-price-and-qu": "Konfiguruj, wyceniaj i ofertuj z precyzją.",
+    "div-cpq": "CPQ",
+    "div-event-driven-workflow-": "Automatyzacja procesów sterowana zdarzeniami.",
+    "div-flexible-monetization-": "Elastyczna monetyzacja dla B2B SaaS.",
+    "div-lifecycle-renewals-and": "Cykl życia, odnowienia i analiza zużycia.",
+    "div-pipeline-playbooks-and": "Pipeline, playbooki i akceptacje.",
+    "div-process-optimisation": "Optymalizacja procesów",
+    "div-sales": "Sprzedaż",
+    "div-subscription-managemen": "Zarządzanie subskrypcjami"
   }
 }
