@@ -165,6 +165,23 @@ function buildConfig({ contentDir, locales, defaultLocaleOnly, siteUrl, branch }
   L.push('backend:');
   L.push('  name: git-gateway');
   L.push('  branch: ' + branch);
+  //
+  // Naming the provider in the URL is not decoration — it is what stops Decap
+  // asking the gateway which provider it is.
+  //
+  // By default Decap fetches /.netlify/git/settings to discover whether the
+  // gateway is backed by GitHub, GitLab or Bitbucket. On this site that path
+  // returns Netlify's 404 *page*, and Decap rejects any non-JSON response with
+  // "Your Git Gateway backend is not returning valid settings. Please make
+  // sure it is enabled." — which reads like the gateway is off when it is on:
+  // /.netlify/git/github/* answers correctly.
+  //
+  // Decap resolves a gateway_url ending in /github by reading the provider off
+  // the URL and skipping the discovery call entirely, then rebuilding the same
+  // API root it would have used anyway. So this says explicitly what the
+  // 404-ing endpoint was supposed to say.
+  //
+  L.push('  gateway_url: /.netlify/git/github');
   L.push('');
   L.push('site_url: ' + yamlStr(siteUrl));
   L.push('display_url: ' + yamlStr(siteUrl));
