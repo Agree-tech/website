@@ -1,0 +1,13 @@
+# Netlify build settings live here rather than in the site UI, so each branch
+# carries the configuration it actually needs. main is still flat HTML with no
+# build step and no dist/ directory — it must not inherit these settings, which
+# is why this file stays on the feature branch until cutover.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Pinned so a Netlify default bump cannot change the output. build.js has no
+  # dependencies; it only needs fs.cpSync (Node 16.7+).
+  NODE_VERSION = "22"

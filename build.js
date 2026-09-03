@@ -290,6 +290,18 @@ function writeRootRedirect() {
   fs.writeFileSync(path.join(DIST, '_redirects'), lines.join('\n') + '\n', 'utf8');
 }
 
+/**
+ * Netlify sets CONTEXT on every build. Anything that is not the production
+ * deploy is a staging URL serving pages byte-identical to production, so
+ * without this it would compete with the real site in search results.
+ */
+function writeStagingHeaders() {
+  const ctx = process.env.CONTEXT;
+  if (!ctx || ctx === 'production') return null;
+  fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex\n', 'utf8');
+  return ctx;
+}
+
 function build() {
   const started = Date.now();
 
@@ -373,6 +385,7 @@ function build() {
   }
 
   writeRootRedirect();
+  const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
 
   for (const c of coverage) {
@@ -386,6 +399,7 @@ function build() {
   console.log(
     `\nbuilt ${LOCALES.length} locales + ${staticCount} static files, ${sitemapUrls} sitemap URLs -> dist/ (${Date.now() - started}ms)`
   );
+  if (staging) console.log(`context "${staging}" — whole deploy marked noindex via dist/_headers`);
 }
 
 build();
