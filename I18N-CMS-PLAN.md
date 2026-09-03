@@ -354,16 +354,27 @@ Still to do in the Netlify dashboard (see §9):
 
 ---
 
-### Phase 7 — Translation & QA · content work, not engineering
+### Phase 7 — Translation · **DRAFTED, awaiting native review**
 
-**Volume: 796 strings × 2 target languages = 1,592 strings to translate.** This is the largest single cost in the project and it is not engineering time. Worth deciding early whether it goes to an agency (export `content/en/`, hand back `content/da/` and `content/pl/`) or is done in the CMS by native speakers.
+**All 1,592 strings translated** (796 × 2), machine-produced and committed to `draft`. Every locale now reports 100%.
 
-- QA per locale:
-  - **Layout overflow.** Danish and Polish both run longer than English — Polish noticeably so. Highest-risk spots: the hero `<h1>`, the four nav items, and button labels like "Book a demo" / "Talk to an expert", which sit in a fixed-width nav bar.
-  - No leaked `*asterisks*` or stray `<` (the build fails on the latter).
-  - No untranslated English leaking through the fallback — the build's missing-key warnings are the checklist.
-  - `hreflang` validates across all three locales.
-- Polish needs `pl` typography checked: it uses a space as the thousands separator, which affects the mock-UI amounts.
+Conventions applied:
+
+- **Not translated:** brand and product names (ATSuite, Voice Pro, Northwind Telecom), vendor names in the integrations grid (Salesforce, SAP, Stripe, …), people's names, identifiers like `Q-2046`, and schema type annotations (`: enum`, `: str`, `: uuid`) — those are code, not copy.
+- **Kept English by convention:** CPQ, SaaS, B2B, ERP, CRM, API, ARR, MRR, SSO, on-premise, Managed-as-a-Service. These are the terms Danish and Polish B2B buyers actually use.
+- **Number formatting follows the locale**, currency stays EUR per D4: `8,461` → `8.461` (da) / `8 461` (pl); `18.4%` → `18,4%` in both.
+- The one `>` in the product copy — `If amt > €100k` — is preserved; only `<` is forbidden.
+
+**Coverage bug found and fixed:** with everything translated, da and pl reported 87% and stayed `noindex`. The denominator was every key in the project, including the 123 belonging to `index-print`, which is English-only and which those locales never build — so a fully translated locale was mathematically capped below the 90% threshold. Coverage is now measured against what each locale can actually translate. Both locales went to 100% and the sitemap from 11 URLs to 31.
+
+**Verified:** 0 values containing `<`, 0 unbalanced asterisk pairs, 0 missing keys, 0 keys not present in English, all 4 emphasis fields preserved in both locales, English DOM unchanged 11/11.
+
+**Still needs a native speaker.** These are machine translations of marketing copy. They are consistent and technically correct, but tone, idiom and product wording deserve a first-language pass before this goes public — particularly the hero headline, the two customer quotes, and the consent text on the contact form, which is legal-adjacent. The CMS is the right place to do it: each field shows the English source beneath it.
+
+**Remaining QA:**
+
+- **Layout overflow.** Danish and Polish both run longer than English. Highest-risk spots: the hero `<h1>`, the nav items, and button labels like "Porozmawiaj z ekspertem" (23 chars vs "Talk to an expert" at 17), which sit in a fixed-width nav bar.
+- `hreflang` validates across all three locales.
 
 ---
 
@@ -386,7 +397,7 @@ Still to do in the Netlify dashboard (see §9):
 | 4 Multi-locale | 4h |
 | 5 Decap CMS | 3h · done |
 | 6 Netlify + staging | 2h · build config done |
-| 7 Translation QA (engineering side) | 3h |
+| 7 Translation (drafted, needs native review) | done |
 | 8 Cutover | 1h |
 | **Engineering total** | **~3 days** |
 
