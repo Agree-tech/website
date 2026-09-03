@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Content editor · Agree Technologies</title>
+  <style>
+    /* Shown only until Decap paints over it, and if the CDN is unreachable. */
+    body { margin: 0; font: 15px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: #101A3A; }
+    #boot { max-width: 30rem; margin: 20vh auto; padding: 0 1.5rem; text-align: center; }
+    #boot h1 { font-size: 1.1rem; font-weight: 600; margin: 0 0 .5rem; }
+    #boot p { margin: 0; color: #56607A; }
+  </style>
+</head>
+<body>
+  <div id="boot">
+    <h1>Loading the content editor…</h1>
+    <p>If this message stays put, check your connection and reload the page.</p>
+  </div>
+
+  <!--
+    Netlify Identity must load first: it is what answers the invite and
+    password-recovery tokens that arrive in the URL fragment, and what Decap
+    asks for a token when it talks to Git Gateway.
+  -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/decap-cms@3.16.0/dist/decap-cms.js"></script>
+  <script>
+    // Decap replaces the whole body once it mounts; this only matters on the
+    // path where the bundle never arrives.
+    window.addEventListener('load', function () {
+      if (!window.CMS) return;
+      var boot = document.getElementById('boot');
+      if (boot) boot.remove();
+    });
+  </script>
+</body>
+</html>

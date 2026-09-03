@@ -1,0 +1,45 @@
+{
+  "cta-band-dark": {
+    "a-schedule-a-call": "Schedule a call",
+    "a-see-the-platform": "See the platform",
+    "div-ready-when-you-are": "READY WHEN YOU ARE",
+    "h2-get-started-today": "Get started today.",
+    "p-a-30-minute-conversati": "A 30-minute conversation is all it takes to scope the right path."
+  },
+  "meta": {
+    "description": "How Agree Technologies implements ATSuite — a structured onboarding approach that gets finance and commercial teams live on CPQ and billing with confidence.",
+    "og-description": "A structured onboarding approach that gets finance and commercial teams live on CPQ and billing with confidence.",
+    "og-title": "ATSuite Implementation & Onboarding",
+    "title": "ATSuite Implementation & Onboarding · Agree Technologies",
+    "twitter-description": "A structured onboarding approach that gets finance and commercial teams live on CPQ and billing.",
+    "twitter-title": "ATSuite Implementation & Onboarding"
+  },
+  "page-hero": {
+    "a-schedule-a-call": "Schedule a call",
+    "div-implementation": "IMPLEMENTATION",
+    "h1-seamless-transition-ze": "Seamless transition. Zero rocket science.",
+    "p-implementing-a-new-cpq": "Implementing a new CPQ and Billing platform can be daunting. We make it a stress-free transition from your current system to ours — increased efficiency, streamlined processes, and a more profitable business at the end."
+  },
+  "split-section": {
+    "div-our-approach": "OUR APPROACH",
+    "h2-four-steps-one-outcome": "Four steps. One outcome.",
+    "h3-discovery-workshops": "Discovery Workshops",
+    "h3-implementation": "Implementation",
+    "h3-operations": "Operations",
+    "h3-proof-of-concept": "Proof of Concept",
+    "p-in-depth-workshops-to": "In-depth workshops to understand current processes and thoroughly identify opportunities for optimisation.",
+    "p-ongoing-support-and-mo": "Ongoing support and monitoring ensure your new system runs at peak performance and continually delivers value.",
+    "p-our-team-works-closely": "Our team works closely with you to execute a smooth, efficient implementation — minimal disruption to your operations.",
+    "p-we-start-by-demonstrat": "We start by demonstrating the platform's potential with a tailored POC, so you see firsthand how ATSuite meets your needs."
+  },
+  "split-section-alt": {
+    "div-what-you-get": "WHAT YOU GET",
+    "h2-a-partner-not-just": "A partner, not just a vendor.",
+    "p-our-experts-assess-you": "Our experts assess your unique business needs, goals and challenges to create a customised implementation plan.",
+    "p-reduced-implementation": "Reduced implementation time and cost alongside enhanced productivity — outcomes that show up in business operations.",
+    "p-we-prioritise-ongoing-": "We prioritise ongoing communication and hands-on support during implementation for a smooth transition.",
+    "strong-measurable-outcomes": "Measurable outcomes",
+    "strong-seamless-transition-wi": "Seamless transition with support",
+    "strong-tailored-solution-desi": "Tailored solution design"
+  }
+}

@@ -17,6 +17,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildConfig } = require('./tools/cms-config.js');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
@@ -52,6 +53,26 @@ const STATIC_DIRS = ['assets'];
 
 /** Root-relative so they resolve from any locale directory. */
 const ASSET_REFS = ['styles.css', 'shared.css', 'subpage.css', 'shared.js'];
+
+/**
+ * The CMS commits here, never straight to the branch that publishes. An edit
+ * becomes a Netlify branch deploy the editor can look at, and only a merge
+ * makes it live.
+ */
+const CMS_BRANCH = 'draft';
+
+/**
+ * Netlify Identity mails an invite to the site root with the token in the URL
+ * fragment, and a fragment is invisible to a server-side redirect rule — so
+ * the hop has to happen in the browser, on the page the root lands on.
+ *
+ * Inlined and guarded rather than loading the Identity widget site-wide: this
+ * costs visitors 130 bytes and no request, where the widget would put ~40KB of
+ * third-party JavaScript on the homepage to serve one invite a year.
+ */
+const INVITE_HOP =
+  '<script>if(/[#&](invite_token|recovery_token|email_change_token)=/.test(location.hash))' +
+  'location.replace("/admin/"+location.hash);</script>';
 
 // ---------------------------------------------------------------------------
 
@@ -223,10 +244,34 @@ function listPages() {
     .sort();
 }
 
+/**
+ * Content is stored one file per page, one object per section, so that the CMS
+ * can present 14 navigable entries instead of a single 908-field form. The
+ * build wants none of that structure — it wants the flat page.section.field
+ * keys the templates were written against — so the shape collapses on load.
+ *
+ * Blank values are dropped rather than kept. Decap writes every field of a
+ * form on save, so a translator who fills in half a page leaves the other half
+ * as empty strings; treating those as translated would publish blank elements
+ * instead of falling back to English, and would report the locale as further
+ * along than it is.
+ */
 function loadContent(code) {
-  const file = path.join(CONTENT, `${code}.json`);
-  if (!fs.existsSync(file)) return {};
-  return JSON.parse(fs.readFileSync(file, 'utf8'));
+  const dir = path.join(CONTENT, code);
+  if (!fs.existsSync(dir)) return {};
+
+  const flat = {};
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
+    const page = file.replace(/\.json$/, '');
+    const sections = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+    for (const [section, fields] of Object.entries(sections)) {
+      for (const [field, value] of Object.entries(fields)) {
+        if (typeof value !== 'string' || !value.trim()) continue;
+        flat[`${page}.${section}.${field}`] = value;
+      }
+    }
+  }
+  return flat;
 }
 
 function writeSitemap(pages, indexable) {
@@ -274,6 +319,7 @@ function writeRootRedirect() {
 <meta charset="utf-8" />
 <title>Agree Technologies</title>
 <link rel="canonical" href="${SITE}/${def.code}/" />
+${INVITE_HOP}
 <meta http-equiv="refresh" content="0; url=/${def.code}/" />
 </head>
 <body><p>Redirecting to <a href="/${def.code}/">/${def.code}/</a></p></body>
@@ -309,6 +355,28 @@ function writeStagingHeaders() {
   if (ctx === 'production' && primary.startsWith(SITE)) return null;
   fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex\n', 'utf8');
   return primary ? `${ctx} @ ${primary}` : ctx;
+}
+
+/**
+ * The CMS is a single static page plus a config file describing every editable
+ * field. The config is generated from content/en/ on each build so that adding
+ * a key to a template is all it takes for the key to appear in the editor —
+ * there is no second list to keep in step.
+ */
+function writeAdmin() {
+  const outDir = path.join(DIST, 'admin');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.copyFileSync(path.join(ROOT, 'admin', 'index.html'), path.join(outDir, 'index.html'));
+
+  const { yaml, fieldCount } = buildConfig({
+    contentDir: CONTENT,
+    locales: LOCALES,
+    defaultLocaleOnly: DEFAULT_LOCALE_ONLY,
+    siteUrl: process.env.URL || SITE,
+    branch: CMS_BRANCH,
+  });
+  fs.writeFileSync(path.join(outDir, 'config.yml'), yaml, 'utf8');
+  return fieldCount;
 }
 
 function build() {
@@ -366,6 +434,10 @@ function build() {
       );
       out = localizeUrls(out, locale, page, localesForPage, locale.indexable);
 
+      // Only the homepages: / redirects to a locale homepage, so that is where
+      // an invite link with a token fragment actually arrives.
+      if (page === 'index.html') out = out.replace('</head>', INVITE_HOP + '\r\n</head>');
+
       fs.writeFileSync(path.join(outDir, page), out, 'utf8');
       written++;
     }
@@ -396,6 +468,7 @@ function build() {
   writeRootRedirect();
   const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
+  const cmsFields = writeAdmin();
 
   for (const c of coverage) {
     const pct = totalKeys ? Math.round((c.translated / totalKeys) * 100) : 0;
@@ -408,6 +481,7 @@ function build() {
   console.log(
     `\nbuilt ${LOCALES.length} locales + ${staticCount} static files, ${sitemapUrls} sitemap URLs -> dist/ (${Date.now() - started}ms)`
   );
+  console.log(`admin/ CMS: ${cmsFields} editable fields on branch "${CMS_BRANCH}"`);
   if (staging) console.log(`context "${staging}" — whole deploy marked noindex via dist/_headers`);
 }
 

@@ -1,0 +1,23 @@
+{
+  "main": {
+    "a-about": "About",
+    "a-analytics": "Analytics",
+    "a-billing": "Billing",
+    "a-contact": "Contact",
+    "a-cpq": "CPQ",
+    "a-extensible-model": "Extensible model",
+    "a-implementation": "Implementation",
+    "a-integration": "Integration",
+    "a-introduction": "Introduction",
+    "a-process-engine": "Process engine",
+    "a-process-optimisation": "Process Optimisation",
+    "a-sales": "Sales",
+    "a-secure-reliable": "Secure & reliable",
+    "a-subscription": "Subscription",
+    "div-2026-agree-technologie": "© 2026 Agree Technologies ApS · Copenhagen, Denmark",
+    "h4-company": "Company",
+    "h4-platform": "Platform",
+    "h4-solutions": "Solutions",
+    "p-a-european-revenue-pla": "A European revenue platform for B2B SaaS & telecom — CPQ, billing, subscription, and process automation in one suite."
+  }
+}

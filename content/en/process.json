@@ -1,0 +1,50 @@
+{
+  "cta-band-dark": {
+    "a-back-to-overview": "Back to overview",
+    "a-schedule-a-demo": "Schedule a demo",
+    "div-operational-efficiency": "OPERATIONAL EFFICIENCY MANAGEMENT",
+    "h2-streamline-processes-r": "Streamline processes. Reduce waste. Compound productivity.",
+    "p-by-leveraging-atsuite-": "By leveraging ATSuite workflow automation, you minimise delays, cut costs, and optimise resource utilisation — empowering teams to focus on value-driven work."
+  },
+  "meta": {
+    "description": "ATSuite Process Optimisation brings event-driven workflow automation to revenue operations — orchestrate quote-to-cash without manual handoffs.",
+    "og-description": "Event-driven workflow automation for revenue operations — orchestrate quote-to-cash without manual handoffs.",
+    "og-title": "Process Optimisation & Workflow Automation",
+    "title": "Process Optimisation & Workflow Automation · Agree Technologies",
+    "twitter-description": "Event-driven workflow automation for revenue operations — orchestrate quote-to-cash without manual handoffs.",
+    "twitter-title": "Process Optimisation & Workflow Automation"
+  },
+  "page-hero": {
+    "a-schedule-a-demo": "Schedule a demo",
+    "a-see-the-platform": "See the platform",
+    "b-generate-invoice": "Generate invoice",
+    "b-notify-crm": "Notify CRM",
+    "b-provision-service": "Provision service",
+    "b-quote-signed": "Quote signed",
+    "div-solutions-process-opti": "SOLUTIONS · PROCESS OPTIMISATION",
+    "h1-eliminate-manual-work-": "Eliminate manual work. Operate at machine speed.",
+    "p-atsuite-automates-manu": "ATSuite automates manual processes, streamlines workflows, and integrates systems seamlessly. With event-driven automation, your teams make faster decisions, reduce errors, and free time for strategic and customer-centric work."
+  },
+  "split-section": {
+    "div-control": "CONTROL",
+    "div-efficiency": "EFFICIENCY",
+    "div-events": "EVENTS",
+    "div-integration": "INTEGRATION",
+    "div-process-capabilities": "PROCESS · CAPABILITIES",
+    "div-scale": "SCALE",
+    "div-workflows": "WORKFLOWS",
+    "h2-discover-the-process-m": "Discover the process management features.",
+    "h3-be-in-control": "Be in control",
+    "h3-become-event-driven": "Become event-driven",
+    "h3-create-workflows": "Create workflows",
+    "h3-increase-efficiency": "Increase efficiency",
+    "h3-scale-your-business": "Scale your business",
+    "h3-seamless-integration": "Seamless integration",
+    "p-automation-of-daily-ta": "Automation of daily tasks increases internal scalability, helping you handle customer requests promptly and secure loyalty.",
+    "p-connect-systems-and-ap": "Connect systems and applications to pull or push data — leveraging our microservices and APIs.",
+    "p-let-well-defined-event": "Let well-defined events trigger tasks, approvals, orders, and customer updates — automatically.",
+    "p-stop-wasting-time-on": "Stop wasting time on administrative duties — leverage time for strategic, customer-focused initiatives.",
+    "p-the-atsuite-process-en": "The ATSuite process engine runs 24/7 and alerts you promptly when issues need your attention.",
+    "p-use-the-process-tool": "Use the process tool to automate business tasks — and keep enhancing them as your business grows or changes."
+  }
+}

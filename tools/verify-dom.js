@@ -94,6 +94,9 @@ function canonical(html) {
   // The language switcher is new.
   out = out.replace(/<div class="lang-switch"[\s\S]*?<\/div>/i, '');
 
+  // Phase 5 adds the CMS invite hop to the homepages.
+  out = out.replace(/<script>[^<]*invite_token[^<]*<\/script>/gi, '');
+
   // Assets are shared at the dist root, so their refs became absolute.
   out = out.replace(/(href|src)="\/(styles\.css|shared\.css|subpage\.css|shared\.js|assets\/)/g, '$1="$2');
 

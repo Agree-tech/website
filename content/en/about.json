@@ -1,0 +1,65 @@
+{
+  "cta-band-dark": {
+    "a-contact-me": "Contact me",
+    "a-see-the-platform": "See the platform",
+    "div-book-a-meeting": "BOOK A MEETING",
+    "h2-it-can-start-with": "It can start with a conversation.",
+    "p-whether-you-need-sales": "Whether you need Sales, CPQ, Billing, Subscription Management or an all-in-one solution — our team is here to support. Built with comprehensive industry knowledge; experts ready to engage."
+  },
+  "meta": {
+    "alt": "Henrik Müller",
+    "alt-2": "Peter Reich",
+    "alt-3": "Kristian Jacobsen",
+    "alt-4": "Karina Buch",
+    "description": "Meet Agree Technologies, the Copenhagen-based company behind ATSuite — a unified CPQ, billing, and subscription platform for European B2B SaaS and telecom.",
+    "og-description": "The Copenhagen-based company behind ATSuite — a unified CPQ, billing, and subscription platform for European B2B SaaS and telecom.",
+    "og-title": "About Agree Technologies — European B2B CPQ & Billing",
+    "title": "About Agree Technologies — European B2B CPQ & Billing",
+    "twitter-description": "The Copenhagen-based company behind ATSuite — CPQ, billing, and subscription for European B2B SaaS and telecom.",
+    "twitter-title": "About Agree Technologies"
+  },
+  "page-hero": {
+    "div-our-journey": "OUR JOURNEY",
+    "h1-built-from-a-real": "Built from a real problem. Trusted in production for years.",
+    "p-it-began-with-the": "It began with the opportunity to meet a pressing need. IPVision (now Dstny A/S) had a thriving business but urgently required a modern, reliable, scalable solution to manage its entire telecom operations. Leveraging extensive telecom expertise, a unique solution was developed — and evolved into ATSuite, a CPQ and Billing platform ideally suited for subscription-based B2B businesses. Six-plus years in production as a managed service later, today we help companies streamline and grow with our platform."
+  },
+  "split-section": {
+    "div-board-member": "Board Member",
+    "div-board-member-ceo": "Board Member · CEO",
+    "div-board-member-cto": "Board Member · CTO",
+    "div-board-of-directors": "BOARD OF DIRECTORS",
+    "div-chairman-of-the-board": "Chairman of the Board",
+    "div-our-values": "OUR VALUES",
+    "h2-meet-the-board": "Meet the board.",
+    "h2-what-drives-agree-tech": "What drives Agree Technologies.",
+    "h3-accountability": "Accountability",
+    "h3-diversity": "Diversity",
+    "h3-innovation": "Innovation",
+    "h3-sustainability": "Sustainability",
+    "h4-karina-buch": "Karina Buch",
+    "h4-kenneth-andreasen": "Kenneth Andreasen",
+    "h4-kristian-hvid-jakobsen": "Kristian Hvid Jakobsen",
+    "h4-peter-reich": "Peter Reich",
+    "p-always-evolving-the-pl": "Always evolving the platform with new capabilities and ideas drawn from real customer needs.",
+    "p-ceo-and-investor-at": "CEO and investor at Agree Technologies — bringing operational and commercial perspective to the board.",
+    "p-cto-and-investor-at": "CTO and investor at Agree Technologies — bringing deep technical and product perspective to the board.",
+    "p-different-perspectives": "Different perspectives make better products. We design teams and culture for it.",
+    "p-innovation-accountabil": "Innovation, accountability, diversity and sustainability — values that guide our actions, shape our culture, and define our commitment to customers, partners and community.",
+    "p-long-term-thinking-for": "Long-term thinking — for our software, our customers' businesses, and the planet.",
+    "p-seasoned-executive-and": "Seasoned executive and investor with a background in telecommunications and banking. Co-founder of IP Vision in Denmark; under his leadership it became a prominent Nordic SME player, acquired by DSTNY in 2021.",
+    "p-seasoned-executive-and-2": "Seasoned executive and investor with extensive telecommunications experience. Co-founded IP Vision in Denmark in 2005, scaling it to acquisition by DSTNY in 2021.",
+    "p-we-do-what-we": "We do what we say. Customers, partners and team members can rely on it."
+  },
+  "split-section-alt": {
+    "div-ceo": "CEO",
+    "div-cto": "CTO",
+    "div-kb": "KB",
+    "div-kj": "KJ",
+    "div-management-team": "MANAGEMENT TEAM",
+    "h2-meet-the-leaders-behin": "Meet the leaders behind ATSuite.",
+    "h3-karina-buch": "Karina Buch",
+    "h3-kristian-jacobsen": "Kristian Jacobsen",
+    "p-20-years-in-software": "20+ years in software with extensive experience in Telecom CPQ and Billing. A senior innovator leading the dynamic, flexible ATSuite roadmap and development — committed to delivering a future-proven solution to customers.",
+    "p-senior-executive-with-": "Senior executive with C-level experience (CCO, COO, CIO) across Technology, Insurance and Auction industries. International leadership across Copenhagen, London, New York and San Francisco — with a global perspective and deep operational instinct."
+  }
+}

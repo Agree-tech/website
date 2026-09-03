@@ -1,0 +1,25 @@
+{
+  "main": {
+    "a-about-us": "About us",
+    "a-book-a-demo": "Book a demo",
+    "a-implementation": "Implementation",
+    "a-platform": "Platform",
+    "a-talk-to-an-expert": "Talk to an expert",
+    "div-solutions": "Solutions"
+  },
+  "meta": {
+    "aria-label": "Primary"
+  },
+  "mm-solutions": {
+    "div-billing-automation": "Billing Automation",
+    "div-configure-price-and-qu": "Configure, price, and quote with precision.",
+    "div-cpq": "CPQ",
+    "div-event-driven-workflow-": "Event-driven workflow automation.",
+    "div-flexible-monetization-": "Flexible monetization for B2B SaaS.",
+    "div-lifecycle-renewals-and": "Lifecycle, renewals, and usage analytics.",
+    "div-pipeline-playbooks-and": "Pipeline, playbooks, and approvals.",
+    "div-process-optimisation": "Process Optimisation",
+    "div-sales": "Sales",
+    "div-subscription-managemen": "Subscription Management"
+  }
+}
