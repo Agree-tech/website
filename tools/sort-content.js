@@ -37,7 +37,10 @@ for (const locale of locales) {
     const page = file.replace(/\.json$/, '');
     const full = path.join(dir, file);
     const raw = fs.readFileSync(full, 'utf8');
-    const sorted = JSON.stringify(sortPage(page, JSON.parse(raw), order), null, 2) + '\n';
+    // Keep the file's own line endings: a CRLF checkout is not "out of order".
+    const eol = raw.includes('\r\n') ? '\r\n' : '\n';
+    const sorted =
+      JSON.stringify(sortPage(page, JSON.parse(raw), order), null, 2).replace(/\n/g, eol) + eol;
     total++;
     if (sorted === raw) continue;
     changed++;
