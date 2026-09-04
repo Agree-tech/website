@@ -82,8 +82,17 @@ const ACRONYMS = {
   saas: 'SaaS', atsuite: 'ATSuite', seo: 'SEO', faq: 'FAQ', mm: 'Menu',
 };
 
-/** Long values get a textarea; short ones a single line. */
+/**
+ * Long values get a textarea; short ones a single line.
+ *
+ * The length being measured is always the English value, because that is what
+ * the config is generated from. Translated locales use a lower threshold:
+ * across the current content Danish and Polish run up to 35% longer than the
+ * English (90th percentile), so a 110-character English sentence becomes a
+ * 150-character translation that no longer fits a single-line input.
+ */
 const TEXTAREA_OVER = 120;
+const TEXTAREA_OVER_TRANSLATED = 90;
 
 /**
  * The build throws on a "<" in a content value, so the CMS refuses it at the
@@ -221,7 +230,8 @@ function buildConfig({ contentDir, locales, defaultLocaleOnly, siteUrl, branch }
           const hint = hintFor(key, section, value, locale.isDefault);
           L.push('              - name: ' + yamlStr(key));
           L.push('                label: ' + yamlStr(fieldLabel(section, key, value)));
-          L.push('                widget: ' + (value.length > TEXTAREA_OVER ? 'text' : 'string'));
+          const textareaOver = locale.isDefault ? TEXTAREA_OVER : TEXTAREA_OVER_TRANSLATED;
+          L.push('                widget: ' + (value.length > textareaOver ? 'text' : 'string'));
           L.push('                required: ' + (locale.isDefault ? 'true' : 'false'));
           L.push('                pattern: [' + yamlStr(NO_MARKUP[0]) + ', ' + yamlStr(NO_MARKUP[1]) + ']');
           if (hint) L.push('                hint: ' + yamlStr(hint));

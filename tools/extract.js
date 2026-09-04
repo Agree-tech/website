@@ -22,6 +22,12 @@
  *  - Keys are derived from document structure so they stay readable.
  *
  * Run with --dry to report without writing.
+ *
+ * Already run. The flat content/en.json it wrote was later split into
+ * content/en/<page>.json by tools/split-content.js, and the templates now carry
+ * the placeholders. main() refuses to run against extracted templates: the
+ * placeholder text itself contains letters, so a second pass would key every
+ * {{i18n:...}} as a sentence and wrap it in another placeholder.
  */
 
 const fs = require('fs');
@@ -439,6 +445,18 @@ function main() {
   const partials = ['_nav.html', '_foot.html'].filter((f) =>
     fs.existsSync(path.join(SRC, f))
   );
+
+  const extracted = [...pages, ...partials].filter((f) =>
+    /\{\{i18n:/.test(fs.readFileSync(path.join(SRC, f), 'utf8'))
+  );
+  if (extracted.length) {
+    console.error(
+      `extract.js has already been run: ${extracted.length} template(s) carry {{i18n:}} placeholders ` +
+        `(${extracted.slice(0, 3).join(', ')}${extracted.length > 3 ? ', …' : ''}).\n` +
+        'Nothing written. Add new strings by hand — see I18N-CMS-STACK.md §3.2.'
+    );
+    process.exit(1);
+  }
 
   const all = {};
   let totalManual = [];

@@ -130,7 +130,9 @@ function applyEmphasis(value, spec) {
  *
  * A key missing from a target locale falls back to English and is counted, so
  * a half-translated locale is still a working page — never an empty element or
- * a raw key on screen.
+ * a raw key on screen. A key missing from English has nothing to fall back to:
+ * the raw placeholder stays in place, and build() exits non-zero once the
+ * summary is printed, so a deploy fails rather than shipping it.
  */
 function localize(html, strings, fallback, missing) {
   return html.replace(/\{\{i18n:([^}@]+)(?:@([^}]+))?\}\}/g, (raw, key, cls) => {
@@ -151,8 +153,15 @@ function localize(html, strings, fallback, missing) {
     }
 
     // Content is stored decoded so editors never see entities. Re-escape here.
+    // `"` is included because 61 placeholders sit inside attributes (meta
+    // content, alt, placeholder, aria-label): an unescaped quote there closes
+    // the attribute and whatever follows becomes markup. &quot; renders as a
+    // plain quote in text too, so one rule covers both contexts.
     // Emphasis is applied afterwards, since that step introduces real markup.
-    const escaped = value.replace(/&/g, '&amp;').replace(/>/g, '&gt;');
+    const escaped = value
+      .replace(/&/g, '&amp;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
 
     return cls ? applyEmphasis(escaped, cls) : escaped;
   });
@@ -250,9 +259,9 @@ function listPages() {
  * build wants none of that structure — it wants the flat page.section.field
  * keys the templates were written against — so the shape collapses on load.
  *
- * Blank values are dropped rather than kept. Decap writes every field of a
- * form on save, so a translator who fills in half a page leaves the other half
- * as empty strings; treating those as translated would publish blank elements
+ * Blank values are dropped rather than kept. The CMS commits seen so far omit
+ * fields the editor never touched, but a field that is cleared can be saved as
+ * an empty string; treating that as translated would publish a blank element
  * instead of falling back to English, and would report the locale as further
  * along than it is.
  */
@@ -306,8 +315,14 @@ function writeSitemap(pages, indexable) {
 
 /**
  * A static redirect, not JavaScript language sniffing — crawlers handle a
- * meta refresh predictably, and Netlify turns the _redirects file into a real
- * 302 before the HTML is ever served.
+ * meta refresh and a 302 predictably.
+ *
+ * The root rule is forced (302!). dist/index.html exists at the same path, and
+ * Netlify serves an existing file in preference to an unforced rule, so
+ * without the "!" visitors got a 200 meta refresh instead of the 302 the rule
+ * promised. dist/index.html stays for local static servers, which do not read
+ * _redirects. An invite link's #fragment survives the 302 — browsers carry it
+ * onto the Location target — so the hop on /en/ still catches it.
  */
 function writeRootRedirect() {
   const def = LOCALES.find((l) => l.isDefault);
@@ -332,7 +347,7 @@ ${INVITE_HOP}
   const lines = listPages()
     .filter((p) => p !== 'index.html')
     .map((p) => `/${p}  /${def.code}/${p}  301!`);
-  lines.unshift(`/  /${def.code}/  302`);
+  lines.unshift(`/  /${def.code}/  302!`);
   fs.writeFileSync(path.join(DIST, '_redirects'), lines.join('\n') + '\n', 'utf8');
 }
 
@@ -346,13 +361,27 @@ ${INVITE_HOP}
  * Keying on Netlify's URL instead means this switches itself off at cutover,
  * the moment the primary domain becomes agree-tech.com — no edit required.
  *
+ * The comparison is by hostname with "www." stripped, so it does not matter
+ * whether the primary domain in Netlify is set as the apex or as www. A
+ * prefix match against SITE would have kept the live site noindex forever if
+ * the apex were chosen, with nothing but a build-log line to say so.
+ *
  * No CONTEXT at all means a local build, which nobody can crawl.
  */
+function isLiveUrl(url) {
+  const bare = (host) => host.replace(/^www\./, '');
+  try {
+    return bare(new URL(url).hostname) === bare(new URL(SITE).hostname);
+  } catch {
+    return false;
+  }
+}
+
 function writeStagingHeaders() {
   const ctx = process.env.CONTEXT;
   if (!ctx) return null;
   const primary = process.env.URL || '';
-  if (ctx === 'production' && primary.startsWith(SITE)) return null;
+  if (ctx === 'production' && isLiveUrl(primary)) return null;
   fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex\n', 'utf8');
   return primary ? `${ctx} @ ${primary}` : ctx;
 }
@@ -458,7 +487,7 @@ function build() {
     // Coverage is what the locale file actually provides — not what this build
     // happened to encounter. Pages excluded from a locale (index-print) would
     // otherwise make an empty locale look partly translated.
-    coverage.push({ locale, written, fellBack: missing.size, translated: locale.translated });
+    coverage.push({ locale, written, fellBack: missing.size, missingKeys: missing, translated: locale.translated });
   }
 
   let staticCount = 0;
@@ -498,6 +527,17 @@ function build() {
   );
   console.log(`admin/ CMS: ${cmsFields} editable fields on branch "${CMS_BRANCH}"`);
   if (staging) console.log(`context "${staging}" — whole deploy marked noindex via dist/_headers`);
+
+  // English has no fallback, so a key it lacks is a raw placeholder on every
+  // locale's page. Only a developer can cause this — the CMS marks every
+  // English field required — and the deploy must fail rather than ship it.
+  const enGap = coverage.find((c) => c.locale.isDefault).missingKeys;
+  if (enGap.size) {
+    console.error(`\nERROR: ${enGap.size} placeholder(s) have no English value — the raw key is on the page:`);
+    for (const key of [...enGap].sort()) console.error(`  ${key}`);
+    console.error('Add the value under its section in content/en/<page>.json.');
+    process.exitCode = 1;
+  }
 }
 
 build();

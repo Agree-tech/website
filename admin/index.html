@@ -29,7 +29,24 @@
     asks for a token when it talks to Git Gateway.
   -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://unpkg.com/decap-cms@3.16.0/dist/decap-cms.js"></script>
+  <!--
+    Pinned and hashed: the editor holds the Identity token that Git Gateway
+    turns into repository writes, so the bundle running here has to be the
+    bytes that were reviewed, not whatever the CDN serves that day. The hash is
+    sha384 of decap-cms@3.16.0/dist/decap-cms.js and is the same on unpkg and
+    jsDelivr (both serve the npm tarball). When bumping the version, recompute:
+      curl -sL https://unpkg.com/decap-cms@<v>/dist/decap-cms.js | openssl dgst -sha384 -binary | openssl base64 -A
+    If unpkg fails — outage or hash mismatch — the same file is fetched from
+    jsDelivr under the same hash.
+  -->
+  <script src="https://unpkg.com/decap-cms@3.16.0/dist/decap-cms.js"
+          integrity="sha384-WFBlw1ZGvgE9W2ia0r2gJPu3HOVweIpoHCGmlm3f/9J2OURAjzuJ/lV55gUd4By4"
+          crossorigin="anonymous"></script>
+  <script>
+    if (!window.CMS) {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/decap-cms@3.16.0/dist/decap-cms.js" integrity="sha384-WFBlw1ZGvgE9W2ia0r2gJPu3HOVweIpoHCGmlm3f/9J2OURAjzuJ/lV55gUd4By4" crossorigin="anonymous"><\/script>');
+    }
+  </script>
   <script>
     /*
      * Clear the boot message once the editor has actually rendered — not on
