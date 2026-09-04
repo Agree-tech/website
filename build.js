@@ -19,6 +19,7 @@ const fs = require('fs');
 const path = require('path');
 const { buildConfig } = require('./tools/cms-config.js');
 const { localize } = require('./tools/localize.js');
+const { fromDisk, fromPayload } = require('./tools/content-source.js');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
@@ -69,6 +70,31 @@ const CMS_BRANCH = 'draft';
  * plain build.
  */
 const LOCAL_CMS = process.argv.includes('--local-cms');
+
+/**
+ * `node build.js --from-payload` renders from the Payload CMS instead of
+ * content/, which is what a deploy does once the database is the source of
+ * truth. content/ stays in the repository as the seed and as the input to the
+ * field model, but it is no longer read for the strings.
+ *
+ * Both paths are kept because they are each other's test: the same templates
+ * and the same locale data must produce byte-identical output whichever side
+ * the strings came from, and tools/verify-parity.js checks exactly that.
+ */
+const FROM_PAYLOAD = process.argv.includes('--from-payload');
+
+/**
+ * `node build.js --from-blocks` assembles each page from blocks/<page>/*.html
+ * in the order content/layout.json gives, instead of reading the whole template
+ * from src/. It is the same markup either way — tools/extract-blocks.js cut the
+ * templates and proves the pieces rejoin byte for byte — so this flag exists to
+ * show that composing a page from parts changes nothing about the page, which
+ * is the precondition for letting an editor reorder those parts.
+ */
+const FROM_BLOCKS = process.argv.includes('--from-blocks');
+const BLOCKS = path.join(ROOT, 'blocks');
+const SHELL = path.join(ROOT, 'shell');
+const PAYLOAD_URL = (process.env.PAYLOAD_URL || 'http://localhost:3001').replace(/[/]+$/, '');
 
 /**
  * Netlify Identity mails an invite to the site root with the token in the URL
@@ -212,6 +238,29 @@ function render(html, partials, pageFile, locale, strings, fallback, missing) {
   return localize(compose(html, partials, pageFile, locale), strings, fallback, missing);
 }
 
+/**
+ * A page's template, from src/ or reassembled from its blocks.
+ *
+ * The block path reads the order from content/layout.json, which is the file an
+ * editor's reordering would write. Everything downstream — placeholder
+ * substitution, nav, footer, hreflang — is unchanged, because a reassembled
+ * page is the same string the template was.
+ */
+function loadTemplate(pageFile) {
+  if (!FROM_BLOCKS) return fs.readFileSync(path.join(SRC, pageFile), 'utf8');
+
+  const page = pageFile.replace(/.html$/, '');
+  const layout = JSON.parse(fs.readFileSync(path.join(CONTENT, 'layout.json'), 'utf8'));
+  const order = layout[page];
+  if (!order) throw new Error(`no layout for "${page}" — run node tools/extract-blocks.js`);
+
+  return (
+    fs.readFileSync(path.join(SHELL, `${page}.head.html`), 'utf8') +
+    order.map((b) => fs.readFileSync(path.join(BLOCKS, page, `${b}.html`), 'utf8')).join('') +
+    fs.readFileSync(path.join(SHELL, `${page}.tail.html`), 'utf8')
+  );
+}
+
 function listPages() {
   return fs
     .readdirSync(SRC)
@@ -221,33 +270,14 @@ function listPages() {
 }
 
 /**
- * Content is stored one file per page, one object per section, so that the CMS
- * can present 14 navigable entries instead of a single 908-field form. The
- * build wants none of that structure — it wants the flat page.section.field
- * keys the templates were written against — so the shape collapses on load.
+ * The strings for one locale, as a flat map of page.section.field.
  *
- * Blank values are dropped rather than kept. The CMS commits seen so far omit
- * fields the editor never touched, but a field that is cleared can be saved as
- * an empty string; treating that as translated would publish a blank element
- * instead of falling back to English, and would report the locale as further
- * along than it is.
+ * Which side they come from is the only thing --from-payload changes about this
+ * build; both sources live in tools/content-source.js and both promise the same
+ * thing, including that a missing key means "not translated", never "empty".
  */
-function loadContent(code) {
-  const dir = path.join(CONTENT, code);
-  if (!fs.existsSync(dir)) return {};
-
-  const flat = {};
-  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
-    const page = file.replace(/\.json$/, '');
-    const sections = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
-    for (const [section, fields] of Object.entries(sections)) {
-      for (const [field, value] of Object.entries(fields)) {
-        if (typeof value !== 'string' || !value.trim()) continue;
-        flat[`${page}.${section}.${field}`] = value;
-      }
-    }
-  }
-  return flat;
+async function loadContent(code) {
+  return FROM_PAYLOAD ? fromPayload(PAYLOAD_URL, SRC, code) : fromDisk(CONTENT, code);
 }
 
 function writeSitemap(pages, indexable) {
@@ -377,7 +407,7 @@ function writeAdmin(partials, content) {
   const def = LOCALES.find((l) => l.isDefault);
   const pages = listPages();
   for (const page of pages) {
-    const html = fs.readFileSync(path.join(SRC, page), 'utf8');
+    const html = loadTemplate(page);
     fs.writeFileSync(
       path.join(previewDir, page),
       absolutizeAssets(compose(html, partials, page, def)),
@@ -406,7 +436,7 @@ function writeAdmin(partials, content) {
   return fieldCount;
 }
 
-function build() {
+async function build() {
   const started = Date.now();
 
   fs.rmSync(DIST, { recursive: true, force: true });
@@ -420,7 +450,7 @@ function build() {
 
   const pages = listPages();
   const content = {};
-  for (const locale of LOCALES) content[locale.code] = loadContent(locale.code);
+  for (const locale of LOCALES) content[locale.code] = await loadContent(locale.code);
   const en = content.en;
   const totalKeys = Object.keys(en).length;
 
@@ -462,7 +492,7 @@ function build() {
         ? indexable.filter((l) => l.isDefault)
         : indexable;
 
-      const html = fs.readFileSync(path.join(SRC, page), 'utf8');
+      const html = loadTemplate(page);
       let out = render(
         html,
         partials,
@@ -538,4 +568,7 @@ function build() {
   }
 }
 
-build();
+build().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

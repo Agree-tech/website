@@ -339,4 +339,70 @@ function buildConfig({ contentDir, srcDir, locales, defaultLocaleOnly, siteUrl, 
   return { yaml: L.join('\n') + '\n', fieldCount };
 }
 
-module.exports = { buildConfig, templateOrder, sortPage };
+
+/**
+ * The same projection buildConfig() prints as Decap YAML, returned as data.
+ *
+ * Decap and Payload disagree about almost everything at the file level — YAML
+ * against TypeScript, three parallel locale trees against one localized tree —
+ * but they are describing the identical thing: which pages exist, which
+ * sections each holds, in what order, under what name. That agreement is the
+ * part worth keeping in one place. An emitter that renders this to a second
+ * CMS inherits the page ordering, the heading-derived section names and the
+ * value-derived field labels for free, and cannot drift from the editor the
+ * site actually ships with.
+ *
+ * Locale-specific choices stay with the emitter: which fields are required,
+ * how long a value must be before it earns a textarea, and what a hint says
+ * are answers that depend on the CMS asking.
+ */
+function buildModel({ contentDir, srcDir, defaultLocaleOnly }) {
+  const order = templateOrder(srcDir);
+  const pages = fs
+    .readdirSync(path.join(contentDir, 'en'))
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.replace(/\.json$/, ''));
+
+  const ordered = PAGE_ORDER.filter((p) => pages.includes(p)).concat(
+    pages.filter((p) => !PAGE_ORDER.includes(p)).sort()
+  );
+
+  return ordered.map((page) => {
+    const sections = sortPage(
+      page,
+      JSON.parse(fs.readFileSync(path.join(contentDir, 'en', page + '.json'), 'utf8')),
+      order
+    );
+
+    let visible = 0;
+    return {
+      name: page,
+      label: PAGE_LABELS[page] || humanize(page),
+      defaultLocaleOnly: defaultLocaleOnly ? defaultLocaleOnly.has(page + '.html') : false,
+      sections: Object.keys(sections).map((section) => {
+        const fields = Object.entries(sections[section]);
+        if (section !== 'meta') visible++;
+        return {
+          name: section,
+          label: sectionLabel(page, section, fields, visible),
+          fields: fields.map(([key, value]) => ({
+            name: key,
+            label: fieldLabel(section, key, value),
+            value,
+          })),
+        };
+      }),
+    };
+  });
+}
+
+module.exports = {
+  buildConfig,
+  buildModel,
+  templateOrder,
+  sortPage,
+  hintFor,
+  TEXTAREA_OVER,
+  TEXTAREA_OVER_TRANSLATED,
+  NO_MARKUP,
+};

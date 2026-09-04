@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{{i18n:billing.meta.title}}</title>
+<meta name="description" content="{{i18n:billing.meta.description}}" />
+<link rel="canonical" href="https://www.agree-tech.com/billing.html" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Agree Technologies" />
+<meta property="og:title" content="{{i18n:billing.meta.og-title}}" />
+<meta property="og:description" content="{{i18n:billing.meta.og-description}}" />
+<meta property="og:url" content="https://www.agree-tech.com/billing.html" />
+<meta property="og:image" content="https://www.agree-tech.com/assets/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{i18n:billing.meta.twitter-title}}" />
+<meta name="twitter:description" content="{{i18n:billing.meta.twitter-description}}" />
+<meta name="twitter:image" content="https://www.agree-tech.com/assets/og-default.png" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+.bill-mock { background: var(--navy); border-radius: 16px; padding: 24px; box-shadow: var(--shadow-pop); color:white;}
+.bill-mock .head { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; }
+.bill-mock .ttl { font-family: var(--f-display); font-size:18px; font-weight:600; }
+.bill-mock .sub { font-family: var(--f-mono); font-size:11px; letter-spacing:0.08em; color:rgba(255,255,255,0.55); margin-top:3px; text-transform:uppercase;}
+.bill-stat-row { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom: 18px;}
+.bill-stat { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px;}
+.bill-stat .l { font-family:var(--f-mono); font-size:10px; letter-spacing:0.14em; color:rgba(255,255,255,0.55); text-transform:uppercase;}
+.bill-stat .v { font-family:var(--f-display); font-size:22px; font-weight:600; margin-top:4px; letter-spacing:-0.02em;}
+.bill-list { background:rgba(255,255,255,0.04); border-radius:10px; padding:6px; border:1px solid rgba(255,255,255,0.08);}
+.bill-row { display:grid; grid-template-columns: 1fr auto auto; gap:14px; align-items:center; padding:10px 12px; font-size:13px; border-radius:8px;}
+.bill-row + .bill-row { border-top:1px dashed rgba(255,255,255,0.08);}
+.bill-row .id { font-family:var(--f-mono); color:rgba(255,255,255,0.55); font-size:11.5px;}
+.bill-row .name { color:white; font-weight:500; }
+.bill-row .name small { display:block; color:rgba(255,255,255,0.55); font-weight:400; font-size:11px; font-family:var(--f-mono); margin-top:2px;}
+.bill-row .amt { font-family:var(--f-mono); color:white; font-weight:500;}
+.bill-row .pill { font-family:var(--f-mono); font-size:10px; padding:3px 8px; border-radius:99px; }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='billing'; window.AT_NAV_DARK=true;</script>
+<div id="site-nav"></div>
+

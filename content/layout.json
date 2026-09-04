@@ -1,0 +1,75 @@
+{
+  "about": [
+    "page-hero",
+    "split-section",
+    "split-section-alt",
+    "split-section-2",
+    "cta-band-dark"
+  ],
+  "billing": [
+    "page-hero-dark",
+    "split-section",
+    "split-section-alt",
+    "cta-band-dark"
+  ],
+  "contact": [
+    "page-hero",
+    "split-section"
+  ],
+  "cpq": [
+    "page-hero",
+    "split-section",
+    "split-section-alt",
+    "split-section-crm-integrations",
+    "cta-band-dark"
+  ],
+  "implementation": [
+    "page-hero",
+    "split-section",
+    "split-section-alt",
+    "cta-band-dark"
+  ],
+  "index-print": [
+    "hero",
+    "q2c",
+    "modules",
+    "quote",
+    "innovate",
+    "cta-band"
+  ],
+  "index": [
+    "hero",
+    "q2c",
+    "modules",
+    "cfo",
+    "quote",
+    "innovate",
+    "cta-band"
+  ],
+  "platform": [
+    "page-hero-dark",
+    "split-section",
+    "split-section-alt",
+    "split-section-process",
+    "split-section-alt-analytics",
+    "split-section-deployment",
+    "cta-band-dark"
+  ],
+  "process": [
+    "page-hero",
+    "split-section",
+    "cta-band-dark"
+  ],
+  "sales": [
+    "page-hero",
+    "split-section",
+    "split-section-alt",
+    "cta-band-dark"
+  ],
+  "subscription": [
+    "page-hero",
+    "split-section-alt",
+    "split-section",
+    "cta-band-dark"
+  ]
+}

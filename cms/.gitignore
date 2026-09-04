@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.env
+# (sqlite leftovers, harmless)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+src/globals.generated.ts
+payload-types.ts
+
+# Written and re-added by `next dev` (Next 16 agent files), not by us.
+AGENTS.md
+CLAUDE.md

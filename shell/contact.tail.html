@@ -1,0 +1,22 @@
+
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+<script>
+  // Show success message if redirected after form submission
+  if (window.location.search.includes('success=true')) {
+    const notice = document.querySelector('.notice');
+    if (notice) {
+      notice.style.background = '#DCFCE7';
+      notice.style.borderColor = '#BBF7D0';
+      notice.style.color = '#15803D';
+      // Read from the template rather than a JS string literal: the message is
+      // translator-edited copy, and an apostrophe in it used to end the string
+      // early and throw a SyntaxError that killed this whole block.
+      notice.innerHTML = document.getElementById('sent-message').innerHTML;
+    }
+    // Clear URL parameter
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+</script>
+</body></html>
