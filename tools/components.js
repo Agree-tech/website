@@ -1,0 +1,69 @@
+/**
+ * components.js — renders a block instance from a shared component template.
+ *
+ * A component is one HTML file with three kinds of hole in it:
+ *
+ *   {{slot:name}}        the instance's content key, resolved to the
+ *                        {{i18n:page.section.key}} the templates already use
+ *   {{prop:name}}        a literal string from the instance
+ *   {{#if name}}…{{/if}} included when a prop or slot is present, with an
+ *                        optional {{else}}
+ *
+ * Slots rather than keys because content keys are derived from the English
+ * text, so every instance of a component has different ones — `a-book-a-demo`
+ * on one page and `a-contact-me` on another. What is stable is the position:
+ * eyebrow, heading, body, primary, secondary, in that order, every time. The
+ * instance maps position to key and the component never learns either.
+ *
+ * A missing slot makes {{#if}} false, which is how one CTA band drops its
+ * paragraph without needing a prop to say so.
+ */
+
+/** Nesting is not supported and not needed; keep components flat. */
+const IF = /\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g;
+
+function render(template, instance, page) {
+  const { section, props = {}, slots = {} } = instance;
+  const has = (name) => {
+    const v = name in slots ? slots[name] : props[name];
+    return v !== undefined && v !== null && v !== false && v !== '';
+  };
+
+  let out = template;
+
+  // Conditionals first, so a false branch cannot leave a slot behind for the
+  // substitutions below to fill in.
+  // Nesting silently mis-parses — the inner {{/if}} would close the outer
+  // block — so it is refused rather than rendered wrongly. Lift the inner
+  // branch into a prop instead; components stay flat on purpose.
+  for (const m of out.matchAll(IF)) {
+    if (m[2].includes('{{#if ')) {
+      throw new Error(`nested {{#if}} in a component on "${page}" — lift the inner branch into a prop`);
+    }
+  }
+  IF.lastIndex = 0;
+
+  let guard = 0;
+  while (IF.test(out)) {
+    IF.lastIndex = 0;
+    out = out.replace(IF, (_, name, then, otherwise = '') => (has(name) ? then : otherwise));
+    if (++guard > 10) throw new Error(`runaway {{#if}} in a component on "${page}"`);
+  }
+
+  out = out.replace(/\{\{slot:(\w+)(@[^}]+)?\}\}/g, (raw, name, emphasis = '') => {
+    if (!(name in slots)) throw new Error(`component on "${page}" has no slot "${name}"`);
+    return `{{i18n:${page}.${section}.${slots[name]}${emphasis}}}`;
+  });
+
+  out = out.replace(/\{\{prop:(\w+)\}\}/g, (raw, name) => {
+    if (!(name in props)) throw new Error(`component on "${page}" has no prop "${name}"`);
+    return String(props[name]);
+  });
+
+  const left = out.match(/\{\{(?!i18n:)[^}]*\}\}/);
+  if (left) throw new Error(`unresolved ${left[0]} in a component on "${page}"`);
+
+  return (instance.lead || '') + out;
+}
+
+module.exports = { render };

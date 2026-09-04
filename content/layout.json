@@ -4,13 +4,49 @@
     "split-section",
     "split-section-alt",
     "split-section-2",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": true,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "platform.html"
+      },
+      "slots": {
+        "eyebrow": "div-book-a-meeting",
+        "heading": "h2-it-can-start-with",
+        "body": "p-whether-you-need-sales",
+        "primary": "a-contact-me",
+        "secondary": "a-see-the-platform"
+      }
+    }
   ],
   "billing": [
     "page-hero-dark",
     "split-section",
     "split-section-alt",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-for-a-billing",
+        "heading": "h2-modernise-your-billing",
+        "body": "p-walk-through-a-real",
+        "primary": "a-book-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
   ],
   "contact": [
     "page-hero",
@@ -21,13 +57,49 @@
     "split-section",
     "split-section-alt",
     "split-section-crm-integrations",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-to-quote-faster",
+        "heading": "h2-see-atsuite-cpq-in",
+        "body": "p-30-minute-discovery-we",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
   ],
   "implementation": [
     "page-hero",
     "split-section",
     "split-section-alt",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "platform.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today",
+        "body": "p-a-30-minute-conversati",
+        "primary": "a-schedule-a-call",
+        "secondary": "a-see-the-platform"
+      }
+    }
   ],
   "index-print": [
     "hero",
@@ -35,7 +107,25 @@
     "modules",
     "quote",
     "innovate",
-    "cta-band"
+    {
+      "component": "cta-band",
+      "section": "cta-band",
+      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
+      "props": {
+        "dark": false,
+        "narrow": false,
+        "bodyClass": " class=\"lede\"",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today-and",
+        "body": "p-a-30-minute-discovery",
+        "primary": "a-book-a-demo",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
   ],
   "index": [
     "hero",
@@ -44,7 +134,25 @@
     "cfo",
     "quote",
     "innovate",
-    "cta-band"
+    {
+      "component": "cta-band",
+      "section": "cta-band",
+      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
+      "props": {
+        "dark": false,
+        "narrow": false,
+        "bodyClass": " class=\"lede\"",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today-and",
+        "body": "p-a-30-minute-discovery",
+        "primary": "a-book-a-demo",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
   ],
   "platform": [
     "page-hero-dark",
@@ -53,23 +161,94 @@
     "split-section-process",
     "split-section-alt-analytics",
     "split-section-deployment",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "eyebrow": "div-innovate-with-agree-te",
+        "heading": "h2-continuous-innovation-",
+        "body": "p-cutting-edge-cloud-bas",
+        "primary": "a-talk-to-an-expert",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
   ],
   "process": [
     "page-hero",
     "split-section",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "eyebrow": "div-operational-efficiency",
+        "heading": "h2-streamline-processes-r",
+        "body": "p-by-leveraging-atsuite-",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
   ],
   "sales": [
     "page-hero",
     "split-section",
     "split-section-alt",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "eyebrow": "div-ready-to-ignite-a",
+        "heading": "h2-streamline-workflows-b",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
   ],
   "subscription": [
     "page-hero",
     "split-section-alt",
     "split-section",
-    "cta-band-dark"
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "eyebrow": "div-your-benefits-today-an",
+        "heading": "h2-elevate-operations-fin",
+        "body": "p-an-indispensable-tool-",
+        "primary": "a-contact-us",
+        "secondary": "a-back-to-overview"
+      }
+    }
   ]
 }

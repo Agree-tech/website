@@ -20,6 +20,7 @@ const path = require('path');
 const { buildConfig } = require('./tools/cms-config.js');
 const { localize } = require('./tools/localize.js');
 const { fromDisk, fromPayload } = require('./tools/content-source.js');
+const { render: renderComponent } = require('./tools/components.js');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
@@ -93,6 +94,7 @@ const FROM_PAYLOAD = process.argv.includes('--from-payload');
  */
 const FROM_BLOCKS = process.argv.includes('--from-blocks');
 const BLOCKS = path.join(ROOT, 'blocks');
+const COMPONENTS = path.join(ROOT, 'components');
 const SHELL = path.join(ROOT, 'shell');
 const PAYLOAD_URL = (process.env.PAYLOAD_URL || 'http://localhost:3001').replace(/[/]+$/, '');
 
@@ -254,9 +256,23 @@ function loadTemplate(pageFile) {
   const order = layout[page];
   if (!order) throw new Error(`no layout for "${page}" — run node tools/extract-blocks.js`);
 
+  /**
+   * An entry is either a block name — markup that still lives only on this page
+   * — or a component instance, which names a shared template in components/ and
+   * supplies the props and content keys that make it this page's copy of it.
+   * Both forms coexist so the palette can absorb one family at a time.
+   */
+  const part = (entry) => {
+    if (typeof entry === 'string') {
+      return fs.readFileSync(path.join(BLOCKS, page, `${entry}.html`), 'utf8');
+    }
+    const template = fs.readFileSync(path.join(COMPONENTS, `${entry.component}.html`), 'utf8');
+    return renderComponent(template, entry, page);
+  };
+
   return (
     fs.readFileSync(path.join(SHELL, `${page}.head.html`), 'utf8') +
-    order.map((b) => fs.readFileSync(path.join(BLOCKS, page, `${b}.html`), 'utf8')).join('') +
+    order.map(part).join('') +
     fs.readFileSync(path.join(SHELL, `${page}.tail.html`), 'utf8')
   );
 }
