@@ -14,3 +14,12 @@ Regenerate:
            --force-device-scale-factor=1 --window-size=1200,630 \
            --virtual-time-budget=10000 \
            --screenshot=assets/og-default.png /tmp/og.html
+
+## sort-content.js
+
+Reorders `content/<locale>/*.json` so sections and fields follow the page,
+top to bottom, the same order the CMS lists them in. Key order does not affect
+the build; it keeps files and translation diffs readable.
+
+    npm run sort            # rewrite files that are out of order
+    npm run sort -- --check # report only, exit 1 if any are
