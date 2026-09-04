@@ -1,23 +1,23 @@
 {
   "main": {
-    "p-a-european-revenue-pla": "A European revenue platform for B2B SaaS & telecom — CPQ, billing, subscription, and process automation in one suite.",
-    "h4-platform": "Platform",
+    "a-sales": "Sales",
+    "a-about": "About",
+    "a-extensible-model": "Extensible model",
     "a-introduction": "Introduction",
     "a-integration": "Integration",
-    "a-extensible-model": "Extensible model",
-    "a-process-engine": "Process engine",
-    "a-analytics": "Analytics",
-    "a-secure-reliable": "Secure & reliable",
-    "h4-solutions": "Solutions",
-    "a-sales": "Sales",
-    "a-cpq": "CPQ",
-    "a-billing": "Billing",
     "a-subscription": "Subscription",
-    "a-process-optimisation": "Process Optimisation",
-    "h4-company": "Company",
-    "a-about": "About",
-    "a-implementation": "Implementation",
+    "a-process-engine": "Process engine",
+    "a-billing": "Billing",
+    "h4-platform": "Platform",
+    "a-secure-reliable": "Secure & reliable",
     "a-contact": "Contact",
-    "div-2026-agree-technologie": "© 2026 Agree Technologies ApS · Copenhagen, Denmark"
+    "a-cpq": "CPQ",
+    "div-2026-agree-technologie": "© 2027 Agree Technologies ApS · Copenhagen, Denmark",
+    "h4-solutions": "Solutions",
+    "a-analytics": "Analytics",
+    "h4-company": "Company",
+    "a-process-optimisation": "Process Optimisation",
+    "a-implementation": "Implementation",
+    "p-a-european-revenue-pla": "A European revenue platform for B2B SaaS & telecom — CPQ, billing, subscription, and process automation in one suite."
   }
 }
