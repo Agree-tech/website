@@ -1,25 +1,25 @@
 {
-  "main": {
-    "a-about-us": "Om os",
-    "a-book-a-demo": "Book en demo",
-    "a-implementation": "Implementering",
-    "a-platform": "Platform",
-    "a-talk-to-an-expert": "Tal med en ekspert",
-    "div-solutions": "Løsninger"
-  },
   "meta": {
     "aria-label": "Primær"
   },
+  "main": {
+    "div-solutions": "Løsninger",
+    "a-platform": "Platform",
+    "a-implementation": "Implementering",
+    "a-about-us": "Om os",
+    "a-talk-to-an-expert": "Tal med en ekspert",
+    "a-book-a-demo": "Book en demo"
+  },
   "mm-solutions": {
-    "div-billing-automation": "Faktureringsautomatisering",
-    "div-configure-price-and-qu": "Konfigurer, prissæt og tilbudsgiv med præcision.",
     "div-cpq": "CPQ",
-    "div-event-driven-workflow-": "Hændelsesdrevet workflowautomatisering.",
-    "div-flexible-monetization-": "Fleksibel monetisering til B2B SaaS.",
+    "div-configure-price-and-qu": "Konfigurer, prissæt og tilbudsgiv med præcision.",
+    "div-subscription-managemen": "Abonnementsstyring",
     "div-lifecycle-renewals-and": "Livscyklus, fornyelser og forbrugsanalyse.",
-    "div-pipeline-playbooks-and": "Pipeline, playbooks og godkendelser.",
+    "div-billing-automation": "Faktureringsautomatisering",
+    "div-flexible-monetization-": "Fleksibel monetisering til B2B SaaS.",
     "div-process-optimisation": "Procesoptimering",
+    "div-event-driven-workflow-": "Hændelsesdrevet workflowautomatisering.",
     "div-sales": "Salg",
-    "div-subscription-managemen": "Abonnementsstyring"
+    "div-pipeline-playbooks-and": "Pipeline, playbooks og godkendelser."
   }
 }

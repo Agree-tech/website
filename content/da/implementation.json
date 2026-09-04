@@ -1,45 +1,45 @@
 {
-  "cta-band-dark": {
-    "a-schedule-a-call": "Book et møde",
-    "a-see-the-platform": "Se platformen",
-    "div-ready-when-you-are": "KLAR, NÅR DU ER",
-    "h2-get-started-today": "Kom godt i gang i dag.",
-    "p-a-30-minute-conversati": "En samtale på 30 minutter er alt, der skal til for at afklare den rigtige vej."
-  },
   "meta": {
-    "description": "Sådan implementerer Agree Technologies ATSuite — en struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering.",
-    "og-description": "En struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering.",
-    "og-title": "ATSuite implementering & onboarding",
     "title": "ATSuite implementering & onboarding · Agree Technologies",
-    "twitter-description": "En struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering.",
-    "twitter-title": "ATSuite implementering & onboarding"
+    "description": "Sådan implementerer Agree Technologies ATSuite — en struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering.",
+    "og-title": "ATSuite implementering & onboarding",
+    "og-description": "En struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering.",
+    "twitter-title": "ATSuite implementering & onboarding",
+    "twitter-description": "En struktureret onboarding, der trygt får økonomi- og forretningsteams i drift på CPQ og fakturering."
   },
   "page-hero": {
-    "a-schedule-a-call": "Book et møde",
     "div-implementation": "IMPLEMENTERING",
     "h1-seamless-transition-ze": "Gnidningsfri overgang. Ingen raketvidenskab.",
-    "p-implementing-a-new-cpq": "Det kan virke uoverskueligt at implementere en ny CPQ- og faktureringsplatform. Vi gør overgangen fra dit nuværende system til vores stressfri — højere effektivitet, strømlinede processer og en mere profitabel forretning i den anden ende."
+    "p-implementing-a-new-cpq": "Det kan virke uoverskueligt at implementere en ny CPQ- og faktureringsplatform. Vi gør overgangen fra dit nuværende system til vores stressfri — højere effektivitet, strømlinede processer og en mere profitabel forretning i den anden ende.",
+    "a-schedule-a-call": "Book et møde"
   },
   "split-section": {
     "div-our-approach": "VORES TILGANG",
     "h2-four-steps-one-outcome": "Fire trin. Ét resultat.",
-    "h3-discovery-workshops": "Afdækkende workshops",
-    "h3-implementation": "Implementering",
-    "h3-operations": "Drift",
     "h3-proof-of-concept": "Proof of Concept",
+    "p-we-start-by-demonstrat": "Vi starter med at demonstrere platformens potentiale med et skræddersyet POC, så I selv ser, hvordan ATSuite dækker jeres behov.",
+    "h3-discovery-workshops": "Afdækkende workshops",
     "p-in-depth-workshops-to": "Dybdegående workshops, der afdækker jeres nuværende processer og systematisk identificerer muligheder for optimering.",
-    "p-ongoing-support-and-mo": "Løbende support og overvågning sikrer, at jeres nye system kører optimalt og bliver ved med at skabe værdi.",
+    "h3-implementation": "Implementering",
     "p-our-team-works-closely": "Vores team arbejder tæt sammen med jer om en glidende, effektiv implementering — med minimal forstyrrelse af driften.",
-    "p-we-start-by-demonstrat": "Vi starter med at demonstrere platformens potentiale med et skræddersyet POC, så I selv ser, hvordan ATSuite dækker jeres behov."
+    "h3-operations": "Drift",
+    "p-ongoing-support-and-mo": "Løbende support og overvågning sikrer, at jeres nye system kører optimalt og bliver ved med at skabe værdi."
   },
   "split-section-alt": {
     "div-what-you-get": "DET FÅR I",
     "h2-a-partner-not-just": "En partner, ikke bare en leverandør.",
+    "strong-tailored-solution-desi": "Skræddersyet løsningsdesign",
     "p-our-experts-assess-you": "Vores eksperter vurderer jeres specifikke behov, mål og udfordringer og udarbejder en skræddersyet implementeringsplan.",
-    "p-reduced-implementation": "Kortere implementeringstid og lavere omkostninger kombineret med højere produktivitet — resultater, der kan ses i den daglige drift.",
+    "strong-seamless-transition-wi": "Gnidningsfri overgang med support",
     "p-we-prioritise-ongoing-": "Vi prioriterer løbende kommunikation og praktisk support gennem implementeringen for en gnidningsfri overgang.",
     "strong-measurable-outcomes": "Målbare resultater",
-    "strong-seamless-transition-wi": "Gnidningsfri overgang med support",
-    "strong-tailored-solution-desi": "Skræddersyet løsningsdesign"
+    "p-reduced-implementation": "Kortere implementeringstid og lavere omkostninger kombineret med højere produktivitet — resultater, der kan ses i den daglige drift."
+  },
+  "cta-band-dark": {
+    "div-ready-when-you-are": "KLAR, NÅR DU ER",
+    "h2-get-started-today": "Kom godt i gang i dag.",
+    "p-a-30-minute-conversati": "En samtale på 30 minutter er alt, der skal til for at afklare den rigtige vej.",
+    "a-schedule-a-call": "Book et møde",
+    "a-see-the-platform": "Se platformen"
   }
 }

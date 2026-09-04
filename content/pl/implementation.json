@@ -1,45 +1,45 @@
 {
-  "cta-band-dark": {
-    "a-schedule-a-call": "Umów rozmowę",
-    "a-see-the-platform": "Zobacz platformę",
-    "div-ready-when-you-are": "GOTOWI, KIEDY TY BĘDZIESZ",
-    "h2-get-started-today": "Zacznij już dziś.",
-    "p-a-30-minute-conversati": "Wystarczy 30 minut rozmowy, aby wyznaczyć właściwą drogę."
-  },
   "meta": {
-    "description": "Jak Agree Technologies wdraża ATSuite — uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe pewnie uruchamiają CPQ i fakturowanie.",
-    "og-description": "Uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe pewnie uruchamiają CPQ i fakturowanie.",
-    "og-title": "Wdrożenie i onboarding ATSuite",
     "title": "Wdrożenie i onboarding ATSuite · Agree Technologies",
-    "twitter-description": "Uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe uruchamiają CPQ i fakturowanie.",
-    "twitter-title": "Wdrożenie i onboarding ATSuite"
+    "description": "Jak Agree Technologies wdraża ATSuite — uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe pewnie uruchamiają CPQ i fakturowanie.",
+    "og-title": "Wdrożenie i onboarding ATSuite",
+    "og-description": "Uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe pewnie uruchamiają CPQ i fakturowanie.",
+    "twitter-title": "Wdrożenie i onboarding ATSuite",
+    "twitter-description": "Uporządkowane podejście do onboardingu, dzięki któremu zespoły finansowe i handlowe uruchamiają CPQ i fakturowanie."
   },
   "page-hero": {
-    "a-schedule-a-call": "Umów rozmowę",
     "div-implementation": "WDROŻENIE",
     "h1-seamless-transition-ze": "Płynne przejście. Zero filozofii.",
-    "p-implementing-a-new-cpq": "Wdrożenie nowej platformy CPQ i fakturowania potrafi onieśmielać. Sprawiamy, że przejście z obecnego systemu na nasz przebiega bezstresowo — z większą efektywnością, uproszczonymi procesami i bardziej rentownym biznesem na końcu."
+    "p-implementing-a-new-cpq": "Wdrożenie nowej platformy CPQ i fakturowania potrafi onieśmielać. Sprawiamy, że przejście z obecnego systemu na nasz przebiega bezstresowo — z większą efektywnością, uproszczonymi procesami i bardziej rentownym biznesem na końcu.",
+    "a-schedule-a-call": "Umów rozmowę"
   },
   "split-section": {
     "div-our-approach": "NASZE PODEJŚCIE",
     "h2-four-steps-one-outcome": "Cztery kroki. Jeden efekt.",
-    "h3-discovery-workshops": "Warsztaty rozpoznawcze",
-    "h3-implementation": "Wdrożenie",
-    "h3-operations": "Utrzymanie",
     "h3-proof-of-concept": "Proof of Concept",
+    "p-we-start-by-demonstrat": "Zaczynamy od pokazania możliwości platformy w dopasowanym POC, żebyście z pierwszej ręki zobaczyli, jak ATSuite odpowiada na Wasze potrzeby.",
+    "h3-discovery-workshops": "Warsztaty rozpoznawcze",
     "p-in-depth-workshops-to": "Pogłębione warsztaty, które pozwalają zrozumieć obecne procesy i rzetelnie wskazać możliwości optymalizacji.",
-    "p-ongoing-support-and-mo": "Stałe wsparcie i monitoring sprawiają, że nowy system działa z pełną wydajnością i nieprzerwanie dostarcza wartość.",
+    "h3-implementation": "Wdrożenie",
     "p-our-team-works-closely": "Nasz zespół pracuje z Wami blisko, aby wdrożenie przebiegło płynnie i sprawnie — przy minimalnych zakłóceniach działalności.",
-    "p-we-start-by-demonstrat": "Zaczynamy od pokazania możliwości platformy w dopasowanym POC, żebyście z pierwszej ręki zobaczyli, jak ATSuite odpowiada na Wasze potrzeby."
+    "h3-operations": "Utrzymanie",
+    "p-ongoing-support-and-mo": "Stałe wsparcie i monitoring sprawiają, że nowy system działa z pełną wydajnością i nieprzerwanie dostarcza wartość."
   },
   "split-section-alt": {
     "div-what-you-get": "CO OTRZYMUJESZ",
     "h2-a-partner-not-just": "Partner, a nie tylko dostawca.",
+    "strong-tailored-solution-desi": "Dopasowany projekt rozwiązania",
     "p-our-experts-assess-you": "Nasi eksperci analizują Wasze potrzeby, cele i wyzwania, aby przygotować dopasowany plan wdrożenia.",
-    "p-reduced-implementation": "Krótszy czas i niższy koszt wdrożenia w parze z wyższą produktywnością — efekty widoczne w codziennej działalności.",
+    "strong-seamless-transition-wi": "Płynne przejście ze wsparciem",
     "p-we-prioritise-ongoing-": "Stawiamy na stałą komunikację i praktyczne wsparcie w trakcie wdrożenia, aby przejście było płynne.",
     "strong-measurable-outcomes": "Mierzalne efekty",
-    "strong-seamless-transition-wi": "Płynne przejście ze wsparciem",
-    "strong-tailored-solution-desi": "Dopasowany projekt rozwiązania"
+    "p-reduced-implementation": "Krótszy czas i niższy koszt wdrożenia w parze z wyższą produktywnością — efekty widoczne w codziennej działalności."
+  },
+  "cta-band-dark": {
+    "div-ready-when-you-are": "GOTOWI, KIEDY TY BĘDZIESZ",
+    "h2-get-started-today": "Zacznij już dziś.",
+    "p-a-30-minute-conversati": "Wystarczy 30 minut rozmowy, aby wyznaczyć właściwą drogę.",
+    "a-schedule-a-call": "Umów rozmowę",
+    "a-see-the-platform": "Zobacz platformę"
   }
 }
