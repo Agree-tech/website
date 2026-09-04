@@ -8,6 +8,7 @@
   "scripts": {
     "build": "node build.js",
     "verify": "node tools/verify-baseline.js",
+    "sort": "node tools/sort-content.js",
     "dev": "node build.js && npx --yes http-server dist -p 8000 -c-1",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
   }

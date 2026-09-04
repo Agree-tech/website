@@ -399,6 +399,7 @@ function writeAdmin() {
 
   const { yaml, fieldCount } = buildConfig({
     contentDir: CONTENT,
+    srcDir: SRC,
     locales: LOCALES,
     defaultLocaleOnly: DEFAULT_LOCALE_ONLY,
     siteUrl: process.env.URL || SITE,
