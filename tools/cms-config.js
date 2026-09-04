@@ -237,7 +237,7 @@ function yamlStr(s) {
   return '"' + String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\s+/g, ' ') + '"';
 }
 
-function buildConfig({ contentDir, srcDir, locales, defaultLocaleOnly, siteUrl, branch }) {
+function buildConfig({ contentDir, srcDir, locales, defaultLocaleOnly, siteUrl, branch, localBackend }) {
   const order = templateOrder(srcDir);
   const pages = fs
     .readdirSync(path.join(contentDir, 'en'))
@@ -275,6 +275,12 @@ function buildConfig({ contentDir, srcDir, locales, defaultLocaleOnly, siteUrl, 
   //
   L.push('  gateway_url: /.netlify/git/github');
   L.push('');
+  // Local builds only (build.js --local-cms): Decap talks to `npx decap-server`
+  // on this machine instead of the gateway. Netlify never sets it.
+  if (localBackend) {
+    L.push('local_backend: true');
+    L.push('');
+  }
   L.push('site_url: ' + yamlStr(siteUrl));
   L.push('display_url: ' + yamlStr(siteUrl));
   L.push('logo_url: "/assets/logo-black.png"');

@@ -18,6 +18,7 @@
 const fs = require('fs');
 const path = require('path');
 const { buildConfig } = require('./tools/cms-config.js');
+const { localize } = require('./tools/localize.js');
 
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
@@ -60,6 +61,14 @@ const ASSET_REFS = ['styles.css', 'shared.css', 'subpage.css', 'shared.js'];
  * makes it live.
  */
 const CMS_BRANCH = 'draft';
+
+/**
+ * `node build.js --local-cms` puts local_backend into the CMS config, so the
+ * editor at /admin/ can be opened against this checkout with `npx decap-server`
+ * running, without Netlify Identity. Never part of a deploy: Netlify runs the
+ * plain build.
+ */
+const LOCAL_CMS = process.argv.includes('--local-cms');
 
 /**
  * Netlify Identity mails an invite to the site root with the token in the URL
@@ -116,62 +125,23 @@ function renderNav(navTemplate, { onDark }, pageFile, locale) {
   return nav;
 }
 
-function applyEmphasis(value, spec) {
-  // spec is `span.accent` for a classed span, or `b` for a bare tag.
-  const [tag, cls] = spec.split('.');
-  const wrap = cls
-    ? (inner) => `<${tag} class="${cls}">${inner}</${tag}>`
-    : (inner) => `<${tag}>${inner}</${tag}>`;
-  return value.replace(/\*([^*]+)\*/g, (_, inner) => wrap(inner));
-}
-
-/**
- * Swap {{i18n:key}} placeholders for their strings.
- *
- * A key missing from a target locale falls back to English and is counted, so
- * a half-translated locale is still a working page — never an empty element or
- * a raw key on screen. A key missing from English has nothing to fall back to:
- * the raw placeholder stays in place, and build() exits non-zero once the
- * summary is printed, so a deploy fails rather than shipping it.
- */
-function localize(html, strings, fallback, missing) {
-  return html.replace(/\{\{i18n:([^}@]+)(?:@([^}]+))?\}\}/g, (raw, key, cls) => {
-    let value;
-    if (key in strings) value = strings[key];
-    else if (fallback && key in fallback) {
-      missing.add(key);
-      value = fallback[key];
-    } else {
-      missing.add(key);
-      return raw;
-    }
-
-    if (value.includes('<')) {
-      throw new Error(
-        `content value for "${key}" contains markup; values must be plain text`
-      );
-    }
-
-    // Content is stored decoded so editors never see entities. Re-escape here.
-    // `"` is included because 61 placeholders sit inside attributes (meta
-    // content, alt, placeholder, aria-label): an unescaped quote there closes
-    // the attribute and whatever follows becomes markup. &quot; renders as a
-    // plain quote in text too, so one rule covers both contexts.
-    // Emphasis is applied afterwards, since that step introduces real markup.
-    const escaped = value
-      .replace(/&/g, '&amp;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-
-    return cls ? applyEmphasis(escaped, cls) : escaped;
-  });
-}
-
 /** The canonical path for a page within a locale, as it appears in a URL. */
 function urlPath(locale, pageFile) {
   return pageFile === 'index.html'
     ? `/${locale.code}/`
     : `/${locale.code}/${pageFile}`;
+}
+
+/** Assets live at the dist root and are shared, so make their refs absolute. */
+function absolutizeAssets(html) {
+  let out = html;
+  for (const ref of ASSET_REFS) {
+    out = out.split(`href="${ref}"`).join(`href="/${ref}"`);
+    out = out.split(`src="${ref}"`).join(`src="/${ref}"`);
+  }
+  out = out.split('src="assets/').join('src="/assets/');
+  out = out.split('href="assets/').join('href="/assets/');
+  return out;
 }
 
 /**
@@ -188,13 +158,7 @@ function localizeUrls(html, locale, pageFile, localesForPage, indexable) {
     );
   }
 
-  // Assets live at the dist root and are shared, so make their refs absolute.
-  for (const ref of ASSET_REFS) {
-    out = out.split(`href="${ref}"`).join(`href="/${ref}"`);
-    out = out.split(`src="${ref}"`).join(`src="/${ref}"`);
-  }
-  out = out.split('src="assets/').join('src="/assets/');
-  out = out.split('href="assets/').join('href="/assets/');
+  out = absolutizeAssets(out);
 
   out = out.replace(/<html lang="[^"]*">/, `<html lang="${locale.lang}">`);
 
@@ -230,7 +194,8 @@ function localizeUrls(html, locale, pageFile, localesForPage, indexable) {
   return out;
 }
 
-function render(html, partials, pageFile, locale, strings, fallback, missing) {
+/** The page template with nav, footer and JSON-LD inlined; placeholders intact. */
+function compose(html, partials, pageFile, locale) {
   const config = readPageConfig(html);
 
   let out = html;
@@ -240,9 +205,11 @@ function render(html, partials, pageFile, locale, strings, fallback, missing) {
     renderNav(partials.nav, config, pageFile, locale)
   );
   out = out.replace('<div id="site-foot"></div>', partials.foot);
-  out = localize(out, strings, fallback, missing);
-
   return out;
+}
+
+function render(html, partials, pageFile, locale, strings, fallback, missing) {
+  return localize(compose(html, partials, pageFile, locale), strings, fallback, missing);
 }
 
 function listPages() {
@@ -391,11 +358,40 @@ function writeStagingHeaders() {
  * field. The config is generated from content/en/ on each build so that adding
  * a key to a template is all it takes for the key to appear in the editor —
  * there is no second list to keep in step.
+ *
+ * Beside it goes what the live preview (admin/preview.js) needs: every page
+ * template with nav, footer and JSON-LD already inlined and asset paths made
+ * absolute, but placeholders left in place, plus each locale's strings and the
+ * list of entries to register for. The preview substitutes the entry being
+ * edited into its template in the browser with the same localize() this build
+ * uses, so the pane shows the page as it will deploy.
  */
-function writeAdmin() {
+function writeAdmin(partials, content) {
   const outDir = path.join(DIST, 'admin');
-  fs.mkdirSync(outDir, { recursive: true });
+  const previewDir = path.join(outDir, 'preview');
+  fs.mkdirSync(previewDir, { recursive: true });
   fs.copyFileSync(path.join(ROOT, 'admin', 'index.html'), path.join(outDir, 'index.html'));
+  fs.copyFileSync(path.join(ROOT, 'admin', 'preview.js'), path.join(outDir, 'preview.js'));
+  fs.copyFileSync(path.join(ROOT, 'tools', 'localize.js'), path.join(outDir, 'localize.js'));
+
+  const def = LOCALES.find((l) => l.isDefault);
+  const pages = listPages();
+  for (const page of pages) {
+    const html = fs.readFileSync(path.join(SRC, page), 'utf8');
+    fs.writeFileSync(
+      path.join(previewDir, page),
+      absolutizeAssets(compose(html, partials, page, def)),
+      'utf8'
+    );
+  }
+  fs.writeFileSync(
+    path.join(previewDir, 'data.json'),
+    JSON.stringify({
+      pages: pages.map((p) => p.replace(/\.html$/, '')).concat(Object.keys(partials)),
+      strings: content,
+    }),
+    'utf8'
+  );
 
   const { yaml, fieldCount } = buildConfig({
     contentDir: CONTENT,
@@ -404,6 +400,7 @@ function writeAdmin() {
     defaultLocaleOnly: DEFAULT_LOCALE_ONLY,
     siteUrl: process.env.URL || SITE,
     branch: CMS_BRANCH,
+    localBackend: LOCAL_CMS,
   });
   fs.writeFileSync(path.join(outDir, 'config.yml'), yaml, 'utf8');
   return fieldCount;
@@ -511,7 +508,7 @@ function build() {
   writeRootRedirect();
   const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
-  const cmsFields = writeAdmin();
+  const cmsFields = writeAdmin(partials, content);
 
   for (const c of coverage) {
     const total = c.locale.translatable;
