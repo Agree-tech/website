@@ -5,15 +5,16 @@
   "license": "ISC",
   "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-globals.mjs",
+    "generate": "node scripts/generate-globals.mjs && node scripts/generate-blocks.mjs",
     "predev": "npm run generate",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev -p 3001",
     "build": "npm run generate && cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start -p 3001",
-    "seed": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" node --env-file=.env scripts/seed.ts",
+    "seed": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" node --env-file=.env scripts/seed.ts && npm run seed:pages",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
-    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap"
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "seed:pages": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" node --env-file=.env scripts/seed-pages.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.88.0",

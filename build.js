@@ -19,7 +19,12 @@ const fs = require('fs');
 const path = require('path');
 const { buildConfig } = require('./tools/cms-config.js');
 const { localize } = require('./tools/localize.js');
-const { fromDisk, fromPayload, fetchMedia } = require('./tools/content-source.js');
+const {
+  fromDisk,
+  fromPayload,
+  fetchMedia,
+  layoutFromPayload,
+} = require('./tools/content-source.js');
 const { render: renderComponent } = require('./tools/components.js');
 
 const ROOT = __dirname;
@@ -241,20 +246,22 @@ function render(html, partials, pageFile, locale, strings, fallback, missing) {
 }
 
 /**
- * A page's template, from src/ or reassembled from its blocks.
+ * A page's template, from src/ or composed from its sections.
  *
- * The block path reads the order from content/layout.json, which is the file an
- * editor's reordering would write. Everything downstream — placeholder
- * substitution, nav, footer, hreflang — is unchanged, because a reassembled
- * page is the same string the template was.
+ * The composed path reads the order from content/layout.json, or from the CMS
+ * when --from-payload is given, which is where an editor's reordering lands.
+ * Everything downstream — placeholder substitution, nav, footer, hreflang — is
+ * unchanged, because a composed page is the same string the template was.
+ *
+ * The layout is fetched once and passed in rather than read per page: it is one
+ * request for the whole site.
  */
-function loadTemplate(pageFile) {
+function loadTemplate(pageFile, layout) {
   if (!FROM_BLOCKS) return fs.readFileSync(path.join(SRC, pageFile), 'utf8');
 
-  const page = pageFile.replace(/.html$/, '');
-  const layout = JSON.parse(fs.readFileSync(path.join(CONTENT, 'layout.json'), 'utf8'));
+  const page = pageFile.replace(/\.html$/, '');
   const order = layout[page];
-  if (!order) throw new Error(`no layout for "${page}" — run node tools/extract-blocks.js`);
+  if (!order) throw new Error(`no layout for "${page}"`);
 
   /**
    * An entry is either a block name — markup that still lives only on this page
@@ -414,7 +421,7 @@ function writeStagingHeaders() {
  * edited into its template in the browser with the same localize() this build
  * uses, so the pane shows the page as it will deploy.
  */
-function writeAdmin(partials, content) {
+function writeAdmin(partials, content, layout) {
   const outDir = path.join(DIST, 'admin');
   const previewDir = path.join(outDir, 'preview');
   fs.mkdirSync(previewDir, { recursive: true });
@@ -425,7 +432,7 @@ function writeAdmin(partials, content) {
   const def = LOCALES.find((l) => l.isDefault);
   const pages = listPages();
   for (const page of pages) {
-    const html = loadTemplate(page);
+    const html = loadTemplate(page, layout);
     fs.writeFileSync(
       path.join(previewDir, page),
       absolutizeAssets(compose(html, partials, page, def)),
@@ -467,6 +474,15 @@ async function build() {
   };
 
   const pages = listPages();
+
+  // Structure comes from the same side as the strings when --from-payload is
+  // given, so a build is a consistent snapshot of one source rather than a mix.
+  const layout = FROM_BLOCKS
+    ? FROM_PAYLOAD
+      ? await layoutFromPayload(PAYLOAD_URL)
+      : JSON.parse(fs.readFileSync(path.join(CONTENT, 'layout.json'), 'utf8'))
+    : {};
+
   const content = {};
   for (const locale of LOCALES) content[locale.code] = await loadContent(locale.code);
   const en = content.en;
@@ -510,7 +526,7 @@ async function build() {
         ? indexable.filter((l) => l.isDefault)
         : indexable;
 
-      const html = loadTemplate(page);
+      const html = loadTemplate(page, layout);
       let out = render(
         html,
         partials,
@@ -562,7 +578,7 @@ async function build() {
   writeRootRedirect();
   const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
-  const cmsFields = writeAdmin(partials, content);
+  const cmsFields = writeAdmin(partials, content, layout);
 
   for (const c of coverage) {
     const total = c.locale.translatable;

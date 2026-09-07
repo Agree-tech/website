@@ -2,8 +2,10 @@
 /**
  * verify-parity.js — the acceptance gate for the move to Payload.
  *
- * Builds the site twice, once from content/*.json and once from the CMS, and
- * requires the two dist/ trees to be identical byte for byte.
+ * Builds the site twice — once from content/ on disk, once from the CMS — and
+ * requires the two dist/ trees to be identical byte for byte. Both the strings
+ * and the page structure come from the side under test, so this covers the
+ * whole path an editor touches.
  *
  * That is the whole argument for the migration being safe. The templates, the
  * locale fallback, the coverage thresholds and the SEO output are untouched by
@@ -63,16 +65,16 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('building from content/*.json ...');
-  build([]);
+  console.log('building from content/ (strings and layout on disk) ...');
+  build(['--from-blocks']);
   const fromDisk = hashTree(DIST);
 
   // Kept out of the build's way so the second build starts from a clean dist/.
   const stash = fs.mkdtempSync(path.join(os.tmpdir(), 'parity-'));
   fs.cpSync(DIST, stash, { recursive: true });
 
-  console.log(`building from the CMS at ${PAYLOAD_URL} ...`);
-  build(['--from-payload']);
+  console.log(`building from the CMS at ${PAYLOAD_URL} (strings and layout) ...`);
+  build(['--from-blocks', '--from-payload']);
   const fromCms = hashTree(DIST);
 
   fs.rmSync(stash, { recursive: true, force: true });

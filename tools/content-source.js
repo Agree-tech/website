@@ -186,3 +186,50 @@ async function fetchMedia(baseUrl, destDir, existing) {
 }
 
 module.exports.fetchMedia = fetchMedia;
+
+/**
+ * Page structure from the CMS: which sections a page has, in what order.
+ *
+ * The shape returned matches content/layout.json exactly, so build.js cannot
+ * tell which side it came from — the same reason fromDisk and fromPayload exist
+ * for the strings. Payload adds its own bookkeeping to every block (id,
+ * blockType, blockName) and flattens props to the top level; this puts them back
+ * into the component/props/slots shape the renderer expects.
+ */
+const BLOCK_META = new Set(['id', 'blockType', 'blockName', 'section', 'lead', 'slots']);
+
+function toInstance(block) {
+  const props = {};
+  for (const [key, value] of Object.entries(block)) {
+    if (BLOCK_META.has(key)) continue;
+    // An array field comes back as rows carrying their own slots and props.
+    props[key] = Array.isArray(value)
+      ? value.map((row) => {
+          const itemProps = {};
+          for (const [k, v] of Object.entries(row)) {
+            if (BLOCK_META.has(k)) continue;
+            itemProps[k] = v;
+          }
+          return { props: itemProps, slots: row.slots || {} };
+        })
+      : value;
+  }
+
+  const instance = { component: block.blockType, section: block.section, props, slots: block.slots || {} };
+  // Absent rather than empty: the lead is the whitespace and comment before a
+  // section, and an empty one must not become the string "undefined".
+  if (block.lead) instance.lead = block.lead;
+  return instance;
+}
+
+async function layoutFromPayload(baseUrl) {
+  const res = await fetch(`${baseUrl}/api/pages?limit=100&depth=0`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} listing pages`);
+
+  const { docs = [] } = await res.json();
+  const layout = {};
+  for (const doc of docs) layout[doc.name] = (doc.layout || []).map(toInstance);
+  return layout;
+}
+
+module.exports.layoutFromPayload = layoutFromPayload;

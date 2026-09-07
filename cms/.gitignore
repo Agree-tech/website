@@ -14,3 +14,5 @@ AGENTS.md
 CLAUDE.md
 
 media/
+
+src/blocks.generated.ts

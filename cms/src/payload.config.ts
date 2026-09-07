@@ -6,6 +6,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 
 import { Media } from './collections/Media'
+import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { pageGlobals } from './globals.generated'
 
@@ -21,7 +22,7 @@ export default buildConfig({
     },
   },
 
-  collections: [Users, Media],
+  collections: [Users, Media, Pages],
 
   /**
    * One global per page, generated from the site's own content model. Globals
