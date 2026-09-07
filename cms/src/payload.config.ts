@@ -14,6 +14,13 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  /**
+   * Absolute, because live preview compares the frame URL against the origin of
+   * the messages it receives — a relative URL never matches and the handshake
+   * silently never completes.
+   */
+  serverURL: process.env.PAYLOAD_PUBLIC_URL || 'http://localhost:3001',
+
   admin: {
     user: Users.slug,
     importMap: { baseDir: path.resolve(dirname) },

@@ -27,9 +27,29 @@ export const Pages: CollectionConfig = {
     useAsTitle: 'label',
     defaultColumns: ['label', 'name', 'updatedAt'],
     /**
-     * Opens the page rendered by the real build, in the locale being edited.
-     * Save first: this reads the database, not the unsaved form.
+     * Side by side with the form, redrawn as you type.
+     *
+     * Payload posts the unsaved document into the frame; the page sends it back
+     * to the same route, which renders it with the build. So the preview shows
+     * work that has not been saved, and still shows it drawn by the code that
+     * deploys it — there is no second renderer, and nothing that can disagree
+     * with the site.
      */
+    livePreview: {
+      // Absolute: Payload only accepts messages from the frame once
+      // `url.startsWith(event.origin)`, and a path never starts with an origin.
+      url: ({ data, locale }) =>
+        `${process.env.PAYLOAD_PUBLIC_URL || 'http://localhost:3001'}/preview` +
+        `?page=${encodeURIComponent(String(data?.name ?? 'index'))}` +
+        `&locale=${encodeURIComponent(typeof locale === 'string' ? locale : locale?.code || 'en')}`,
+      breakpoints: [
+        { name: 'mobile', label: 'Mobile', width: 390, height: 844 },
+        { name: 'tablet', label: 'Tablet', width: 834, height: 1112 },
+        { name: 'desktop', label: 'Desktop', width: 1440, height: 900 },
+      ],
+    },
+
+    /** The same page, in a tab of its own. Reads what is saved. */
     preview: (doc, { locale }) =>
       `/preview?page=${encodeURIComponent(String(doc?.name ?? 'index'))}&locale=${encodeURIComponent(locale || 'en')}`,
   },

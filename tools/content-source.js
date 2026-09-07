@@ -365,3 +365,27 @@ async function textFromPages(baseUrl, code) {
 }
 
 module.exports.textFromPages = textFromPages;
+
+/**
+ * A page's layout and text taken from a Payload document held in the admin —
+ * unsaved, as the editor is typing.
+ *
+ * Live preview posts the form's current state to the preview frame, which sends
+ * it here rather than rendering it itself. The same build then draws the page
+ * from it. That is the whole trick: the editor sees changes that have not been
+ * saved, and still sees them drawn by the code that will deploy them, because
+ * nothing about the renderer changed — only where this one page's data came from.
+ */
+function fromLiveDoc(doc, code) {
+  const page = doc.name;
+  const blocks = (doc.layout || []).map(toInstance);
+
+  const text = {};
+  for (const block of doc.layout || []) collectBlockText(page, block, text);
+
+  return { page, layout: blocks, text };
+}
+
+module.exports.fromLiveDoc = fromLiveDoc;
+module.exports.toInstance = toInstance;
+module.exports.collectBlockText = collectBlockText;

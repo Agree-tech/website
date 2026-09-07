@@ -24,6 +24,7 @@ const {
   fromPayload,
   fetchMedia,
   layoutFromPayload,
+  fromLiveDoc,
 } = require('./tools/content-source.js');
 const { render: renderComponent } = require('./tools/components.js');
 
@@ -620,7 +621,7 @@ async function build() {
  *
  * `dist/` is untouched: this returns a string.
  */
-async function renderOne({ page, locale: code }) {
+async function renderOne({ page, locale: code, doc }) {
   const pageFile = page.endsWith('.html') ? page : `${page}.html`;
   const locale = LOCALES.find((l) => l.code === code);
   if (!locale) throw new Error(`unknown locale "${code}"`);
@@ -638,8 +639,52 @@ async function renderOne({ page, locale: code }) {
       : JSON.parse(fs.readFileSync(path.join(CONTENT, 'layout.json'), 'utf8'))
     : {};
 
+  /**
+   * A document handed in from the admin replaces this page's saved layout and
+   * text, and nothing else.
+   *
+   * Live preview posts what is in the form, not what is in the database, so the
+   * editor sees a heading they have typed but not saved. Only this page is
+   * overridden: every other page's content still comes from the database, which
+   * is what the nav, the footer and the hreflang set are drawn from.
+   *
+   * The overlay is applied after the saved content, so a field cleared in the
+   * form falls back to English exactly as a cleared field does on the site.
+   */
+  const live = doc && doc.name === page ? fromLiveDoc(doc, code) : null;
+  if (live) layout[page] = live.layout;
+
   const content = {};
   for (const l of LOCALES) content[l.code] = await loadContent(l.code, layout);
+
+  if (live) {
+    /**
+     * Only the keys these blocks own are replaced. The page's title, its social
+     * description and the text inside its hand-drawn diagrams are globals, not
+     * block fields, so the form does not carry them — dropping every key that
+     * starts with this page's name would blank them.
+     *
+     * Within that set, a key the form no longer has is removed rather than left
+     * at its saved value, so clearing a field in the admin shows the fallback
+     * the site would show.
+     */
+    const owned = new Set();
+    for (const block of live.layout) {
+      const add = (slots) => {
+        for (const [slot, value] of Object.entries(slots || {})) {
+          const v = value || slot;
+          owned.add(`${page}.${v.includes('.') ? v : `${block.section}.${v}`}`);
+        }
+      };
+      add(block.slots);
+      for (const value of Object.values(block.props || {})) {
+        if (!Array.isArray(value)) continue;
+        for (const row of value) add(row.slots);
+      }
+    }
+    for (const key of owned) if (!(key in live.text)) delete content[code][key];
+    Object.assign(content[code], live.text);
+  }
   const en = content.en;
 
   /**
