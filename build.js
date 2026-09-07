@@ -609,7 +609,74 @@ async function build() {
   }
 }
 
-build().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+/**
+ * One page, rendered exactly as the build renders it — for the CMS preview.
+ *
+ * It goes through loadTemplate, render and localizeUrls, the same three steps
+ * and the same order as the loop above, because a preview produced by a second
+ * renderer is a preview that can disagree with the deployed page. The cost is
+ * that it loads the whole site's content to render one page; that is the price
+ * of the guarantee, and a preview is not a hot path.
+ *
+ * `dist/` is untouched: this returns a string.
+ */
+async function renderOne({ page, locale: code }) {
+  const pageFile = page.endsWith('.html') ? page : `${page}.html`;
+  const locale = LOCALES.find((l) => l.code === code);
+  if (!locale) throw new Error(`unknown locale "${code}"`);
+  if (!listPages().includes(pageFile)) throw new Error(`unknown page "${pageFile}"`);
+
+  const partials = {
+    nav: loadPartial('_nav.html'),
+    foot: loadPartial('_foot.html'),
+    jsonld: loadPartial('_jsonld.html'),
+  };
+
+  const layout = FROM_BLOCKS
+    ? FROM_PAYLOAD
+      ? await layoutFromPayload(PAYLOAD_URL)
+      : JSON.parse(fs.readFileSync(path.join(CONTENT, 'layout.json'), 'utf8'))
+    : {};
+
+  const content = {};
+  for (const l of LOCALES) content[l.code] = await loadContent(l.code, layout);
+  const en = content.en;
+
+  /**
+   * The same coverage arithmetic the build does, because it decides the hreflang
+   * set and the robots tag. Approximating it here — assuming every locale is
+   * indexable, say — gives index-print a Danish alternate it does not have, and
+   * the preview quietly stops being the page that deploys.
+   */
+  const unreachable = new Set(
+    Object.keys(en).filter((k) => DEFAULT_LOCALE_ONLY.has(`${k.split('.')[0]}.html`))
+  );
+  const totalKeys = Object.keys(en).length;
+  for (const l of LOCALES) {
+    const translatable = l.isDefault ? totalKeys : totalKeys - unreachable.size;
+    const provided = Object.keys(content[l.code]).filter((k) => k in en).length;
+    l.indexable = l.isDefault || (translatable > 0 && provided / translatable >= MIN_INDEXABLE_COVERAGE);
+  }
+  const indexable = LOCALES.filter((l) => l.indexable);
+  const localesForPage = DEFAULT_LOCALE_ONLY.has(pageFile)
+    ? indexable.filter((l) => l.isDefault)
+    : indexable;
+
+  const html = loadTemplate(pageFile, layout);
+  const strings = content[code];
+  let out = render(html, partials, pageFile, locale, strings, locale.isDefault ? null : en, new Set());
+  out = localizeUrls(out, locale, pageFile, localesForPage, locale.indexable);
+  if (pageFile === 'index.html') out = out.replace('</head>', INVITE_HOP + '\r\n</head>');
+  return out;
+}
+
+module.exports = { renderOne, LOCALES, listPages };
+
+// Only when run as a script. Requiring this file — the preview does — must not
+// rebuild the site as a side effect.
+if (require.main === module) {
+  build().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
