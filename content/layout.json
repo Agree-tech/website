@@ -307,7 +307,126 @@
       }
     },
     "split-section-alt",
-    "split-section-crm-integrations",
+    {
+      "component": "integration-grid",
+      "section": "crm-integrations",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "idAttr": " id=\"crm-integrations\"",
+        "dotStyle": "",
+        "accent": "acc-blue",
+        "bullet": "<span class=\"dot\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l4 4L19 6\"/></svg></span> ",
+        "bullets": [
+          {
+            "slots": {
+              "text": "li-two-way-sync-of"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-generate-atsuite-quote"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-closed-won-deals-hand"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-pre-built-connectors-p"
+            }
+          }
+        ],
+        "cards": [
+          {
+            "props": {
+              "badgeClass": "crm-hubspot",
+              "badgeLetter": "H"
+            },
+            "slots": {
+              "name": "div-hubspot",
+              "meta": "div-crm-sales-hub",
+              "body": "p-sync-deals-companies-a"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-pipedrive",
+              "badgeLetter": "P"
+            },
+            "slots": {
+              "name": "div-pipedrive",
+              "meta": "div-crm-pipeline",
+              "body": "p-mirror-pipeline-stages"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-salesforce",
+              "badgeLetter": "S"
+            },
+            "slots": {
+              "name": "div-salesforce",
+              "meta": "div-crm-sales-cloud",
+              "body": "p-native-object-mapping-"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-dynamics",
+              "badgeLetter": "D"
+            },
+            "slots": {
+              "name": "div-microsoft-dynamics-365",
+              "meta": "div-crm-sales",
+              "body": "p-bi-directional-sync-wi"
+            }
+          }
+        ],
+        "sourceTags": [
+          {
+            "slots": {
+              "text": "span-accounts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-contacts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-opportunities"
+            }
+          }
+        ],
+        "targetTags": [
+          {
+            "slots": {
+              "text": "span-quotes"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-orders"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-subscriptions"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-integrations-crm",
+        "heading": "h2-quote-from-the-crm",
+        "body": "p-atsuite-cpq-plugs-bi",
+        "syncSource": "div-crm"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
@@ -997,7 +1116,126 @@
         "heading": "h2-discover-our-sales-fea"
       }
     },
-    "split-section-alt",
+    {
+      "component": "integration-grid",
+      "section": "crm-integrations",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "idAttr": " id=\"crm-integrations\"",
+        "dotStyle": " style=\"background:var(--violet)\"",
+        "accent": "acc-violet",
+        "bullet": "<span class=\"dot\">✓</span>",
+        "bullets": [
+          {
+            "slots": {
+              "text": "li-two-way-sync-of"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-quotes-generated-in-at"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-closed-won-deals-trigg"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-pre-built-connectors-p"
+            }
+          }
+        ],
+        "cards": [
+          {
+            "props": {
+              "badgeClass": "crm-hubspot",
+              "badgeLetter": "H"
+            },
+            "slots": {
+              "name": "div-hubspot",
+              "meta": "div-crm-sales-hub",
+              "body": "p-sync-deals-companies-a"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-pipedrive",
+              "badgeLetter": "P"
+            },
+            "slots": {
+              "name": "div-pipedrive",
+              "meta": "div-crm-pipeline",
+              "body": "p-mirror-pipeline-stages"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-salesforce",
+              "badgeLetter": "S"
+            },
+            "slots": {
+              "name": "div-salesforce",
+              "meta": "div-crm-sales-cloud",
+              "body": "p-native-object-mapping-"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-dynamics",
+              "badgeLetter": "D"
+            },
+            "slots": {
+              "name": "div-microsoft-dynamics-365",
+              "meta": "div-crm-sales",
+              "body": "p-bi-directional-sync-wi"
+            }
+          }
+        ],
+        "sourceTags": [
+          {
+            "slots": {
+              "text": "span-accounts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-contacts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-opportunities"
+            }
+          }
+        ],
+        "targetTags": [
+          {
+            "slots": {
+              "text": "span-quotes"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-orders"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-subscriptions"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-integrations-crm",
+        "heading": "h2-works-with-the-crm",
+        "body": "p-atsuite-connects-bi-di",
+        "syncSource": "div-crm"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",

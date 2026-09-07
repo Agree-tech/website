@@ -52,7 +52,19 @@ function render(template, instance, page, loadInclude) {
   out = out.replace(EACH, (raw, name, body) => {
     const items = props[name];
     if (!Array.isArray(items)) throw new Error(`component on "${page}" has no array prop "${name}"`);
-    return items.map((item) => render(body, { ...item, section }, page, loadInclude)).join('');
+    return items
+      .map((item) =>
+        render(
+          body,
+          // An item sees the block's props too, so something every item shares —
+          // the tick that opens each bullet, say — is stated once rather than
+          // copied onto each. The item's own props win where both define one.
+          { section, slots: item.slots, props: { ...props, ...item.props } },
+          page,
+          loadInclude
+        )
+      )
+      .join('');
   });
 
   // Conditionals first, so a false branch cannot leave a slot behind for the

@@ -1,0 +1,27 @@
+<section class="split-section{{#if alt}} alt{{/if}}"{{prop:idAttr}}>
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"{{prop:dotStyle}}></span>{{slot:eyebrow}}</div>
+      <h2 style="margin-top:18px">{{slot:heading}}</h2>
+      <p>{{slot:body}}</p>
+      <ul class="{{prop:accent}}">
+{{#each bullets}}        <li>{{prop:bullet}}{{slot:text}}</li>
+{{/each}}      </ul>
+    </div>
+    <div>
+      <div class="crm-grid">
+{{#each cards}}        <div class="crm-card">
+          <div class="badge {{prop:badgeClass}}">{{prop:badgeLetter}}</div>
+          <div class="name">{{slot:name}}</div>
+          <div class="meta">{{slot:meta}}</div>
+          <p>{{slot:body}}</p>
+        </div>
+{{/each}}      </div>
+      <div class="sync-flow">
+        <div class="side">{{slot:syncSource}}<div class="tags">{{#each sourceTags}}<span class="tag">{{slot:text}}</span>{{/each}}</div></div>
+        <div class="arrows">⇄</div>
+        <div class="side">ATSuite<div class="tags">{{#each targetTags}}<span class="tag">{{slot:text}}</span>{{/each}}</div></div>
+      </div>
+    </div>
+  </div>
+</section>
