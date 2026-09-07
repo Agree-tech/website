@@ -74,7 +74,9 @@ function render(template, instance, page, loadInclude) {
     if (++guard > 10) throw new Error(`runaway {{#if}} in a component on "${page}"`);
   }
 
-  out = out.replace(/\{\{slot:(\w+)(@[^}]+)?\}\}/g, (raw, name, emphasis = '') => {
+  // Hyphens allowed: a slot is often named after the content key it fills, and
+  // content keys are hyphenated.
+  out = out.replace(/\{\{slot:([\w-]+)(@[^}]+)?\}\}/g, (raw, name, emphasis = '') => {
     if (!(name in slots)) throw new Error(`component on "${page}" has no slot "${name}"`);
     return `{{i18n:${page}.${section}.${slots[name]}${emphasis}}}`;
   });

@@ -1,0 +1,10 @@
+<section class="split-section{{#if alt}} alt{{/if}}"{{prop:idAttr}}>
+  <div class="container split-grid{{#if flip}} flip{{/if}}">
+    <div>
+      <div class="eyebrow"><span class="dot"{{prop:dotStyle}}></span>{{slot:eyebrow}}</div>
+      <h2 style="margin-top:18px">{{slot:heading}}</h2>
+{{#each paragraphs}}      <p{{prop:style}}>{{slot:text}}</p>
+{{/each}}    </div>
+    {{include:visual}}
+  </div>
+</section>

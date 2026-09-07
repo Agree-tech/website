@@ -136,7 +136,40 @@
         "heading": "h2-discover-the-billing-c"
       }
     },
-    "split-section-alt",
+    {
+      "component": "split-prose",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Security -->\r\n",
+      "props": {
+        "alt": true,
+        "flip": false,
+        "idAttr": "",
+        "dotStyle": "",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-our-platform-is-equipp"
+            }
+          },
+          {
+            "props": {
+              "style": " style=\"margin-top:14px\""
+            },
+            "slots": {
+              "text": "p-compliant-with-major-d"
+            }
+          }
+        ],
+        "visual": "billing-split-section-alt"
+      },
+      "slots": {
+        "eyebrow": "div-your-data-is-safe",
+        "heading": "h2-we-take-your-billing"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
@@ -337,10 +370,105 @@
   ],
   "index-print": [
     "hero",
-    "q2c",
-    "modules",
+    {
+      "component": "q2c-board",
+      "section": "q2c",
+      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
+      "slots": {
+        "div-one-platform-atsuite": "div-one-platform-atsuite",
+        "h2-one-system-for-the": "h2-one-system-for-the",
+        "p-replace-disconnected-t": "p-replace-disconnected-t",
+        "a-tour-the-platform": "a-tour-the-platform",
+        "a-speak-to-an-expert": "a-speak-to-an-expert",
+        "div-quoting": "div-quoting",
+        "div-subscription": "div-subscription",
+        "div-usage": "div-usage",
+        "div-billing": "div-billing",
+        "div-revenue": "div-revenue",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
+        "span-approved": "span-approved",
+        "div-arr-active": "div-arr-active",
+        "div-142-active-subs-2": "div-142-active-subs-2",
+        "span-healthy": "span-healthy",
+        "div-usage-voice-min": "div-usage-voice-min",
+        "div-issued-14-may-2026": "div-issued-14-may-2026",
+        "span-auto-billed": "span-auto-billed",
+        "div-recognised": "div-recognised"
+      }
+    },
+    {
+      "component": "module-grid",
+      "section": "modules",
+      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
+      "slots": {
+        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
+        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
+        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
+        "span-01-subscription": "span-01-subscription",
+        "h3-manage-every-subscript": "h3-manage-every-subscript",
+        "p-full-control-over-plan": "p-full-control-over-plan",
+        "span-active-subs": "span-active-subs",
+        "span-renewing-this-month": "span-renewing-this-month",
+        "span-on-track": "span-on-track",
+        "span-add-ons-attached": "span-add-ons-attached",
+        "span-net-retention": "span-net-retention",
+        "a-subscription-managemen": "a-subscription-managemen",
+        "span-02-cpq": "span-02-cpq",
+        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
+        "p-an-intelligent-automat": "p-an-intelligent-automat",
+        "div-catalog": "div-catalog",
+        "div-348-skus": "div-348-skus",
+        "div-price": "div-price",
+        "div-1-820-mo": "div-1-820-mo",
+        "div-quote": "div-quote",
+        "div-38-sec": "div-38-sec",
+        "span-approval-queue": "span-approval-queue",
+        "span-2-pending": "span-2-pending",
+        "a-configure-price-quote": "a-configure-price-quote",
+        "span-03-billing": "span-03-billing",
+        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
+        "p-recurring-usage-based-": "p-recurring-usage-based-",
+        "span-invoices-this-run": "span-invoices-this-run",
+        "span-billed": "span-billed",
+        "span-mediation-rate": "span-mediation-rate",
+        "span-exceptions": "span-exceptions",
+        "span-3-to-review": "span-3-to-review",
+        "a-billing-automation": "a-billing-automation",
+        "span-04-process": "span-04-process",
+        "h3-event-driven-automatio": "h3-event-driven-automatio",
+        "p-an-always-on-process": "p-an-always-on-process",
+        "span-workflows-live": "span-workflows-live",
+        "span-triggered-today": "span-triggered-today",
+        "span-avg-completion": "span-avg-completion",
+        "span-status": "span-status",
+        "span-all-systems-normal": "span-all-systems-normal",
+        "a-process-optimisation": "a-process-optimisation"
+      }
+    },
     "quote",
-    "innovate",
+    {
+      "component": "innovate-forecast",
+      "section": "innovate",
+      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
+      "slots": {
+        "div-innovate": "div-innovate",
+        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
+        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
+        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
+        "li-guided-selling-for-a": "li-guided-selling-for-a",
+        "li-real-time-collaboratio": "li-real-time-collaboratio",
+        "li-predictive-analytics-f": "li-predictive-analytics-f",
+        "a-schedule-a-demo": "a-schedule-a-demo",
+        "a-see-the-platform": "a-see-the-platform",
+        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
+        "div-predictive-90d-horizon": "div-predictive-90d-horizon",
+        "div-arr": "div-arr",
+        "div-renewals": "div-renewals",
+        "div-3-1-pts": "div-3-1-pts",
+        "div-upsell": "div-upsell"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band",
@@ -363,11 +491,106 @@
   ],
   "index": [
     "hero",
-    "q2c",
-    "modules",
+    {
+      "component": "q2c-board",
+      "section": "q2c",
+      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
+      "slots": {
+        "div-one-platform-atsuite": "div-one-platform-atsuite",
+        "h2-one-system-for-the": "h2-one-system-for-the",
+        "p-replace-disconnected-t": "p-replace-disconnected-t",
+        "a-tour-the-platform": "a-tour-the-platform",
+        "a-speak-to-an-expert": "a-speak-to-an-expert",
+        "div-quoting": "div-quoting",
+        "div-subscription": "div-subscription",
+        "div-usage": "div-usage",
+        "div-billing": "div-billing",
+        "div-revenue": "div-revenue",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
+        "span-approved": "span-approved",
+        "div-arr-active": "div-arr-active",
+        "div-142-active-subs-2": "div-142-active-subs-2",
+        "span-healthy": "span-healthy",
+        "div-usage-voice-min": "div-usage-voice-min",
+        "div-issued-14-may-2026": "div-issued-14-may-2026",
+        "span-auto-billed": "span-auto-billed",
+        "div-recognised": "div-recognised"
+      }
+    },
+    {
+      "component": "module-grid",
+      "section": "modules",
+      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
+      "slots": {
+        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
+        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
+        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
+        "span-01-subscription": "span-01-subscription",
+        "h3-manage-every-subscript": "h3-manage-every-subscript",
+        "p-full-control-over-plan": "p-full-control-over-plan",
+        "span-active-subs": "span-active-subs",
+        "span-renewing-this-month": "span-renewing-this-month",
+        "span-on-track": "span-on-track",
+        "span-add-ons-attached": "span-add-ons-attached",
+        "span-net-retention": "span-net-retention",
+        "a-subscription-managemen": "a-subscription-managemen",
+        "span-02-cpq": "span-02-cpq",
+        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
+        "p-an-intelligent-automat": "p-an-intelligent-automat",
+        "div-catalog": "div-catalog",
+        "div-348-skus": "div-348-skus",
+        "div-price": "div-price",
+        "div-1-820-mo": "div-1-820-mo",
+        "div-quote": "div-quote",
+        "div-38-sec": "div-38-sec",
+        "span-approval-queue": "span-approval-queue",
+        "span-2-pending": "span-2-pending",
+        "a-configure-price-quote": "a-configure-price-quote",
+        "span-03-billing": "span-03-billing",
+        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
+        "p-recurring-usage-based-": "p-recurring-usage-based-",
+        "span-invoices-this-run": "span-invoices-this-run",
+        "span-billed": "span-billed",
+        "span-mediation-rate": "span-mediation-rate",
+        "span-exceptions": "span-exceptions",
+        "span-3-to-review": "span-3-to-review",
+        "a-billing-automation": "a-billing-automation",
+        "span-04-process": "span-04-process",
+        "h3-event-driven-automatio": "h3-event-driven-automatio",
+        "p-an-always-on-process": "p-an-always-on-process",
+        "span-workflows-live": "span-workflows-live",
+        "span-triggered-today": "span-triggered-today",
+        "span-avg-completion": "span-avg-completion",
+        "span-status": "span-status",
+        "span-all-systems-normal": "span-all-systems-normal",
+        "a-process-optimisation": "a-process-optimisation"
+      }
+    },
     "cfo",
     "quote",
-    "innovate",
+    {
+      "component": "innovate-forecast",
+      "section": "innovate",
+      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
+      "slots": {
+        "div-innovate": "div-innovate",
+        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
+        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
+        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
+        "li-guided-selling-for-a": "li-guided-selling-for-a",
+        "li-real-time-collaboratio": "li-real-time-collaboratio",
+        "li-predictive-analytics-f": "li-predictive-analytics-f",
+        "a-schedule-a-demo": "a-schedule-a-demo",
+        "a-see-the-platform": "a-see-the-platform",
+        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
+        "div-predictive-90d-horizon": "div-predictive-90d-horizon",
+        "div-arr": "div-arr",
+        "div-renewals": "div-renewals",
+        "div-3-1-pts": "div-3-1-pts",
+        "div-upsell": "div-upsell"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band",
@@ -410,11 +633,136 @@
         "secondary": "a-how-implementation-wor"
       }
     },
-    "split-section",
-    "split-section-alt",
-    "split-section-process",
-    "split-section-alt-analytics",
-    "split-section-deployment",
+    {
+      "component": "split-prose",
+      "section": "integration",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"integration\"",
+        "dotStyle": "",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-being-api-driven-atsui"
+            }
+          }
+        ],
+        "visual": "platform-split-section"
+      },
+      "slots": {
+        "eyebrow": "div-integration",
+        "heading": "h2-api-driven-by-design"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "data-model",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "flip": true,
+        "idAttr": " id=\"data-model\"",
+        "dotStyle": "",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-a-highly-adaptable-dat"
+            }
+          }
+        ],
+        "visual": "platform-split-section-alt"
+      },
+      "slots": {
+        "eyebrow": "div-extensible-data-model",
+        "heading": "h2-adaptable-to-diverse-b"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "process",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"process\"",
+        "dotStyle": "",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-atsuite-s-process-engi"
+            }
+          }
+        ],
+        "visual": "platform-split-section-process"
+      },
+      "slots": {
+        "eyebrow": "div-process-engine",
+        "heading": "h2-built-in-automation-op"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "analytics",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "flip": true,
+        "idAttr": " id=\"analytics\"",
+        "dotStyle": " style=\"background:var(--violet)\"",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-the-analytics-module-e"
+            }
+          }
+        ],
+        "visual": "platform-split-section-alt-analytics"
+      },
+      "slots": {
+        "eyebrow": "div-analytics",
+        "heading": "h2-insight-that-drives-de"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "deployment",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"deployment\"",
+        "dotStyle": "",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-unlike-most-modern-cpq"
+            }
+          }
+        ],
+        "visual": "platform-split-section-deployment"
+      },
+      "slots": {
+        "eyebrow": "div-reliable-secure-deploy",
+        "heading": "h2-deploy-how-your-busine"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
