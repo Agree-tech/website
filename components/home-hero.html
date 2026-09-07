@@ -1,12 +1,12 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow on-dark"><span class="dot"></span>{{i18n:index.hero.div-atsuite-quote-to-reven}}</div>
-      <h1 style="margin-top: 22px;">{{i18n:index.hero.h1-the-all-in-one@span.accent}}</h1>
-      <p class="lede">{{i18n:index.hero.p-automate-the-entire-qu}}</p>
+      <div class="eyebrow on-dark"><span class="dot"></span>{{slot:div-atsuite-quote-to-reven}}</div>
+      <h1 style="margin-top: 22px;">{{slot:h1-the-all-in-one@span.accent}}</h1>
+      <p class="lede">{{slot:p-automate-the-entire-qu}}</p>
       <div class="ctas">
-        <a class="btn btn-cyan btn-lg" href="contact.html">{{i18n:index.hero.a-book-a-demo}}</a>
-        <a class="btn btn-outline-dark btn-lg" href="platform.html">{{i18n:index.hero.a-explore-the-platform}} <span class="arr">→</span></a>
+        <a class="btn btn-cyan btn-lg" href="contact.html">{{slot:a-book-a-demo}}</a>
+        <a class="btn btn-outline-dark btn-lg" href="platform.html">{{slot:a-explore-the-platform}} <span class="arr">→</span></a>
       </div>
     </div>
 
@@ -18,22 +18,22 @@
       <div class="mock-body">
         <div class="mock-head">
           <div>
-            <div class="ttl">{{i18n:index.hero.div-quote-q-2046}}</div>
-            <div class="sub">{{i18n:index.hero.div-northwind-telecom-rene}}</div>
+            <div class="ttl">{{slot:div-quote-q-2046}}</div>
+            <div class="sub">{{slot:div-northwind-telecom-rene}}</div>
           </div>
-          <div class="pill">{{i18n:index.hero.div-approved}}</div>
+          <div class="pill">{{slot:div-approved}}</div>
         </div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-subscription-voice-pro}}</span><span class="r">€186,400</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-add-on-recording-qa}}</span><span class="r">€24,000</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-usage-international-es}}</span><span class="r">€12,225</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-multi-year-ramp-7}}</span><span class="r" style="color:var(--green)">−€16,030</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-subscription-voice-pro}}</span><span class="r">€186,400</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-add-on-recording-qa}}</span><span class="r">€24,000</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-usage-international-es}}</span><span class="r">€12,225</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-multi-year-ramp-7}}</span><span class="r" style="color:var(--green)">−€16,030</span></div>
         <div class="mock-total">
-          <span class="lbl">{{i18n:index.hero.span-annualised}}</span>
+          <span class="lbl">{{slot:span-annualised}}</span>
           <span class="amt">€206,595</span>
         </div>
         <div class="mock-actions">
-          <div class="mock-btn">{{i18n:index.hero.div-send-to-customer}}</div>
-          <div class="mock-btn alt">{{i18n:index.hero.div-edit-quote}}</div>
+          <div class="mock-btn">{{slot:div-send-to-customer}}</div>
+          <div class="mock-btn alt">{{slot:div-edit-quote}}</div>
         </div>
       </div>
       <!-- floating cards -->
@@ -41,17 +41,17 @@
         <div class="ico" style="background:var(--green)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg>
         </div>
-        <div class="label">{{i18n:index.hero.div-renewal-auto}}</div>
-        <div class="val">{{i18n:index.hero.div-2-4m-arr}}</div>
-        <div class="delta">{{i18n:index.hero.div-18-vs-last-year}}</div>
+        <div class="label">{{slot:div-renewal-auto}}</div>
+        <div class="val">{{slot:div-2-4m-arr}}</div>
+        <div class="delta">{{slot:div-18-vs-last-year}}</div>
       </div>
       <div class="mock-float mock-float-2">
         <div class="ico" style="background:var(--violet)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l4-4 4 4 4-6 6 8"/></svg>
         </div>
-        <div class="label">{{i18n:index.hero.div-forecast-accuracy}}</div>
+        <div class="label">{{slot:div-forecast-accuracy}}</div>
         <div class="val">98.7%</div>
-        <div class="delta" style="color:var(--cyan-light)">{{i18n:index.hero.div-predictive-90d}}</div>
+        <div class="delta" style="color:var(--cyan-light)">{{slot:div-predictive-90d}}</div>
       </div>
     </div>
   </div>
@@ -64,49 +64,49 @@
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-6-years}}</b> {{i18n:index.hero.div-in-production}}</div>
+          <div class="hv-text"><b>{{slot:b-6-years}}</b> {{slot:div-in-production}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l4 4L19 6"/></svg>
           </span>
-          <div class="hv-text"><b>~100%</b> {{i18n:index.hero.div-billing-accuracy}}</div>
+          <div class="hv-text"><b>~100%</b> {{slot:div-billing-accuracy}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><ellipse cx="12" cy="12" rx="5" ry="10"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-built-in-eu}}</b> {{i18n:index.hero.div-gdpr-native}}</div>
+          <div class="hv-text"><b>{{slot:b-built-in-eu}}</b> {{slot:div-gdpr-native}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 4-7 5 8"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-real-time}}</b> {{i18n:index.hero.div-profitability}}</div>
+          <div class="hv-text"><b>{{slot:b-real-time}}</b> {{slot:div-profitability}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l5 5 4-4 4 7 5-8"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-lower-acpu}}</b> {{i18n:index.hero.div-through-automation}}</div>
+          <div class="hv-text"><b>{{slot:b-lower-acpu}}</b> {{slot:div-through-automation}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-faster}}</b> {{i18n:index.hero.div-time-to-cash}}</div>
+          <div class="hv-text"><b>{{slot:b-faster}}</b> {{slot:div-time-to-cash}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14l4-4 4 3 4-7"/><path d="M15 6l3 4 3-5" stroke-dasharray="2 2"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-predictive}}</b> {{i18n:index.hero.div-cash-flow}}</div>
+          <div class="hv-text"><b>{{slot:b-predictive}}</b> {{slot:div-cash-flow}}</div>
         </div>
         <div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-3 8-12V5l-8-3-8 3v5c0 9 8 12 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
           </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-reduced}}</b> {{i18n:index.hero.div-operational-risk}}</div>
+          <div class="hv-text"><b>{{slot:b-reduced}}</b> {{slot:div-operational-risk}}</div>
         </div>
       </div>
     </div>
@@ -115,11 +115,11 @@
   <!-- LOGO STRIP merges into hero (still navy) -->
   <div class="container">
     <div class="logo-strip" style="padding-top: 40px;">
-      <div class="label">{{i18n:index.hero.div-trusted-by-leading-saa}}</div>
+      <div class="label">{{slot:div-trusted-by-leading-saa}}</div>
       <div class="logos">
-        <div class="lg bold">{{i18n:index.hero.div-dstny}}</div>
-        <div class="lg serif">{{i18n:index.hero.div-telavox}}</div>
-        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">{{i18n:index.hero.div-ipvision}}</div>
+        <div class="lg bold">{{slot:div-dstny}}</div>
+        <div class="lg serif">{{slot:div-telavox}}</div>
+        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">{{slot:div-ipvision}}</div>
       </div>
     </div>
   </div>

@@ -1,0 +1,82 @@
+<section class="split-section">
+  <div class="container contact-grid">
+    <div class="form-card">
+      <div class="notice">
+        <b>{{slot:b-please-note}}</b> {{slot:div-we-only-reply-to}}
+      </div>
+      <template id="sent-message"><b>✓ {{slot:b-message-sent}}</b> {{slot:p-we-ve-received-your-mes}}</template>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="07b59940-9095-4781-b372-7adf5cbe4570">
+        <input type="hidden" name="subject" value="New ATSuite Contact Form Submission">
+        <input type="hidden" name="from_name" value="ATSuite Website">
+
+        <div class="form-row">
+          <div class="field"><label>{{slot:label-first-name}} <span class="req">*</span></label><input name="first_name" required placeholder="{{i18n:contact.meta.first-name}}" /></div>
+          <div class="field"><label>{{slot:label-last-name}} <span class="req">*</span></label><input name="last_name" required placeholder="{{i18n:contact.meta.last-name}}" /></div>
+        </div>
+        <div class="field"><label>{{slot:label-business-email}} <span class="req">*</span></label><input name="email" type="email" required placeholder="{{i18n:contact.meta.email}}" /></div>
+        <div class="form-row">
+          <div class="field"><label>{{slot:label-company-name}} <span class="req">*</span></label><input name="company" required placeholder="{{i18n:contact.meta.company}}" /></div>
+          <div class="field"><label>{{slot:label-website}}</label><input name="website" placeholder="{{i18n:contact.meta.website}}" /></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>{{slot:label-country}}</label>
+            <!--
+              value= stays English so the submitted lead data reads the same in
+              every locale; only the visible label is translated.
+            -->
+            <select name="country">
+              <option value="Denmark">{{slot:option-denmark}}</option><option value="Sweden">{{slot:option-sweden}}</option><option value="Norway">{{slot:option-norway}}</option>
+              <option value="Germany">{{slot:option-germany}}</option><option value="Netherlands">{{slot:option-netherlands}}</option><option value="United Kingdom">{{slot:option-united-kingdom}}</option>
+              <option value="Other">{{slot:option-other}}</option>
+            </select>
+          </div>
+          <div class="field"><label>{{slot:label-i-m-interested-in}}</label>
+            <select name="interest">
+              <option value="The full ATSuite">{{slot:option-the-full-atsuite}}</option><option value="CPQ">{{slot:option-cpq}}</option>
+              <option value="Billing Automation">{{slot:option-billing-automation}}</option><option value="Subscription Management">{{slot:option-subscription-manage}}</option>
+              <option value="Process Optimisation">{{slot:option-process-optimisatio}}</option><option value="Sales">{{slot:option-sales}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>{{slot:label-message}}</label><textarea name="message" placeholder="{{i18n:contact.meta.message}}"></textarea></div>
+        <div class="consent">
+          <input type="checkbox" name="consent" id="consent" value="yes" />
+          <label for="consent" style="margin:0">{{slot:label-i-consent-to-receive}}</label>
+        </div>
+        <input type="hidden" name="redirect" value="https://agree-tech.com/contact.html?success=true">
+        <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">{{slot:button-send-message}}</button></div>
+      </form>
+    </div>
+
+    <div>
+      <div class="contact-info-card">
+        <div class="eyebrow on-dark" style="position:relative"><span class="dot"></span>{{slot:div-agree-technologies-aps}}</div>
+        <h2 style="color:white;margin-top:18px;font-size:30px;position:relative">{{slot:h2-copenhagen-built-for-e}}</h2>
+        <p style="color:rgba(255,255,255,0.7);margin-top:14px;position:relative">{{slot:p-a-european-revenue-pla}}</p>
+
+        <div class="info-row" style="margin-top:24px">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg></div>
+          <div><b>{{slot:b-info-agree-tech-com}}</b><p>{{slot:p-demo-sales-requests}}</p></div>
+        </div>
+        <div class="info-row">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-7.5-7-12a7 7 0 0114 0c0 4.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><b>{{slot:b-copenhagen-denmark}}</b><p>{{slot:p-european-hq-gdpr-nativ}}</p></div>
+        </div>
+        <div class="info-row">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg></div>
+          <div><b>{{slot:b-mon-fri-09-00}}</b><p>{{slot:p-reply-within-one-busin}}</p></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;padding:24px;background:var(--mist);border-radius:14px;border:1px solid var(--border-soft)">
+        <div class="eyebrow"><span class="dot"></span>{{slot:div-use-this-form-for}}</div>
+        <ul style="list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--slate)">
+          <li>{{slot:li-a-discovery-call}}</li>
+          <li>{{slot:li-requesting-a-demo}}</li>
+          <li>{{slot:li-general-enquiries}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

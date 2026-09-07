@@ -16,9 +16,66 @@
         "body": "p-it-began-with-the"
       }
     },
-    "split-section",
-    "split-section-alt",
-    "split-section-2",
+    {
+      "component": "value-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-our-values": "div-our-values",
+        "h2-what-drives-agree-tech": "h2-what-drives-agree-tech",
+        "p-innovation-accountabil": "p-innovation-accountabil",
+        "h3-innovation": "h3-innovation",
+        "p-always-evolving-the-pl": "p-always-evolving-the-pl",
+        "h3-accountability": "h3-accountability",
+        "p-we-do-what-we": "p-we-do-what-we",
+        "h3-diversity": "h3-diversity",
+        "p-different-perspectives": "p-different-perspectives",
+        "h3-sustainability": "h3-sustainability",
+        "p-long-term-thinking-for": "p-long-term-thinking-for"
+      }
+    },
+    {
+      "component": "team-grid",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-management-team": "div-management-team",
+        "h2-meet-the-leaders-behin": "h2-meet-the-leaders-behin",
+        "div-kb": "div-kb",
+        "div-ceo": "div-ceo",
+        "h3-karina-buch": "h3-karina-buch",
+        "p-senior-executive-with-": "p-senior-executive-with-",
+        "div-kj": "div-kj",
+        "div-cto": "div-cto",
+        "h3-kristian-jacobsen": "h3-kristian-jacobsen",
+        "p-20-years-in-software": "p-20-years-in-software"
+      }
+    },
+    {
+      "component": "board-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-board-of-directors": "div-board-of-directors",
+        "h2-meet-the-board": "h2-meet-the-board",
+        "alt": "alt",
+        "div-chairman-of-the-board": "div-chairman-of-the-board",
+        "h4-kenneth-andreasen": "h4-kenneth-andreasen",
+        "p-seasoned-executive-and": "p-seasoned-executive-and",
+        "alt-2": "alt-2",
+        "div-board-member": "div-board-member",
+        "h4-peter-reich": "h4-peter-reich",
+        "p-seasoned-executive-and-2": "p-seasoned-executive-and-2",
+        "alt-3": "alt-3",
+        "div-board-member-cto": "div-board-member-cto",
+        "h4-kristian-hvid-jakobsen": "h4-kristian-hvid-jakobsen",
+        "p-cto-and-investor-at": "p-cto-and-investor-at",
+        "alt-4": "alt-4",
+        "div-board-member-ceo": "div-board-member-ceo",
+        "h4-karina-buch": "h4-karina-buch",
+        "p-ceo-and-investor-at": "p-ceo-and-investor-at"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
@@ -207,7 +264,59 @@
         "body": "p-tell-us-a-bit"
       }
     },
-    "split-section"
+    {
+      "component": "contact-form",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "b-please-note": "b-please-note",
+        "div-we-only-reply-to": "div-we-only-reply-to",
+        "b-message-sent": "b-message-sent",
+        "p-we-ve-received-your-mes": "p-we-ve-received-your-mes",
+        "label-first-name": "label-first-name",
+        "first-name": "first-name",
+        "label-last-name": "label-last-name",
+        "last-name": "last-name",
+        "label-business-email": "label-business-email",
+        "email": "email",
+        "label-company-name": "label-company-name",
+        "company": "company",
+        "label-website": "label-website",
+        "website": "website",
+        "label-country": "label-country",
+        "option-denmark": "option-denmark",
+        "option-sweden": "option-sweden",
+        "option-norway": "option-norway",
+        "option-germany": "option-germany",
+        "option-netherlands": "option-netherlands",
+        "option-united-kingdom": "option-united-kingdom",
+        "option-other": "option-other",
+        "label-i-m-interested-in": "label-i-m-interested-in",
+        "option-the-full-atsuite": "option-the-full-atsuite",
+        "option-cpq": "option-cpq",
+        "option-billing-automation": "option-billing-automation",
+        "option-subscription-manage": "option-subscription-manage",
+        "option-process-optimisatio": "option-process-optimisatio",
+        "option-sales": "option-sales",
+        "label-message": "label-message",
+        "message": "message",
+        "label-i-consent-to-receive": "label-i-consent-to-receive",
+        "button-send-message": "button-send-message",
+        "div-agree-technologies-aps": "div-agree-technologies-aps",
+        "h2-copenhagen-built-for-e": "h2-copenhagen-built-for-e",
+        "p-a-european-revenue-pla": "p-a-european-revenue-pla",
+        "b-info-agree-tech-com": "b-info-agree-tech-com",
+        "p-demo-sales-requests": "p-demo-sales-requests",
+        "b-copenhagen-denmark": "b-copenhagen-denmark",
+        "p-european-hq-gdpr-nativ": "p-european-hq-gdpr-nativ",
+        "b-mon-fri-09-00": "b-mon-fri-09-00",
+        "p-reply-within-one-busin": "p-reply-within-one-busin",
+        "div-use-this-form-for": "div-use-this-form-for",
+        "li-a-discovery-call": "li-a-discovery-call",
+        "li-requesting-a-demo": "li-requesting-a-demo",
+        "li-general-enquiries": "li-general-enquiries"
+      }
+    }
   ],
   "cpq": [
     {
@@ -306,7 +415,29 @@
         "heading": "h2-everything-your-sales-"
       }
     },
-    "split-section-alt",
+    {
+      "component": "cpq-rules",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Power -->\r\n",
+      "slots": {
+        "div-the-transformative-pow": "div-the-transformative-pow",
+        "h2-free-your-sales-team": "h2-free-your-sales-team",
+        "p-atsuite-revolutionises": "p-atsuite-revolutionises",
+        "li-faster-more-consistent": "li-faster-more-consistent",
+        "li-approval-routing-align": "li-approval-routing-align",
+        "li-direct-hand-off-to": "li-direct-hand-off-to",
+        "div-approval-flow": "div-approval-flow",
+        "div-quote-q-2046-206": "div-quote-q-2046-206",
+        "span-2-of-3": "span-2-of-3",
+        "b-sales-manager-anna-l": "b-sales-manager-anna-l",
+        "div-approved-09-14": "div-approved-09-14",
+        "b-deal-desk-marco-r": "b-deal-desk-marco-r",
+        "div-approved-11-02": "div-approved-11-02",
+        "b-finance-karina-b": "b-finance-karina-b",
+        "div-awaiting-2h-sla": "div-awaiting-2h-sla",
+        "div-pending": "div-pending"
+      }
+    },
     {
       "component": "integration-grid",
       "section": "crm-integrations",
@@ -465,8 +596,38 @@
         "primary": "a-schedule-a-call"
       }
     },
-    "split-section",
-    "split-section-alt",
+    {
+      "component": "step-list",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-our-approach": "div-our-approach",
+        "h2-four-steps-one-outcome": "h2-four-steps-one-outcome",
+        "h3-proof-of-concept": "h3-proof-of-concept",
+        "p-we-start-by-demonstrat": "p-we-start-by-demonstrat",
+        "h3-discovery-workshops": "h3-discovery-workshops",
+        "p-in-depth-workshops-to": "p-in-depth-workshops-to",
+        "h3-implementation": "h3-implementation",
+        "p-our-team-works-closely": "p-our-team-works-closely",
+        "h3-operations": "h3-operations",
+        "p-ongoing-support-and-mo": "p-ongoing-support-and-mo"
+      }
+    },
+    {
+      "component": "implementation-note",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-what-you-get": "div-what-you-get",
+        "h2-a-partner-not-just": "h2-a-partner-not-just",
+        "strong-tailored-solution-desi": "strong-tailored-solution-desi",
+        "p-our-experts-assess-you": "p-our-experts-assess-you",
+        "strong-seamless-transition-wi": "strong-seamless-transition-wi",
+        "p-we-prioritise-ongoing-": "p-we-prioritise-ongoing-",
+        "strong-measurable-outcomes": "strong-measurable-outcomes",
+        "p-reduced-implementation": "p-reduced-implementation"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
@@ -488,7 +649,45 @@
     }
   ],
   "index-print": [
-    "hero",
+    {
+      "component": "print-hero",
+      "section": "hero",
+      "lead": "",
+      "slots": {
+        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
+        "h1-the-all-in-one": "h1-the-all-in-one",
+        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
+        "a-book-a-demo": "a-book-a-demo",
+        "a-explore-the-platform": "a-explore-the-platform",
+        "b-6-years": "b-6-years",
+        "div-in-production": "div-in-production",
+        "div-billing-accuracy": "div-billing-accuracy",
+        "b-built-in-eu": "b-built-in-eu",
+        "div-gdpr-native": "div-gdpr-native",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
+        "div-approved": "div-approved",
+        "span-subscription-voice-pro": "span-subscription-voice-pro",
+        "span-add-on-recording-qa": "span-add-on-recording-qa",
+        "span-usage-international-es": "span-usage-international-es",
+        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
+        "span-annualised": "span-annualised",
+        "div-send-to-customer": "div-send-to-customer",
+        "div-edit-quote": "div-edit-quote",
+        "div-renewal-auto": "div-renewal-auto",
+        "div-2-4m-arr": "div-2-4m-arr",
+        "div-18-vs-last-year": "div-18-vs-last-year",
+        "div-forecast-accuracy": "div-forecast-accuracy",
+        "div-predictive-90d": "div-predictive-90d",
+        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
+        "div-dstny": "div-dstny",
+        "div-telavox": "div-telavox",
+        "div-mvnx": "div-mvnx",
+        "div-ipvision": "div-ipvision",
+        "div-nordix": "div-nordix",
+        "div-kontur-co": "div-kontur-co"
+      }
+    },
     {
       "component": "q2c-board",
       "section": "q2c",
@@ -565,7 +764,21 @@
         "a-process-optimisation": "a-process-optimisation"
       }
     },
-    "quote",
+    {
+      "component": "print-quote",
+      "section": "quote",
+      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
+      "slots": {
+        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
+        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
+        "div-ct": "div-ct",
+        "div-carsten-thomsen": "div-carsten-thomsen",
+        "div-billing-accuracy-in-pr": "div-billing-accuracy-in-pr",
+        "div-operating-as-a-managed": "div-operating-as-a-managed",
+        "div-average-quote-turnarou": "div-average-quote-turnarou",
+        "div-average-net-revenue-re": "div-average-net-revenue-re"
+      }
+    },
     {
       "component": "innovate-forecast",
       "section": "innovate",
@@ -609,7 +822,52 @@
     }
   ],
   "index": [
-    "hero",
+    {
+      "component": "home-hero",
+      "section": "hero",
+      "lead": "",
+      "slots": {
+        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
+        "h1-the-all-in-one": "h1-the-all-in-one",
+        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
+        "a-book-a-demo": "a-book-a-demo",
+        "a-explore-the-platform": "a-explore-the-platform",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
+        "div-approved": "div-approved",
+        "span-subscription-voice-pro": "span-subscription-voice-pro",
+        "span-add-on-recording-qa": "span-add-on-recording-qa",
+        "span-usage-international-es": "span-usage-international-es",
+        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
+        "span-annualised": "span-annualised",
+        "div-send-to-customer": "div-send-to-customer",
+        "div-edit-quote": "div-edit-quote",
+        "div-renewal-auto": "div-renewal-auto",
+        "div-2-4m-arr": "div-2-4m-arr",
+        "div-18-vs-last-year": "div-18-vs-last-year",
+        "div-forecast-accuracy": "div-forecast-accuracy",
+        "div-predictive-90d": "div-predictive-90d",
+        "b-6-years": "b-6-years",
+        "div-in-production": "div-in-production",
+        "div-billing-accuracy": "div-billing-accuracy",
+        "b-built-in-eu": "b-built-in-eu",
+        "div-gdpr-native": "div-gdpr-native",
+        "b-real-time": "b-real-time",
+        "div-profitability": "div-profitability",
+        "b-lower-acpu": "b-lower-acpu",
+        "div-through-automation": "div-through-automation",
+        "b-faster": "b-faster",
+        "div-time-to-cash": "div-time-to-cash",
+        "b-predictive": "b-predictive",
+        "div-cash-flow": "div-cash-flow",
+        "b-reduced": "b-reduced",
+        "div-operational-risk": "div-operational-risk",
+        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
+        "div-dstny": "div-dstny",
+        "div-telavox": "div-telavox",
+        "div-ipvision": "div-ipvision"
+      }
+    },
     {
       "component": "q2c-board",
       "section": "q2c",
@@ -686,8 +944,77 @@
         "a-process-optimisation": "a-process-optimisation"
       }
     },
-    "cfo",
-    "quote",
+    {
+      "component": "cfo-dashboard",
+      "section": "cfo",
+      "lead": "\r\n\r\n<!-- CFO BAND -->\r\n",
+      "slots": {
+        "div-built-for-the-office": "div-built-for-the-office",
+        "h2-eliminate-revenue-leak": "h2-eliminate-revenue-leak",
+        "p-as-businesses-move-tow": "p-as-businesses-move-tow",
+        "p-atsuite-brings-cpq-sub": "p-atsuite-brings-cpq-sub",
+        "div-today-without-atsuite": "div-today-without-atsuite",
+        "h3-the-challenges-most-cf": "h3-the-challenges-most-cf",
+        "li-inconsistent-cash-flow": "li-inconsistent-cash-flow",
+        "li-manual-billing-control": "li-manual-billing-control",
+        "li-limited-confidence-in-": "li-limited-confidence-in-",
+        "li-complex-subscription-a": "li-complex-subscription-a",
+        "li-no-real-time-visibilit": "li-no-real-time-visibilit",
+        "div-with-atsuite": "div-with-atsuite",
+        "h3-the-result-from-day": "h3-the-result-from-day",
+        "li-more-predictable-cash-": "li-more-predictable-cash-",
+        "li-near-perfect-invoice-a": "li-near-perfect-invoice-a",
+        "li-lower-operational-cost": "li-lower-operational-cost",
+        "li-improved-compliance-an": "li-improved-compliance-an",
+        "li-better-reporting-for-m": "li-better-reporting-for-m",
+        "div-real-time-revenue-visi": "div-real-time-revenue-visi",
+        "div-quote-subscription-usa": "div-quote-subscription-usa",
+        "div-live-streaming": "div-live-streaming",
+        "div-mrr-arr": "div-mrr-arr",
+        "div-18-4-yoy": "div-18-4-yoy",
+        "div-gross-margin": "div-gross-margin",
+        "div-2-1-pts-qoq": "div-2-1-pts-qoq",
+        "div-contribution": "div-contribution",
+        "div-discount-performance": "div-discount-performance",
+        "div-vs-list-within-policy": "div-vs-list-within-policy",
+        "div-subscription-usage": "div-subscription-usage",
+        "small-mo": "small-mo",
+        "div-11-mom-142-active": "div-11-mom-142-active",
+        "div-renewal-indexation": "div-renewal-indexation",
+        "div-23-renewing-cpi-auto": "div-23-renewing-cpi-auto",
+        "b-3-1-pts": "b-3-1-pts",
+        "div-qoq": "div-qoq",
+        "span-usage-ingest": "span-usage-ingest",
+        "div-8-461-events-minute": "div-8-461-events-minute",
+        "div-run-14-may-2026": "div-run-14-may-2026"
+      }
+    },
+    {
+      "component": "quote-carousel",
+      "section": "quote",
+      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
+      "slots": {
+        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
+        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
+        "div-ct": "div-ct",
+        "div-carsten-thomsen": "div-carsten-thomsen",
+        "div-billing-accuracy-acros": "div-billing-accuracy-acros",
+        "div-in-production-at-dstny": "div-in-production-at-dstny",
+        "small-mo": "small-mo",
+        "div-monthly-transactions-p": "div-monthly-transactions-p",
+        "div-average-net-revenue-re": "div-average-net-revenue-re",
+        "div-customer-cloudfarms": "div-customer-cloudfarms",
+        "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru",
+        "div-jt": "div-jt",
+        "div-jens-toppenberg": "div-jens-toppenberg",
+        "small-ceo-cloudfarms": "small-ceo-cloudfarms",
+        "small-regions": "small-regions",
+        "div-global-operations-acro": "div-global-operations-acro",
+        "div-unified-platform-repla": "div-unified-platform-repla",
+        "div-lead-to-billing-fully": "div-lead-to-billing-fully",
+        "div-manual-handoffs-across": "div-manual-handoffs-across"
+      }
+    },
     {
       "component": "innovate-forecast",
       "section": "innovate",
@@ -1277,7 +1604,16 @@
         "secondary": "a-see-the-platform"
       }
     },
-    "split-section-alt",
+    {
+      "component": "quote-band",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Quote -->\r\n",
+      "slots": {
+        "div-customer-telavox": "div-customer-telavox",
+        "blockquote-our-enduring-collabora": "blockquote-our-enduring-collabora",
+        "div-colin-russel-mvnx-dire": "div-colin-russel-mvnx-dire"
+      }
+    },
     {
       "component": "feature-grid",
       "section": "split-section",

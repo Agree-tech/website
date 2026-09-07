@@ -93,7 +93,32 @@ function pages() {
     .sort();
 }
 
+/**
+ * This tool cut src/ into blocks/ and wrote the first content/layout.json, back
+ * when a layout entry was just a block name. Those entries are component
+ * instances now — they carry the props and content keys that Phase 2 lifted out
+ * of the markup — and rewriting the manifest from src/ would replace every one
+ * of them with a bare string, silently undoing the whole phase.
+ *
+ * So it refuses. --check still works, because it writes nothing.
+ */
+function refuseToClobber() {
+  if (CHECK || !fs.existsSync(MANIFEST)) return;
+  const layout = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
+  const instances = Object.values(layout)
+    .flat()
+    .filter((e) => typeof e !== 'string').length;
+  if (!instances) return;
+
+  console.error(`content/layout.json holds ${instances} component instance(s).`);
+  console.error('Rewriting it from src/ would discard them. Nothing was written.');
+  console.error('Use --check to verify the split still round-trips.');
+  process.exit(1);
+}
+
 function main() {
+  refuseToClobber();
+
   const manifest = {};
   const failures = [];
   let blockCount = 0;

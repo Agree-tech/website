@@ -1,0 +1,78 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow on-dark"><span class="dot"></span>{{slot:div-atsuite-quote-to-reven}}</div>
+      <h1 style="margin-top: 22px;">{{slot:h1-the-all-in-one@span.accent}}</h1>
+      <p class="lede">{{slot:p-automate-the-entire-qu}}</p>
+      <div class="ctas">
+        <a class="btn btn-cyan btn-lg" href="contact.html">{{slot:a-book-a-demo}}</a>
+        <a class="btn btn-outline-dark btn-lg" href="platform.html">{{slot:a-explore-the-platform}} <span class="arr">→</span></a>
+      </div>
+      <div class="meta-row">
+        <div><b>{{slot:b-6-years}}</b> {{slot:div-in-production}}</div>
+        <div><b>~100%</b> {{slot:div-billing-accuracy}}</div>
+        <div><b>{{slot:b-built-in-eu}}</b> {{slot:div-gdpr-native}}</div>
+      </div>
+    </div>
+
+    <div class="hero-mock">
+      <div class="mock-tab-row">
+        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+        <div class="url">atsuite.app/quotes/Q-2046 · Enterprise renewal · FY26</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-head">
+          <div>
+            <div class="ttl">{{slot:div-quote-q-2046}}</div>
+            <div class="sub">{{slot:div-northwind-telecom-rene}}</div>
+          </div>
+          <div class="pill">{{slot:div-approved}}</div>
+        </div>
+        <div class="mock-line"><span class="l">{{slot:span-subscription-voice-pro}}</span><span class="r">€186,400</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-add-on-recording-qa}}</span><span class="r">€24,000</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-usage-international-es}}</span><span class="r">€12,225</span></div>
+        <div class="mock-line"><span class="l">{{slot:span-multi-year-ramp-7}}</span><span class="r" style="color:var(--green)">−€16,030</span></div>
+        <div class="mock-total">
+          <span class="lbl">{{slot:span-annualised}}</span>
+          <span class="amt">€206,595</span>
+        </div>
+        <div class="mock-actions">
+          <div class="mock-btn">{{slot:div-send-to-customer}}</div>
+          <div class="mock-btn alt">{{slot:div-edit-quote}}</div>
+        </div>
+      </div>
+      <!-- floating cards -->
+      <div class="mock-float mock-float-1">
+        <div class="ico" style="background:var(--green)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg>
+        </div>
+        <div class="label">{{slot:div-renewal-auto}}</div>
+        <div class="val">{{slot:div-2-4m-arr}}</div>
+        <div class="delta">{{slot:div-18-vs-last-year}}</div>
+      </div>
+      <div class="mock-float mock-float-2">
+        <div class="ico" style="background:var(--violet)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l4-4 4 4 4-6 6 8"/></svg>
+        </div>
+        <div class="label">{{slot:div-forecast-accuracy}}</div>
+        <div class="val">98.7%</div>
+        <div class="delta" style="color:var(--cyan-light)">{{slot:div-predictive-90d}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGO STRIP merges into hero (still navy) -->
+  <div class="container">
+    <div class="logo-strip" style="padding-top: 40px;">
+      <div class="label">{{slot:div-trusted-by-leading-saa}}</div>
+      <div class="logos">
+        <div class="lg bold">{{slot:div-dstny}}</div>
+        <div class="lg serif">{{slot:div-telavox}}</div>
+        <div class="lg mono">{{slot:div-mvnx}}</div>
+        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">{{slot:div-ipvision}}</div>
+        <div class="lg bold" style="letter-spacing:-0.04em">{{slot:div-nordix}}</div>
+        <div class="lg serif">{{slot:div-kontur-co}}</div>
+      </div>
+    </div>
+  </div>
+</section>
