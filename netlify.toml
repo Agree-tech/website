@@ -4,7 +4,17 @@
 # is why this file stays on the feature branch until cutover.
 
 [build]
-  command = "npm run build"
+  # --from-blocks composes each page from components/ in the order
+  # content/layout.json gives, which is what the CMS writes when somebody
+  # publishes. Without it the build renders src/*.html directly and an editor's
+  # reordering never reaches the site.
+  #
+  # Deliberately NOT --from-payload. The CMS exports to content/ and layout.json
+  # on publish (npm run export), so everything this build needs is committed.
+  # That keeps the deploy independent of the CMS being up, reachable, or awake —
+  # a build cannot fail because a database was asleep, and the site can be
+  # rebuilt from the repository alone years from now.
+  command = "npm run build:blocks"
   publish = "dist"
 
 [build.environment]

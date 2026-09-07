@@ -17,7 +17,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { buildConfig } = require('./tools/cms-config.js');
 const { localize } = require('./tools/localize.js');
 const {
   fromDisk,
@@ -64,21 +63,6 @@ const STATIC_DIRS = ['assets'];
 const ASSET_REFS = ['styles.css', 'shared.css', 'subpage.css', 'shared.js'];
 
 /**
- * The CMS commits here, never straight to the branch that publishes. An edit
- * becomes a Netlify branch deploy the editor can look at, and only a merge
- * makes it live.
- */
-const CMS_BRANCH = 'draft';
-
-/**
- * `node build.js --local-cms` puts local_backend into the CMS config, so the
- * editor at /admin/ can be opened against this checkout with `npx decap-server`
- * running, without Netlify Identity. Never part of a deploy: Netlify runs the
- * plain build.
- */
-const LOCAL_CMS = process.argv.includes('--local-cms');
-
-/**
  * `node build.js --from-payload` renders from the Payload CMS instead of
  * content/, which is what a deploy does once the database is the source of
  * truth. content/ stays in the repository as the seed and as the input to the
@@ -103,19 +87,6 @@ const BLOCKS = path.join(ROOT, 'blocks');
 const COMPONENTS = path.join(ROOT, 'components');
 const SHELL = path.join(ROOT, 'shell');
 const PAYLOAD_URL = (process.env.PAYLOAD_URL || 'http://localhost:3001').replace(/[/]+$/, '');
-
-/**
- * Netlify Identity mails an invite to the site root with the token in the URL
- * fragment, and a fragment is invisible to a server-side redirect rule — so
- * the hop has to happen in the browser, on the page the root lands on.
- *
- * Inlined and guarded rather than loading the Identity widget site-wide: this
- * costs visitors 130 bytes and no request, where the widget would put ~40KB of
- * third-party JavaScript on the homepage to serve one invite a year.
- */
-const INVITE_HOP =
-  '<script>if(/[#&](invite_token|recovery_token|email_change_token)=/.test(location.hash))' +
-  'location.replace("/admin/"+location.hash);</script>';
 
 // ---------------------------------------------------------------------------
 
@@ -359,7 +330,6 @@ function writeRootRedirect() {
 <meta charset="utf-8" />
 <title>Agree Technologies</title>
 <link rel="canonical" href="${SITE}/${def.code}/" />
-${INVITE_HOP}
 <meta http-equiv="refresh" content="0; url=/${def.code}/" />
 </head>
 <body><p>Redirecting to <a href="/${def.code}/">/${def.code}/</a></p></body>
@@ -409,59 +379,6 @@ function writeStagingHeaders() {
   if (ctx === 'production' && isLiveUrl(primary)) return null;
   fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex\n', 'utf8');
   return primary ? `${ctx} @ ${primary}` : ctx;
-}
-
-/**
- * The CMS is a single static page plus a config file describing every editable
- * field. The config is generated from content/en/ on each build so that adding
- * a key to a template is all it takes for the key to appear in the editor —
- * there is no second list to keep in step.
- *
- * Beside it goes what the live preview (admin/preview.js) needs: every page
- * template with nav, footer and JSON-LD already inlined and asset paths made
- * absolute, but placeholders left in place, plus each locale's strings and the
- * list of entries to register for. The preview substitutes the entry being
- * edited into its template in the browser with the same localize() this build
- * uses, so the pane shows the page as it will deploy.
- */
-function writeAdmin(partials, content, layout) {
-  const outDir = path.join(DIST, 'admin');
-  const previewDir = path.join(outDir, 'preview');
-  fs.mkdirSync(previewDir, { recursive: true });
-  fs.copyFileSync(path.join(ROOT, 'admin', 'index.html'), path.join(outDir, 'index.html'));
-  fs.copyFileSync(path.join(ROOT, 'admin', 'preview.js'), path.join(outDir, 'preview.js'));
-  fs.copyFileSync(path.join(ROOT, 'tools', 'localize.js'), path.join(outDir, 'localize.js'));
-
-  const def = LOCALES.find((l) => l.isDefault);
-  const pages = listPages();
-  for (const page of pages) {
-    const html = loadTemplate(page, layout);
-    fs.writeFileSync(
-      path.join(previewDir, page),
-      absolutizeAssets(compose(html, partials, page, def)),
-      'utf8'
-    );
-  }
-  fs.writeFileSync(
-    path.join(previewDir, 'data.json'),
-    JSON.stringify({
-      pages: pages.map((p) => p.replace(/\.html$/, '')).concat(Object.keys(partials)),
-      strings: content,
-    }),
-    'utf8'
-  );
-
-  const { yaml, fieldCount } = buildConfig({
-    contentDir: CONTENT,
-    srcDir: SRC,
-    locales: LOCALES,
-    defaultLocaleOnly: DEFAULT_LOCALE_ONLY,
-    siteUrl: process.env.URL || SITE,
-    branch: CMS_BRANCH,
-    localBackend: LOCAL_CMS,
-  });
-  fs.writeFileSync(path.join(outDir, 'config.yml'), yaml, 'utf8');
-  return fieldCount;
 }
 
 async function build() {
@@ -541,10 +458,6 @@ async function build() {
       );
       out = localizeUrls(out, locale, page, localesForPage, locale.indexable);
 
-      // Only the homepages: / redirects to a locale homepage, so that is where
-      // an invite link with a token fragment actually arrives.
-      if (page === 'index.html') out = out.replace('</head>', INVITE_HOP + '\r\n</head>');
-
       fs.writeFileSync(path.join(outDir, page), out, 'utf8');
       written++;
     }
@@ -581,7 +494,6 @@ async function build() {
   writeRootRedirect();
   const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
-  const cmsFields = writeAdmin(partials, content, layout);
 
   for (const c of coverage) {
     const total = c.locale.translatable;
@@ -596,7 +508,6 @@ async function build() {
   console.log(
     `\nbuilt ${LOCALES.length} locales + ${staticCount} static files, ${sitemapUrls} sitemap URLs -> dist/ (${Date.now() - started}ms)`
   );
-  console.log(`admin/ CMS: ${cmsFields} editable fields on branch "${CMS_BRANCH}"`);
   if (uploaded.length) console.log(`media: ${uploaded.length} uploaded image(s) copied into dist/assets/`);
   if (staging) console.log(`context "${staging}" — whole deploy marked noindex via dist/_headers`);
 
@@ -713,7 +624,6 @@ async function renderOne({ page, locale: code, doc }) {
   const strings = content[code];
   let out = render(html, partials, pageFile, locale, strings, locale.isDefault ? null : en, new Set());
   out = localizeUrls(out, locale, pageFile, localesForPage, locale.indexable);
-  if (pageFile === 'index.html') out = out.replace('</head>', INVITE_HOP + '\r\n</head>');
   return out;
 }
 

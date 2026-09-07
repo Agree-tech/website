@@ -15,7 +15,6 @@
     "verify:export": "node tools/export-from-payload.js --check",
     "sort": "node tools/sort-content.js",
     "dev": "node build.js && npx --yes http-server dist -p 8000 -c-1",
-    "cms": "node build.js --local-cms && npx --yes http-server dist -p 8000 -c-1",
     "payload": "npm --prefix cms run dev",
     "payload:db": "docker compose -f cms/docker-compose.yml up -d",
     "payload:seed": "npm --prefix cms run seed",
