@@ -26,7 +26,6 @@ export const Pages: CollectionConfig = {
   admin: {
     useAsTitle: 'label',
     defaultColumns: ['label', 'name', 'updatedAt'],
-    group: 'Structure',
     /**
      * Opens the page rendered by the real build, in the locale being edited.
      * Save first: this reads the database, not the unsaved form.

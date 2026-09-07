@@ -20,7 +20,7 @@ const dirname = path.dirname(fileURLToPath(import.meta.url))
 export const Media: CollectionConfig = {
   slug: 'media',
   access: { read: () => true },
-  admin: { useAsTitle: 'filename', group: 'Media' },
+  admin: { useAsTitle: 'filename', group: 'Library' },
   upload: {
     // Beside the app rather than inside src/, so a rebuild never sweeps uploads
     // away with the compiled output.

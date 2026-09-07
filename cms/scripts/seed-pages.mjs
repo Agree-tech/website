@@ -61,9 +61,36 @@ const readContent = (locale, page) => {
 }
 
 /** A block: its props, the words for this locale, and where they came from. */
-function toBlock(entry, content) {
+function toBlock(entry, content, english) {
   const { component, section, lead, slots = {}, props = {} } = entry
-  const out = { blockType: component, section, lead: lead ?? '', slots }
+  // The row label in the layout list. Always from English: blockName is not a
+  // localized field, so writing it once per locale would leave whichever locale
+  // was seeded last — a Polish label above an English form. Without it every row reads "Untitled",
+  // so a page is a stack of identical-looking bars and finding the section you
+  // meant means opening them one at a time. The heading is what the section
+  // actually says, which is how a person recognises it.
+  const heading = (() => {
+    // A reusable component names its slots semantically (heading, eyebrow); a
+    // single-use one names them after the content key it was extracted from
+    // (h2-meet-the-board). Try both, heading first, before giving up on the
+    // section name.
+    const names = Object.keys(slots)
+    const candidates = [
+      'heading',
+      // Highest level first: a grid's own h2 names the section, an h3 inside it
+      // names one card. Picking the card would label the row "Diversity".
+      ...names.filter((n) => /^h[1-6]-/.test(n)).sort((a, b) => a.charCodeAt(1) - b.charCodeAt(1)),
+      'eyebrow',
+      ...names.filter((n) => /^(div|span|b)-/.test(n)),
+    ]
+    for (const key of candidates) {
+      const value = slots[key] && textFor(english, section, slots[key])
+      if (value) return value.length > 60 ? value.slice(0, 57) + '…' : value
+    }
+    return section
+  })()
+
+  const out = { blockType: component, blockName: heading, section, lead: lead ?? '', slots }
 
   // The words go in their own group, so the build can tell content from props
   // without knowing which is which.
@@ -108,7 +135,7 @@ async function main() {
     // an id to every block and array row as it does so.
     const en = readContent('en', name)
     const existing = await payload.find({ collection: 'pages', where: { name: { equals: name } }, limit: 1 })
-    const data = { name, label, layout: entries.map((e) => toBlock(e, en)) }
+    const data = { name, label, layout: entries.map((e) => toBlock(e, en, en)) }
     const doc = existing.totalDocs
       ? await payload.update({ collection: 'pages', id: existing.docs[0].id, locale: 'en', fallbackLocale: 'none', data, depth: 0 })
       : await payload.create({ collection: 'pages', locale: 'en', fallbackLocale: 'none', data, depth: 0 })
@@ -121,7 +148,7 @@ async function main() {
       const content = readContent(locale, name)
       if (!content) continue
       const layoutWithIds = entries.map((e, i) => {
-        const block = toBlock(e, content)
+        const block = toBlock(e, content, en)
         const stored = doc.layout[i]
         block.id = stored.id
         for (const [k, v] of Object.entries(block)) {
