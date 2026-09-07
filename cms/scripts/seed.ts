@@ -79,7 +79,19 @@ async function main() {
       }
 
       try {
-        await payload.updateGlobal({ slug: slug as never, locale, data: data as never, depth: 0 })
+        // fallbackLocale none, or a locale inherits English for any field the
+        // data omits. Payload reads the global before writing it, and that read
+        // resolves an untranslated field to the default locale; the merged
+        // result is then stored, turning "not translated" into "translated,
+        // in English". It costs nothing on a first seed, where there is nothing
+        // to read back, and silently corrupts every later one.
+        await payload.updateGlobal({
+          slug: slug as never,
+          locale,
+          fallbackLocale: 'none',
+          data: data as never,
+          depth: 0,
+        })
         written++
       } catch (err) {
         failures.push(`${slug} [${locale}] ${Object.keys(data).length} fields — ${(err as Error).message.split('\n')[0]}`)
