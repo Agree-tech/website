@@ -88,9 +88,18 @@ function render(template, instance, page, loadInclude) {
 
   // Hyphens allowed: a slot is often named after the content key it fills, and
   // content keys are hyphenated.
+  //
+  // A slot's value is normally a key in this block's own section. A value
+  // containing a dot is read as "section.key" instead, which is how a block
+  // reaches a string that genuinely lives elsewhere — image alt text is stored
+  // under <page>.meta, shared by every image on the page, not under whichever
+  // section happens to show it. Content keys never contain a dot, so the two
+  // forms cannot be confused.
   out = out.replace(/\{\{slot:([\w-]+)(@[^}]+)?\}\}/g, (raw, name, emphasis = '') => {
     if (!(name in slots)) throw new Error(`component on "${page}" has no slot "${name}"`);
-    return `{{i18n:${page}.${section}.${slots[name]}${emphasis}}}`;
+    const value = slots[name];
+    const path = value.includes('.') ? value : `${section}.${value}`;
+    return `{{i18n:${page}.${path}${emphasis}}}`;
   });
 
   out = out.replace(/\{\{prop:(\w+)\}\}/g, (raw, name) => {

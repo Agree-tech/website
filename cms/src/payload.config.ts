@@ -5,6 +5,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 
+import { Media } from './collections/Media'
 import { Users } from './collections/Users'
 import { pageGlobals } from './globals.generated'
 
@@ -20,7 +21,7 @@ export default buildConfig({
     },
   },
 
-  collections: [Users],
+  collections: [Users, Media],
 
   /**
    * One global per page, generated from the site's own content model. Globals

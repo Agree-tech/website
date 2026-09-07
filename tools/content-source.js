@@ -149,3 +149,40 @@ async function fromPayload(baseUrl, srcDir, code) {
 }
 
 module.exports = { fromDisk, fromPayload, payloadSections };
+
+/**
+ * Images uploaded through the CMS, copied into dist/assets/.
+ *
+ * The site is static and stays that way: an uploaded image is fetched once at
+ * build time and written beside the files that live in the repository, so the
+ * deployed page refers to /assets/<name> either way and never asks the CMS for
+ * anything. A file already present in assets/ is left alone — the repository
+ * wins, so uploading something called styles.css cannot replace a stylesheet.
+ *
+ * Returns what it wrote, or an empty list when the CMS has no media or is not
+ * being used as the source.
+ */
+async function fetchMedia(baseUrl, destDir, existing) {
+  const res = await fetch(`${baseUrl}/api/media?limit=500&depth=0`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} listing media`);
+
+  const { docs = [] } = await res.json();
+  const written = [];
+
+  for (const doc of docs) {
+    const name = doc.filename;
+    if (!name || existing.has(name)) continue;
+
+    // Reject anything that would escape assets/ — the filename comes from an
+    // upload, and a path separator in it would write outside the build.
+    if (name !== path.basename(name)) throw new Error(`media filename is a path: ${name}`);
+
+    const file = await fetch(`${baseUrl}/api/media/file/${encodeURIComponent(name)}`);
+    if (!file.ok) throw new Error(`${file.status} fetching media ${name}`);
+    fs.writeFileSync(path.join(destDir, name), Buffer.from(await file.arrayBuffer()));
+    written.push(name);
+  }
+  return written;
+}
+
+module.exports.fetchMedia = fetchMedia;

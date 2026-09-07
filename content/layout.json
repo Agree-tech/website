@@ -56,24 +56,56 @@
       "section": "split-section",
       "lead": "\r\n\r\n",
       "slots": {
-        "div-board-of-directors": "div-board-of-directors",
-        "h2-meet-the-board": "h2-meet-the-board",
-        "alt": "alt",
-        "div-chairman-of-the-board": "div-chairman-of-the-board",
-        "h4-kenneth-andreasen": "h4-kenneth-andreasen",
-        "p-seasoned-executive-and": "p-seasoned-executive-and",
-        "alt-2": "alt-2",
-        "div-board-member": "div-board-member",
-        "h4-peter-reich": "h4-peter-reich",
-        "p-seasoned-executive-and-2": "p-seasoned-executive-and-2",
-        "alt-3": "alt-3",
-        "div-board-member-cto": "div-board-member-cto",
-        "h4-kristian-hvid-jakobsen": "h4-kristian-hvid-jakobsen",
-        "p-cto-and-investor-at": "p-cto-and-investor-at",
-        "alt-4": "alt-4",
-        "div-board-member-ceo": "div-board-member-ceo",
-        "h4-karina-buch": "h4-karina-buch",
-        "p-ceo-and-investor-at": "p-ceo-and-investor-at"
+        "eyebrow": "div-board-of-directors",
+        "heading": "h2-meet-the-board"
+      },
+      "props": {
+        "people": [
+          {
+            "props": {
+              "image": "assets/board-henrik.jpeg"
+            },
+            "slots": {
+              "alt": "meta.alt",
+              "role": "div-chairman-of-the-board",
+              "name": "h4-kenneth-andreasen",
+              "bio": "p-seasoned-executive-and"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-peter.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-2",
+              "role": "div-board-member",
+              "name": "h4-peter-reich",
+              "bio": "p-seasoned-executive-and-2"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-kristian.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-3",
+              "role": "div-board-member-cto",
+              "name": "h4-kristian-hvid-jakobsen",
+              "bio": "p-cto-and-investor-at"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-karina.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-4",
+              "role": "div-board-member-ceo",
+              "name": "h4-karina-buch",
+              "bio": "p-ceo-and-investor-at"
+            }
+          }
+        ]
       }
     },
     {

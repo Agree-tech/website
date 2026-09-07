@@ -19,7 +19,7 @@ const fs = require('fs');
 const path = require('path');
 const { buildConfig } = require('./tools/cms-config.js');
 const { localize } = require('./tools/localize.js');
-const { fromDisk, fromPayload } = require('./tools/content-source.js');
+const { fromDisk, fromPayload, fetchMedia } = require('./tools/content-source.js');
 const { render: renderComponent } = require('./tools/components.js');
 
 const ROOT = __dirname;
@@ -553,6 +553,12 @@ async function build() {
     staticCount += fs.readdirSync(from).length;
   }
 
+  // Uploaded images land beside the committed ones, so a page refers to
+  // /assets/<name> whichever it came from.
+  const uploaded = FROM_PAYLOAD
+    ? await fetchMedia(PAYLOAD_URL, path.join(DIST, 'assets'), new Set(fs.readdirSync(path.join(ROOT, 'assets'))))
+    : [];
+
   writeRootRedirect();
   const staging = writeStagingHeaders();
   const sitemapUrls = writeSitemap(pages, indexable);
@@ -572,6 +578,7 @@ async function build() {
     `\nbuilt ${LOCALES.length} locales + ${staticCount} static files, ${sitemapUrls} sitemap URLs -> dist/ (${Date.now() - started}ms)`
   );
   console.log(`admin/ CMS: ${cmsFields} editable fields on branch "${CMS_BRANCH}"`);
+  if (uploaded.length) console.log(`media: ${uploaded.length} uploaded image(s) copied into dist/assets/`);
   if (staging) console.log(`context "${staging}" — whole deploy marked noindex via dist/_headers`);
 
   // English has no fallback, so a key it lacks is a raw placeholder on every
