@@ -1,0 +1,16 @@
+<section class="split-section">
+  <div class="container">
+    <div class="kicker">
+      <div class="eyebrow"><span class="dot"{{prop:dotStyle}}></span>{{slot:eyebrow}}</div>
+      <h2 style="margin-top:18px">{{slot:heading}}</h2>
+    </div>
+    <div class="feat-grid-3 {{prop:accent}}">
+{{#each cards}}      <div class="f3">
+        <div class="ico">{{prop:icon}}</div>
+        <div class="num">{{#if labelText}}{{prop:labelText}}{{else}}{{slot:label}}{{/if}}</div>
+        <h3>{{slot:heading}}</h3>
+        <p>{{slot:body}}</p>
+      </div>
+{{/each}}    </div>
+  </div>
+</section>

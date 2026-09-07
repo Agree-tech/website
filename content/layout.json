@@ -61,7 +61,81 @@
         "secondary": "a-see-the-platform"
       }
     },
-    "split-section",
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "props": {
+        "accent": "acc-navy",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
+            },
+            "slots": {
+              "label": "div-models",
+              "heading": "h3-flexible-billing-model",
+              "body": "p-usage-based-tiered-one"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
+            },
+            "slots": {
+              "label": "div-usage",
+              "heading": "h3-real-time-usage-collec",
+              "body": "p-track-usage-from-cdrs"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M9 10h6M9 14h6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-invoicing",
+              "heading": "h3-advanced-invoicing",
+              "body": "p-periodic-one-time-or"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1-4 4-6 8-6s7 2 8 6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-accounts",
+              "heading": "h3-account-management",
+              "body": "p-a-360-view-of"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-rules",
+              "heading": "h3-rules-automation",
+              "body": "p-automate-upgrades-bill"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5zM9 12l2 2 4-4\"/></svg>"
+            },
+            "slots": {
+              "label": "div-quality",
+              "heading": "h3-quality-assurance",
+              "body": "p-a-daily-shadow-billing"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-billing-capabilities",
+        "heading": "h2-discover-the-billing-c"
+      }
+    },
     "split-section-alt",
     {
       "component": "cta-band",
@@ -124,7 +198,81 @@
         "secondary": "a-see-the-platform"
       }
     },
-    "split-section",
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "props": {
+        "accent": "acc-blue",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 7h18M3 12h18M3 17h12\"/></svg>"
+            },
+            "slots": {
+              "label": "div-01-catalog",
+              "heading": "h3-product-catalog",
+              "body": "p-detailed-accurate-prod"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M5 8h14M5 16h14\"/></svg>"
+            },
+            "slots": {
+              "label": "div-02-pricing",
+              "heading": "h3-dynamic-pricing",
+              "body": "p-adjust-pricing-ratings"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 8v4l3 2\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg>"
+            },
+            "slots": {
+              "label": "div-03-turnaround",
+              "heading": "h3-fast-quote-turnaround",
+              "body": "p-speed-up-quote-generat"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
+            },
+            "slots": {
+              "label": "div-04-efficiency",
+              "heading": "h3-increase-efficiency",
+              "body": "p-automate-complex-prici"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 6h18M6 12h12M9 18h6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-05-flexibility",
+              "heading": "h3-flexible-cpq",
+              "body": "p-tailored-configuration"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18\"/></svg>",
+              "labelText": "06 · I18N"
+            },
+            "slots": {
+              "heading": "h3-multi-language",
+              "body": "p-a-multilingual-product"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-cpq-capabilities",
+        "heading": "h2-everything-your-sales-"
+      }
+    },
     "split-section-alt",
     "split-section-crm-integrations",
     {
@@ -309,7 +457,81 @@
         "secondary": "a-see-the-platform"
       }
     },
-    "split-section",
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "props": {
+        "accent": "acc-cyan",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-workflows",
+              "heading": "h3-create-workflows",
+              "body": "p-use-the-process-tool"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h18M12 3v18\"/></svg>"
+            },
+            "slots": {
+              "label": "div-integration",
+              "heading": "h3-seamless-integration",
+              "body": "p-connect-systems-and-ap"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M13 2L4 14h7l-1 8 9-12h-7l1-8z\"/></svg>"
+            },
+            "slots": {
+              "label": "div-events",
+              "heading": "h3-become-event-driven",
+              "body": "p-let-well-defined-event"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
+            },
+            "slots": {
+              "label": "div-efficiency",
+              "heading": "h3-increase-efficiency",
+              "body": "p-stop-wasting-time-on"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
+            },
+            "slots": {
+              "label": "div-scale",
+              "heading": "h3-scale-your-business",
+              "body": "p-automation-of-daily-ta"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v6l4 2\"/></svg>"
+            },
+            "slots": {
+              "label": "div-control",
+              "heading": "h3-be-in-control",
+              "body": "p-the-atsuite-process-en"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-process-capabilities",
+        "heading": "h2-discover-the-process-m"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",
@@ -352,7 +574,81 @@
         "secondary": "a-see-cpq"
       }
     },
-    "split-section",
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "props": {
+        "accent": "acc-violet",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
+            },
+            "slots": {
+              "label": "div-pipeline",
+              "heading": "h3-pipeline-management",
+              "body": "p-opportunities-link-to-"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
+            },
+            "slots": {
+              "label": "div-process",
+              "heading": "h3-customizable-sales-pro",
+              "body": "p-match-the-sales-path"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v6l4 2\"/></svg>"
+            },
+            "slots": {
+              "label": "div-activity",
+              "heading": "h3-sales-activity-recordi",
+              "body": "p-record-tasks-events-ca"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z\"/></svg>"
+            },
+            "slots": {
+              "label": "div-playbook",
+              "heading": "h3-sales-playbook",
+              "body": "p-online-playbooks-guide"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 7h18M3 12h12M3 17h8\"/></svg>"
+            },
+            "slots": {
+              "label": "div-quotes",
+              "heading": "h3-quotes",
+              "body": "p-create-quotes-automati"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12l4 4L19 6\"/></svg>"
+            },
+            "slots": {
+              "label": "div-approval",
+              "heading": "h3-internal-review-approv",
+              "body": "p-quotes-route-to-the"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-sales-capabilities",
+        "heading": "h2-discover-our-sales-fea"
+      }
+    },
     "split-section-alt",
     {
       "component": "cta-band",
@@ -396,7 +692,81 @@
       }
     },
     "split-section-alt",
-    "split-section",
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "props": {
+        "accent": "acc-green",
+        "dotStyle": " style=\"background:var(--green)\"",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
+            },
+            "slots": {
+              "label": "div-plan-package",
+              "heading": "h3-plan-and-package-manag",
+              "body": "p-customizable-plans-add"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5z\"/></svg>"
+            },
+            "slots": {
+              "label": "div-provisioning",
+              "heading": "h3-activation-provisionin",
+              "body": "p-simplified-onboarding-"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
+            },
+            "slots": {
+              "label": "div-usage",
+              "heading": "h3-usage-tracking-reporti",
+              "body": "p-real-time-monitoring-a"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 12a9 9 0 11-3-6.7M21 4v5h-5\"/></svg>"
+            },
+            "slots": {
+              "label": "div-lifecycle",
+              "heading": "h3-renewals-lifecycle",
+              "body": "p-automated-reminders-an"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 10h18\"/></svg>"
+            },
+            "slots": {
+              "label": "div-billing",
+              "heading": "h3-cycles-invoicing",
+              "body": "p-recurring-billing-on-a"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h4l3-9 4 18 3-9h4\"/></svg>"
+            },
+            "slots": {
+              "label": "div-analytics",
+              "heading": "h3-advanced-analytics",
+              "body": "p-customer-behaviour-ins"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-subscription-capabilit",
+        "heading": "h2-built-for-the-entire"
+      }
+    },
     {
       "component": "cta-band",
       "section": "cta-band-dark",

@@ -22,6 +22,17 @@
 /** Nesting is not supported and not needed; keep components flat. */
 const IF = /\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g;
 
+/**
+ * A repeated child — the six cards of a feature grid, the four logos of an
+ * integration row.
+ *
+ * The count is the instance's, not the component's, which is the whole point:
+ * every feature grid on the site happens to have exactly six cards today, and
+ * nothing about the markup requires that. Once the array is the thing being
+ * rendered, a seventh card is data rather than a code change.
+ */
+const EACH = /\{\{#each (\w+)\}\}([\s\S]*?)\{\{\/each\}\}/g;
+
 function render(template, instance, page, loadInclude) {
   const { section, props = {}, slots = {} } = instance;
   const has = (name) => {
@@ -30,6 +41,19 @@ function render(template, instance, page, loadInclude) {
   };
 
   let out = template;
+
+  /**
+   * Repeats first: each item is rendered as its own little instance, sharing
+   * this one's page and section, so {{slot:}} and {{prop:}} mean the same thing
+   * inside a card as outside it. An item's slots are its own content keys — the
+   * six cards of a grid have six different sets — and its props its own markup,
+   * which is how each card keeps its own icon.
+   */
+  out = out.replace(EACH, (raw, name, body) => {
+    const items = props[name];
+    if (!Array.isArray(items)) throw new Error(`component on "${page}" has no array prop "${name}"`);
+    return items.map((item) => render(body, { ...item, section }, page, loadInclude)).join('');
+  });
 
   // Conditionals first, so a false branch cannot leave a slot behind for the
   // substitutions below to fill in.
