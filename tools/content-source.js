@@ -154,6 +154,29 @@ function slotBackedKeys(layout) {
   return keys;
 }
 
+/**
+ * A flat map in the order a sorted content file has: pages by filename, then
+ * sections and fields in template order, with anything the templates do not
+ * mention last and alphabetical. Both sources end up here so that the same
+ * strings are always in the same sequence.
+ */
+function sortFlat(flat, order) {
+  const pages = {};
+  for (const [key, value] of Object.entries(flat)) {
+    const [page, section, ...rest] = key.split('.');
+    const field = rest.join('.');
+    if (!field) continue;
+    ((pages[page] = pages[page] || {})[section] = pages[page][section] || {})[field] = value;
+  }
+  const out = {};
+  for (const page of Object.keys(pages).sort((a, b) => (a + '.json' < b + '.json' ? -1 : 1))) {
+    for (const [section, fields] of Object.entries(sortPage(page, pages[page], order))) {
+      for (const [field, value] of Object.entries(fields)) out[`${page}.${section}.${field}`] = value;
+    }
+  }
+  return out;
+}
+
 async function fromPayload(baseUrl, srcDir, code, layout) {
   const sections = payloadSections(srcDir);
   const fetched = new Array(sections.length);
@@ -199,11 +222,15 @@ async function fromPayload(baseUrl, srcDir, code, layout) {
     if (key in fromBlocks) flat[key] = fromBlocks[key];
     else delete flat[key];
   }
-  // A block-owned key the globals never had — a section added in the CMS.
+  // A block-owned key the globals never had — a button or section added in the
+  // CMS. Appending it here would put it after every other page's keys, while the
+  // same key on disk sits inside its own section, so the two maps would hold the
+  // same strings in a different order and the parity gate would fail on nothing.
+  // Re-sorting both by the rule sorted content files already follow settles it.
   for (const [key, value] of Object.entries(fromBlocks)) {
     if (!(key in flat)) flat[key] = value;
   }
-  return flat;
+  return sortFlat(flat, order);
 }
 
 module.exports = { fromDisk, fromPayload, payloadSections };
@@ -263,6 +290,36 @@ module.exports.fetchMedia = fetchMedia;
  */
 const BLOCK_META = new Set(['id', 'blockType', 'blockName', 'section', 'lead', 'slots', 'content']);
 
+/**
+ * The content key each of a block's — or a row's — slots writes to.
+ *
+ * Everything migrated out of the templates carries a `slots` map saying which
+ * key it came from, so its text keeps living under the name it has always had.
+ * Anything an editor adds has no such history, and needs a key invented for it.
+ *
+ * The name alone will not do. Two buttons added to the same band would both be
+ * `label`, and the second would overwrite the first — one button, twice, with
+ * the same words. So the invented key carries the row's own id.
+ *
+ * Deliberately not derived from the English text, tempting as that is given
+ * every existing key was: renaming a button in English would change its key and
+ * orphan every translation of it.
+ */
+function slotsFor(node) {
+  const slots = { ...(node.slots || {}) };
+  const id = String(node.id || '').replace(/[^a-z0-9]/gi, '').slice(-8).toLowerCase();
+  for (const [name, value] of Object.entries(node.content || {})) {
+    // Only a field with words in it. Payload returns every field of a group,
+    // null for the ones nobody filled, and inventing a slot for those would
+    // give a block a part it does not have — the sales CTA band would grow the
+    // paragraph it was drawn without, holding a key that resolves to nothing.
+    if (typeof value !== 'string' || !value.trim()) continue;
+    const slot = fromIdent(name);
+    if (!(slot in slots)) slots[slot] = id ? `${slot}-${id}` : slot;
+  }
+  return slots;
+}
+
 function toInstance(block) {
   const props = {};
   for (const [key, value] of Object.entries(block)) {
@@ -281,9 +338,10 @@ function toInstance(block) {
           }
           // Same rule as the block: a row with nothing to configure — a bullet
           // that is only its text — carries no props key at all.
+          const rowSlots = slotsFor(row);
           return Object.keys(itemProps).length
-            ? { props: itemProps, slots: row.slots || {} }
-            : { slots: row.slots || {} };
+            ? { props: itemProps, slots: rowSlots }
+            : { slots: rowSlots };
         })
       : value;
   }
@@ -298,7 +356,7 @@ function toInstance(block) {
   // Omitted when there are none, as the hand-written file has it. A block with
   // nothing to configure should not carry an empty object saying so.
   if (Object.keys(props).length) instance.props = props;
-  instance.slots = block.slots || {};
+  instance.slots = slotsFor(block);
   return instance;
 }
 
@@ -340,7 +398,9 @@ function blockKey(section, slot, slots) {
  * the same shape.
  */
 function collectBlockText(page, block, flat) {
-  const { section, slots, content } = block;
+  const { content } = block;
+  const section = block.section;
+  const slots = slotsFor(block);
 
   for (const [name, value] of Object.entries(content || {})) {
     if (typeof value !== 'string' || !value.trim()) continue;
@@ -352,7 +412,7 @@ function collectBlockText(page, block, flat) {
     for (const row of value) {
       for (const [rname, rvalue] of Object.entries(row.content || {})) {
         if (typeof rvalue !== 'string' || !rvalue.trim()) continue;
-        flat[`${page}.${blockKey(section, fromIdent(rname), row.slots)}`] = rvalue;
+        flat[`${page}.${blockKey(section, fromIdent(rname), slotsFor(row))}`] = rvalue;
       }
     }
   }

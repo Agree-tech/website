@@ -124,8 +124,11 @@ function render(template, instance, page, loadInclude, loadPartial) {
   // section happens to show it. Content keys never contain a dot, so the two
   // forms cannot be confused.
   out = out.replace(/\{\{slot:([\w-]+)(@[^}]+)?\}\}/g, (raw, name, emphasis = '') => {
-    if (!(name in slots)) throw new Error(`component on "${page}" has no slot "${name}"`);
-    const value = slots[name];
+    // A slot with no entry in the map writes to a key named after itself. That
+    // is what a section or a button added in the CMS looks like: it has no
+    // history saying which key its words came from, because it has no history.
+    // content-source.js makes those names unique before they get here.
+    const value = name in slots ? slots[name] : name;
     const path = value.includes('.') ? value : `${section}.${value}`;
     return `{{i18n:${page}.${path}${emphasis}}}`;
   });
