@@ -7,11 +7,10 @@
       </div>
       <div class="right">
         <p>{{slot:p-replace-disconnected-t}}</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="platform.html">{{slot:a-tour-the-platform}}</a>
-          <a class="btn btn-ghost" href="contact.html">{{slot:a-speak-to-an-expert}}</a>
-        </div>
-      </div>
+{{#if links}}        <div class="ctas">
+{{#each links}}          {{partial:button}}
+{{/each}}        </div>
+{{/if}}      </div>
     </div>
 
     <div class="q2c-board">

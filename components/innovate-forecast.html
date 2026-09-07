@@ -10,11 +10,10 @@
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{slot:li-real-time-collaboratio}}</li>
         <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{slot:li-predictive-analytics-f}}</li>
       </ul>
-      <div class="ctas">
-        <a class="btn btn-cyan btn-lg" href="contact.html">{{slot:a-schedule-a-demo}}</a>
-        <a class="btn btn-outline-dark btn-lg" href="platform.html">{{slot:a-see-the-platform}}</a>
-      </div>
-    </div>
+{{#if links}}      <div class="ctas">
+{{#each links}}        {{partial:button}}
+{{/each}}      </div>
+{{/if}}    </div>
     <div class="inn-vis">
       <div class="inn-vis-head">
         <div>

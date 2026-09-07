@@ -4,11 +4,10 @@
       <div class="eyebrow on-dark"><span class="dot"></span>{{slot:div-atsuite-quote-to-reven}}</div>
       <h1 style="margin-top: 22px;">{{slot:h1-the-all-in-one@span.accent}}</h1>
       <p class="lede">{{slot:p-automate-the-entire-qu}}</p>
-      <div class="ctas">
-        <a class="btn btn-cyan btn-lg" href="contact.html">{{slot:a-book-a-demo}}</a>
-        <a class="btn btn-outline-dark btn-lg" href="platform.html">{{slot:a-explore-the-platform}} <span class="arr">→</span></a>
-      </div>
-      <div class="meta-row">
+{{#if links}}      <div class="ctas">
+{{#each links}}        {{partial:button}}
+{{/each}}      </div>
+{{/if}}      <div class="meta-row">
         <div><b>{{slot:b-6-years}}</b> {{slot:div-in-production}}</div>
         <div><b>~100%</b> {{slot:div-billing-accuracy}}</div>
         <div><b>{{slot:b-built-in-eu}}</b> {{slot:div-gdpr-native}}</div>

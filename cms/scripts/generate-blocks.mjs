@@ -40,7 +40,7 @@ const LABELS = {
   narrow: 'Narrow column',
   alt: 'Alternate background',
   flip: 'Visual on the left',
-  arrow: 'Arrow on the second button',
+  arrow: 'Show arrow',
   accent: 'Accent colour',
   primaryHref: 'First button links to',
   secondaryHref: 'Second button links to',
@@ -48,6 +48,11 @@ const LABELS = {
   secondaryClass: 'Second button style',
   image: 'Photo',
   badgeLetter: 'Badge letter',
+  links: 'Buttons',
+  href: 'Links to',
+  variant: 'Style',
+  large: 'Large',
+  label: 'Button text',
 }
 
 const ACRONYMS = { cta: 'CTA', cpq: 'CPQ', q2c: 'Q2C', cfo: 'CFO', crm: 'CRM', href: 'link' }
@@ -88,7 +93,7 @@ function fieldFor(name, values, pages) {
     optional ? [{ label: '— none —', value: '' }, ...options] : options
 
   // A destination is always a choice over the site, never free text.
-  if (/Href$/.test(name)) return { ...base, type: 'select', options: withNone(pages) }
+  if (/^href$|Href$/.test(name)) return { ...base, type: 'select', options: withNone(pages) }
 
   if (kinds.size === 1 && kinds.has('bool')) return { ...base, type: 'checkbox' }
 
@@ -125,7 +130,7 @@ function fieldFor(name, values, pages) {
 function contentFields(slots) {
   return [...slots].sort().map((slot) => ({
     name: slot.replace(/-/g, '_'),
-    label: title(slot),
+    label: LABELS[slot] || title(slot),
     type: 'text',
     localized: true,
     admin: { description: 'Leave blank to fall back to English.' },
@@ -212,7 +217,7 @@ function main() {
     for (const [arrayName, itemProps] of c.arrays) {
       L.push('    {')
       L.push(`      name: ${JSON.stringify(arrayName)},`)
-      L.push(`      label: ${JSON.stringify(title(arrayName))},`)
+      L.push(`      label: ${JSON.stringify(LABELS[arrayName] || title(arrayName))},`)
       L.push("      type: 'array',")
       L.push('      fields: [')
       const rowSlots = c.arraySlots.get(arrayName) || new Set()

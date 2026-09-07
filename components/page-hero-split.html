@@ -4,11 +4,10 @@
       <div class="eyebrow{{#if dark}} on-dark{{/if}}"><span class="dot"{{prop:dotStyle}}></span>{{slot:eyebrow}}</div>
       <h1>{{slot:heading}}</h1>
       <p class="lede">{{slot:body}}</p>
-      <div class="ctas">
-        <a class="btn {{prop:primaryClass}} btn-lg" href="{{prop:primaryHref}}">{{slot:primary}}</a>
-        <a class="btn {{prop:secondaryClass}} btn-lg" href="{{prop:secondaryHref}}">{{slot:secondary}}{{#if arrow}} <span class="arr">→</span>{{/if}}</a>
-      </div>
-    </div>
+{{#if links}}      <div class="ctas">
+{{#each links}}        {{partial:button}}
+{{/each}}      </div>
+{{/if}}    </div>
     {{include:visual}}
   </div>
 </section>

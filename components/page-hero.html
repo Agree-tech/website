@@ -3,6 +3,6 @@
     <div class="eyebrow"><span class="dot"></span>{{slot:eyebrow}}</div>
     <h1 style="margin-top:18px">{{slot:heading}}</h1>
     <p class="lede"{{prop:ledeStyle}}>{{slot:body}}</p>
-{{#if primary}}    <div class="ctas"{{prop:ctasStyle}}><a class="btn {{prop:primaryClass}} btn-lg" href="{{prop:primaryHref}}">{{slot:primary}}</a></div>
+{{#if links}}    <div class="ctas"{{prop:ctasStyle}}>{{#each links}}{{partial:button}}{{/each}}</div>
 {{/if}}  </div>
 </section>

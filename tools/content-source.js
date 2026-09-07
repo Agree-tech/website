@@ -267,12 +267,16 @@ function toInstance(block) {
   const props = {};
   for (const [key, value] of Object.entries(block)) {
     if (BLOCK_META.has(key)) continue;
+    if (value === null || value === undefined) continue;
     // An array field comes back as rows carrying their own slots and props.
     props[key] = Array.isArray(value)
       ? value.map((row) => {
           const itemProps = {};
           for (const [k, v] of Object.entries(row)) {
             if (BLOCK_META.has(k)) continue;
+            // Payload returns null for a checkbox nobody ticked; the file simply
+            // has no key. Same meaning, and the export compares files.
+            if (v === null || v === undefined) continue;
             itemProps[k] = v;
           }
           // Same rule as the block: a row with nothing to configure — a bullet

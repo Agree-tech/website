@@ -277,7 +277,9 @@ function loadTemplate(pageFile, layout) {
     const template = fs.readFileSync(path.join(COMPONENTS, `${entry.component}.html`), 'utf8');
     const visual = (name) =>
       fs.readFileSync(path.join(COMPONENTS, 'visuals', `${name}.html`), 'utf8');
-    return renderComponent(template, entry, page, visual);
+    const partial = (name) =>
+      fs.readFileSync(path.join(COMPONENTS, 'partials', `${name}.html`), 'utf8');
+    return renderComponent(template, entry, page, visual, partial);
   };
 
   return (

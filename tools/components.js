@@ -33,14 +33,41 @@ const IF = /\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g
  */
 const EACH = /\{\{#each (\w+)\}\}([\s\S]*?)\{\{\/each\}\}/g;
 
-function render(template, instance, page, loadInclude) {
+/** A shared fragment of a component: components/partials/<name>.html. */
+const PARTIAL = /\{\{partial:([\w-]+)\}\}/g;
+
+function render(template, instance, page, loadInclude, loadPartial) {
   const { section, props = {}, slots = {} } = instance;
   const has = (name) => {
     const v = name in slots ? slots[name] : props[name];
+    // An empty array is absent, not present: a band with its buttons all
+    // removed should lose the row that held them, not keep an empty one.
+    if (Array.isArray(v)) return v.length > 0;
     return v !== undefined && v !== null && v !== false && v !== '';
   };
 
   let out = template;
+
+  /**
+   * A shared fragment, pasted in before anything else is resolved.
+   *
+   * The difference from {{include:}} is what happens next: an include is a
+   * finished piece of a page and is left alone, while a partial is a piece of a
+   * component and goes on to be resolved in whatever scope it landed in. So the
+   * button inside {{#each links}} reads that row's label and destination, and
+   * the same file used outside a loop reads the block's.
+   *
+   * That is what makes it a component rather than a copy: `<a class="btn …">` is
+   * written once, and the thirteen places that draw a button all draw this one.
+   */
+  for (let depth = 0; PARTIAL.test(out); depth++) {
+    PARTIAL.lastIndex = 0;
+    if (depth > 5) throw new Error(`{{partial:}} nested too deeply on "${page}" — is one including itself?`);
+    out = out.replace(PARTIAL, (raw, name) => {
+      if (!loadPartial) throw new Error(`component on "${page}" uses {{partial:${name}}} but no loader was given`);
+      return loadPartial(name);
+    });
+  }
 
   /**
    * Repeats first: each item is rendered as its own little instance, sharing
@@ -61,7 +88,8 @@ function render(template, instance, page, loadInclude) {
           // copied onto each. The item's own props win where both define one.
           { section, slots: item.slots, props: { ...props, ...item.props } },
           page,
-          loadInclude
+          loadInclude,
+          loadPartial
         )
       )
       .join('');
