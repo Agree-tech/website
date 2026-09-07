@@ -72,6 +72,10 @@ export const Pages: CollectionConfig = {
       name: 'layout',
       type: 'blocks',
       blocks: pageBlocks,
+      // Payload names the add button after the singular label, so without this
+      // it reads "Add Layout" — which is the field's name, not the thing being
+      // added. An editor is adding a section.
+      labels: { singular: 'Section', plural: 'Sections' },
       admin: { description: 'The sections of the page, top to bottom. Drag to reorder.' },
     },
   ],

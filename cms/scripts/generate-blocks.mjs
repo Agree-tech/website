@@ -188,6 +188,13 @@ function main() {
     L.push(`const ${varName}: Block = {`)
     L.push(`  slug: ${JSON.stringify(component)},`)
     L.push(`  labels: { singular: ${JSON.stringify(title(component))}, plural: ${JSON.stringify(title(component))} },`)
+    // A photograph of the component on a page that uses it, so the picker shows
+    // what each one looks like instead of twenty-two identical placeholders.
+    // tools/block-thumbnails.mjs makes these; a missing file just falls back.
+    if (fs.existsSync(path.resolve(dirname, '..', 'public', 'blocks', component + '.png'))) {
+      L.push(`  imageURL: ${JSON.stringify(`/blocks/${component}.png`)},`)
+      L.push(`  imageAltText: ${JSON.stringify(`${title(component)} section`)},`)
+    }
     L.push('  fields: [')
     if (c.slots.size) {
       L.push('    {')

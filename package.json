@@ -19,6 +19,7 @@
     "payload": "npm --prefix cms run dev",
     "payload:db": "docker compose -f cms/docker-compose.yml up -d",
     "payload:seed": "npm --prefix cms run seed",
+    "thumbnails": "node tools/block-thumbnails.mjs",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "blocks": "node tools/extract-blocks.js"
   }
