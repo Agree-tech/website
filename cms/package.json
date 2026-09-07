@@ -14,7 +14,8 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
-    "seed:pages": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" node --env-file=.env scripts/seed-pages.mjs"
+    "seed:pages": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" node --env-file=.env scripts/seed-pages.mjs",
+    "db:reset": "docker compose down -v && docker compose up -d"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.88.0",

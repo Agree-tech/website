@@ -120,7 +120,41 @@ async function pool(items, limit, worker) {
  * sortPage the CMS config uses) makes the two sources produce identical bytes
  * and makes each build identical to the last.
  */
-async function fromPayload(baseUrl, srcDir, code) {
+/**
+ * Which keys the page blocks are responsible for.
+ *
+ * Derived from the layout, so it is the same answer in every locale: a key is
+ * a block's to provide if some block declares a slot for it. Anything else —
+ * page metadata, the nav and footer, and the text baked into the hand-drawn
+ * visuals, which keep their own placeholders — still comes from the globals.
+ *
+ * The distinction matters when a translation is removed. If a global kept a
+ * stale Danish string for a key a block now owns, clearing that field in the
+ * CMS would show the stale text instead of falling back to English. Excluding
+ * the block-owned keys from the globals is what makes clearing a field mean
+ * what it says.
+ */
+function slotBackedKeys(layout) {
+  const keys = new Set();
+  const add = (page, section, slots) => {
+    for (const [slot, value] of Object.entries(slots || {})) {
+      const v = value || slot;
+      keys.add(`${page}.${v.includes('.') ? v : `${section}.${v}`}`);
+    }
+  };
+  for (const [page, blocks] of Object.entries(layout || {})) {
+    for (const block of blocks) {
+      add(page, block.section, block.slots);
+      for (const value of Object.values(block.props || {})) {
+        if (!Array.isArray(value)) continue;
+        for (const row of value) add(page, block.section, row.slots);
+      }
+    }
+  }
+  return keys;
+}
+
+async function fromPayload(baseUrl, srcDir, code, layout) {
   const sections = payloadSections(srcDir);
   const fetched = new Array(sections.length);
   await pool(sections, 8, async (s, i) => {
@@ -144,6 +178,30 @@ async function fromPayload(baseUrl, srcDir, code) {
         flat[`${page}.${section}.${field}`] = value;
       }
     }
+  }
+
+  if (!layout) return flat;
+
+  /**
+   * Where a block owns the key, the block's text wins — substituted in place
+   * rather than appended, so the map keeps the order a sorted content file has
+   * and the build stays reproducible.
+   *
+   * A key the block no longer has a value for is removed rather than left at the
+   * global's value: that is what makes clearing a field in the CMS mean the
+   * locale is untranslated, so it falls back to English instead of showing a
+   * stale string nobody can find.
+   */
+  const owned = slotBackedKeys(layout);
+  const fromBlocks = await textFromPages(baseUrl, code);
+  for (const key of Object.keys(flat)) {
+    if (!owned.has(key)) continue;
+    if (key in fromBlocks) flat[key] = fromBlocks[key];
+    else delete flat[key];
+  }
+  // A block-owned key the globals never had — a section added in the CMS.
+  for (const [key, value] of Object.entries(fromBlocks)) {
+    if (!(key in flat)) flat[key] = value;
   }
   return flat;
 }
@@ -233,3 +291,59 @@ async function layoutFromPayload(baseUrl) {
 }
 
 module.exports.layoutFromPayload = layoutFromPayload;
+
+/**
+ * The strings for one locale, read from the page blocks rather than the globals.
+ *
+ * Each block holds its own words now, one field per slot. The build still wants
+ * the flat page.section.field map the templates were written against, so this
+ * puts them back under the key each slot came from — the block's `slots` map —
+ * falling back to the slot's own name for a block created in the CMS, which has
+ * no history to carry.
+ *
+ * Structure is decided by English and nothing else. Whether a CTA band has a
+ * paragraph is a property of the band, not of the language being rendered, so a
+ * missing Danish translation has to fall back to English rather than delete the
+ * element from the Danish page. That is why the caller passes `structure`: the
+ * English map, used to decide which slots exist at all.
+ */
+function blockKey(section, slot, slots) {
+  const value = (slots || {})[slot] || slot;
+  return value.includes('.') ? `${value}` : `${section}.${value}`;
+}
+
+/**
+ * A block keeps its words in a `content` group and its configuration beside it,
+ * so the two never have to be told apart by guessing at names. Array rows carry
+ * the same shape.
+ */
+function collectBlockText(page, block, flat) {
+  const { section, slots, content } = block;
+
+  for (const [name, value] of Object.entries(content || {})) {
+    if (typeof value !== 'string' || !value.trim()) continue;
+    flat[`${page}.${blockKey(section, fromIdent(name), slots)}`] = value;
+  }
+
+  for (const value of Object.values(block)) {
+    if (!Array.isArray(value)) continue;
+    for (const row of value) {
+      for (const [rname, rvalue] of Object.entries(row.content || {})) {
+        if (typeof rvalue !== 'string' || !rvalue.trim()) continue;
+        flat[`${page}.${blockKey(section, fromIdent(rname), row.slots)}`] = rvalue;
+      }
+    }
+  }
+}
+
+async function textFromPages(baseUrl, code) {
+  const res = await fetch(`${baseUrl}/api/pages?limit=100&depth=0&locale=${code}&fallback-locale=none`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} reading pages for ${code}`);
+
+  const { docs = [] } = await res.json();
+  const flat = {};
+  for (const doc of docs) for (const block of doc.layout || []) collectBlockText(doc.name, block, flat);
+  return flat;
+}
+
+module.exports.textFromPages = textFromPages;

@@ -301,8 +301,8 @@ function listPages() {
  * build; both sources live in tools/content-source.js and both promise the same
  * thing, including that a missing key means "not translated", never "empty".
  */
-async function loadContent(code) {
-  return FROM_PAYLOAD ? fromPayload(PAYLOAD_URL, SRC, code) : fromDisk(CONTENT, code);
+async function loadContent(code, layout) {
+  return FROM_PAYLOAD ? fromPayload(PAYLOAD_URL, SRC, code, layout) : fromDisk(CONTENT, code);
 }
 
 function writeSitemap(pages, indexable) {
@@ -484,7 +484,7 @@ async function build() {
     : {};
 
   const content = {};
-  for (const locale of LOCALES) content[locale.code] = await loadContent(locale.code);
+  for (const locale of LOCALES) content[locale.code] = await loadContent(locale.code, layout);
   const en = content.en;
   const totalKeys = Object.keys(en).length;
 
