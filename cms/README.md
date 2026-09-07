@@ -74,3 +74,25 @@ breaking.
 hosted Postgres — nothing in `payload.config.ts` changes but the connection
 string. The static build reaches the CMS over HTTP via `PAYLOAD_URL`, so it can
 build on Netlify against a Payload deployed anywhere.
+
+## Keeping git as the record of what shipped
+
+Editing happens in the database; `content/` is what actually deployed. Bringing
+them back into step is one command, run from the repository root:
+
+```
+npm run export          # write the CMS back to content/*.json and layout.json
+npm run verify:export   # report drift and exit 1 — for CI
+```
+
+The export writes exactly the files the build already reads, so `git log` still
+answers who changed a line and when, a content change is reviewable as a diff,
+and rolling one back is `git revert` rather than an appeal to a database backup.
+
+Run it after an editor publishes, or as a CI step before deploying. It is not
+wired into Payload as a hook: committing from the server needs git credentials
+wherever Payload ends up running, and that is a deployment decision rather than
+a CMS one.
+
+**The CMS wins.** A local edit to `content/` that has not been seeded back is
+overwritten — the same rule the seed states in reverse. Edit in one place.

@@ -254,7 +254,14 @@ module.exports.fetchMedia = fetchMedia;
  * blockType, blockName) and flattens props to the top level; this puts them back
  * into the component/props/slots shape the renderer expects.
  */
-const BLOCK_META = new Set(['id', 'blockType', 'blockName', 'section', 'lead', 'slots']);
+/**
+ * Payload's own bookkeeping, plus `content` — the words, which are not part of
+ * the structure. Layout says what a page is made of; the locale files say what
+ * it says. Letting the text through here would write every string into
+ * layout.json as well, in one language, beside the copies that already exist per
+ * locale.
+ */
+const BLOCK_META = new Set(['id', 'blockType', 'blockName', 'section', 'lead', 'slots', 'content']);
 
 function toInstance(block) {
   const props = {};
@@ -268,15 +275,26 @@ function toInstance(block) {
             if (BLOCK_META.has(k)) continue;
             itemProps[k] = v;
           }
-          return { props: itemProps, slots: row.slots || {} };
+          // Same rule as the block: a row with nothing to configure — a bullet
+          // that is only its text — carries no props key at all.
+          return Object.keys(itemProps).length
+            ? { props: itemProps, slots: row.slots || {} }
+            : { slots: row.slots || {} };
         })
       : value;
   }
 
-  const instance = { component: block.blockType, section: block.section, props, slots: block.slots || {} };
+  // One key order for every block. The file grew three different orders as it
+  // was migrated family by family; since nothing reads it positionally, the
+  // export settles on one so a real change is visible in a diff.
+  const instance = { component: block.blockType, section: block.section };
   // Absent rather than empty: the lead is the whitespace and comment before a
   // section, and an empty one must not become the string "undefined".
   if (block.lead) instance.lead = block.lead;
+  // Omitted when there are none, as the hand-written file has it. A block with
+  // nothing to configure should not carry an empty object saying so.
+  if (Object.keys(props).length) instance.props = props;
+  instance.slots = block.slots || {};
   return instance;
 }
 

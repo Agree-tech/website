@@ -11,6 +11,8 @@
     "build:blocks": "node build.js --from-blocks",
     "verify": "node tools/verify-baseline.js",
     "verify:parity": "node tools/verify-parity.js",
+    "export": "node tools/export-from-payload.js",
+    "verify:export": "node tools/export-from-payload.js --check",
     "sort": "node tools/sort-content.js",
     "dev": "node build.js && npx --yes http-server dist -p 8000 -c-1",
     "cms": "node build.js --local-cms && npx --yes http-server dist -p 8000 -c-1",

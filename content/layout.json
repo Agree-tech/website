@@ -1,153 +1,34 @@
 {
-  "about": [
-    {
-      "component": "page-hero",
-      "section": "page-hero",
-      "props": {
-        "containerStyle": "max-width:920px",
-        "ledeStyle": "",
-        "ctasStyle": "",
-        "primaryClass": "",
-        "primaryHref": ""
-      },
-      "slots": {
-        "eyebrow": "div-our-journey",
-        "heading": "h1-built-from-a-real",
-        "body": "p-it-began-with-the"
-      }
-    },
-    {
-      "component": "value-grid",
-      "section": "split-section",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "div-our-values": "div-our-values",
-        "h2-what-drives-agree-tech": "h2-what-drives-agree-tech",
-        "p-innovation-accountabil": "p-innovation-accountabil",
-        "h3-innovation": "h3-innovation",
-        "p-always-evolving-the-pl": "p-always-evolving-the-pl",
-        "h3-accountability": "h3-accountability",
-        "p-we-do-what-we": "p-we-do-what-we",
-        "h3-diversity": "h3-diversity",
-        "p-different-perspectives": "p-different-perspectives",
-        "h3-sustainability": "h3-sustainability",
-        "p-long-term-thinking-for": "p-long-term-thinking-for"
-      }
-    },
-    {
-      "component": "team-grid",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "div-management-team": "div-management-team",
-        "h2-meet-the-leaders-behin": "h2-meet-the-leaders-behin",
-        "div-kb": "div-kb",
-        "div-ceo": "div-ceo",
-        "h3-karina-buch": "h3-karina-buch",
-        "p-senior-executive-with-": "p-senior-executive-with-",
-        "div-kj": "div-kj",
-        "div-cto": "div-cto",
-        "h3-kristian-jacobsen": "h3-kristian-jacobsen",
-        "p-20-years-in-software": "p-20-years-in-software"
-      }
-    },
-    {
-      "component": "board-grid",
-      "section": "split-section",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "eyebrow": "div-board-of-directors",
-        "heading": "h2-meet-the-board"
-      },
-      "props": {
-        "people": [
-          {
-            "props": {
-              "image": "assets/board-henrik.jpeg"
-            },
-            "slots": {
-              "alt": "meta.alt",
-              "role": "div-chairman-of-the-board",
-              "name": "h4-kenneth-andreasen",
-              "bio": "p-seasoned-executive-and"
-            }
-          },
-          {
-            "props": {
-              "image": "assets/board-peter.webp"
-            },
-            "slots": {
-              "alt": "meta.alt-2",
-              "role": "div-board-member",
-              "name": "h4-peter-reich",
-              "bio": "p-seasoned-executive-and-2"
-            }
-          },
-          {
-            "props": {
-              "image": "assets/board-kristian.webp"
-            },
-            "slots": {
-              "alt": "meta.alt-3",
-              "role": "div-board-member-cto",
-              "name": "h4-kristian-hvid-jakobsen",
-              "bio": "p-cto-and-investor-at"
-            }
-          },
-          {
-            "props": {
-              "image": "assets/board-karina.webp"
-            },
-            "slots": {
-              "alt": "meta.alt-4",
-              "role": "div-board-member-ceo",
-              "name": "h4-karina-buch",
-              "bio": "p-ceo-and-investor-at"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band-dark",
-      "lead": "\r\n\r\n",
-      "props": {
-        "dark": true,
-        "narrow": true,
-        "bodyClass": "",
-        "primaryHref": "contact.html",
-        "secondaryHref": "platform.html"
-      },
-      "slots": {
-        "eyebrow": "div-book-a-meeting",
-        "heading": "h2-it-can-start-with",
-        "body": "p-whether-you-need-sales",
-        "primary": "a-contact-me",
-        "secondary": "a-see-the-platform"
-      }
-    }
-  ],
-  "billing": [
+  "subscription": [
     {
       "component": "page-hero-split",
-      "section": "page-hero-dark",
+      "section": "page-hero",
       "props": {
-        "dark": true,
-        "dotStyle": "",
-        "primaryClass": "btn-cyan",
+        "dark": false,
+        "dotStyle": " style=\"background:var(--green)\"",
+        "primaryClass": "btn-blue",
         "primaryHref": "contact.html",
-        "secondaryClass": "btn-outline-dark",
+        "secondaryClass": "btn-ghost",
         "secondaryHref": "platform.html",
         "arrow": true,
-        "visual": "billing-hero"
+        "visual": "subscription-hero"
       },
       "slots": {
-        "eyebrow": "div-solutions-billing-auto",
-        "heading": "h1-modern-billing-for-the",
-        "body": "p-a-flexible-enterprise-",
+        "body": "p-atsuite-subscription-g",
+        "eyebrow": "div-solutions-subscription",
+        "heading": "h1-streamline-every-subsc",
         "primary": "a-schedule-a-demo",
         "secondary": "a-see-the-platform"
+      }
+    },
+    {
+      "component": "quote-band",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Quote -->\r\n",
+      "slots": {
+        "div-customer-telavox": "div-customer-telavox",
+        "div-colin-russel-mvnx-dire": "div-colin-russel-mvnx-dire",
+        "blockquote-our-enduring-collabora": "blockquote-our-enduring-collabora"
       }
     },
     {
@@ -155,17 +36,27 @@
       "section": "split-section",
       "lead": "\r\n\r\n<!-- Features -->\r\n",
       "props": {
-        "accent": "acc-navy",
-        "dotStyle": "",
+        "accent": "acc-green",
+        "dotStyle": " style=\"background:var(--green)\"",
         "cards": [
           {
             "props": {
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
             },
             "slots": {
-              "label": "div-models",
-              "heading": "h3-flexible-billing-model",
-              "body": "p-usage-based-tiered-one"
+              "body": "p-customizable-plans-add",
+              "label": "div-plan-package",
+              "heading": "h3-plan-and-package-manag"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5z\"/></svg>"
+            },
+            "slots": {
+              "body": "p-simplified-onboarding-",
+              "label": "div-provisioning",
+              "heading": "h3-activation-provisionin"
             }
           },
           {
@@ -173,90 +64,46 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
             },
             "slots": {
+              "body": "p-real-time-monitoring-a",
               "label": "div-usage",
-              "heading": "h3-real-time-usage-collec",
-              "body": "p-track-usage-from-cdrs"
+              "heading": "h3-usage-tracking-reporti"
             }
           },
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M9 10h6M9 14h6\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 12a9 9 0 11-3-6.7M21 4v5h-5\"/></svg>"
             },
             "slots": {
-              "label": "div-invoicing",
-              "heading": "h3-advanced-invoicing",
-              "body": "p-periodic-one-time-or"
+              "body": "p-automated-reminders-an",
+              "label": "div-lifecycle",
+              "heading": "h3-renewals-lifecycle"
             }
           },
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1-4 4-6 8-6s7 2 8 6\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 10h18\"/></svg>"
             },
             "slots": {
-              "label": "div-accounts",
-              "heading": "h3-account-management",
-              "body": "p-a-360-view-of"
+              "body": "p-recurring-billing-on-a",
+              "label": "div-billing",
+              "heading": "h3-cycles-invoicing"
             }
           },
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h4l3-9 4 18 3-9h4\"/></svg>"
             },
             "slots": {
-              "label": "div-rules",
-              "heading": "h3-rules-automation",
-              "body": "p-automate-upgrades-bill"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5zM9 12l2 2 4-4\"/></svg>"
-            },
-            "slots": {
-              "label": "div-quality",
-              "heading": "h3-quality-assurance",
-              "body": "p-a-daily-shadow-billing"
+              "body": "p-customer-behaviour-ins",
+              "label": "div-analytics",
+              "heading": "h3-advanced-analytics"
             }
           }
         ]
       },
       "slots": {
-        "eyebrow": "div-billing-capabilities",
-        "heading": "h2-discover-the-billing-c"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n<!-- Security -->\r\n",
-      "props": {
-        "alt": true,
-        "flip": false,
-        "idAttr": "",
-        "dotStyle": "",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-our-platform-is-equipp"
-            }
-          },
-          {
-            "props": {
-              "style": " style=\"margin-top:14px\""
-            },
-            "slots": {
-              "text": "p-compliant-with-major-d"
-            }
-          }
-        ],
-        "visual": "billing-split-section-alt"
-      },
-      "slots": {
-        "eyebrow": "div-your-data-is-safe",
-        "heading": "h2-we-take-your-billing"
+        "eyebrow": "div-subscription-capabilit",
+        "heading": "h2-built-for-the-entire"
       }
     },
     {
@@ -271,1102 +118,10 @@
         "secondaryHref": "index.html"
       },
       "slots": {
-        "eyebrow": "div-ready-for-a-billing",
-        "heading": "h2-modernise-your-billing",
-        "body": "p-walk-through-a-real",
-        "primary": "a-book-a-demo",
-        "secondary": "a-back-to-overview"
-      }
-    }
-  ],
-  "contact": [
-    {
-      "component": "page-hero",
-      "section": "page-hero",
-      "props": {
-        "containerStyle": "max-width:920px",
-        "ledeStyle": "",
-        "ctasStyle": "",
-        "primaryClass": "",
-        "primaryHref": ""
-      },
-      "slots": {
-        "eyebrow": "div-thank-you-for-your",
-        "heading": "h1-contact-us",
-        "body": "p-tell-us-a-bit"
-      }
-    },
-    {
-      "component": "contact-form",
-      "section": "split-section",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "b-please-note": "b-please-note",
-        "div-we-only-reply-to": "div-we-only-reply-to",
-        "b-message-sent": "b-message-sent",
-        "p-we-ve-received-your-mes": "p-we-ve-received-your-mes",
-        "label-first-name": "label-first-name",
-        "label-last-name": "label-last-name",
-        "label-business-email": "label-business-email",
-        "label-company-name": "label-company-name",
-        "label-website": "label-website",
-        "label-country": "label-country",
-        "option-denmark": "option-denmark",
-        "option-sweden": "option-sweden",
-        "option-norway": "option-norway",
-        "option-germany": "option-germany",
-        "option-netherlands": "option-netherlands",
-        "option-united-kingdom": "option-united-kingdom",
-        "option-other": "option-other",
-        "label-i-m-interested-in": "label-i-m-interested-in",
-        "option-the-full-atsuite": "option-the-full-atsuite",
-        "option-cpq": "option-cpq",
-        "option-billing-automation": "option-billing-automation",
-        "option-subscription-manage": "option-subscription-manage",
-        "option-process-optimisatio": "option-process-optimisatio",
-        "option-sales": "option-sales",
-        "label-message": "label-message",
-        "label-i-consent-to-receive": "label-i-consent-to-receive",
-        "button-send-message": "button-send-message",
-        "div-agree-technologies-aps": "div-agree-technologies-aps",
-        "h2-copenhagen-built-for-e": "h2-copenhagen-built-for-e",
-        "p-a-european-revenue-pla": "p-a-european-revenue-pla",
-        "b-info-agree-tech-com": "b-info-agree-tech-com",
-        "p-demo-sales-requests": "p-demo-sales-requests",
-        "b-copenhagen-denmark": "b-copenhagen-denmark",
-        "p-european-hq-gdpr-nativ": "p-european-hq-gdpr-nativ",
-        "b-mon-fri-09-00": "b-mon-fri-09-00",
-        "p-reply-within-one-busin": "p-reply-within-one-busin",
-        "div-use-this-form-for": "div-use-this-form-for",
-        "li-a-discovery-call": "li-a-discovery-call",
-        "li-requesting-a-demo": "li-requesting-a-demo",
-        "li-general-enquiries": "li-general-enquiries"
-      }
-    }
-  ],
-  "cpq": [
-    {
-      "component": "page-hero-split",
-      "section": "page-hero",
-      "props": {
-        "dark": false,
-        "dotStyle": "",
-        "primaryClass": "btn-blue",
-        "primaryHref": "contact.html",
-        "secondaryClass": "btn-ghost",
-        "secondaryHref": "platform.html",
-        "arrow": true,
-        "visual": "cpq-hero"
-      },
-      "slots": {
-        "eyebrow": "div-solutions-cpq",
-        "heading": "h1-quote-with-speed-confi",
-        "body": "p-an-automated-cpq-that",
-        "primary": "a-schedule-a-demo",
-        "secondary": "a-see-the-platform"
-      }
-    },
-    {
-      "component": "feature-grid",
-      "section": "split-section",
-      "lead": "\r\n\r\n<!-- Features -->\r\n",
-      "props": {
-        "accent": "acc-blue",
-        "dotStyle": "",
-        "cards": [
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 7h18M3 12h18M3 17h12\"/></svg>"
-            },
-            "slots": {
-              "label": "div-01-catalog",
-              "heading": "h3-product-catalog",
-              "body": "p-detailed-accurate-prod"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M5 8h14M5 16h14\"/></svg>"
-            },
-            "slots": {
-              "label": "div-02-pricing",
-              "heading": "h3-dynamic-pricing",
-              "body": "p-adjust-pricing-ratings"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 8v4l3 2\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg>"
-            },
-            "slots": {
-              "label": "div-03-turnaround",
-              "heading": "h3-fast-quote-turnaround",
-              "body": "p-speed-up-quote-generat"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
-            },
-            "slots": {
-              "label": "div-04-efficiency",
-              "heading": "h3-increase-efficiency",
-              "body": "p-automate-complex-prici"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 6h18M6 12h12M9 18h6\"/></svg>"
-            },
-            "slots": {
-              "label": "div-05-flexibility",
-              "heading": "h3-flexible-cpq",
-              "body": "p-tailored-configuration"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18\"/></svg>"
-            },
-            "slots": {
-              "label": "div-06-i18n",
-              "heading": "h3-multi-language",
-              "body": "p-a-multilingual-product"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "eyebrow": "div-cpq-capabilities",
-        "heading": "h2-everything-your-sales-"
-      }
-    },
-    {
-      "component": "cpq-rules",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n<!-- Power -->\r\n",
-      "slots": {
-        "div-the-transformative-pow": "div-the-transformative-pow",
-        "h2-free-your-sales-team": "h2-free-your-sales-team",
-        "p-atsuite-revolutionises": "p-atsuite-revolutionises",
-        "li-faster-more-consistent": "li-faster-more-consistent",
-        "li-approval-routing-align": "li-approval-routing-align",
-        "li-direct-hand-off-to": "li-direct-hand-off-to",
-        "div-approval-flow": "div-approval-flow",
-        "div-quote-q-2046-206": "div-quote-q-2046-206",
-        "span-2-of-3": "span-2-of-3",
-        "b-sales-manager-anna-l": "b-sales-manager-anna-l",
-        "div-approved-09-14": "div-approved-09-14",
-        "b-deal-desk-marco-r": "b-deal-desk-marco-r",
-        "div-approved-11-02": "div-approved-11-02",
-        "b-finance-karina-b": "b-finance-karina-b",
-        "div-awaiting-2h-sla": "div-awaiting-2h-sla",
-        "div-pending": "div-pending"
-      }
-    },
-    {
-      "component": "integration-grid",
-      "section": "crm-integrations",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "idAttr": " id=\"crm-integrations\"",
-        "dotStyle": "",
-        "accent": "acc-blue",
-        "bullet": "<span class=\"dot\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l4 4L19 6\"/></svg></span> ",
-        "bullets": [
-          {
-            "slots": {
-              "text": "li-two-way-sync-of"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-generate-atsuite-quote"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-closed-won-deals-hand"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-pre-built-connectors-p"
-            }
-          }
-        ],
-        "cards": [
-          {
-            "props": {
-              "badgeClass": "crm-hubspot",
-              "badgeLetter": "H"
-            },
-            "slots": {
-              "name": "div-hubspot",
-              "meta": "div-crm-sales-hub",
-              "body": "p-sync-deals-companies-a"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-pipedrive",
-              "badgeLetter": "P"
-            },
-            "slots": {
-              "name": "div-pipedrive",
-              "meta": "div-crm-pipeline",
-              "body": "p-mirror-pipeline-stages"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-salesforce",
-              "badgeLetter": "S"
-            },
-            "slots": {
-              "name": "div-salesforce",
-              "meta": "div-crm-sales-cloud",
-              "body": "p-native-object-mapping-"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-dynamics",
-              "badgeLetter": "D"
-            },
-            "slots": {
-              "name": "div-microsoft-dynamics-365",
-              "meta": "div-crm-sales",
-              "body": "p-bi-directional-sync-wi"
-            }
-          }
-        ],
-        "sourceTags": [
-          {
-            "slots": {
-              "text": "span-accounts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-contacts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-opportunities"
-            }
-          }
-        ],
-        "targetTags": [
-          {
-            "slots": {
-              "text": "span-quotes"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-orders"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-subscriptions"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "eyebrow": "div-integrations-crm",
-        "heading": "h2-quote-from-the-crm",
-        "body": "p-atsuite-cpq-plugs-bi",
-        "syncSource": "div-crm"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band-dark",
-      "lead": "\r\n\r\n",
-      "props": {
-        "dark": true,
-        "narrow": false,
-        "bodyClass": "",
-        "primaryHref": "contact.html",
-        "secondaryHref": "index.html"
-      },
-      "slots": {
-        "eyebrow": "div-ready-to-quote-faster",
-        "heading": "h2-see-atsuite-cpq-in",
-        "body": "p-30-minute-discovery-we",
-        "primary": "a-schedule-a-demo",
-        "secondary": "a-back-to-overview"
-      }
-    }
-  ],
-  "implementation": [
-    {
-      "component": "page-hero",
-      "section": "page-hero",
-      "props": {
-        "containerStyle": "max-width:880px;text-align:center",
-        "ledeStyle": " style=\"margin-inline:auto\"",
-        "ctasStyle": " style=\"justify-content:center\"",
-        "primaryClass": "btn-blue",
-        "primaryHref": "contact.html"
-      },
-      "slots": {
-        "eyebrow": "div-implementation",
-        "heading": "h1-seamless-transition-ze",
-        "body": "p-implementing-a-new-cpq",
-        "primary": "a-schedule-a-call"
-      }
-    },
-    {
-      "component": "step-list",
-      "section": "split-section",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "div-our-approach": "div-our-approach",
-        "h2-four-steps-one-outcome": "h2-four-steps-one-outcome",
-        "h3-proof-of-concept": "h3-proof-of-concept",
-        "p-we-start-by-demonstrat": "p-we-start-by-demonstrat",
-        "h3-discovery-workshops": "h3-discovery-workshops",
-        "p-in-depth-workshops-to": "p-in-depth-workshops-to",
-        "h3-implementation": "h3-implementation",
-        "p-our-team-works-closely": "p-our-team-works-closely",
-        "h3-operations": "h3-operations",
-        "p-ongoing-support-and-mo": "p-ongoing-support-and-mo"
-      }
-    },
-    {
-      "component": "implementation-note",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n",
-      "slots": {
-        "div-what-you-get": "div-what-you-get",
-        "h2-a-partner-not-just": "h2-a-partner-not-just",
-        "strong-tailored-solution-desi": "strong-tailored-solution-desi",
-        "p-our-experts-assess-you": "p-our-experts-assess-you",
-        "strong-seamless-transition-wi": "strong-seamless-transition-wi",
-        "p-we-prioritise-ongoing-": "p-we-prioritise-ongoing-",
-        "strong-measurable-outcomes": "strong-measurable-outcomes",
-        "p-reduced-implementation": "p-reduced-implementation"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band-dark",
-      "lead": "\r\n\r\n",
-      "props": {
-        "dark": true,
-        "narrow": false,
-        "bodyClass": "",
-        "primaryHref": "contact.html",
-        "secondaryHref": "platform.html"
-      },
-      "slots": {
-        "eyebrow": "div-ready-when-you-are",
-        "heading": "h2-get-started-today",
-        "body": "p-a-30-minute-conversati",
-        "primary": "a-schedule-a-call",
-        "secondary": "a-see-the-platform"
-      }
-    }
-  ],
-  "index-print": [
-    {
-      "component": "print-hero",
-      "section": "hero",
-      "lead": "",
-      "slots": {
-        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
-        "h1-the-all-in-one": "h1-the-all-in-one",
-        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
-        "a-book-a-demo": "a-book-a-demo",
-        "a-explore-the-platform": "a-explore-the-platform",
-        "b-6-years": "b-6-years",
-        "div-in-production": "div-in-production",
-        "div-billing-accuracy": "div-billing-accuracy",
-        "b-built-in-eu": "b-built-in-eu",
-        "div-gdpr-native": "div-gdpr-native",
-        "div-quote-q-2046": "div-quote-q-2046",
-        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
-        "div-approved": "div-approved",
-        "span-subscription-voice-pro": "span-subscription-voice-pro",
-        "span-add-on-recording-qa": "span-add-on-recording-qa",
-        "span-usage-international-es": "span-usage-international-es",
-        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
-        "span-annualised": "span-annualised",
-        "div-send-to-customer": "div-send-to-customer",
-        "div-edit-quote": "div-edit-quote",
-        "div-renewal-auto": "div-renewal-auto",
-        "div-2-4m-arr": "div-2-4m-arr",
-        "div-18-vs-last-year": "div-18-vs-last-year",
-        "div-forecast-accuracy": "div-forecast-accuracy",
-        "div-predictive-90d": "div-predictive-90d",
-        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
-        "div-dstny": "div-dstny",
-        "div-telavox": "div-telavox",
-        "div-mvnx": "div-mvnx",
-        "div-ipvision": "div-ipvision",
-        "div-nordix": "div-nordix",
-        "div-kontur-co": "div-kontur-co"
-      }
-    },
-    {
-      "component": "q2c-board",
-      "section": "q2c",
-      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
-      "slots": {
-        "div-one-platform-atsuite": "div-one-platform-atsuite",
-        "h2-one-system-for-the": "h2-one-system-for-the",
-        "p-replace-disconnected-t": "p-replace-disconnected-t",
-        "a-tour-the-platform": "a-tour-the-platform",
-        "a-speak-to-an-expert": "a-speak-to-an-expert",
-        "div-quoting": "div-quoting",
-        "div-subscription": "div-subscription",
-        "div-usage": "div-usage",
-        "div-billing": "div-billing",
-        "div-revenue": "div-revenue",
-        "div-quote-q-2046": "div-quote-q-2046",
-        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
-        "span-approved": "span-approved",
-        "div-arr-active": "div-arr-active",
-        "div-142-active-subs-2": "div-142-active-subs-2",
-        "span-healthy": "span-healthy",
-        "div-usage-voice-min": "div-usage-voice-min",
-        "div-issued-14-may-2026": "div-issued-14-may-2026",
-        "span-auto-billed": "span-auto-billed",
-        "div-recognised": "div-recognised"
-      }
-    },
-    {
-      "component": "module-grid",
-      "section": "modules",
-      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
-      "slots": {
-        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
-        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
-        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
-        "span-01-subscription": "span-01-subscription",
-        "h3-manage-every-subscript": "h3-manage-every-subscript",
-        "p-full-control-over-plan": "p-full-control-over-plan",
-        "span-active-subs": "span-active-subs",
-        "span-renewing-this-month": "span-renewing-this-month",
-        "span-on-track": "span-on-track",
-        "span-add-ons-attached": "span-add-ons-attached",
-        "span-net-retention": "span-net-retention",
-        "a-subscription-managemen": "a-subscription-managemen",
-        "span-02-cpq": "span-02-cpq",
-        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
-        "p-an-intelligent-automat": "p-an-intelligent-automat",
-        "div-catalog": "div-catalog",
-        "div-348-skus": "div-348-skus",
-        "div-price": "div-price",
-        "div-1-820-mo": "div-1-820-mo",
-        "div-quote": "div-quote",
-        "div-38-sec": "div-38-sec",
-        "span-approval-queue": "span-approval-queue",
-        "span-2-pending": "span-2-pending",
-        "a-configure-price-quote": "a-configure-price-quote",
-        "span-03-billing": "span-03-billing",
-        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
-        "p-recurring-usage-based-": "p-recurring-usage-based-",
-        "span-invoices-this-run": "span-invoices-this-run",
-        "span-billed": "span-billed",
-        "span-mediation-rate": "span-mediation-rate",
-        "span-exceptions": "span-exceptions",
-        "span-3-to-review": "span-3-to-review",
-        "a-billing-automation": "a-billing-automation",
-        "span-04-process": "span-04-process",
-        "h3-event-driven-automatio": "h3-event-driven-automatio",
-        "p-an-always-on-process": "p-an-always-on-process",
-        "span-workflows-live": "span-workflows-live",
-        "span-triggered-today": "span-triggered-today",
-        "span-avg-completion": "span-avg-completion",
-        "span-status": "span-status",
-        "span-all-systems-normal": "span-all-systems-normal",
-        "a-process-optimisation": "a-process-optimisation"
-      }
-    },
-    {
-      "component": "print-quote",
-      "section": "quote",
-      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
-      "slots": {
-        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
-        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
-        "div-ct": "div-ct",
-        "div-carsten-thomsen": "div-carsten-thomsen",
-        "div-billing-accuracy-in-pr": "div-billing-accuracy-in-pr",
-        "div-operating-as-a-managed": "div-operating-as-a-managed",
-        "div-average-quote-turnarou": "div-average-quote-turnarou",
-        "div-average-net-revenue-re": "div-average-net-revenue-re"
-      }
-    },
-    {
-      "component": "innovate-forecast",
-      "section": "innovate",
-      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
-      "slots": {
-        "div-innovate": "div-innovate",
-        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
-        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
-        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
-        "li-guided-selling-for-a": "li-guided-selling-for-a",
-        "li-real-time-collaboratio": "li-real-time-collaboratio",
-        "li-predictive-analytics-f": "li-predictive-analytics-f",
-        "a-schedule-a-demo": "a-schedule-a-demo",
-        "a-see-the-platform": "a-see-the-platform",
-        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
-        "div-predictive-90d-horizon": "div-predictive-90d-horizon",
-        "div-arr": "div-arr",
-        "div-renewals": "div-renewals",
-        "div-3-1-pts": "div-3-1-pts",
-        "div-upsell": "div-upsell"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band",
-      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
-      "props": {
-        "dark": false,
-        "narrow": false,
-        "bodyClass": " class=\"lede\"",
-        "primaryHref": "contact.html",
-        "secondaryHref": "implementation.html"
-      },
-      "slots": {
-        "eyebrow": "div-ready-when-you-are",
-        "heading": "h2-get-started-today-and",
-        "body": "p-a-30-minute-discovery",
-        "primary": "a-book-a-demo",
-        "secondary": "a-how-implementation-wor"
-      }
-    }
-  ],
-  "index": [
-    {
-      "component": "home-hero",
-      "section": "hero",
-      "lead": "",
-      "slots": {
-        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
-        "h1-the-all-in-one": "h1-the-all-in-one",
-        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
-        "a-book-a-demo": "a-book-a-demo",
-        "a-explore-the-platform": "a-explore-the-platform",
-        "div-quote-q-2046": "div-quote-q-2046",
-        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
-        "div-approved": "div-approved",
-        "span-subscription-voice-pro": "span-subscription-voice-pro",
-        "span-add-on-recording-qa": "span-add-on-recording-qa",
-        "span-usage-international-es": "span-usage-international-es",
-        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
-        "span-annualised": "span-annualised",
-        "div-send-to-customer": "div-send-to-customer",
-        "div-edit-quote": "div-edit-quote",
-        "div-renewal-auto": "div-renewal-auto",
-        "div-2-4m-arr": "div-2-4m-arr",
-        "div-18-vs-last-year": "div-18-vs-last-year",
-        "div-forecast-accuracy": "div-forecast-accuracy",
-        "div-predictive-90d": "div-predictive-90d",
-        "b-6-years": "b-6-years",
-        "div-in-production": "div-in-production",
-        "div-billing-accuracy": "div-billing-accuracy",
-        "b-built-in-eu": "b-built-in-eu",
-        "div-gdpr-native": "div-gdpr-native",
-        "b-real-time": "b-real-time",
-        "div-profitability": "div-profitability",
-        "b-lower-acpu": "b-lower-acpu",
-        "div-through-automation": "div-through-automation",
-        "b-faster": "b-faster",
-        "div-time-to-cash": "div-time-to-cash",
-        "b-predictive": "b-predictive",
-        "div-cash-flow": "div-cash-flow",
-        "b-reduced": "b-reduced",
-        "div-operational-risk": "div-operational-risk",
-        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
-        "div-dstny": "div-dstny",
-        "div-telavox": "div-telavox",
-        "div-ipvision": "div-ipvision"
-      }
-    },
-    {
-      "component": "q2c-board",
-      "section": "q2c",
-      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
-      "slots": {
-        "div-one-platform-atsuite": "div-one-platform-atsuite",
-        "h2-one-system-for-the": "h2-one-system-for-the",
-        "p-replace-disconnected-t": "p-replace-disconnected-t",
-        "a-tour-the-platform": "a-tour-the-platform",
-        "a-speak-to-an-expert": "a-speak-to-an-expert",
-        "div-quoting": "div-quoting",
-        "div-subscription": "div-subscription",
-        "div-usage": "div-usage",
-        "div-billing": "div-billing",
-        "div-revenue": "div-revenue",
-        "div-quote-q-2046": "div-quote-q-2046",
-        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
-        "span-approved": "span-approved",
-        "div-arr-active": "div-arr-active",
-        "div-142-active-subs-2": "div-142-active-subs-2",
-        "span-healthy": "span-healthy",
-        "div-usage-voice-min": "div-usage-voice-min",
-        "div-issued-14-may-2026": "div-issued-14-may-2026",
-        "span-auto-billed": "span-auto-billed",
-        "div-recognised": "div-recognised"
-      }
-    },
-    {
-      "component": "module-grid",
-      "section": "modules",
-      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
-      "slots": {
-        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
-        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
-        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
-        "span-01-subscription": "span-01-subscription",
-        "h3-manage-every-subscript": "h3-manage-every-subscript",
-        "p-full-control-over-plan": "p-full-control-over-plan",
-        "span-active-subs": "span-active-subs",
-        "span-renewing-this-month": "span-renewing-this-month",
-        "span-on-track": "span-on-track",
-        "span-add-ons-attached": "span-add-ons-attached",
-        "span-net-retention": "span-net-retention",
-        "a-subscription-managemen": "a-subscription-managemen",
-        "span-02-cpq": "span-02-cpq",
-        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
-        "p-an-intelligent-automat": "p-an-intelligent-automat",
-        "div-catalog": "div-catalog",
-        "div-348-skus": "div-348-skus",
-        "div-price": "div-price",
-        "div-1-820-mo": "div-1-820-mo",
-        "div-quote": "div-quote",
-        "div-38-sec": "div-38-sec",
-        "span-approval-queue": "span-approval-queue",
-        "span-2-pending": "span-2-pending",
-        "a-configure-price-quote": "a-configure-price-quote",
-        "span-03-billing": "span-03-billing",
-        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
-        "p-recurring-usage-based-": "p-recurring-usage-based-",
-        "span-invoices-this-run": "span-invoices-this-run",
-        "span-billed": "span-billed",
-        "span-mediation-rate": "span-mediation-rate",
-        "span-exceptions": "span-exceptions",
-        "span-3-to-review": "span-3-to-review",
-        "a-billing-automation": "a-billing-automation",
-        "span-04-process": "span-04-process",
-        "h3-event-driven-automatio": "h3-event-driven-automatio",
-        "p-an-always-on-process": "p-an-always-on-process",
-        "span-workflows-live": "span-workflows-live",
-        "span-triggered-today": "span-triggered-today",
-        "span-avg-completion": "span-avg-completion",
-        "span-status": "span-status",
-        "span-all-systems-normal": "span-all-systems-normal",
-        "a-process-optimisation": "a-process-optimisation"
-      }
-    },
-    {
-      "component": "cfo-dashboard",
-      "section": "cfo",
-      "lead": "\r\n\r\n<!-- CFO BAND -->\r\n",
-      "slots": {
-        "div-built-for-the-office": "div-built-for-the-office",
-        "h2-eliminate-revenue-leak": "h2-eliminate-revenue-leak",
-        "p-as-businesses-move-tow": "p-as-businesses-move-tow",
-        "p-atsuite-brings-cpq-sub": "p-atsuite-brings-cpq-sub",
-        "div-today-without-atsuite": "div-today-without-atsuite",
-        "h3-the-challenges-most-cf": "h3-the-challenges-most-cf",
-        "li-inconsistent-cash-flow": "li-inconsistent-cash-flow",
-        "li-manual-billing-control": "li-manual-billing-control",
-        "li-limited-confidence-in-": "li-limited-confidence-in-",
-        "li-complex-subscription-a": "li-complex-subscription-a",
-        "li-no-real-time-visibilit": "li-no-real-time-visibilit",
-        "div-with-atsuite": "div-with-atsuite",
-        "h3-the-result-from-day": "h3-the-result-from-day",
-        "li-more-predictable-cash-": "li-more-predictable-cash-",
-        "li-near-perfect-invoice-a": "li-near-perfect-invoice-a",
-        "li-lower-operational-cost": "li-lower-operational-cost",
-        "li-improved-compliance-an": "li-improved-compliance-an",
-        "li-better-reporting-for-m": "li-better-reporting-for-m",
-        "div-real-time-revenue-visi": "div-real-time-revenue-visi",
-        "div-quote-subscription-usa": "div-quote-subscription-usa",
-        "div-live-streaming": "div-live-streaming",
-        "div-mrr-arr": "div-mrr-arr",
-        "div-18-4-yoy": "div-18-4-yoy",
-        "div-gross-margin": "div-gross-margin",
-        "div-2-1-pts-qoq": "div-2-1-pts-qoq",
-        "div-contribution": "div-contribution",
-        "div-discount-performance": "div-discount-performance",
-        "div-vs-list-within-policy": "div-vs-list-within-policy",
-        "div-subscription-usage": "div-subscription-usage",
-        "small-mo": "small-mo",
-        "div-11-mom-142-active": "div-11-mom-142-active",
-        "div-renewal-indexation": "div-renewal-indexation",
-        "div-23-renewing-cpi-auto": "div-23-renewing-cpi-auto",
-        "b-3-1-pts": "b-3-1-pts",
-        "div-qoq": "div-qoq",
-        "span-usage-ingest": "span-usage-ingest",
-        "div-8-461-events-minute": "div-8-461-events-minute",
-        "div-run-14-may-2026": "div-run-14-may-2026"
-      }
-    },
-    {
-      "component": "quote-carousel",
-      "section": "quote",
-      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
-      "slots": {
-        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
-        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
-        "div-ct": "div-ct",
-        "div-carsten-thomsen": "div-carsten-thomsen",
-        "div-billing-accuracy-acros": "div-billing-accuracy-acros",
-        "div-in-production-at-dstny": "div-in-production-at-dstny",
-        "div-monthly-transactions-p": "div-monthly-transactions-p",
-        "div-average-net-revenue-re": "div-average-net-revenue-re",
-        "div-customer-cloudfarms": "div-customer-cloudfarms",
-        "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru",
-        "div-jt": "div-jt",
-        "div-jens-toppenberg": "div-jens-toppenberg",
-        "small-ceo-cloudfarms": "small-ceo-cloudfarms",
-        "small-regions": "small-regions",
-        "div-global-operations-acro": "div-global-operations-acro",
-        "div-unified-platform-repla": "div-unified-platform-repla",
-        "div-lead-to-billing-fully": "div-lead-to-billing-fully",
-        "div-manual-handoffs-across": "div-manual-handoffs-across"
-      }
-    },
-    {
-      "component": "innovate-forecast",
-      "section": "innovate",
-      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
-      "slots": {
-        "div-innovate": "div-innovate",
-        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
-        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
-        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
-        "li-guided-selling-for-a": "li-guided-selling-for-a",
-        "li-real-time-collaboratio": "li-real-time-collaboratio",
-        "li-predictive-analytics-f": "li-predictive-analytics-f",
-        "a-schedule-a-demo": "a-schedule-a-demo",
-        "a-see-the-platform": "a-see-the-platform",
-        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
-        "div-predictive-90d-horizon": "div-predictive-90d-horizon",
-        "div-arr": "div-arr",
-        "div-renewals": "div-renewals",
-        "div-3-1-pts": "div-3-1-pts",
-        "div-upsell": "div-upsell"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band",
-      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
-      "props": {
-        "dark": false,
-        "narrow": false,
-        "bodyClass": " class=\"lede\"",
-        "primaryHref": "contact.html",
-        "secondaryHref": "implementation.html"
-      },
-      "slots": {
-        "eyebrow": "div-ready-when-you-are",
-        "heading": "h2-get-started-today-and",
-        "body": "p-a-30-minute-discovery",
-        "primary": "a-book-a-demo",
-        "secondary": "a-how-implementation-wor"
-      }
-    }
-  ],
-  "platform": [
-    {
-      "component": "page-hero-split",
-      "section": "page-hero-dark",
-      "props": {
-        "dark": true,
-        "dotStyle": "",
-        "primaryClass": "btn-cyan",
-        "primaryHref": "contact.html",
-        "secondaryClass": "btn-outline-dark",
-        "secondaryHref": "implementation.html",
-        "arrow": false,
-        "visual": "platform-hero"
-      },
-      "slots": {
-        "eyebrow": "div-the-atsuite-platform",
-        "heading": "h1-configure-launch-go",
-        "body": "p-a-comprehensive-platfo",
-        "primary": "a-speak-to-an-expert",
-        "secondary": "a-how-implementation-wor"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "integration",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "flip": false,
-        "idAttr": " id=\"integration\"",
-        "dotStyle": "",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-being-api-driven-atsui"
-            }
-          }
-        ],
-        "visual": "platform-split-section"
-      },
-      "slots": {
-        "eyebrow": "div-integration",
-        "heading": "h2-api-driven-by-design"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "data-model",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": true,
-        "flip": true,
-        "idAttr": " id=\"data-model\"",
-        "dotStyle": "",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-a-highly-adaptable-dat"
-            }
-          }
-        ],
-        "visual": "platform-split-section-alt"
-      },
-      "slots": {
-        "eyebrow": "div-extensible-data-model",
-        "heading": "h2-adaptable-to-diverse-b"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "process",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "flip": false,
-        "idAttr": " id=\"process\"",
-        "dotStyle": "",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-atsuite-s-process-engi"
-            }
-          }
-        ],
-        "visual": "platform-split-section-process"
-      },
-      "slots": {
-        "eyebrow": "div-process-engine",
-        "heading": "h2-built-in-automation-op"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "analytics",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": true,
-        "flip": true,
-        "idAttr": " id=\"analytics\"",
-        "dotStyle": " style=\"background:var(--violet)\"",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-the-analytics-module-e"
-            }
-          }
-        ],
-        "visual": "platform-split-section-alt-analytics"
-      },
-      "slots": {
-        "eyebrow": "div-analytics",
-        "heading": "h2-insight-that-drives-de"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "deployment",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "flip": false,
-        "idAttr": " id=\"deployment\"",
-        "dotStyle": "",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-unlike-most-modern-cpq"
-            }
-          }
-        ],
-        "visual": "platform-split-section-deployment"
-      },
-      "slots": {
-        "eyebrow": "div-reliable-secure-deploy",
-        "heading": "h2-deploy-how-your-busine"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band-dark",
-      "lead": "\r\n\r\n",
-      "props": {
-        "dark": true,
-        "narrow": false,
-        "bodyClass": "",
-        "primaryHref": "contact.html",
-        "secondaryHref": "implementation.html"
-      },
-      "slots": {
-        "eyebrow": "div-innovate-with-agree-te",
-        "heading": "h2-continuous-innovation-",
-        "body": "p-cutting-edge-cloud-bas",
-        "primary": "a-talk-to-an-expert",
-        "secondary": "a-how-implementation-wor"
-      }
-    }
-  ],
-  "process": [
-    {
-      "component": "page-hero-split",
-      "section": "page-hero",
-      "props": {
-        "dark": false,
-        "dotStyle": "",
-        "primaryClass": "btn-cyan",
-        "primaryHref": "contact.html",
-        "secondaryClass": "btn-ghost",
-        "secondaryHref": "platform.html",
-        "arrow": true,
-        "visual": "process-hero"
-      },
-      "slots": {
-        "eyebrow": "div-solutions-process-opti",
-        "heading": "h1-eliminate-manual-work-",
-        "body": "p-atsuite-automates-manu",
-        "primary": "a-schedule-a-demo",
-        "secondary": "a-see-the-platform"
-      }
-    },
-    {
-      "component": "feature-grid",
-      "section": "split-section",
-      "lead": "\r\n\r\n",
-      "props": {
-        "accent": "acc-cyan",
-        "dotStyle": "",
-        "cards": [
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
-            },
-            "slots": {
-              "label": "div-workflows",
-              "heading": "h3-create-workflows",
-              "body": "p-use-the-process-tool"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h18M12 3v18\"/></svg>"
-            },
-            "slots": {
-              "label": "div-integration",
-              "heading": "h3-seamless-integration",
-              "body": "p-connect-systems-and-ap"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M13 2L4 14h7l-1 8 9-12h-7l1-8z\"/></svg>"
-            },
-            "slots": {
-              "label": "div-events",
-              "heading": "h3-become-event-driven",
-              "body": "p-let-well-defined-event"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
-            },
-            "slots": {
-              "label": "div-efficiency",
-              "heading": "h3-increase-efficiency",
-              "body": "p-stop-wasting-time-on"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
-            },
-            "slots": {
-              "label": "div-scale",
-              "heading": "h3-scale-your-business",
-              "body": "p-automation-of-daily-ta"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v6l4 2\"/></svg>"
-            },
-            "slots": {
-              "label": "div-control",
-              "heading": "h3-be-in-control",
-              "body": "p-the-atsuite-process-en"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "eyebrow": "div-process-capabilities",
-        "heading": "h2-discover-the-process-m"
-      }
-    },
-    {
-      "component": "cta-band",
-      "section": "cta-band-dark",
-      "lead": "\r\n\r\n",
-      "props": {
-        "dark": true,
-        "narrow": false,
-        "bodyClass": "",
-        "primaryHref": "contact.html",
-        "secondaryHref": "index.html"
-      },
-      "slots": {
-        "eyebrow": "div-operational-efficiency",
-        "heading": "h2-streamline-processes-r",
-        "body": "p-by-leveraging-atsuite-",
-        "primary": "a-schedule-a-demo",
+        "body": "p-an-indispensable-tool-",
+        "eyebrow": "div-your-benefits-today-an",
+        "heading": "h2-elevate-operations-fin",
+        "primary": "a-contact-us",
         "secondary": "a-back-to-overview"
       }
     }
@@ -1386,9 +141,9 @@
         "visual": "sales-hero"
       },
       "slots": {
+        "body": "p-atsuite-automates-time",
         "eyebrow": "div-solutions-sales",
         "heading": "h1-grow-your-business-wit",
-        "body": "p-atsuite-automates-time",
         "primary": "a-request-a-demo",
         "secondary": "a-see-cpq"
       }
@@ -1406,9 +161,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
             },
             "slots": {
+              "body": "p-opportunities-link-to-",
               "label": "div-pipeline",
-              "heading": "h3-pipeline-management",
-              "body": "p-opportunities-link-to-"
+              "heading": "h3-pipeline-management"
             }
           },
           {
@@ -1416,9 +171,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
             },
             "slots": {
+              "body": "p-match-the-sales-path",
               "label": "div-process",
-              "heading": "h3-customizable-sales-pro",
-              "body": "p-match-the-sales-path"
+              "heading": "h3-customizable-sales-pro"
             }
           },
           {
@@ -1426,9 +181,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v6l4 2\"/></svg>"
             },
             "slots": {
+              "body": "p-record-tasks-events-ca",
               "label": "div-activity",
-              "heading": "h3-sales-activity-recordi",
-              "body": "p-record-tasks-events-ca"
+              "heading": "h3-sales-activity-recordi"
             }
           },
           {
@@ -1436,9 +191,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z\"/></svg>"
             },
             "slots": {
+              "body": "p-online-playbooks-guide",
               "label": "div-playbook",
-              "heading": "h3-sales-playbook",
-              "body": "p-online-playbooks-guide"
+              "heading": "h3-sales-playbook"
             }
           },
           {
@@ -1446,9 +201,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 7h18M3 12h12M3 17h8\"/></svg>"
             },
             "slots": {
+              "body": "p-create-quotes-automati",
               "label": "div-quotes",
-              "heading": "h3-quotes",
-              "body": "p-create-quotes-automati"
+              "heading": "h3-quotes"
             }
           },
           {
@@ -1456,9 +211,9 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12l4 4L19 6\"/></svg>"
             },
             "slots": {
+              "body": "p-quotes-route-to-the",
               "label": "div-approval",
-              "heading": "h3-internal-review-approv",
-              "body": "p-quotes-route-to-the"
+              "heading": "h3-internal-review-approv"
             }
           }
         ]
@@ -1507,9 +262,9 @@
               "badgeLetter": "H"
             },
             "slots": {
-              "name": "div-hubspot",
+              "body": "p-sync-deals-companies-a",
               "meta": "div-crm-sales-hub",
-              "body": "p-sync-deals-companies-a"
+              "name": "div-hubspot"
             }
           },
           {
@@ -1518,9 +273,9 @@
               "badgeLetter": "P"
             },
             "slots": {
-              "name": "div-pipedrive",
+              "body": "p-mirror-pipeline-stages",
               "meta": "div-crm-pipeline",
-              "body": "p-mirror-pipeline-stages"
+              "name": "div-pipedrive"
             }
           },
           {
@@ -1529,9 +284,9 @@
               "badgeLetter": "S"
             },
             "slots": {
-              "name": "div-salesforce",
+              "body": "p-native-object-mapping-",
               "meta": "div-crm-sales-cloud",
-              "body": "p-native-object-mapping-"
+              "name": "div-salesforce"
             }
           },
           {
@@ -1540,9 +295,9 @@
               "badgeLetter": "D"
             },
             "slots": {
-              "name": "div-microsoft-dynamics-365",
+              "body": "p-bi-directional-sync-wi",
               "meta": "div-crm-sales",
-              "body": "p-bi-directional-sync-wi"
+              "name": "div-microsoft-dynamics-365"
             }
           }
         ],
@@ -1582,9 +337,9 @@
         ]
       },
       "slots": {
+        "body": "p-atsuite-connects-bi-di",
         "eyebrow": "div-integrations-crm",
         "heading": "h2-works-with-the-crm",
-        "body": "p-atsuite-connects-bi-di",
         "syncSource": "div-crm"
       }
     },
@@ -1607,64 +362,74 @@
       }
     }
   ],
-  "subscription": [
+  "process": [
     {
       "component": "page-hero-split",
       "section": "page-hero",
       "props": {
         "dark": false,
-        "dotStyle": " style=\"background:var(--green)\"",
-        "primaryClass": "btn-blue",
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
         "primaryHref": "contact.html",
         "secondaryClass": "btn-ghost",
         "secondaryHref": "platform.html",
         "arrow": true,
-        "visual": "subscription-hero"
+        "visual": "process-hero"
       },
       "slots": {
-        "eyebrow": "div-solutions-subscription",
-        "heading": "h1-streamline-every-subsc",
-        "body": "p-atsuite-subscription-g",
+        "body": "p-atsuite-automates-manu",
+        "eyebrow": "div-solutions-process-opti",
+        "heading": "h1-eliminate-manual-work-",
         "primary": "a-schedule-a-demo",
         "secondary": "a-see-the-platform"
       }
     },
     {
-      "component": "quote-band",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n<!-- Quote -->\r\n",
-      "slots": {
-        "div-customer-telavox": "div-customer-telavox",
-        "blockquote-our-enduring-collabora": "blockquote-our-enduring-collabora",
-        "div-colin-russel-mvnx-dire": "div-colin-russel-mvnx-dire"
-      }
-    },
-    {
       "component": "feature-grid",
       "section": "split-section",
-      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "lead": "\r\n\r\n",
       "props": {
-        "accent": "acc-green",
-        "dotStyle": " style=\"background:var(--green)\"",
+        "accent": "acc-cyan",
+        "dotStyle": "",
         "cards": [
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
             },
             "slots": {
-              "label": "div-plan-package",
-              "heading": "h3-plan-and-package-manag",
-              "body": "p-customizable-plans-add"
+              "body": "p-use-the-process-tool",
+              "label": "div-workflows",
+              "heading": "h3-create-workflows"
             }
           },
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5z\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h18M12 3v18\"/></svg>"
             },
             "slots": {
-              "label": "div-provisioning",
-              "heading": "h3-activation-provisionin",
-              "body": "p-simplified-onboarding-"
+              "body": "p-connect-systems-and-ap",
+              "label": "div-integration",
+              "heading": "h3-seamless-integration"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M13 2L4 14h7l-1 8 9-12h-7l1-8z\"/></svg>"
+            },
+            "slots": {
+              "body": "p-let-well-defined-event",
+              "label": "div-events",
+              "heading": "h3-become-event-driven"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
+            },
+            "slots": {
+              "body": "p-stop-wasting-time-on",
+              "label": "div-efficiency",
+              "heading": "h3-increase-efficiency"
             }
           },
           {
@@ -1672,46 +437,26 @@
               "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
             },
             "slots": {
-              "label": "div-usage",
-              "heading": "h3-usage-tracking-reporti",
-              "body": "p-real-time-monitoring-a"
+              "body": "p-automation-of-daily-ta",
+              "label": "div-scale",
+              "heading": "h3-scale-your-business"
             }
           },
           {
             "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 12a9 9 0 11-3-6.7M21 4v5h-5\"/></svg>"
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v6l4 2\"/></svg>"
             },
             "slots": {
-              "label": "div-lifecycle",
-              "heading": "h3-renewals-lifecycle",
-              "body": "p-automated-reminders-an"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 10h18\"/></svg>"
-            },
-            "slots": {
-              "label": "div-billing",
-              "heading": "h3-cycles-invoicing",
-              "body": "p-recurring-billing-on-a"
-            }
-          },
-          {
-            "props": {
-              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12h4l3-9 4 18 3-9h4\"/></svg>"
-            },
-            "slots": {
-              "label": "div-analytics",
-              "heading": "h3-advanced-analytics",
-              "body": "p-customer-behaviour-ins"
+              "body": "p-the-atsuite-process-en",
+              "label": "div-control",
+              "heading": "h3-be-in-control"
             }
           }
         ]
       },
       "slots": {
-        "eyebrow": "div-subscription-capabilit",
-        "heading": "h2-built-for-the-entire"
+        "eyebrow": "div-process-capabilities",
+        "heading": "h2-discover-the-process-m"
       }
     },
     {
@@ -1726,11 +471,1264 @@
         "secondaryHref": "index.html"
       },
       "slots": {
-        "eyebrow": "div-your-benefits-today-an",
-        "heading": "h2-elevate-operations-fin",
-        "body": "p-an-indispensable-tool-",
-        "primary": "a-contact-us",
+        "body": "p-by-leveraging-atsuite-",
+        "eyebrow": "div-operational-efficiency",
+        "heading": "h2-streamline-processes-r",
+        "primary": "a-schedule-a-demo",
         "secondary": "a-back-to-overview"
+      }
+    }
+  ],
+  "platform": [
+    {
+      "component": "page-hero-split",
+      "section": "page-hero-dark",
+      "props": {
+        "dark": true,
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-outline-dark",
+        "secondaryHref": "implementation.html",
+        "arrow": false,
+        "visual": "platform-hero"
+      },
+      "slots": {
+        "body": "p-a-comprehensive-platfo",
+        "eyebrow": "div-the-atsuite-platform",
+        "heading": "h1-configure-launch-go",
+        "primary": "a-speak-to-an-expert",
+        "secondary": "a-how-implementation-wor"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "integration",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"integration\"",
+        "dotStyle": "",
+        "visual": "platform-split-section",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-being-api-driven-atsui"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-integration",
+        "heading": "h2-api-driven-by-design"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "data-model",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "flip": true,
+        "idAttr": " id=\"data-model\"",
+        "dotStyle": "",
+        "visual": "platform-split-section-alt",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-a-highly-adaptable-dat"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-extensible-data-model",
+        "heading": "h2-adaptable-to-diverse-b"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "process",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"process\"",
+        "dotStyle": "",
+        "visual": "platform-split-section-process",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-atsuite-s-process-engi"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-process-engine",
+        "heading": "h2-built-in-automation-op"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "analytics",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "flip": true,
+        "idAttr": " id=\"analytics\"",
+        "dotStyle": " style=\"background:var(--violet)\"",
+        "visual": "platform-split-section-alt-analytics",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-the-analytics-module-e"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-analytics",
+        "heading": "h2-insight-that-drives-de"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "deployment",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"deployment\"",
+        "dotStyle": "",
+        "visual": "platform-split-section-deployment",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-unlike-most-modern-cpq"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-reliable-secure-deploy",
+        "heading": "h2-deploy-how-your-busine"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "body": "p-cutting-edge-cloud-bas",
+        "eyebrow": "div-innovate-with-agree-te",
+        "heading": "h2-continuous-innovation-",
+        "primary": "a-talk-to-an-expert",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
+  ],
+  "index": [
+    {
+      "component": "home-hero",
+      "section": "hero",
+      "slots": {
+        "b-faster": "b-faster",
+        "b-6-years": "b-6-years",
+        "b-reduced": "b-reduced",
+        "div-dstny": "div-dstny",
+        "b-real-time": "b-real-time",
+        "div-telavox": "div-telavox",
+        "b-lower-acpu": "b-lower-acpu",
+        "b-predictive": "b-predictive",
+        "div-2-4m-arr": "div-2-4m-arr",
+        "div-approved": "div-approved",
+        "div-ipvision": "div-ipvision",
+        "a-book-a-demo": "a-book-a-demo",
+        "b-built-in-eu": "b-built-in-eu",
+        "div-cash-flow": "div-cash-flow",
+        "div-edit-quote": "div-edit-quote",
+        "div-gdpr-native": "div-gdpr-native",
+        "span-annualised": "span-annualised",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-renewal-auto": "div-renewal-auto",
+        "div-time-to-cash": "div-time-to-cash",
+        "div-in-production": "div-in-production",
+        "div-profitability": "div-profitability",
+        "h1-the-all-in-one": "h1-the-all-in-one",
+        "div-predictive-90d": "div-predictive-90d",
+        "div-18-vs-last-year": "div-18-vs-last-year",
+        "div-billing-accuracy": "div-billing-accuracy",
+        "div-operational-risk": "div-operational-risk",
+        "div-send-to-customer": "div-send-to-customer",
+        "div-forecast-accuracy": "div-forecast-accuracy",
+        "a-explore-the-platform": "a-explore-the-platform",
+        "div-through-automation": "div-through-automation",
+        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
+        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
+        "span-add-on-recording-qa": "span-add-on-recording-qa",
+        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
+        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
+        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
+        "span-subscription-voice-pro": "span-subscription-voice-pro",
+        "span-usage-international-es": "span-usage-international-es"
+      }
+    },
+    {
+      "component": "q2c-board",
+      "section": "q2c",
+      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
+      "slots": {
+        "div-usage": "div-usage",
+        "div-billing": "div-billing",
+        "div-quoting": "div-quoting",
+        "div-revenue": "div-revenue",
+        "span-healthy": "span-healthy",
+        "span-approved": "span-approved",
+        "div-arr-active": "div-arr-active",
+        "div-recognised": "div-recognised",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-subscription": "div-subscription",
+        "span-auto-billed": "span-auto-billed",
+        "a-tour-the-platform": "a-tour-the-platform",
+        "div-usage-voice-min": "div-usage-voice-min",
+        "a-speak-to-an-expert": "a-speak-to-an-expert",
+        "div-142-active-subs-2": "div-142-active-subs-2",
+        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
+        "h2-one-system-for-the": "h2-one-system-for-the",
+        "div-issued-14-may-2026": "div-issued-14-may-2026",
+        "div-one-platform-atsuite": "div-one-platform-atsuite",
+        "p-replace-disconnected-t": "p-replace-disconnected-t"
+      }
+    },
+    {
+      "component": "module-grid",
+      "section": "modules",
+      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
+      "slots": {
+        "div-price": "div-price",
+        "div-quote": "div-quote",
+        "div-38-sec": "div-38-sec",
+        "div-catalog": "div-catalog",
+        "span-02-cpq": "span-02-cpq",
+        "span-billed": "span-billed",
+        "span-status": "span-status",
+        "div-1-820-mo": "div-1-820-mo",
+        "div-348-skus": "div-348-skus",
+        "span-on-track": "span-on-track",
+        "span-2-pending": "span-2-pending",
+        "span-03-billing": "span-03-billing",
+        "span-04-process": "span-04-process",
+        "span-exceptions": "span-exceptions",
+        "span-3-to-review": "span-3-to-review",
+        "span-active-subs": "span-active-subs",
+        "span-net-retention": "span-net-retention",
+        "span-approval-queue": "span-approval-queue",
+        "span-avg-completion": "span-avg-completion",
+        "span-mediation-rate": "span-mediation-rate",
+        "span-workflows-live": "span-workflows-live",
+        "a-billing-automation": "a-billing-automation",
+        "span-01-subscription": "span-01-subscription",
+        "span-triggered-today": "span-triggered-today",
+        "span-add-ons-attached": "span-add-ons-attached",
+        "a-process-optimisation": "a-process-optimisation",
+        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
+        "p-an-always-on-process": "p-an-always-on-process",
+        "span-invoices-this-run": "span-invoices-this-run",
+        "a-configure-price-quote": "a-configure-price-quote",
+        "span-all-systems-normal": "span-all-systems-normal",
+        "a-subscription-managemen": "a-subscription-managemen",
+        "p-an-intelligent-automat": "p-an-intelligent-automat",
+        "p-full-control-over-plan": "p-full-control-over-plan",
+        "p-recurring-usage-based-": "p-recurring-usage-based-",
+        "span-renewing-this-month": "span-renewing-this-month",
+        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
+        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
+        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
+        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
+        "h3-event-driven-automatio": "h3-event-driven-automatio",
+        "h3-manage-every-subscript": "h3-manage-every-subscript"
+      }
+    },
+    {
+      "component": "cfo-dashboard",
+      "section": "cfo",
+      "lead": "\r\n\r\n<!-- CFO BAND -->\r\n",
+      "slots": {
+        "div-qoq": "div-qoq",
+        "small-mo": "small-mo",
+        "b-3-1-pts": "b-3-1-pts",
+        "div-mrr-arr": "div-mrr-arr",
+        "div-18-4-yoy": "div-18-4-yoy",
+        "div-2-1-pts-qoq": "div-2-1-pts-qoq",
+        "div-contribution": "div-contribution",
+        "div-gross-margin": "div-gross-margin",
+        "div-with-atsuite": "div-with-atsuite",
+        "span-usage-ingest": "span-usage-ingest",
+        "div-live-streaming": "div-live-streaming",
+        "div-run-14-may-2026": "div-run-14-may-2026",
+        "div-11-mom-142-active": "div-11-mom-142-active",
+        "div-renewal-indexation": "div-renewal-indexation",
+        "div-subscription-usage": "div-subscription-usage",
+        "h3-the-result-from-day": "h3-the-result-from-day",
+        "div-8-461-events-minute": "div-8-461-events-minute",
+        "div-23-renewing-cpi-auto": "div-23-renewing-cpi-auto",
+        "div-built-for-the-office": "div-built-for-the-office",
+        "div-discount-performance": "div-discount-performance",
+        "p-as-businesses-move-tow": "p-as-businesses-move-tow",
+        "p-atsuite-brings-cpq-sub": "p-atsuite-brings-cpq-sub",
+        "div-today-without-atsuite": "div-today-without-atsuite",
+        "div-vs-list-within-policy": "div-vs-list-within-policy",
+        "h2-eliminate-revenue-leak": "h2-eliminate-revenue-leak",
+        "h3-the-challenges-most-cf": "h3-the-challenges-most-cf",
+        "li-better-reporting-for-m": "li-better-reporting-for-m",
+        "li-complex-subscription-a": "li-complex-subscription-a",
+        "li-improved-compliance-an": "li-improved-compliance-an",
+        "li-inconsistent-cash-flow": "li-inconsistent-cash-flow",
+        "li-limited-confidence-in-": "li-limited-confidence-in-",
+        "li-lower-operational-cost": "li-lower-operational-cost",
+        "li-manual-billing-control": "li-manual-billing-control",
+        "li-more-predictable-cash-": "li-more-predictable-cash-",
+        "li-near-perfect-invoice-a": "li-near-perfect-invoice-a",
+        "li-no-real-time-visibilit": "li-no-real-time-visibilit",
+        "div-quote-subscription-usa": "div-quote-subscription-usa",
+        "div-real-time-revenue-visi": "div-real-time-revenue-visi"
+      }
+    },
+    {
+      "component": "quote-carousel",
+      "section": "quote",
+      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
+      "slots": {
+        "div-ct": "div-ct",
+        "div-jt": "div-jt",
+        "small-regions": "small-regions",
+        "div-carsten-thomsen": "div-carsten-thomsen",
+        "div-jens-toppenberg": "div-jens-toppenberg",
+        "small-ceo-cloudfarms": "small-ceo-cloudfarms",
+        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
+        "div-customer-cloudfarms": "div-customer-cloudfarms",
+        "div-lead-to-billing-fully": "div-lead-to-billing-fully",
+        "div-average-net-revenue-re": "div-average-net-revenue-re",
+        "div-billing-accuracy-acros": "div-billing-accuracy-acros",
+        "div-global-operations-acro": "div-global-operations-acro",
+        "div-in-production-at-dstny": "div-in-production-at-dstny",
+        "div-manual-handoffs-across": "div-manual-handoffs-across",
+        "div-monthly-transactions-p": "div-monthly-transactions-p",
+        "div-unified-platform-repla": "div-unified-platform-repla",
+        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
+        "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru"
+      }
+    },
+    {
+      "component": "innovate-forecast",
+      "section": "innovate",
+      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
+      "slots": {
+        "div-arr": "div-arr",
+        "div-upsell": "div-upsell",
+        "div-3-1-pts": "div-3-1-pts",
+        "div-innovate": "div-innovate",
+        "div-renewals": "div-renewals",
+        "a-schedule-a-demo": "a-schedule-a-demo",
+        "a-see-the-platform": "a-see-the-platform",
+        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
+        "li-guided-selling-for-a": "li-guided-selling-for-a",
+        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
+        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
+        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
+        "li-predictive-analytics-f": "li-predictive-analytics-f",
+        "li-real-time-collaboratio": "li-real-time-collaboratio",
+        "div-predictive-90d-horizon": "div-predictive-90d-horizon"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band",
+      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
+      "props": {
+        "dark": false,
+        "narrow": false,
+        "bodyClass": " class=\"lede\"",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "body": "p-a-30-minute-discovery",
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today-and",
+        "primary": "a-book-a-demo",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
+  ],
+  "index-print": [
+    {
+      "component": "print-hero",
+      "section": "hero",
+      "slots": {
+        "div-mvnx": "div-mvnx",
+        "b-6-years": "b-6-years",
+        "div-dstny": "div-dstny",
+        "div-nordix": "div-nordix",
+        "div-telavox": "div-telavox",
+        "div-2-4m-arr": "div-2-4m-arr",
+        "div-approved": "div-approved",
+        "div-ipvision": "div-ipvision",
+        "a-book-a-demo": "a-book-a-demo",
+        "b-built-in-eu": "b-built-in-eu",
+        "div-kontur-co": "div-kontur-co",
+        "div-edit-quote": "div-edit-quote",
+        "div-gdpr-native": "div-gdpr-native",
+        "span-annualised": "span-annualised",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-renewal-auto": "div-renewal-auto",
+        "div-in-production": "div-in-production",
+        "h1-the-all-in-one": "h1-the-all-in-one",
+        "div-predictive-90d": "div-predictive-90d",
+        "div-18-vs-last-year": "div-18-vs-last-year",
+        "div-billing-accuracy": "div-billing-accuracy",
+        "div-send-to-customer": "div-send-to-customer",
+        "div-forecast-accuracy": "div-forecast-accuracy",
+        "a-explore-the-platform": "a-explore-the-platform",
+        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
+        "p-automate-the-entire-qu": "p-automate-the-entire-qu",
+        "span-add-on-recording-qa": "span-add-on-recording-qa",
+        "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
+        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
+        "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
+        "span-subscription-voice-pro": "span-subscription-voice-pro",
+        "span-usage-international-es": "span-usage-international-es"
+      }
+    },
+    {
+      "component": "q2c-board",
+      "section": "q2c",
+      "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
+      "slots": {
+        "div-usage": "div-usage",
+        "div-billing": "div-billing",
+        "div-quoting": "div-quoting",
+        "div-revenue": "div-revenue",
+        "span-healthy": "span-healthy",
+        "span-approved": "span-approved",
+        "div-arr-active": "div-arr-active",
+        "div-recognised": "div-recognised",
+        "div-quote-q-2046": "div-quote-q-2046",
+        "div-subscription": "div-subscription",
+        "span-auto-billed": "span-auto-billed",
+        "a-tour-the-platform": "a-tour-the-platform",
+        "div-usage-voice-min": "div-usage-voice-min",
+        "a-speak-to-an-expert": "a-speak-to-an-expert",
+        "div-142-active-subs-2": "div-142-active-subs-2",
+        "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
+        "h2-one-system-for-the": "h2-one-system-for-the",
+        "div-issued-14-may-2026": "div-issued-14-may-2026",
+        "div-one-platform-atsuite": "div-one-platform-atsuite",
+        "p-replace-disconnected-t": "p-replace-disconnected-t"
+      }
+    },
+    {
+      "component": "module-grid",
+      "section": "modules",
+      "lead": "\r\n\r\n<!-- MODULES -->\r\n",
+      "slots": {
+        "div-price": "div-price",
+        "div-quote": "div-quote",
+        "div-38-sec": "div-38-sec",
+        "div-catalog": "div-catalog",
+        "span-02-cpq": "span-02-cpq",
+        "span-billed": "span-billed",
+        "span-status": "span-status",
+        "div-1-820-mo": "div-1-820-mo",
+        "div-348-skus": "div-348-skus",
+        "span-on-track": "span-on-track",
+        "span-2-pending": "span-2-pending",
+        "span-03-billing": "span-03-billing",
+        "span-04-process": "span-04-process",
+        "span-exceptions": "span-exceptions",
+        "span-3-to-review": "span-3-to-review",
+        "span-active-subs": "span-active-subs",
+        "span-net-retention": "span-net-retention",
+        "span-approval-queue": "span-approval-queue",
+        "span-avg-completion": "span-avg-completion",
+        "span-mediation-rate": "span-mediation-rate",
+        "span-workflows-live": "span-workflows-live",
+        "a-billing-automation": "a-billing-automation",
+        "span-01-subscription": "span-01-subscription",
+        "span-triggered-today": "span-triggered-today",
+        "span-add-ons-attached": "span-add-ons-attached",
+        "a-process-optimisation": "a-process-optimisation",
+        "p-adopt-the-full-suite": "p-adopt-the-full-suite",
+        "p-an-always-on-process": "p-an-always-on-process",
+        "span-invoices-this-run": "span-invoices-this-run",
+        "a-configure-price-quote": "a-configure-price-quote",
+        "span-all-systems-normal": "span-all-systems-normal",
+        "a-subscription-managemen": "a-subscription-managemen",
+        "p-an-intelligent-automat": "p-an-intelligent-automat",
+        "p-full-control-over-plan": "p-full-control-over-plan",
+        "p-recurring-usage-based-": "p-recurring-usage-based-",
+        "span-renewing-this-month": "span-renewing-this-month",
+        "div-atsuite-in-a-nutshell": "div-atsuite-in-a-nutshell",
+        "h2-four-modules-one-reven": "h2-four-modules-one-reven",
+        "h3-configure-price-and-qu": "h3-configure-price-and-qu",
+        "h3-enterprise-grade-billi": "h3-enterprise-grade-billi",
+        "h3-event-driven-automatio": "h3-event-driven-automatio",
+        "h3-manage-every-subscript": "h3-manage-every-subscript"
+      }
+    },
+    {
+      "component": "print-quote",
+      "section": "quote",
+      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
+      "slots": {
+        "div-ct": "div-ct",
+        "div-carsten-thomsen": "div-carsten-thomsen",
+        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
+        "div-average-net-revenue-re": "div-average-net-revenue-re",
+        "div-average-quote-turnarou": "div-average-quote-turnarou",
+        "div-billing-accuracy-in-pr": "div-billing-accuracy-in-pr",
+        "div-operating-as-a-managed": "div-operating-as-a-managed",
+        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have"
+      }
+    },
+    {
+      "component": "innovate-forecast",
+      "section": "innovate",
+      "lead": "\r\n\r\n<!-- INNOVATE -->\r\n",
+      "slots": {
+        "div-arr": "div-arr",
+        "div-upsell": "div-upsell",
+        "div-3-1-pts": "div-3-1-pts",
+        "div-innovate": "div-innovate",
+        "div-renewals": "div-renewals",
+        "a-schedule-a-demo": "a-schedule-a-demo",
+        "a-see-the-platform": "a-see-the-platform",
+        "div-revenue-forecast-q3": "div-revenue-forecast-q3",
+        "li-guided-selling-for-a": "li-guided-selling-for-a",
+        "p-we-continuously-add-ca": "p-we-continuously-add-ca",
+        "h2-unlock-your-earnings-p": "h2-unlock-your-earnings-p",
+        "li-advanced-cpq-billing-c": "li-advanced-cpq-billing-c",
+        "li-predictive-analytics-f": "li-predictive-analytics-f",
+        "li-real-time-collaboratio": "li-real-time-collaboratio",
+        "div-predictive-90d-horizon": "div-predictive-90d-horizon"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band",
+      "lead": "\r\n\r\n<!-- CTA close -->\r\n",
+      "props": {
+        "dark": false,
+        "narrow": false,
+        "bodyClass": " class=\"lede\"",
+        "primaryHref": "contact.html",
+        "secondaryHref": "implementation.html"
+      },
+      "slots": {
+        "body": "p-a-30-minute-discovery",
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today-and",
+        "primary": "a-book-a-demo",
+        "secondary": "a-how-implementation-wor"
+      }
+    }
+  ],
+  "implementation": [
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:880px;text-align:center",
+        "ledeStyle": " style=\"margin-inline:auto\"",
+        "ctasStyle": " style=\"justify-content:center\"",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html"
+      },
+      "slots": {
+        "body": "p-implementing-a-new-cpq",
+        "eyebrow": "div-implementation",
+        "heading": "h1-seamless-transition-ze",
+        "primary": "a-schedule-a-call"
+      }
+    },
+    {
+      "component": "step-list",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "h3-operations": "h3-operations",
+        "div-our-approach": "div-our-approach",
+        "h3-implementation": "h3-implementation",
+        "h3-proof-of-concept": "h3-proof-of-concept",
+        "h3-discovery-workshops": "h3-discovery-workshops",
+        "p-in-depth-workshops-to": "p-in-depth-workshops-to",
+        "p-ongoing-support-and-mo": "p-ongoing-support-and-mo",
+        "p-our-team-works-closely": "p-our-team-works-closely",
+        "p-we-start-by-demonstrat": "p-we-start-by-demonstrat",
+        "h2-four-steps-one-outcome": "h2-four-steps-one-outcome"
+      }
+    },
+    {
+      "component": "implementation-note",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-what-you-get": "div-what-you-get",
+        "h2-a-partner-not-just": "h2-a-partner-not-just",
+        "p-our-experts-assess-you": "p-our-experts-assess-you",
+        "p-reduced-implementation": "p-reduced-implementation",
+        "p-we-prioritise-ongoing-": "p-we-prioritise-ongoing-",
+        "strong-measurable-outcomes": "strong-measurable-outcomes",
+        "strong-seamless-transition-wi": "strong-seamless-transition-wi",
+        "strong-tailored-solution-desi": "strong-tailored-solution-desi"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "platform.html"
+      },
+      "slots": {
+        "body": "p-a-30-minute-conversati",
+        "eyebrow": "div-ready-when-you-are",
+        "heading": "h2-get-started-today",
+        "primary": "a-schedule-a-call",
+        "secondary": "a-see-the-platform"
+      }
+    }
+  ],
+  "cpq": [
+    {
+      "component": "page-hero-split",
+      "section": "page-hero",
+      "props": {
+        "dark": false,
+        "dotStyle": "",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-ghost",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "cpq-hero"
+      },
+      "slots": {
+        "body": "p-an-automated-cpq-that",
+        "eyebrow": "div-solutions-cpq",
+        "heading": "h1-quote-with-speed-confi",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "props": {
+        "accent": "acc-blue",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 7h18M3 12h18M3 17h12\"/></svg>"
+            },
+            "slots": {
+              "body": "p-detailed-accurate-prod",
+              "label": "div-01-catalog",
+              "heading": "h3-product-catalog"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2v20M5 8h14M5 16h14\"/></svg>"
+            },
+            "slots": {
+              "body": "p-adjust-pricing-ratings",
+              "label": "div-02-pricing",
+              "heading": "h3-dynamic-pricing"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 8v4l3 2\"/><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg>"
+            },
+            "slots": {
+              "body": "p-speed-up-quote-generat",
+              "label": "div-03-turnaround",
+              "heading": "h3-fast-quote-turnaround"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 12l5 5L21 4\"/></svg>"
+            },
+            "slots": {
+              "body": "p-automate-complex-prici",
+              "label": "div-04-efficiency",
+              "heading": "h3-increase-efficiency"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 6h18M6 12h12M9 18h6\"/></svg>"
+            },
+            "slots": {
+              "body": "p-tailored-configuration",
+              "label": "div-05-flexibility",
+              "heading": "h3-flexible-cpq"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18\"/></svg>"
+            },
+            "slots": {
+              "body": "p-a-multilingual-product",
+              "label": "div-06-i18n",
+              "heading": "h3-multi-language"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-cpq-capabilities",
+        "heading": "h2-everything-your-sales-"
+      }
+    },
+    {
+      "component": "cpq-rules",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Power -->\r\n",
+      "slots": {
+        "div-pending": "div-pending",
+        "span-2-of-3": "span-2-of-3",
+        "div-approval-flow": "div-approval-flow",
+        "b-finance-karina-b": "b-finance-karina-b",
+        "div-approved-09-14": "div-approved-09-14",
+        "div-approved-11-02": "div-approved-11-02",
+        "b-deal-desk-marco-r": "b-deal-desk-marco-r",
+        "div-awaiting-2h-sla": "div-awaiting-2h-sla",
+        "div-quote-q-2046-206": "div-quote-q-2046-206",
+        "li-direct-hand-off-to": "li-direct-hand-off-to",
+        "b-sales-manager-anna-l": "b-sales-manager-anna-l",
+        "h2-free-your-sales-team": "h2-free-your-sales-team",
+        "p-atsuite-revolutionises": "p-atsuite-revolutionises",
+        "li-approval-routing-align": "li-approval-routing-align",
+        "li-faster-more-consistent": "li-faster-more-consistent",
+        "div-the-transformative-pow": "div-the-transformative-pow"
+      }
+    },
+    {
+      "component": "integration-grid",
+      "section": "crm-integrations",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "idAttr": " id=\"crm-integrations\"",
+        "dotStyle": "",
+        "accent": "acc-blue",
+        "bullet": "<span class=\"dot\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l4 4L19 6\"/></svg></span> ",
+        "bullets": [
+          {
+            "slots": {
+              "text": "li-two-way-sync-of"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-generate-atsuite-quote"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-closed-won-deals-hand"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-pre-built-connectors-p"
+            }
+          }
+        ],
+        "cards": [
+          {
+            "props": {
+              "badgeClass": "crm-hubspot",
+              "badgeLetter": "H"
+            },
+            "slots": {
+              "body": "p-sync-deals-companies-a",
+              "meta": "div-crm-sales-hub",
+              "name": "div-hubspot"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-pipedrive",
+              "badgeLetter": "P"
+            },
+            "slots": {
+              "body": "p-mirror-pipeline-stages",
+              "meta": "div-crm-pipeline",
+              "name": "div-pipedrive"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-salesforce",
+              "badgeLetter": "S"
+            },
+            "slots": {
+              "body": "p-native-object-mapping-",
+              "meta": "div-crm-sales-cloud",
+              "name": "div-salesforce"
+            }
+          },
+          {
+            "props": {
+              "badgeClass": "crm-dynamics",
+              "badgeLetter": "D"
+            },
+            "slots": {
+              "body": "p-bi-directional-sync-wi",
+              "meta": "div-crm-sales",
+              "name": "div-microsoft-dynamics-365"
+            }
+          }
+        ],
+        "sourceTags": [
+          {
+            "slots": {
+              "text": "span-accounts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-contacts"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-opportunities"
+            }
+          }
+        ],
+        "targetTags": [
+          {
+            "slots": {
+              "text": "span-quotes"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-orders"
+            }
+          },
+          {
+            "slots": {
+              "text": "span-subscriptions"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "body": "p-atsuite-cpq-plugs-bi",
+        "eyebrow": "div-integrations-crm",
+        "heading": "h2-quote-from-the-crm",
+        "syncSource": "div-crm"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "body": "p-30-minute-discovery-we",
+        "eyebrow": "div-ready-to-quote-faster",
+        "heading": "h2-see-atsuite-cpq-in",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
+  ],
+  "contact": [
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "primaryClass": "",
+        "primaryHref": ""
+      },
+      "slots": {
+        "body": "p-tell-us-a-bit",
+        "eyebrow": "div-thank-you-for-your",
+        "heading": "h1-contact-us"
+      }
+    },
+    {
+      "component": "contact-form",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "option-cpq": "option-cpq",
+        "option-other": "option-other",
+        "option-sales": "option-sales",
+        "b-please-note": "b-please-note",
+        "label-country": "label-country",
+        "label-message": "label-message",
+        "label-website": "label-website",
+        "option-norway": "option-norway",
+        "option-sweden": "option-sweden",
+        "b-message-sent": "b-message-sent",
+        "option-denmark": "option-denmark",
+        "option-germany": "option-germany",
+        "b-mon-fri-09-00": "b-mon-fri-09-00",
+        "label-last-name": "label-last-name",
+        "label-first-name": "label-first-name",
+        "label-company-name": "label-company-name",
+        "option-netherlands": "option-netherlands",
+        "button-send-message": "button-send-message",
+        "li-a-discovery-call": "li-a-discovery-call",
+        "b-copenhagen-denmark": "b-copenhagen-denmark",
+        "div-we-only-reply-to": "div-we-only-reply-to",
+        "label-business-email": "label-business-email",
+        "li-general-enquiries": "li-general-enquiries",
+        "li-requesting-a-demo": "li-requesting-a-demo",
+        "b-info-agree-tech-com": "b-info-agree-tech-com",
+        "div-use-this-form-for": "div-use-this-form-for",
+        "option-united-kingdom": "option-united-kingdom",
+        "p-demo-sales-requests": "p-demo-sales-requests",
+        "label-i-m-interested-in": "label-i-m-interested-in",
+        "option-the-full-atsuite": "option-the-full-atsuite",
+        "p-a-european-revenue-pla": "p-a-european-revenue-pla",
+        "p-european-hq-gdpr-nativ": "p-european-hq-gdpr-nativ",
+        "p-reply-within-one-busin": "p-reply-within-one-busin",
+        "h2-copenhagen-built-for-e": "h2-copenhagen-built-for-e",
+        "option-billing-automation": "option-billing-automation",
+        "p-we-ve-received-your-mes": "p-we-ve-received-your-mes",
+        "div-agree-technologies-aps": "div-agree-technologies-aps",
+        "label-i-consent-to-receive": "label-i-consent-to-receive",
+        "option-process-optimisatio": "option-process-optimisatio",
+        "option-subscription-manage": "option-subscription-manage"
+      }
+    }
+  ],
+  "billing": [
+    {
+      "component": "page-hero-split",
+      "section": "page-hero-dark",
+      "props": {
+        "dark": true,
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-outline-dark",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "billing-hero"
+      },
+      "slots": {
+        "body": "p-a-flexible-enterprise-",
+        "eyebrow": "div-solutions-billing-auto",
+        "heading": "h1-modern-billing-for-the",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
+    {
+      "component": "feature-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n<!-- Features -->\r\n",
+      "props": {
+        "accent": "acc-navy",
+        "dotStyle": "",
+        "cards": [
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M4 6h16M4 12h10M4 18h13\"/></svg>"
+            },
+            "slots": {
+              "body": "p-usage-based-tiered-one",
+              "label": "div-models",
+              "heading": "h3-flexible-billing-model"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M3 17l5-5 4 4 4-7 5 8\"/></svg>"
+            },
+            "slots": {
+              "body": "p-track-usage-from-cdrs",
+              "label": "div-usage",
+              "heading": "h3-real-time-usage-collec"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M9 10h6M9 14h6\"/></svg>"
+            },
+            "slots": {
+              "body": "p-periodic-one-time-or",
+              "label": "div-invoicing",
+              "heading": "h3-advanced-invoicing"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21c1-4 4-6 8-6s7 2 8 6\"/></svg>"
+            },
+            "slots": {
+              "body": "p-a-360-view-of",
+              "label": "div-accounts",
+              "heading": "h3-account-management"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"6\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"M8 6h6a4 4 0 0 1 4 4v6\"/></svg>"
+            },
+            "slots": {
+              "body": "p-automate-upgrades-bill",
+              "label": "div-rules",
+              "heading": "h3-rules-automation"
+            }
+          },
+          {
+            "props": {
+              "icon": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L4 7v6c0 5 4 8 8 9 4-1 8-4 8-9V7l-8-5zM9 12l2 2 4-4\"/></svg>"
+            },
+            "slots": {
+              "body": "p-a-daily-shadow-billing",
+              "label": "div-quality",
+              "heading": "h3-quality-assurance"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-billing-capabilities",
+        "heading": "h2-discover-the-billing-c"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n<!-- Security -->\r\n",
+      "props": {
+        "alt": true,
+        "flip": false,
+        "idAttr": "",
+        "dotStyle": "",
+        "visual": "billing-split-section-alt",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-our-platform-is-equipp"
+            }
+          },
+          {
+            "props": {
+              "style": " style=\"margin-top:14px\""
+            },
+            "slots": {
+              "text": "p-compliant-with-major-d"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-your-data-is-safe",
+        "heading": "h2-we-take-your-billing"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "index.html"
+      },
+      "slots": {
+        "body": "p-walk-through-a-real",
+        "eyebrow": "div-ready-for-a-billing",
+        "heading": "h2-modernise-your-billing",
+        "primary": "a-book-a-demo",
+        "secondary": "a-back-to-overview"
+      }
+    }
+  ],
+  "about": [
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "primaryClass": "",
+        "primaryHref": ""
+      },
+      "slots": {
+        "body": "p-it-began-with-the",
+        "eyebrow": "div-our-journey",
+        "heading": "h1-built-from-a-real"
+      }
+    },
+    {
+      "component": "value-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "h3-diversity": "h3-diversity",
+        "h3-innovation": "h3-innovation",
+        "div-our-values": "div-our-values",
+        "p-we-do-what-we": "p-we-do-what-we",
+        "h3-accountability": "h3-accountability",
+        "h3-sustainability": "h3-sustainability",
+        "p-always-evolving-the-pl": "p-always-evolving-the-pl",
+        "p-different-perspectives": "p-different-perspectives",
+        "p-innovation-accountabil": "p-innovation-accountabil",
+        "p-long-term-thinking-for": "p-long-term-thinking-for",
+        "h2-what-drives-agree-tech": "h2-what-drives-agree-tech"
+      }
+    },
+    {
+      "component": "team-grid",
+      "section": "split-section-alt",
+      "lead": "\r\n\r\n",
+      "slots": {
+        "div-kb": "div-kb",
+        "div-kj": "div-kj",
+        "div-ceo": "div-ceo",
+        "div-cto": "div-cto",
+        "h3-karina-buch": "h3-karina-buch",
+        "div-management-team": "div-management-team",
+        "h3-kristian-jacobsen": "h3-kristian-jacobsen",
+        "p-20-years-in-software": "p-20-years-in-software",
+        "p-senior-executive-with-": "p-senior-executive-with-",
+        "h2-meet-the-leaders-behin": "h2-meet-the-leaders-behin"
+      }
+    },
+    {
+      "component": "board-grid",
+      "section": "split-section",
+      "lead": "\r\n\r\n",
+      "props": {
+        "people": [
+          {
+            "props": {
+              "image": "assets/board-henrik.jpeg"
+            },
+            "slots": {
+              "alt": "meta.alt",
+              "bio": "p-seasoned-executive-and",
+              "name": "h4-kenneth-andreasen",
+              "role": "div-chairman-of-the-board"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-peter.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-2",
+              "bio": "p-seasoned-executive-and-2",
+              "name": "h4-peter-reich",
+              "role": "div-board-member"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-kristian.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-3",
+              "bio": "p-cto-and-investor-at",
+              "name": "h4-kristian-hvid-jakobsen",
+              "role": "div-board-member-cto"
+            }
+          },
+          {
+            "props": {
+              "image": "assets/board-karina.webp"
+            },
+            "slots": {
+              "alt": "meta.alt-4",
+              "bio": "p-ceo-and-investor-at",
+              "name": "h4-karina-buch",
+              "role": "div-board-member-ceo"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-board-of-directors",
+        "heading": "h2-meet-the-board"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": true,
+        "bodyClass": "",
+        "primaryHref": "contact.html",
+        "secondaryHref": "platform.html"
+      },
+      "slots": {
+        "body": "p-whether-you-need-sales",
+        "eyebrow": "div-book-a-meeting",
+        "heading": "h2-it-can-start-with",
+        "primary": "a-contact-me",
+        "secondary": "a-see-the-platform"
       }
     }
   ]
