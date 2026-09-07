@@ -1,6 +1,21 @@
 {
   "about": [
-    "page-hero",
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "primaryClass": "",
+        "primaryHref": ""
+      },
+      "slots": {
+        "eyebrow": "div-our-journey",
+        "heading": "h1-built-from-a-real",
+        "body": "p-it-began-with-the"
+      }
+    },
     "split-section",
     "split-section-alt",
     "split-section-2",
@@ -25,7 +40,27 @@
     }
   ],
   "billing": [
-    "page-hero-dark",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero-dark",
+      "props": {
+        "dark": true,
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-outline-dark",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "billing-hero"
+      },
+      "slots": {
+        "eyebrow": "div-solutions-billing-auto",
+        "heading": "h1-modern-billing-for-the",
+        "body": "p-a-flexible-enterprise-",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
     "split-section",
     "split-section-alt",
     {
@@ -49,11 +84,46 @@
     }
   ],
   "contact": [
-    "page-hero",
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "primaryClass": "",
+        "primaryHref": ""
+      },
+      "slots": {
+        "eyebrow": "div-thank-you-for-your",
+        "heading": "h1-contact-us",
+        "body": "p-tell-us-a-bit"
+      }
+    },
     "split-section"
   ],
   "cpq": [
-    "page-hero",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero",
+      "props": {
+        "dark": false,
+        "dotStyle": "",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-ghost",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "cpq-hero"
+      },
+      "slots": {
+        "eyebrow": "div-solutions-cpq",
+        "heading": "h1-quote-with-speed-confi",
+        "body": "p-an-automated-cpq-that",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
     "split-section",
     "split-section-alt",
     "split-section-crm-integrations",
@@ -78,7 +148,23 @@
     }
   ],
   "implementation": [
-    "page-hero",
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:880px;text-align:center",
+        "ledeStyle": " style=\"margin-inline:auto\"",
+        "ctasStyle": " style=\"justify-content:center\"",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html"
+      },
+      "slots": {
+        "eyebrow": "div-implementation",
+        "heading": "h1-seamless-transition-ze",
+        "body": "p-implementing-a-new-cpq",
+        "primary": "a-schedule-a-call"
+      }
+    },
     "split-section",
     "split-section-alt",
     {
@@ -155,7 +241,27 @@
     }
   ],
   "platform": [
-    "page-hero-dark",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero-dark",
+      "props": {
+        "dark": true,
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-outline-dark",
+        "secondaryHref": "implementation.html",
+        "arrow": false,
+        "visual": "platform-hero"
+      },
+      "slots": {
+        "eyebrow": "div-the-atsuite-platform",
+        "heading": "h1-configure-launch-go",
+        "body": "p-a-comprehensive-platfo",
+        "primary": "a-speak-to-an-expert",
+        "secondary": "a-how-implementation-wor"
+      }
+    },
     "split-section",
     "split-section-alt",
     "split-section-process",
@@ -182,7 +288,27 @@
     }
   ],
   "process": [
-    "page-hero",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero",
+      "props": {
+        "dark": false,
+        "dotStyle": "",
+        "primaryClass": "btn-cyan",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-ghost",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "process-hero"
+      },
+      "slots": {
+        "eyebrow": "div-solutions-process-opti",
+        "heading": "h1-eliminate-manual-work-",
+        "body": "p-atsuite-automates-manu",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
     "split-section",
     {
       "component": "cta-band",
@@ -205,7 +331,27 @@
     }
   ],
   "sales": [
-    "page-hero",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero",
+      "props": {
+        "dark": false,
+        "dotStyle": " style=\"background:var(--violet)\"",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-ghost",
+        "secondaryHref": "cpq.html",
+        "arrow": true,
+        "visual": "sales-hero"
+      },
+      "slots": {
+        "eyebrow": "div-solutions-sales",
+        "heading": "h1-grow-your-business-wit",
+        "body": "p-atsuite-automates-time",
+        "primary": "a-request-a-demo",
+        "secondary": "a-see-cpq"
+      }
+    },
     "split-section",
     "split-section-alt",
     {
@@ -228,7 +374,27 @@
     }
   ],
   "subscription": [
-    "page-hero",
+    {
+      "component": "page-hero-split",
+      "section": "page-hero",
+      "props": {
+        "dark": false,
+        "dotStyle": " style=\"background:var(--green)\"",
+        "primaryClass": "btn-blue",
+        "primaryHref": "contact.html",
+        "secondaryClass": "btn-ghost",
+        "secondaryHref": "platform.html",
+        "arrow": true,
+        "visual": "subscription-hero"
+      },
+      "slots": {
+        "eyebrow": "div-solutions-subscription",
+        "heading": "h1-streamline-every-subsc",
+        "body": "p-atsuite-subscription-g",
+        "primary": "a-schedule-a-demo",
+        "secondary": "a-see-the-platform"
+      }
+    },
     "split-section-alt",
     "split-section",
     {

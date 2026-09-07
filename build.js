@@ -267,7 +267,9 @@ function loadTemplate(pageFile) {
       return fs.readFileSync(path.join(BLOCKS, page, `${entry}.html`), 'utf8');
     }
     const template = fs.readFileSync(path.join(COMPONENTS, `${entry.component}.html`), 'utf8');
-    return renderComponent(template, entry, page);
+    const visual = (name) =>
+      fs.readFileSync(path.join(COMPONENTS, 'visuals', `${name}.html`), 'utf8');
+    return renderComponent(template, entry, page, visual);
   };
 
   return (

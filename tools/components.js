@@ -22,7 +22,7 @@
 /** Nesting is not supported and not needed; keep components flat. */
 const IF = /\{\{#if (\w+)\}\}([\s\S]*?)(?:\{\{else\}\}([\s\S]*?))?\{\{\/if\}\}/g;
 
-function render(template, instance, page) {
+function render(template, instance, page, loadInclude) {
   const { section, props = {}, slots = {} } = instance;
   const has = (name) => {
     const v = name in slots ? slots[name] : props[name];
@@ -58,6 +58,22 @@ function render(template, instance, page) {
   out = out.replace(/\{\{prop:(\w+)\}\}/g, (raw, name) => {
     if (!(name in props)) throw new Error(`component on "${page}" has no prop "${name}"`);
     return String(props[name]);
+  });
+
+  /**
+   * A named fragment pasted in verbatim — the mock dashboards and diagrams that
+   * fill the right-hand side of a hero.
+   *
+   * These are the parts of the site that are drawings rather than content: five
+   * hundred lines of hand-placed nodes, bars and SVG paths, each used by exactly
+   * one page. Reuse has nothing to offer them, so they are not parameterised —
+   * they keep their own {{i18n:}} keys and are included whole. What is shared is
+   * the frame around them, which is the half that actually repeats.
+   */
+  out = out.replace(/\{\{include:(\w+)\}\}/g, (raw, name) => {
+    if (!(name in props)) throw new Error(`component on "${page}" has no prop "${name}"`);
+    if (!loadInclude) throw new Error(`component on "${page}" uses {{include:}} but no loader was given`);
+    return loadInclude(String(props[name]));
   });
 
   const left = out.match(/\{\{(?!i18n:)[^}]*\}\}/);
