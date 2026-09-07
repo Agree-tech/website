@@ -44,6 +44,29 @@ const localAssets = (html: string) =>
     .replace(/(href|src)="\/assets\//g, '$1="/preview/asset/assets/')
 
 /**
+ * Points the page's own links back at the preview.
+ *
+ * A previewed page carries the URLs it will have once deployed — `/da/process.html`
+ * for the language switcher, `contact.html` for the nav. Those are right for the
+ * built site and nowhere on this server, so every link in the preview answers 404
+ * and an editor cannot click from one page to the next or check a translation.
+ *
+ * Only navigation is rewritten. The canonical, og:url and hreflang tags name the
+ * live site absolutely and are left alone: they are part of what the editor is
+ * checking, and rewriting them would show the wrong answer.
+ */
+const previewLinks = (html: string, locale: string) =>
+  html
+    // The language switcher, which is the whole point of having three of these.
+    .replace(/href="\/(en|da|pl)\/([a-z0-9-]+)\.html"/g, 'href="/preview?page=$2&locale=$1"')
+    .replace(/href="\/(en|da|pl)\/"/g, 'href="/preview?page=index&locale=$1"')
+    // Nav, footer and in-page links, which are relative on the built site.
+    .replace(
+      /href="([a-z0-9-]+)\.html(#[a-zA-Z0-9-]*)?"/g,
+      (_m, page: string, hash = '') => `href="/preview?page=${page}&locale=${locale}${hash}"`
+    )
+
+/**
  * Listens for the document Payload posts into the frame and asks this route to
  * draw it. Debounced, because a keystroke is not worth a round trip; and
  * position-preserving, so the page does not jump to the top while you type.
@@ -110,7 +133,7 @@ const locale = (req: NextRequest) => req.nextUrl.searchParams.get('locale') || '
 
 export async function GET(req: NextRequest) {
   try {
-    const html = localAssets(await render(page(req), locale(req)))
+    const html = previewLinks(localAssets(await render(page(req), locale(req))), locale(req))
     return new Response(html.replace('</body>', `${LIVE}\n</body>`), {
       headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' },
     })
@@ -122,7 +145,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const { doc } = await req.json()
-    const html = localAssets(await render(page(req), locale(req), doc))
+    const html = previewLinks(localAssets(await render(page(req), locale(req), doc)), locale(req))
     return new Response(html.replace('</body>', `${LIVE}\n</body>`), {
       headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' },
     })

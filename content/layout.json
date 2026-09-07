@@ -775,6 +775,16 @@
             "slots": {
               "label": "a-see-the-platform"
             }
+          },
+          {
+            "props": {
+              "href": "index.html",
+              "variant": "btn-ghost",
+              "arrow": true
+            },
+            "slots": {
+              "label": "label-824a9fbc"
+            }
           }
         ]
       },
