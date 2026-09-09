@@ -1,0 +1,13 @@
+# node_modules is installed inside the image: the binaries in a Windows
+# checkout are the wrong platform. .next likewise is rebuilt there.
+node_modules
+cms/node_modules
+cms/.next
+# Built output — the CMS renders pages on demand and never reads dist/.
+dist
+.git
+.github
+# Uploads are a volume, not image content.
+cms/media
+cms/.env
+*.log

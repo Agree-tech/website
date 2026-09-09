@@ -75,6 +75,9 @@ hosted Postgres — nothing in `payload.config.ts` changes but the connection
 string. The static build reaches the CMS over HTTP via `PAYLOAD_URL`, so it can
 build on Netlify against a Payload deployed anywhere.
 
+The dev-server deployment - the image, the two services in the stack's
+`dev.yml`, the nginx blocks and why it needs migrations - is [DEPLOY.md](DEPLOY.md).
+
 ## Keeping git as the record of what shipped
 
 Editing happens in the database; `content/` is what actually deployed. Bringing
