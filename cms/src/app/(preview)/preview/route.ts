@@ -2,6 +2,9 @@ import { createRequire } from 'module'
 import path from 'path'
 
 import type { NextRequest } from 'next/server'
+import type { Field } from 'payload'
+
+import { pageBlocks } from '../../../blocks.generated'
 
 /**
  * The repository root. Taken from the working directory rather than from
@@ -31,6 +34,53 @@ function render(page: string, locale: string, doc?: unknown) {
   }
   const { renderOne } = require(path.join(ROOT, 'build.js'))
   return renderOne({ page, locale, doc }) as Promise<string>
+}
+
+/**
+ * What the admin posts is its form state, not a document. Payload keeps an
+ * array field's row count where the value would go, so a block with no buttons
+ * arrives as `links: 0` where a saved document has `links: []` — and the
+ * renderer, rightly, refuses to iterate a number. That refusal was every
+ * keystroke's live preview failing with 500 while the saved page sat there
+ * unchanged.
+ *
+ * Guided by the block definitions rather than by guessing: a number is only an
+ * absent array where the field *is* an array, and a numeric prop stays a number.
+ */
+const blocksBySlug = new Map(pageBlocks.map((block) => [block.slug, block]))
+
+function restoreArrays(value: Record<string, unknown>, fields: Field[]) {
+  for (const field of fields) {
+    // Layout-only fields wrap their children without a key of their own.
+    if (field.type === 'row' || field.type === 'collapsible') {
+      restoreArrays(value, field.fields)
+      continue
+    }
+    if (!('name' in field) || !field.name) continue
+    const current = value[field.name]
+    if (field.type === 'array') {
+      if (typeof current === 'number') value[field.name] = []
+      else if (Array.isArray(current)) {
+        for (const row of current) {
+          if (row && typeof row === 'object') restoreArrays(row as Record<string, unknown>, field.fields)
+        }
+      }
+    } else if (field.type === 'group' && current && typeof current === 'object') {
+      restoreArrays(current as Record<string, unknown>, field.fields)
+    }
+  }
+}
+
+function fromForm(doc: unknown) {
+  if (!doc || typeof doc !== 'object') return doc
+  const { layout } = doc as { layout?: unknown }
+  if (!Array.isArray(layout)) return doc
+  for (const block of layout) {
+    if (!block || typeof block !== 'object') continue
+    const definition = blocksBySlug.get((block as { blockType?: string }).blockType ?? '')
+    if (definition) restoreArrays(block as Record<string, unknown>, definition.fields)
+  }
+  return doc
 }
 
 /**
@@ -145,7 +195,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const { doc } = await req.json()
-    const html = previewLinks(localAssets(await render(page(req), locale(req), doc)), locale(req))
+    const html = previewLinks(localAssets(await render(page(req), locale(req), fromForm(doc))), locale(req))
     return new Response(html.replace('</body>', `${LIVE}\n</body>`), {
       headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' },
     })
