@@ -9,6 +9,7 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { pageGlobals } from './globals.generated'
+import { publish, PublishBusyError } from './lib/publish'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,9 +28,35 @@ export default buildConfig({
     meta: {
       titleSuffix: '· Agree Technologies',
     },
+    components: {
+      // The publish button, under the nav links — components/PublishButton.tsx.
+      afterNavLinks: ['/components/PublishButton#PublishButton'],
+    },
   },
 
   collections: [Users, Media, Pages],
+
+  /**
+   * Publish: commit the CMS to the site repository and let Netlify build it.
+   * Logged-in editors only; lib/publish.ts explains the rest.
+   */
+  endpoints: [
+    {
+      path: '/publish',
+      method: 'post',
+      handler: async (req) => {
+        if (!req.user) return Response.json({ error: 'Log in first.' }, { status: 401 })
+        const { email, name } = req.user as { email: string; name?: string | null }
+        try {
+          return Response.json(await publish({ email, name }))
+        } catch (err) {
+          if (err instanceof PublishBusyError) return Response.json({ error: err.message }, { status: 409 })
+          req.payload.logger.error({ err, msg: 'publish failed' })
+          return Response.json({ error: (err as Error).message }, { status: 500 })
+        }
+      },
+    },
+  ],
 
   /**
    * One global per page, generated from the site's own content model. Globals

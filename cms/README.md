@@ -92,10 +92,14 @@ The export writes exactly the files the build already reads, so `git log` still
 answers who changed a line and when, a content change is reviewable as a diff,
 and rolling one back is `git revert` rather than an appeal to a database backup.
 
-Run it after an editor publishes, or as a CI step before deploying. It is not
-wired into Payload as a hook: committing from the server needs git credentials
-wherever Payload ends up running, and that is a deployment decision rather than
-a CMS one.
+On the deployed CMS this is the **Publish site** button under the nav links:
+`src/lib/publish.ts` clones the branch Netlify builds, runs this same export
+against the running server, and pushes a commit authored by the editor who
+pressed it. The export also copies new uploads into `assets/`, because the
+deploy builds from git without the CMS and an image that exists only in the
+database is a 404 on the live page. What the button needs from the server — a
+token, and which branch — is in [DEPLOY.md](DEPLOY.md). The command above is
+the same thing by hand, and the fallback.
 
 **The CMS wins.** A local edit to `content/` that has not been seeded back is
 overwritten — the same rule the seed states in reverse. Edit in one place.

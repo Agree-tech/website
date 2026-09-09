@@ -134,15 +134,42 @@ backs up `/data/volumes` on the box.
 
 ## Publishing what an editor wrote
 
-Unchanged by this deployment, only pointed somewhere else:
+**Publish site**, the button under the nav links in the admin. It does what an
+engineer would do by hand — clone the branch Netlify builds, run
+`tools/export-from-payload.js` against the CMS, commit, push — and Netlify
+builds from the commit. `src/lib/publish.ts` is the whole of it. Netlify still
+builds from `content/` in git, so what deployed stays reviewable as a diff and
+revertable with `git revert`; the commit is authored by the editor who pressed
+the button, so `git blame` still names a person.
+
+It also commits new uploads into `assets/`. Before it, an uploaded image
+existed only in the database: the deploy builds without the CMS, so the page
+referenced a file that was never in git and 404ed on it.
+
+What it needs on the box, once: a GitHub fine-grained token with **Contents:
+read and write on `Agree-tech/website` only**, in the secrets file beside the
+other one —
+
+```
+echo 'GITHUB_TOKEN=github_pat_…' >> /data/volumes/website-cms/env
+docker compose -f volumes.yml -f dev.yml up -d website-cms      # re-reads env_file
+```
+
+The token stays in the environment: the clone's remote carries only a username
+and git asks a credential helper for the password, so neither the temporary
+clone nor an error message quoting the URL contains it.
+
+Defaults are `Agree-tech/website` and branch `payload`; `PUBLISH_REPO` and
+`PUBLISH_BRANCH` in `dev.yml` override them — the branch is the one to change
+at cutover to `main`. One publish runs at a time; a second press while one is
+running is refused with a message, not queued.
+
+The by-hand route still works and is the fallback if the token is ever wrong:
 
 ```
 PAYLOAD_URL=https://cms.agree-tech.io npm run export
-git commit content/ && git push
+git commit content/ assets/ && git push
 ```
-
-Netlify builds from `content/`, so what deployed stays reviewable as a diff and
-revertable with `git revert`.
 
 ## When the content model changes
 

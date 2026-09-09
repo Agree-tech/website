@@ -34,6 +34,11 @@ RUN DATABASE_URI=postgres://build:build@127.0.0.1:5432/build \
 
 FROM node:22-bookworm-slim AS runtime
 ENV NODE_ENV=production
+# Publishing commits the export to the site repository from inside this
+# container (cms/src/lib/publish.ts), and the slim image ships without git.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends git ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY --from=build /app /app
 WORKDIR /app/cms
