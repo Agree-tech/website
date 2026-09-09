@@ -12,6 +12,12 @@
  *
  *   content/<locale>/<page>.json   the strings, in page order
  *   content/layout.json            the page structure
+ *   assets/<upload>                images uploaded through the CMS
+ *
+ * The last is what makes an upload reach the site at all. The deploy builds
+ * from git without the CMS, so an image that exists only in the database is a
+ * 404 on the deployed page. A name already in assets/ is never overwritten: a
+ * committed file wins over an upload, the same way build.js treats them.
  *
  * Nothing here is clever about merging. The CMS wins outright, because it is
  * the thing editors touch; a local edit to content/ that has not been seeded
@@ -27,11 +33,12 @@
 const fs = require('fs');
 const path = require('path');
 const { templateOrder, sortPage } = require('./cms-config.js');
-const { fromPayload, layoutFromPayload } = require('./content-source.js');
+const { fromPayload, layoutFromPayload, fetchMedia } = require('./content-source.js');
 
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'src');
 const CONTENT = path.join(ROOT, 'content');
+const ASSETS = path.join(ROOT, 'assets');
 const PAYLOAD_URL = (process.env.PAYLOAD_URL || 'http://localhost:3001').replace(/[/]+$/, '');
 const CHECK = process.argv.includes('--check');
 
@@ -65,6 +72,14 @@ function nest(flat, order) {
   }
   for (const page of Object.keys(pages)) pages[page] = sortPage(page, pages[page], order);
   return pages;
+}
+
+/** Uploads the CMS has that assets/ does not, by filename — the set fetchMedia would copy. */
+async function missingMedia(baseUrl, existing) {
+  const res = await fetch(`${baseUrl}/api/media?limit=500&depth=0`);
+  if (!res.ok) throw new Error(`${res.status} ${res.statusText} listing media`);
+  const { docs = [] } = await res.json();
+  return docs.map((doc) => doc.filename).filter((name) => name && !existing.has(name));
 }
 
 function main() {
@@ -102,7 +117,15 @@ function main() {
       for (const f of changed.slice(0, 25)) console.log(`  ${CHECK ? '~' : '+'} ${f}`);
       if (changed.length > 25) console.log(`  … and ${changed.length - 25} more`);
 
-      if (CHECK && changed.length) {
+      const existing = new Set(fs.existsSync(ASSETS) ? fs.readdirSync(ASSETS) : []);
+      const uploads = await missingMedia(PAYLOAD_URL, existing);
+      if (!CHECK && uploads.length) await fetchMedia(PAYLOAD_URL, ASSETS, existing);
+      if (uploads.length) {
+        console.log(`${uploads.length} upload(s) ${CHECK ? 'not in assets/' : 'copied to assets/'}`);
+        for (const f of uploads) console.log(`  ${CHECK ? '~' : '+'} assets/${f}`);
+      }
+
+      if (CHECK && (changed.length || uploads.length)) {
         console.error('\nFAIL — content/ does not match the CMS. Run: npm run export');
         process.exit(1);
       }
