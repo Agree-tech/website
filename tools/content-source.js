@@ -365,6 +365,16 @@ async function layoutFromPayload(baseUrl) {
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} listing pages`);
 
   const { docs = [] } = await res.json();
+
+  /**
+   * Ordered the way src/ lists the templates, because /api/pages answers
+   * newest-first: without this the page order in layout.json is whatever order
+   * somebody happened to create the pages in, and every export is a 150-line
+   * diff that says nothing. The `.html` is what puts index-print before index,
+   * which is where readdirSync().sort() puts it.
+   */
+  docs.sort((a, b) => (`${a.name}.html` < `${b.name}.html` ? -1 : 1));
+
   const layout = {};
   for (const doc of docs) layout[doc.name] = (doc.layout || []).map(toInstance);
   return layout;
