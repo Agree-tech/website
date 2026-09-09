@@ -79,7 +79,7 @@ async function main() {
       }
 
       try {
-        // fallbackLocale none, or a locale inherits English for any field the
+        // No fallback locale, or a locale inherits English for any field the
         // data omits. Payload reads the global before writing it, and that read
         // resolves an untranslated field to the default locale; the merged
         // result is then stored, turning "not translated" into "translated,
@@ -88,7 +88,7 @@ async function main() {
         await payload.updateGlobal({
           slug: slug as never,
           locale,
-          fallbackLocale: 'none',
+          fallbackLocale: false,
           data: data as never,
           depth: 0,
         })
