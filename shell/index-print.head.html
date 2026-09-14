@@ -116,22 +116,6 @@
     pointer-events: none;
     z-index: -1;
   }
-  .mock-tab-row {
-    display: flex; gap: 6px; align-items: center;
-    padding: 4px 6px 14px;
-  }
-  .mock-tab-row .dot { width: 9px; height: 9px; border-radius: 50%; }
-  .mock-tab-row .d1 { background: #ef4444; } .mock-tab-row .d2 { background: #f59e0b; } .mock-tab-row .d3 { background: #22c55e; }
-  .mock-tab-row .url {
-    margin-left: 16px;
-    flex: 1;
-    background: rgba(255,255,255,0.06);
-    border-radius: 7px;
-    padding: 6px 12px;
-    font-family: var(--f-mono);
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.6);
-  }
   .mock-body {
     background: var(--white);
     border-radius: 12px;
@@ -193,6 +177,22 @@
   .mock-float .val { font-size: 18px; font-weight: 600; color: var(--navy); font-family: var(--f-display); margin-top: 2px; letter-spacing: -0.02em;}
   .mock-float .delta { font-size: 12px; color: var(--green); font-family: var(--f-mono); margin-top: 4px; }
 
+  .mock-note {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.42);
+  }
+  .logos .lg-img {
+    display: block;
+    height: 34px;
+    width: auto;
+    max-width: 100%;
+    filter: brightness(0) invert(1);
+  }
   /* Logos */
   .logo-strip {
     background: var(--navy);
@@ -209,8 +209,9 @@
     color: rgba(255,255,255,0.4);
   }
   .logos {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 28px;
     align-items: center;
     opacity: 0.7;
@@ -327,6 +328,23 @@
   .q2c-card .bars span {
     flex: 1; background: var(--blue); border-radius: 2px;
     opacity: 0.85;
+  }
+  .board-note {
+    margin-top: 16px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .q2c-boundary {
+    margin: 28px auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--slate);
   }
 
   /* Modules */

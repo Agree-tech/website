@@ -9,18 +9,18 @@
   },
   "page-hero": {
     "div-solutions-process-opti": "LØSNINGER · PROCESOPTIMERING",
-    "h1-eliminate-manual-work-": "Fjern manuelt arbejde. Kør i maskinhastighed.",
-    "p-atsuite-automates-manu": "ATSuite automatiserer manuelle processer, strømliner workflows og integrerer systemer gnidningsfrit. Med hændelsesdrevet automatisering træffer jeres teams hurtigere beslutninger, laver færre fejl og får tid til strategisk og kundenært arbejde.",
+    "h1-eliminate-manual-work-": "Automatisér de overleveringer, jeres indtægtsproces afhænger af.",
+    "p-atsuite-automates-manu": "ATSuite kører en procesmotor oven på de hændelser, jeres forretning allerede skaber. En bekræftet ordre opretter sine abonnementer; afregnet forbrug bliver til posteringer og en faktura; en færdig faktura bliver dannet, leveret og eksporteret til jeres økonomisystem — uden at nogen taster den om.",
     "a-schedule-a-demo": "Book en demo",
     "a-see-the-platform": "Se platformen",
-    "b-quote-signed": "Tilbud underskrevet",
-    "small-event-cpq": "HÆNDELSE · CPQ",
-    "b-provision-service": "Opret service",
-    "small-workflow-0-8s": "WORKFLOW · 0,8s",
-    "b-generate-invoice": "Dan faktura",
-    "small-billing-day-1": "FAKTURERING · DAG 1",
-    "b-notify-crm": "Notificér CRM",
-    "small-api-hubspot": "API · HUBSPOT"
+    "b-quote-signed": "Ordre bekræftet",
+    "small-event-cpq": "HÆNDELSE · SALG",
+    "b-provision-service": "Abonnementer oprettet",
+    "small-workflow-0-8s": "ARBEJDSGANG · PR. ORDRELINJE",
+    "b-generate-invoice": "Forbrug afregnet til poster",
+    "small-billing-day-1": "FAKTURERING · KØRSEL",
+    "b-notify-crm": "Faktura leveret",
+    "small-api-hubspot": "E-FAKTURA · MAIL · EKSPORT"
   },
   "split-section": {
     "div-process-capabilities": "PROCES · FUNKTIONER",

@@ -12,5 +12,6 @@
         <p>{{slot:body}}</p>
       </div>
 {{/each}}    </div>
-  </div>
+{{#if note}}    <p class="grid-note">{{slot:note}}</p>
+{{/if}}  </div>
 </section>

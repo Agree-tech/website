@@ -58,7 +58,7 @@
         "people": [
           {
             "props": {
-              "image": "assets/board-henrik.jpeg"
+              "image": "assets/board-kenneth.jpeg"
             },
             "slots": {
               "alt": "meta.alt",
@@ -254,6 +254,7 @@
         ]
       },
       "slots": {
+        "note": "p-finance-boundary",
         "eyebrow": "div-billing-capabilities",
         "heading": "h2-discover-the-billing-c"
       }
@@ -531,126 +532,6 @@
       }
     },
     {
-      "component": "integration-grid",
-      "section": "crm-integrations",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "idAttr": " id=\"crm-integrations\"",
-        "dotStyle": "",
-        "accent": "acc-blue",
-        "bullet": "<span class=\"dot\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"><path d=\"M5 12l4 4L19 6\"/></svg></span> ",
-        "bullets": [
-          {
-            "slots": {
-              "text": "li-two-way-sync-of"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-generate-atsuite-quote"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-closed-won-deals-hand"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-pre-built-connectors-p"
-            }
-          }
-        ],
-        "cards": [
-          {
-            "props": {
-              "badgeClass": "crm-hubspot",
-              "badgeLetter": "H"
-            },
-            "slots": {
-              "body": "p-sync-deals-companies-a",
-              "meta": "div-crm-sales-hub",
-              "name": "div-hubspot"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-pipedrive",
-              "badgeLetter": "P"
-            },
-            "slots": {
-              "body": "p-mirror-pipeline-stages",
-              "meta": "div-crm-pipeline",
-              "name": "div-pipedrive"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-salesforce",
-              "badgeLetter": "S"
-            },
-            "slots": {
-              "body": "p-native-object-mapping-",
-              "meta": "div-crm-sales-cloud",
-              "name": "div-salesforce"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-dynamics",
-              "badgeLetter": "D"
-            },
-            "slots": {
-              "body": "p-bi-directional-sync-wi",
-              "meta": "div-crm-sales",
-              "name": "div-microsoft-dynamics-365"
-            }
-          }
-        ],
-        "sourceTags": [
-          {
-            "slots": {
-              "text": "span-accounts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-contacts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-opportunities"
-            }
-          }
-        ],
-        "targetTags": [
-          {
-            "slots": {
-              "text": "span-quotes"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-orders"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-subscriptions"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "body": "p-atsuite-cpq-plugs-bi",
-        "eyebrow": "div-integrations-crm",
-        "heading": "h2-quote-from-the-crm",
-        "syncSource": "div-crm"
-      }
-    },
-    {
       "component": "cta-band",
       "section": "cta-band-dark",
       "lead": "\r\n\r\n",
@@ -894,9 +775,11 @@
         "span-approved": "span-approved",
         "div-arr-active": "div-arr-active",
         "div-recognised": "div-recognised",
+        "div-illustrative": "div-illustrative",
         "div-quote-q-2046": "div-quote-q-2046",
         "div-subscription": "div-subscription",
         "span-auto-billed": "span-auto-billed",
+        "p-finance-boundary": "p-finance-boundary",
         "div-usage-voice-min": "div-usage-voice-min",
         "div-142-active-subs-2": "div-142-active-subs-2",
         "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
@@ -925,6 +808,7 @@
         "span-03-billing": "span-03-billing",
         "span-04-process": "span-04-process",
         "span-exceptions": "span-exceptions",
+        "div-illustrative": "div-illustrative",
         "span-3-to-review": "span-3-to-review",
         "span-active-subs": "span-active-subs",
         "span-net-retention": "span-net-retention",
@@ -1123,6 +1007,31 @@
       }
     },
     {
+      "component": "quote-carousel",
+      "section": "quote",
+      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
+      "slots": {
+        "div-ct": "div-ct",
+        "div-jt": "div-jt",
+        "small-regions": "small-regions",
+        "div-carsten-thomsen": "div-carsten-thomsen",
+        "div-jens-toppenberg": "div-jens-toppenberg",
+        "small-ceo-cloudfarms": "small-ceo-cloudfarms",
+        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
+        "div-customer-cloudfarms": "div-customer-cloudfarms",
+        "div-lead-to-billing-fully": "div-lead-to-billing-fully",
+        "div-average-net-revenue-re": "div-average-net-revenue-re",
+        "div-billing-accuracy-acros": "div-billing-accuracy-acros",
+        "div-global-operations-acro": "div-global-operations-acro",
+        "div-in-production-at-dstny": "div-in-production-at-dstny",
+        "div-manual-handoffs-across": "div-manual-handoffs-across",
+        "div-monthly-transactions-p": "div-monthly-transactions-p",
+        "div-unified-platform-repla": "div-unified-platform-repla",
+        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
+        "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru"
+      }
+    },
+    {
       "component": "q2c-board",
       "section": "q2c",
       "lead": "\r\n\r\n<!-- Q2C BOARD -->\r\n",
@@ -1159,9 +1068,11 @@
         "span-approved": "span-approved",
         "div-arr-active": "div-arr-active",
         "div-recognised": "div-recognised",
+        "div-illustrative": "div-illustrative",
         "div-quote-q-2046": "div-quote-q-2046",
         "div-subscription": "div-subscription",
         "span-auto-billed": "span-auto-billed",
+        "p-finance-boundary": "p-finance-boundary",
         "div-usage-voice-min": "div-usage-voice-min",
         "div-142-active-subs-2": "div-142-active-subs-2",
         "div-renewal-3-yr-ramp": "div-renewal-3-yr-ramp",
@@ -1190,6 +1101,7 @@
         "span-03-billing": "span-03-billing",
         "span-04-process": "span-04-process",
         "span-exceptions": "span-exceptions",
+        "div-illustrative": "div-illustrative",
         "span-3-to-review": "span-3-to-review",
         "span-active-subs": "span-active-subs",
         "span-net-retention": "span-net-retention",
@@ -1263,31 +1175,6 @@
         "li-no-real-time-visibilit": "li-no-real-time-visibilit",
         "div-quote-subscription-usa": "div-quote-subscription-usa",
         "div-real-time-revenue-visi": "div-real-time-revenue-visi"
-      }
-    },
-    {
-      "component": "quote-carousel",
-      "section": "quote",
-      "lead": "\r\n\r\n<!-- QUOTE -->\r\n",
-      "slots": {
-        "div-ct": "div-ct",
-        "div-jt": "div-jt",
-        "small-regions": "small-regions",
-        "div-carsten-thomsen": "div-carsten-thomsen",
-        "div-jens-toppenberg": "div-jens-toppenberg",
-        "small-ceo-cloudfarms": "small-ceo-cloudfarms",
-        "div-customer-dstny-a-s": "div-customer-dstny-a-s",
-        "div-customer-cloudfarms": "div-customer-cloudfarms",
-        "div-lead-to-billing-fully": "div-lead-to-billing-fully",
-        "div-average-net-revenue-re": "div-average-net-revenue-re",
-        "div-billing-accuracy-acros": "div-billing-accuracy-acros",
-        "div-global-operations-acro": "div-global-operations-acro",
-        "div-in-production-at-dstny": "div-in-production-at-dstny",
-        "div-manual-handoffs-across": "div-manual-handoffs-across",
-        "div-monthly-transactions-p": "div-monthly-transactions-p",
-        "div-unified-platform-repla": "div-unified-platform-repla",
-        "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
-        "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru"
       }
     },
     {
@@ -1853,126 +1740,6 @@
       }
     },
     {
-      "component": "integration-grid",
-      "section": "crm-integrations",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": true,
-        "idAttr": " id=\"crm-integrations\"",
-        "dotStyle": " style=\"background:var(--violet)\"",
-        "accent": "acc-violet",
-        "bullet": "<span class=\"dot\">✓</span>",
-        "bullets": [
-          {
-            "slots": {
-              "text": "li-two-way-sync-of"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-quotes-generated-in-at"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-closed-won-deals-trigg"
-            }
-          },
-          {
-            "slots": {
-              "text": "li-pre-built-connectors-p"
-            }
-          }
-        ],
-        "cards": [
-          {
-            "props": {
-              "badgeClass": "crm-hubspot",
-              "badgeLetter": "H"
-            },
-            "slots": {
-              "body": "p-sync-deals-companies-a",
-              "meta": "div-crm-sales-hub",
-              "name": "div-hubspot"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-pipedrive",
-              "badgeLetter": "P"
-            },
-            "slots": {
-              "body": "p-mirror-pipeline-stages",
-              "meta": "div-crm-pipeline",
-              "name": "div-pipedrive"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-salesforce",
-              "badgeLetter": "S"
-            },
-            "slots": {
-              "body": "p-native-object-mapping-",
-              "meta": "div-crm-sales-cloud",
-              "name": "div-salesforce"
-            }
-          },
-          {
-            "props": {
-              "badgeClass": "crm-dynamics",
-              "badgeLetter": "D"
-            },
-            "slots": {
-              "body": "p-bi-directional-sync-wi",
-              "meta": "div-crm-sales",
-              "name": "div-microsoft-dynamics-365"
-            }
-          }
-        ],
-        "sourceTags": [
-          {
-            "slots": {
-              "text": "span-accounts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-contacts"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-opportunities"
-            }
-          }
-        ],
-        "targetTags": [
-          {
-            "slots": {
-              "text": "span-quotes"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-orders"
-            }
-          },
-          {
-            "slots": {
-              "text": "span-subscriptions"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "body": "p-atsuite-connects-bi-di",
-        "eyebrow": "div-integrations-crm",
-        "heading": "h2-works-with-the-crm",
-        "syncSource": "div-crm"
-      }
-    },
-    {
       "component": "cta-band",
       "section": "cta-band-dark",
       "lead": "\r\n\r\n",
@@ -2011,12 +1778,13 @@
   ],
   "subscription": [
     {
-      "component": "page-hero-split",
+      "component": "page-hero",
       "section": "page-hero",
       "props": {
-        "dark": false,
+        "containerStyle": "max-width:880px;text-align:center",
+        "ledeStyle": " style=\"margin-inline:auto\"",
+        "ctasStyle": " style=\"justify-content:center\"",
         "dotStyle": " style=\"background:var(--green)\"",
-        "visual": "subscription-hero",
         "links": [
           {
             "props": {
@@ -2045,16 +1813,6 @@
         "body": "p-atsuite-subscription-g",
         "eyebrow": "div-solutions-subscription",
         "heading": "h1-streamline-every-subsc"
-      }
-    },
-    {
-      "component": "quote-band",
-      "section": "split-section-alt",
-      "lead": "\r\n\r\n<!-- Quote -->\r\n",
-      "slots": {
-        "div-customer-telavox": "div-customer-telavox",
-        "div-colin-russel-mvnx-dire": "div-colin-russel-mvnx-dire",
-        "blockquote-our-enduring-collabora": "blockquote-our-enduring-collabora"
       }
     },
     {
@@ -2128,6 +1886,7 @@
         ]
       },
       "slots": {
+        "note": "p-finance-boundary",
         "eyebrow": "div-subscription-capabilit",
         "heading": "h2-built-for-the-entire"
       }

@@ -28,9 +28,6 @@
   background: white; border: 1px solid var(--border-soft); border-radius: 16px;
   box-shadow: var(--shadow-pop); overflow: hidden;
 }
-.cpq-mock .bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--border-soft); align-items:center; }
-.cpq-mock .bar .d { width: 9px; height: 9px; border-radius:50%; }
-.cpq-mock .bar .url { margin-left: 12px; flex:1; background: var(--cloud); border-radius: 6px; padding: 5px 10px; font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
 .cpq-mock .body { padding: 22px; }
 .cpq-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 12px; padding: 12px 14px; align-items: center; border-bottom: 1px dashed var(--border-soft); font-size: 13px; }
 .cpq-row.head { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; padding-top: 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-soft); }
@@ -63,6 +60,24 @@
 .sync-flow .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
 .sync-flow .tag { font-family:var(--f-mono); font-size:10.5px; letter-spacing:0.06em; color:var(--slate); background:white; border:1px solid var(--border-soft); padding:3px 8px; border-radius:99px; }
 @media (max-width: 600px) { .crm-grid { grid-template-columns:1fr; } .sync-flow { grid-template-columns:1fr; text-align:center; } }
+.app-shot { margin: 0; }
+.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+}
+.app-shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 </style>
 </head>
 <body>
@@ -80,32 +95,11 @@
         <a class="btn btn-ghost btn-lg" href="platform.html">{{i18n:cpq.page-hero.a-see-the-platform}} <span class="arr">→</span></a>
       </div>
     </div>
-    <div class="cpq-mock">
-      <div class="bar">
-        <span class="d" style="background:#ef4444"></span>
-        <span class="d" style="background:#f59e0b"></span>
-        <span class="d" style="background:#22c55e"></span>
-        <div class="url">atsuite.app/cpq/quotes/Q-2046 · Subscription quote · Northwind</div>
-      </div>
-      <div class="body">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
-          <div>
-            <div style="font-family:var(--f-display);font-weight:600;color:var(--navy);font-size:18px">{{i18n:cpq.page-hero.div-northwind-telecom-fy26}}</div>
-            <div style="font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;margin-top:3px">{{i18n:cpq.page-hero.div-quote-q-2046-draft}}</div>
-          </div>
-          <span style="background:#DBEAFE;color:var(--blue);padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono);letter-spacing:0.06em">{{i18n:cpq.page-hero.span-pending-approval}}</span>
-        </div>
-        <div class="cpq-row head"><span>{{i18n:cpq.page-hero.span-product}}</span><span class="qty">{{i18n:cpq.page-hero.span-qty}}</span><span class="disc">{{i18n:cpq.page-hero.span-disc}}</span><span class="price">{{i18n:cpq.page-hero.span-annual}}</span></div>
-        <div class="cpq-row"><span class="name">{{i18n:cpq.page-hero.span-voice-pro-per-seat}}</span><span class="qty">1,200</span><span class="disc">−7%</span><span class="price">€186,400</span></div>
-        <div class="cpq-row"><span class="name">{{i18n:cpq.page-hero.span-recording-qa}}</span><span class="qty">1,200</span><span class="disc">−12%</span><span class="price">€24,000</span></div>
-        <div class="cpq-row"><span class="name">{{i18n:cpq.page-hero.span-sms-usage-tier}}</span><span class="qty">{{i18n:cpq.page-hero.span-80k-mo}}</span><span class="disc">{{i18n:cpq.page-hero.span-tier-b}}</span><span class="price">€9,840</span></div>
-        <div class="cpq-row" style="border-bottom:0"><span class="name">{{i18n:cpq.page-hero.span-international-voice-es}}</span><span class="qty">{{i18n:cpq.page-hero.span-1-4m-min}}</span><span class="disc">{{i18n:cpq.page-hero.span-tier-a}}</span><span class="price">€12,225</span></div>
-        <div class="cpq-total"><span class="l">{{i18n:cpq.page-hero.span-annualised-multi-yr-ra}}</span><span class="a">€206,595</span></div>
-        <div class="lang-pills">
-          <span class="on">{{i18n:cpq.page-hero.span-en}}</span><span>{{i18n:cpq.page-hero.span-da}}</span><span>{{i18n:cpq.page-hero.span-de}}</span><span>{{i18n:cpq.page-hero.span-fr}}</span><span>{{i18n:cpq.page-hero.span-nl}}</span><span>{{i18n:cpq.page-hero.span-sv}}</span>
-        </div>
-      </div>
-    </div>
+    <figure class="app-shot">
+          <img src="assets/screens/atsuite-quote.jpg" width="1000" height="709" loading="eager" fetchpriority="high" decoding="async"
+               alt="{{i18n:cpq.page-hero.alt-screenshot}}" />
+          <figcaption>{{i18n:cpq.page-hero.div-shot-caption}}</figcaption>
+        </figure>
   </div>
 </section>
 
@@ -190,55 +184,6 @@
         <div style="width:28px;height:28px;border-radius:50%;background:#FEF3C7;color:#B45309;display:grid;place-items:center;font-size:13px">●</div>
         <div><b style="color:var(--navy)">{{i18n:cpq.split-section-alt.b-finance-karina-b}}</b><div style="font-size:12px;color:var(--muted);font-family:var(--f-mono)">{{i18n:cpq.split-section-alt.div-awaiting-2h-sla}}</div></div>
         <div style="font-family:var(--f-mono);font-size:12px;color:var(--muted)">{{i18n:cpq.split-section-alt.div-pending}}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="split-section" id="crm-integrations">
-  <div class="container split-grid">
-    <div>
-      <div class="eyebrow"><span class="dot"></span>{{i18n:cpq.crm-integrations.div-integrations-crm}}</div>
-      <h2 style="margin-top:18px">{{i18n:cpq.crm-integrations.h2-quote-from-the-crm}}</h2>
-      <p>{{i18n:cpq.crm-integrations.p-atsuite-cpq-plugs-bi}}</p>
-      <ul class="acc-blue">
-        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{i18n:cpq.crm-integrations.li-two-way-sync-of}}</li>
-        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{i18n:cpq.crm-integrations.li-generate-atsuite-quote}}</li>
-        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{i18n:cpq.crm-integrations.li-closed-won-deals-hand}}</li>
-        <li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span> {{i18n:cpq.crm-integrations.li-pre-built-connectors-p}}</li>
-      </ul>
-    </div>
-    <div>
-      <div class="crm-grid">
-        <div class="crm-card">
-          <div class="badge crm-hubspot">H</div>
-          <div class="name">{{i18n:cpq.crm-integrations.div-hubspot}}</div>
-          <div class="meta">{{i18n:cpq.crm-integrations.div-crm-sales-hub}}</div>
-          <p>{{i18n:cpq.crm-integrations.p-sync-deals-companies-a}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-pipedrive">P</div>
-          <div class="name">{{i18n:cpq.crm-integrations.div-pipedrive}}</div>
-          <div class="meta">{{i18n:cpq.crm-integrations.div-crm-pipeline}}</div>
-          <p>{{i18n:cpq.crm-integrations.p-mirror-pipeline-stages}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-salesforce">S</div>
-          <div class="name">{{i18n:cpq.crm-integrations.div-salesforce}}</div>
-          <div class="meta">{{i18n:cpq.crm-integrations.div-crm-sales-cloud}}</div>
-          <p>{{i18n:cpq.crm-integrations.p-native-object-mapping-}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-dynamics">D</div>
-          <div class="name">{{i18n:cpq.crm-integrations.div-microsoft-dynamics-365}}</div>
-          <div class="meta">{{i18n:cpq.crm-integrations.div-crm-sales}}</div>
-          <p>{{i18n:cpq.crm-integrations.p-bi-directional-sync-wi}}</p>
-        </div>
-      </div>
-      <div class="sync-flow">
-        <div class="side">{{i18n:cpq.crm-integrations.div-crm}}<div class="tags"><span class="tag">{{i18n:cpq.crm-integrations.span-accounts}}</span><span class="tag">{{i18n:cpq.crm-integrations.span-contacts}}</span><span class="tag">{{i18n:cpq.crm-integrations.span-opportunities}}</span></div></div>
-        <div class="arrows">⇄</div>
-        <div class="side">ATSuite<div class="tags"><span class="tag">{{i18n:cpq.crm-integrations.span-quotes}}</span><span class="tag">{{i18n:cpq.crm-integrations.span-orders}}</span><span class="tag">{{i18n:cpq.crm-integrations.span-subscriptions}}</span></div></div>
       </div>
     </div>
   </div>

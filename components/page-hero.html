@@ -1,6 +1,6 @@
 <section class="page-hero">
   <div class="container" style="{{prop:containerStyle}}">
-    <div class="eyebrow"><span class="dot"></span>{{slot:eyebrow}}</div>
+    <div class="eyebrow"><span class="dot"{{#if dotStyle}}{{prop:dotStyle}}{{/if}}></span>{{slot:eyebrow}}</div>
     <h1 style="margin-top:18px">{{slot:heading}}</h1>
     <p class="lede"{{prop:ledeStyle}}>{{slot:body}}</p>
 {{#if links}}    <div class="ctas"{{prop:ctasStyle}}>{{#each links}}{{partial:button}}{{/each}}</div>

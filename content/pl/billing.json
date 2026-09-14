@@ -1,36 +1,20 @@
 {
   "meta": {
     "title": "Automatyzacja fakturowania dla B2B SaaS · Agree Technologies",
-    "description": "Automatyzuj fakturowanie cykliczne, oparte na zużyciu i kontraktowe z ATSuite. Ogranicz wyciek przychodów i osiągnij niemal 100% poprawności faktur w B2B SaaS i telekomunikacji.",
+    "description": "Zautomatyzuj rozliczenia cykliczne, oparte na zużyciu i umowach z ATSuite — wyceniaj zużycie, uruchamiaj cykle rozliczeniowe i eksportuj zweryfikowane dane faktur do systemu księgowego.",
     "og-title": "Automatyzacja fakturowania dla B2B SaaS",
-    "og-description": "Automatyzuj fakturowanie cykliczne, oparte na zużyciu i kontraktowe. Ogranicz wyciek przychodów i osiągnij niemal 100% poprawności faktur.",
+    "og-description": "Wyceniaj zużycie, uruchamiaj cykle rozliczeniowe i eksportuj zweryfikowane dane faktur do systemu księgowego.",
     "twitter-title": "Automatyzacja fakturowania dla B2B SaaS",
-    "twitter-description": "Automatyzuj fakturowanie cykliczne, oparte na zużyciu i kontraktowe. Ogranicz wyciek przychodów i osiągnij niemal 100% poprawności faktur."
+    "twitter-description": "Wyceniaj zużycie, uruchamiaj cykle rozliczeniowe i eksportuj zweryfikowane dane faktur do systemu księgowego."
   },
   "page-hero-dark": {
     "div-solutions-billing-auto": "ROZWIĄZANIA · AUTOMATYZACJA FAKTUROWANIA",
     "h1-modern-billing-for-the": "Nowoczesne fakturowanie dopasowane do tego, jak B2B naprawdę zarabia.",
-    "p-a-flexible-enterprise-": "Elastyczny silnik fakturowania klasy enterprise dla modeli cyklicznych, opartych na zużyciu, progowych i kontraktowych — z płynną integracją z bramkami płatniczymi i systemami księgowymi.",
+    "p-a-flexible-enterprise-": "Konfigurowalny silnik rozliczeń dla modeli cyklicznych, opartych na zużyciu, progowych i umownych — z wbudowanymi integracjami e-faktur, płatności i eksportu księgowego.",
     "a-schedule-a-demo": "Umów demo",
     "a-see-the-platform": "Zobacz platformę",
-    "div-bill-run-may-2026": "Cykl fakturowania · maj 2026",
-    "div-cycle-05-1-284": "CYKL 05 · 1 284 FAKTURY · ZAKOŃCZONY",
-    "span-99-98-mediated": "● 99,98% PO MEDIACJI",
-    "div-billed": "Zafakturowano",
-    "div-invoices": "Faktury",
-    "div-exceptions": "Wyjątki",
-    "div-northwind-telecom": "Northwind Telecom",
-    "small-recurring-monthly": "cykliczne · miesięcznie",
-    "span-issued": "wystawiono",
-    "div-telavox-nordics": "Telavox Nordics",
-    "small-usage-based-voice": "wg zużycia · głos",
-    "span-issued-2": "wystawiono",
-    "div-kontur-co": "Kontur & Co",
-    "small-tiered-mid-cycle-cha": "progowe · zmiana w cyklu",
-    "span-qa-review": "Kontrola jakości",
-    "div-ipvision-aps": "IPVision Aps",
-    "small-agreement-proration": "umowa · rozliczenie proporcjonalne",
-    "span-issued-3": "wystawiono"
+    "alt-screenshot": "Ekran należności w ATSuite: sumy nieuregulowane, przeterminowane, wymagalne i zapłacone w euro i dolarach, nad listą faktur klientów ze statusem płatności.",
+    "div-shot-caption": "ATSuite · Należności — euro i dolary liczone osobno · dane ilustracyjne"
   },
   "split-section": {
     "div-billing-capabilities": "FAKTUROWANIE · MOŻLIWOŚCI",
@@ -52,21 +36,22 @@
     "p-automate-upgrades-bill": "Automatyzuj podwyższenia planów, cykle fakturowania i wstrzymywanie faktur. ATSuite bez wysiłku obsługuje korekty i rozliczenia proporcjonalne przy zmianach w trakcie cyklu.",
     "div-quality": "JAKOŚĆ",
     "h3-quality-assurance": "Zapewnienie jakości",
-    "p-a-daily-shadow-billing": "Codzienne środowisko fakturowania równoległego zapewnia proaktywny monitoring i wewnętrzną przejrzystość — dzięki czemu faktury zawsze się zgadzają."
+    "p-a-daily-shadow-billing": "Codzienne środowisko fakturowania równoległego zapewnia proaktywny monitoring i wewnętrzną przejrzystość — dzięki czemu faktury zawsze się zgadzają.",
+    "p-finance-boundary": "ATSuite oblicza i porządkuje pozycje rozliczeniowe oraz dane faktur; księgowość, księga główna, płatności i sprawozdawczość ustawowa pozostają w podłączonych systemach finansowych."
   },
   "split-section-alt": {
     "div-your-data-is-safe": "TWOJE DANE SĄ BEZPIECZNE",
-    "h2-we-take-your-billing": "Poważnie traktujemy Twoje dane rozliczeniowe.",
-    "p-our-platform-is-equipp": "Nasza platforma jest wyposażona w najnowsze mechanizmy bezpieczeństwa chroniące Twoje dane finansowe — szyfrowanie SSL, uwierzytelnianie dwuskładnikowe, stale monitorowane serwery w chmurze oraz regularne kopie zapasowe dla bezpieczeństwa i dostępności.",
-    "p-compliant-with-major-d": "Zgodność z najważniejszymi regulacjami o ochronie danych, w tym RODO i CCPA.",
-    "strong-ssl-encryption": "Szyfrowanie SSL",
-    "p-end-to-end-encryption": "Szyfrowanie end-to-end chroni informacje finansowe w tranzycie i w spoczynku.",
-    "strong-gdpr-ccpa": "RODO i CCPA",
-    "p-compliant-with-the-maj": "Zgodność z najważniejszymi europejskimi i globalnymi regulacjami o ochronie danych.",
-    "strong-2-factor-auth": "Uwierzytelnianie 2FA",
-    "p-additional-layer-of-au": "Dodatkowa warstwa uwierzytelniania dla użytkowników finansowych i administratorów.",
-    "strong-daily-backups": "Codzienne kopie zapasowe",
-    "p-regular-encrypted-back": "Regularne, szyfrowane kopie zapasowe zapewniają bezpieczeństwo danych i szybkie odtworzenie."
+    "h2-we-take-your-billing": "Jak chronimy Twoje dane rozliczeniowe.",
+    "p-our-platform-is-equipp": "ATSuite jest budowany i utrzymywany zgodnie z aktualną praktyką bezpieczeństwa: szyfrowany transport, firmowe logowanie jednokrotne, dostęp oparty na rolach aż do drzewa kont oraz uwierzytelnianie dwuskładnikowe dla administratorów.",
+    "p-compliant-with-major-d": "Szczegółowe warunki umowne i powierzenia przetwarzania uzgadniamy indywidualnie — skontaktuj się z nami, a udostępnimy aktualną dokumentację.",
+    "strong-ssl-encryption": "Szyfrowany transport",
+    "p-end-to-end-encryption": "Ruch między użytkownikami a ATSuite jest chroniony przez TLS.",
+    "strong-gdpr-ccpa": "Hostowane w UE",
+    "p-compliant-with-the-maj": "ATSuite działa w europejskich centrach danych, na infrastrukturze, którą sami utrzymujemy.",
+    "strong-2-factor-auth": "Uwierzytelnianie dwuskładnikowe",
+    "p-additional-layer-of-au": "Dodatkowy składnik uwierzytelniania dla użytkowników finansowych i administracyjnych.",
+    "strong-daily-backups": "Logowanie jednokrotne",
+    "p-regular-encrypted-back": "Tożsamość firmowa przez SAML i OIDC, więc dostęp podąża za istniejącym katalogiem."
   },
   "cta-band-dark": {
     "div-ready-for-a-billing": "GOTOWI NA LEPSZE FAKTUROWANIE?",

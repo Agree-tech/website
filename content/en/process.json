@@ -9,18 +9,18 @@
   },
   "page-hero": {
     "div-solutions-process-opti": "SOLUTIONS · PROCESS OPTIMISATION",
-    "h1-eliminate-manual-work-": "Eliminate manual work. Operate at machine speed.",
-    "p-atsuite-automates-manu": "ATSuite automates manual processes, streamlines workflows, and integrates systems seamlessly. With event-driven automation, your teams make faster decisions, reduce errors, and free time for strategic and customer-centric work.",
+    "h1-eliminate-manual-work-": "Automate the handoffs your revenue process depends on.",
+    "p-atsuite-automates-manu": "ATSuite runs a process engine over the events your business already produces. A confirmed order creates its subscriptions; rated usage becomes charge lines and an invoice; a finished invoice is rendered, delivered and exported to your accounting system — without anyone re-keying it.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-see-the-platform": "See the platform",
-    "b-quote-signed": "Quote signed",
-    "small-event-cpq": "EVENT · CPQ",
-    "b-provision-service": "Provision service",
-    "small-workflow-0-8s": "WORKFLOW · 0.8s",
-    "b-generate-invoice": "Generate invoice",
-    "small-billing-day-1": "BILLING · DAY 1",
-    "b-notify-crm": "Notify CRM",
-    "small-api-hubspot": "API · HUBSPOT"
+    "b-quote-signed": "Order confirmed",
+    "small-event-cpq": "EVENT · SALES",
+    "b-provision-service": "Subscriptions created",
+    "small-workflow-0-8s": "WORKFLOW · PER ORDER LINE",
+    "b-generate-invoice": "Usage rated to charges",
+    "small-billing-day-1": "BILLING · BILL RUN",
+    "b-notify-crm": "Invoice delivered",
+    "small-api-hubspot": "E-INVOICE · EMAIL · EXPORT"
   },
   "split-section": {
     "div-process-capabilities": "PROCESS · CAPABILITIES",

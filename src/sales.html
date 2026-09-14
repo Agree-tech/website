@@ -39,6 +39,24 @@
   .sync-flow .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
   .sync-flow .tag { font-family:var(--f-mono); font-size:10.5px; letter-spacing:0.06em; color:var(--slate); background:white; border:1px solid var(--border-soft); padding:3px 8px; border-radius:99px; }
   @media (max-width: 600px) { .crm-grid { grid-template-columns:1fr; } .sync-flow { grid-template-columns:1fr; text-align:center; } }
+.app-shot { margin: 0; }
+.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+}
+.app-shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 </style>
 </head>
 <body>
@@ -55,15 +73,11 @@
         <a class="btn btn-ghost btn-lg" href="cpq.html">{{i18n:sales.page-hero.a-see-cpq}} <span class="arr">→</span></a>
       </div>
     </div>
-    <div class="mock-card">
-      <div class="head"><div><div class="ttl">{{i18n:sales.page-hero.div-pipeline-this-quarter}}</div><div class="sub">{{i18n:sales.page-hero.div-42-opportunities-1-84m}}</div></div></div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;height:140px;align-items:flex-end">
-        <div style="background:#DBEAFE;border-radius:8px 8px 0 0;height:48%;display:flex;flex-direction:column-reverse;padding:8px;font-family:var(--f-mono);font-size:11px;color:var(--blue)"><b>{{i18n:sales.page-hero.b-lead}}</b><span>14</span></div>
-        <div style="background:#CFFAFE;border-radius:8px 8px 0 0;height:64%;display:flex;flex-direction:column-reverse;padding:8px;font-family:var(--f-mono);font-size:11px;color:var(--cyan-hover)"><b>{{i18n:sales.page-hero.b-qualified}}</b><span>11</span></div>
-        <div style="background:#EDE9FE;border-radius:8px 8px 0 0;height:82%;display:flex;flex-direction:column-reverse;padding:8px;font-family:var(--f-mono);font-size:11px;color:var(--violet)"><b>{{i18n:sales.page-hero.b-proposal}}</b><span>9</span></div>
-        <div style="background:#DCFCE7;border-radius:8px 8px 0 0;height:100%;display:flex;flex-direction:column-reverse;padding:8px;font-family:var(--f-mono);font-size:11px;color:#15803D"><b>{{i18n:sales.page-hero.b-closing}}</b><span>8</span></div>
-      </div>
-    </div>
+    <figure class="app-shot">
+          <img src="assets/screens/atsuite-pipeline.jpg" width="1272" height="620" loading="eager" fetchpriority="high" decoding="async"
+               alt="{{i18n:sales.page-hero.alt-screenshot}}" />
+          <figcaption>{{i18n:sales.page-hero.div-shot-caption}}</figcaption>
+        </figure>
   </div>
 </section>
 
@@ -77,55 +91,6 @@
       <div class="f3"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="num">{{i18n:sales.split-section.div-playbook}}</div><h3>{{i18n:sales.split-section.h3-sales-playbook}}</h3><p>{{i18n:sales.split-section.p-online-playbooks-guide}}</p></div>
       <div class="f3"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h12M3 17h8"/></svg></div><div class="num">{{i18n:sales.split-section.div-quotes}}</div><h3>{{i18n:sales.split-section.h3-quotes}}</h3><p>{{i18n:sales.split-section.p-create-quotes-automati}}</p></div>
       <div class="f3"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg></div><div class="num">{{i18n:sales.split-section.div-approval}}</div><h3>{{i18n:sales.split-section.h3-internal-review-approv}}</h3><p>{{i18n:sales.split-section.p-quotes-route-to-the}}</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="split-section alt" id="crm-integrations">
-  <div class="container split-grid">
-    <div>
-      <div class="eyebrow"><span class="dot" style="background:var(--violet)"></span>{{i18n:sales.crm-integrations.div-integrations-crm}}</div>
-      <h2 style="margin-top:18px">{{i18n:sales.crm-integrations.h2-works-with-the-crm}}</h2>
-      <p>{{i18n:sales.crm-integrations.p-atsuite-connects-bi-di}}</p>
-      <ul class="acc-violet">
-        <li><span class="dot">✓</span>{{i18n:sales.crm-integrations.li-two-way-sync-of}}</li>
-        <li><span class="dot">✓</span>{{i18n:sales.crm-integrations.li-quotes-generated-in-at}}</li>
-        <li><span class="dot">✓</span>{{i18n:sales.crm-integrations.li-closed-won-deals-trigg}}</li>
-        <li><span class="dot">✓</span>{{i18n:sales.crm-integrations.li-pre-built-connectors-p}}</li>
-      </ul>
-    </div>
-    <div>
-      <div class="crm-grid">
-        <div class="crm-card">
-          <div class="badge crm-hubspot">H</div>
-          <div class="name">{{i18n:sales.crm-integrations.div-hubspot}}</div>
-          <div class="meta">{{i18n:sales.crm-integrations.div-crm-sales-hub}}</div>
-          <p>{{i18n:sales.crm-integrations.p-sync-deals-companies-a}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-pipedrive">P</div>
-          <div class="name">{{i18n:sales.crm-integrations.div-pipedrive}}</div>
-          <div class="meta">{{i18n:sales.crm-integrations.div-crm-pipeline}}</div>
-          <p>{{i18n:sales.crm-integrations.p-mirror-pipeline-stages}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-salesforce">S</div>
-          <div class="name">{{i18n:sales.crm-integrations.div-salesforce}}</div>
-          <div class="meta">{{i18n:sales.crm-integrations.div-crm-sales-cloud}}</div>
-          <p>{{i18n:sales.crm-integrations.p-native-object-mapping-}}</p>
-        </div>
-        <div class="crm-card">
-          <div class="badge crm-dynamics">D</div>
-          <div class="name">{{i18n:sales.crm-integrations.div-microsoft-dynamics-365}}</div>
-          <div class="meta">{{i18n:sales.crm-integrations.div-crm-sales}}</div>
-          <p>{{i18n:sales.crm-integrations.p-bi-directional-sync-wi}}</p>
-        </div>
-      </div>
-      <div class="sync-flow">
-        <div class="side">{{i18n:sales.crm-integrations.div-crm}}<div class="tags"><span class="tag">{{i18n:sales.crm-integrations.span-accounts}}</span><span class="tag">{{i18n:sales.crm-integrations.span-contacts}}</span><span class="tag">{{i18n:sales.crm-integrations.span-opportunities}}</span></div></div>
-        <div class="arrows">⇄</div>
-        <div class="side">ATSuite<div class="tags"><span class="tag">{{i18n:sales.crm-integrations.span-quotes}}</span><span class="tag">{{i18n:sales.crm-integrations.span-orders}}</span><span class="tag">{{i18n:sales.crm-integrations.span-subscriptions}}</span></div></div>
-      </div>
     </div>
   </div>
 </section>

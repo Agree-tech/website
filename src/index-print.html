@@ -116,22 +116,6 @@
     pointer-events: none;
     z-index: -1;
   }
-  .mock-tab-row {
-    display: flex; gap: 6px; align-items: center;
-    padding: 4px 6px 14px;
-  }
-  .mock-tab-row .dot { width: 9px; height: 9px; border-radius: 50%; }
-  .mock-tab-row .d1 { background: #ef4444; } .mock-tab-row .d2 { background: #f59e0b; } .mock-tab-row .d3 { background: #22c55e; }
-  .mock-tab-row .url {
-    margin-left: 16px;
-    flex: 1;
-    background: rgba(255,255,255,0.06);
-    border-radius: 7px;
-    padding: 6px 12px;
-    font-family: var(--f-mono);
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.6);
-  }
   .mock-body {
     background: var(--white);
     border-radius: 12px;
@@ -193,6 +177,22 @@
   .mock-float .val { font-size: 18px; font-weight: 600; color: var(--navy); font-family: var(--f-display); margin-top: 2px; letter-spacing: -0.02em;}
   .mock-float .delta { font-size: 12px; color: var(--green); font-family: var(--f-mono); margin-top: 4px; }
 
+  .mock-note {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.42);
+  }
+  .logos .lg-img {
+    display: block;
+    height: 34px;
+    width: auto;
+    max-width: 100%;
+    filter: brightness(0) invert(1);
+  }
   /* Logos */
   .logo-strip {
     background: var(--navy);
@@ -209,8 +209,9 @@
     color: rgba(255,255,255,0.4);
   }
   .logos {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 28px;
     align-items: center;
     opacity: 0.7;
@@ -327,6 +328,23 @@
   .q2c-card .bars span {
     flex: 1; background: var(--blue); border-radius: 2px;
     opacity: 0.85;
+  }
+  .board-note {
+    margin-top: 16px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .q2c-boundary {
+    margin: 28px auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--slate);
   }
 
   /* Modules */
@@ -586,16 +604,10 @@
       </div>
       <div class="meta-row">
         <div><b>{{i18n:index-print.hero.b-6-years}}</b> {{i18n:index-print.hero.div-in-production}}</div>
-        <div><b>~100%</b> {{i18n:index-print.hero.div-billing-accuracy}}</div>
-        <div><b>{{i18n:index-print.hero.b-built-in-eu}}</b> {{i18n:index-print.hero.div-gdpr-native}}</div>
       </div>
     </div>
 
     <div class="hero-mock">
-      <div class="mock-tab-row">
-        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
-        <div class="url">atsuite.app/quotes/Q-2046 · Enterprise renewal · FY26</div>
-      </div>
       <div class="mock-body">
         <div class="mock-head">
           <div>
@@ -618,22 +630,6 @@
         </div>
       </div>
       <!-- floating cards -->
-      <div class="mock-float mock-float-1">
-        <div class="ico" style="background:var(--green)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg>
-        </div>
-        <div class="label">{{i18n:index-print.hero.div-renewal-auto}}</div>
-        <div class="val">{{i18n:index-print.hero.div-2-4m-arr}}</div>
-        <div class="delta">{{i18n:index-print.hero.div-18-vs-last-year}}</div>
-      </div>
-      <div class="mock-float mock-float-2">
-        <div class="ico" style="background:var(--violet)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l4-4 4 4 4-6 6 8"/></svg>
-        </div>
-        <div class="label">{{i18n:index-print.hero.div-forecast-accuracy}}</div>
-        <div class="val">98.7%</div>
-        <div class="delta" style="color:var(--cyan-light)">{{i18n:index-print.hero.div-predictive-90d}}</div>
-      </div>
     </div>
   </div>
 
@@ -643,11 +639,7 @@
       <div class="label">{{i18n:index-print.hero.div-trusted-by-leading-saa}}</div>
       <div class="logos">
         <div class="lg bold">{{i18n:index-print.hero.div-dstny}}</div>
-        <div class="lg serif">{{i18n:index-print.hero.div-telavox}}</div>
-        <div class="lg mono">{{i18n:index-print.hero.div-mvnx}}</div>
-        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">{{i18n:index-print.hero.div-ipvision}}</div>
-        <div class="lg bold" style="letter-spacing:-0.04em">{{i18n:index-print.hero.div-nordix}}</div>
-        <div class="lg serif">{{i18n:index-print.hero.div-kontur-co}}</div>
+        <img class="lg-img" src="assets/logo-cloudfarms.png" alt="{{i18n:index-print.hero.div-ipvision}}" width="360" height="96" />
       </div>
     </div>
   </div>
@@ -702,7 +694,7 @@
         </div>
         <div class="q2c-card green">
           <div class="ttl">{{i18n:index-print.q2c.div-arr-active}}</div>
-          <div class="num">€2.4M</div>
+          <div class="num">142</div>
           <div class="note">{{i18n:index-print.q2c.div-142-active-subs-2}}</div>
           <span class="pill" style="background:#DCFCE7;color:#15803D">{{i18n:index-print.q2c.span-healthy}}</span>
         </div>
@@ -716,7 +708,7 @@
           </div>
         </div>
         <div class="q2c-card">
-          <div class="ttl">INV-7814</div>
+          <div class="ttl">Invoice</div>
           <div class="num">€18,470</div>
           <div class="note">{{i18n:index-print.q2c.div-issued-14-may-2026}}</div>
           <span class="pill" style="background:#DBEAFE;color:var(--blue)">{{i18n:index-print.q2c.span-auto-billed}}</span>
@@ -732,6 +724,8 @@
         </div>
       </div>
     </div>
+    <div class="board-note">{{i18n:index-print.q2c.div-illustrative}}</div>
+    <p class="q2c-boundary">{{i18n:index-print.q2c.p-finance-boundary}}</p>
   </div>
 </section>
 
@@ -760,7 +754,7 @@
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-active-subs}}</span><span class="r">142</span></div>
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-renewing-this-month}}</span><span class="r">23 <span class="pill" style="margin-left:6px">{{i18n:index-print.modules.span-on-track}}</span></span></div>
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-add-ons-attached}}</span><span class="r">87</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-net-retention}}</span><span class="r" style="color:var(--green)">112%</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-net-retention}}</span><span class="r">47</span></div>
         </div>
         <a class="more" href="subscription.html">{{i18n:index-print.modules.a-subscription-managemen}} <span>→</span></a>
       </div>
@@ -802,8 +796,8 @@
         <p>{{i18n:index-print.modules.p-recurring-usage-based-}}</p>
         <div class="vis">
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-invoices-this-run}}</span><span class="r">1,284</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-billed}}</span><span class="r">€842,206.50</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-mediation-rate}}</span><span class="r" style="color:var(--green)">99.98%</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-billed}}</span><span class="r">€842,210</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-mediation-rate}}</span><span class="r">34,197</span></div>
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-exceptions}}</span><span class="r"><span class="pill" style="background:#FEF3C7;color:#B45309">{{i18n:index-print.modules.span-3-to-review}}</span></span></div>
         </div>
         <a class="more" href="billing.html">{{i18n:index-print.modules.a-billing-automation}} <span>→</span></a>
@@ -822,7 +816,7 @@
         <p>{{i18n:index-print.modules.p-an-always-on-process}}</p>
         <div class="vis">
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-workflows-live}}</span><span class="r">42</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-triggered-today}}</span><span class="r">8,461</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-triggered-today}}</span><span class="r">214</span></div>
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-avg-completion}}</span><span class="r">1.4s</span></div>
           <div class="vis-row"><span class="l">{{i18n:index-print.modules.span-status}}</span><span class="r"><span class="pill">{{i18n:index-print.modules.span-all-systems-normal}}</span></span></div>
         </div>
@@ -830,6 +824,7 @@
       </div>
 
     </div>
+    <div class="board-note">{{i18n:index-print.modules.div-illustrative}}</div>
   </div>
 </section>
 
@@ -847,21 +842,13 @@
       </div>
     </div>
     <div class="stats">
-      <div class="stat">
-        <div class="v">~100<small>%</small></div>
+<div class="stat">
+        <div class="v">2019</div>
         <div class="l">{{i18n:index-print.quote.div-billing-accuracy-in-pr}}</div>
       </div>
-      <div class="stat">
+<div class="stat">
         <div class="v">6+<small>yrs</small></div>
         <div class="l">{{i18n:index-print.quote.div-operating-as-a-managed}}</div>
-      </div>
-      <div class="stat">
-        <div class="v">38<small>s</small></div>
-        <div class="l">{{i18n:index-print.quote.div-average-quote-turnarou}}</div>
-      </div>
-      <div class="stat">
-        <div class="v">112<small>%</small></div>
-        <div class="l">{{i18n:index-print.quote.div-average-net-revenue-re}}</div>
       </div>
     </div>
   </div>
@@ -891,7 +878,6 @@
           <div class="t">{{i18n:index-print.innovate.div-revenue-forecast-q3}}</div>
           <div class="s">{{i18n:index-print.innovate.div-predictive-90d-horizon}}</div>
         </div>
-        <div class="pill">▲ 18.4%</div>
       </div>
       <div class="inn-chart">
         <svg viewBox="0 0 400 180" preserveAspectRatio="none">
@@ -905,28 +891,21 @@
                 fill="none" stroke="#06B6D4" stroke-width="2" />
           <path d="M0 140 L40 130 L80 132 L120 110 L160 96 L200 88 L240 70 L280 62 L320 45 L360 30 L400 22 L400 180 L0 180 Z"
                 fill="url(#lg)" />
-          <!-- Forecast dotted -->
-          <path d="M280 62 L320 45 L360 30 L400 22"
-                fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 4" />
-          <circle cx="280" cy="62" r="4" fill="#7C3AED"/>
-          <circle cx="400" cy="22" r="4" fill="#7C3AED"/>
         </svg>
       </div>
       <div class="inn-grid-row">
         <div class="inn-stat">
           <div class="l">{{i18n:index-print.innovate.div-arr}}</div>
-          <div class="v">€2.4M</div>
-          <div class="d">▲ 18.4%</div>
+          <div class="v">142</div>
         </div>
         <div class="inn-stat">
           <div class="l">{{i18n:index-print.innovate.div-renewals}}</div>
-          <div class="v">94%</div>
+          <div class="v">23</div>
           <div class="d">{{i18n:index-print.innovate.div-3-1-pts}}</div>
         </div>
         <div class="inn-stat">
           <div class="l">{{i18n:index-print.innovate.div-upsell}}</div>
-          <div class="v">€312K</div>
-          <div class="d">▲ 24%</div>
+          <div class="v">47</div>
         </div>
       </div>
     </div>

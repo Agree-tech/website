@@ -1,36 +1,20 @@
 {
   "meta": {
     "title": "B2B SaaS Billing Automation · Agree Technologies",
-    "description": "Automate recurring, usage-based, and contract billing with ATSuite. Reduce revenue leakage and reach near-100% invoice accuracy for B2B SaaS and telecom.",
+    "description": "Automate recurring, usage-based and agreement billing with ATSuite — rate usage, run bill cycles, and export validated invoice data to your accounting system.",
     "og-title": "B2B SaaS Billing Automation",
-    "og-description": "Automate recurring, usage-based, and contract billing. Reduce revenue leakage and reach near-100% invoice accuracy.",
+    "og-description": "Rate usage, run bill cycles, and export validated invoice data to your accounting system.",
     "twitter-title": "B2B SaaS Billing Automation",
-    "twitter-description": "Automate recurring, usage-based, and contract billing. Reduce revenue leakage and reach near-100% invoice accuracy."
+    "twitter-description": "Rate usage, run bill cycles, and export validated invoice data to your accounting system."
   },
   "page-hero-dark": {
     "div-solutions-billing-auto": "SOLUTIONS · BILLING AUTOMATION",
     "h1-modern-billing-for-the": "Modern billing for the way B2B actually monetises.",
-    "p-a-flexible-enterprise-": "A flexible, enterprise-grade billing engine for recurring, usage-based, tiered and agreement-based models — with seamless integration to payment gateways and accounting systems.",
+    "p-a-flexible-enterprise-": "A configurable billing engine for recurring, usage-based, tiered and agreement-based models — with e-invoicing, payment and accounting-export integrations built in.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-see-the-platform": "See the platform",
-    "div-bill-run-may-2026": "Bill run · May 2026",
-    "div-cycle-05-1-284": "CYCLE 05 · 1,284 INVOICES · COMPLETE",
-    "span-99-98-mediated": "● 99.98% MEDIATED",
-    "div-billed": "Billed",
-    "div-invoices": "Invoices",
-    "div-exceptions": "Exceptions",
-    "div-northwind-telecom": "Northwind Telecom",
-    "small-recurring-monthly": "recurring · monthly",
-    "span-issued": "issued",
-    "div-telavox-nordics": "Telavox Nordics",
-    "small-usage-based-voice": "usage-based · voice",
-    "span-issued-2": "issued",
-    "div-kontur-co": "Kontur & Co",
-    "small-tiered-mid-cycle-cha": "tiered · mid-cycle change",
-    "span-qa-review": "QA review",
-    "div-ipvision-aps": "IPVision Aps",
-    "small-agreement-proration": "agreement · proration",
-    "span-issued-3": "issued"
+    "alt-screenshot": "The ATSuite account receivable screen: outstanding, overdue, due and paid totals in euro and US dollar, above a list of customer invoices with payment status.",
+    "div-shot-caption": "ATSuite · Account receivable — euro and US dollar totalled separately · illustrative data"
   },
   "split-section": {
     "div-billing-capabilities": "BILLING · CAPABILITIES",
@@ -52,21 +36,22 @@
     "p-automate-upgrades-bill": "Automate upgrades, bill-run cycles and invoice suppression. ATSuite handles crediting and proration for mid-cycle changes effortlessly.",
     "div-quality": "QUALITY",
     "h3-quality-assurance": "Quality assurance",
-    "p-a-daily-shadow-billing": "A daily shadow billing environment provides proactive monitoring and internal visibility — so your billing is always accurate."
+    "p-a-daily-shadow-billing": "A daily shadow billing environment provides proactive monitoring and internal visibility — so your billing is always accurate.",
+    "p-finance-boundary": "ATSuite calculates and structures billable charges and invoice data; accounting, general ledger, payments and statutory reporting remain in connected finance systems."
   },
   "split-section-alt": {
     "div-your-data-is-safe": "YOUR DATA IS SAFE",
-    "h2-we-take-your-billing": "We take your billing data seriously.",
-    "p-our-platform-is-equipp": "Our platform is equipped with the latest security features to safeguard your financial information — SSL encryption, two-factor authentication, continuously monitored cloud servers, and regular backups for safety and accessibility.",
-    "p-compliant-with-major-d": "Compliant with major data protection regulations including GDPR and CCPA.",
-    "strong-ssl-encryption": "SSL encryption",
-    "p-end-to-end-encryption": "End-to-end encryption protects financial information in transit and at rest.",
-    "strong-gdpr-ccpa": "GDPR & CCPA",
-    "p-compliant-with-the-maj": "Compliant with the major European and global data protection regulations.",
-    "strong-2-factor-auth": "2-factor auth",
-    "p-additional-layer-of-au": "Additional layer of authentication for finance and admin users.",
-    "strong-daily-backups": "Daily backups",
-    "p-regular-encrypted-back": "Regular, encrypted backups ensure data safety and rapid recovery."
+    "h2-we-take-your-billing": "How we protect your billing data.",
+    "p-our-platform-is-equipp": "ATSuite is built and operated with current security practice: encrypted transport, enterprise single sign-on, role-based access down to the account tree, and two-factor authentication for administrative users.",
+    "p-compliant-with-major-d": "Specific contractual and data-processing terms are agreed per customer — talk to us and we will share the current documentation.",
+    "strong-ssl-encryption": "Encrypted transport",
+    "p-end-to-end-encryption": "Traffic between your users and ATSuite is protected with TLS.",
+    "strong-gdpr-ccpa": "EU-hosted",
+    "p-compliant-with-the-maj": "ATSuite runs in European data centres on infrastructure we operate.",
+    "strong-2-factor-auth": "Two-factor authentication",
+    "p-additional-layer-of-au": "An additional authentication factor for finance and administrative users.",
+    "strong-daily-backups": "Single sign-on",
+    "p-regular-encrypted-back": "Enterprise identity through SAML and OIDC, so access follows your existing directory."
   },
   "cta-band-dark": {
     "div-ready-for-a-billing": "READY FOR A BILLING UPGRADE?",

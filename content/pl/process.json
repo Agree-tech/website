@@ -9,18 +9,18 @@
   },
   "page-hero": {
     "div-solutions-process-opti": "ROZWIĄZANIA · OPTYMALIZACJA PROCESÓW",
-    "h1-eliminate-manual-work-": "Wyeliminuj pracę ręczną. Działaj z prędkością maszyny.",
-    "p-atsuite-automates-manu": "ATSuite automatyzuje procesy ręczne, upraszcza przepływy pracy i płynnie integruje systemy. Dzięki automatyzacji sterowanej zdarzeniami zespoły decydują szybciej, popełniają mniej błędów i zyskują czas na pracę strategiczną i bliską klientowi.",
+    "h1-eliminate-manual-work-": "Zautomatyzuj przekazania, od których zależy Twój proces sprzedaży.",
+    "p-atsuite-automates-manu": "ATSuite uruchamia silnik procesów na zdarzeniach, które Twoja firma już generuje. Potwierdzone zamówienie tworzy swoje subskrypcje; rozliczone zużycie staje się pozycjami i fakturą; gotowa faktura jest generowana, dostarczana i eksportowana do systemu księgowego — bez ręcznego przepisywania.",
     "a-schedule-a-demo": "Umów demo",
     "a-see-the-platform": "Zobacz platformę",
-    "b-quote-signed": "Oferta podpisana",
-    "small-event-cpq": "ZDARZENIE · CPQ",
-    "b-provision-service": "Uruchom usługę",
-    "small-workflow-0-8s": "PRZEPŁYW · 0,8s",
-    "b-generate-invoice": "Wystaw fakturę",
-    "small-billing-day-1": "FAKTUROWANIE · DZIEŃ 1",
-    "b-notify-crm": "Powiadom CRM",
-    "small-api-hubspot": "API · HUBSPOT"
+    "b-quote-signed": "Zamówienie potwierdzone",
+    "small-event-cpq": "ZDARZENIE · SPRZEDAŻ",
+    "b-provision-service": "Subskrypcje utworzone",
+    "small-workflow-0-8s": "PRZEPŁYW · NA POZYCJĘ",
+    "b-generate-invoice": "Zużycie wycenione na pozycje",
+    "small-billing-day-1": "ROZLICZENIA · PRZEBIEG",
+    "b-notify-crm": "Faktura dostarczona",
+    "small-api-hubspot": "E-FAKTURA · E-MAIL · EKSPORT"
   },
   "split-section": {
     "div-process-capabilities": "PROCESY · MOŻLIWOŚCI",

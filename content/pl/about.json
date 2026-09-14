@@ -6,15 +6,15 @@
     "og-description": "Kopenhaska firma stojąca za ATSuite — jedna platforma do CPQ, fakturowania i subskrypcji dla europejskiego B2B SaaS i telekomunikacji.",
     "twitter-title": "O Agree Technologies",
     "twitter-description": "Kopenhaska firma stojąca za ATSuite — CPQ, fakturowanie i subskrypcje dla europejskiego B2B SaaS i telekomunikacji.",
-    "alt": "Henrik Müller",
+    "alt": "Kenneth Andreasen",
     "alt-2": "Peter Reich",
-    "alt-3": "Kristian Jacobsen",
+    "alt-3": "Kristian Hvid Jakobsen",
     "alt-4": "Karina Buch"
   },
   "page-hero": {
     "div-our-journey": "NASZA DROGA",
     "h1-built-from-a-real": "Zbudowane wokół realnego problemu. Od lat sprawdzone na produkcji.",
-    "p-it-began-with-the": "Zaczęło się od szansy na zaspokojenie pilnej potrzeby. IPVision (dziś Dstny A/S) miał świetnie działający biznes, ale pilnie potrzebował nowoczesnego, niezawodnego i skalowalnego rozwiązania do obsługi całej działalności telekomunikacyjnej. W oparciu o rozległą wiedzę telekomunikacyjną powstało unikalne rozwiązanie — które przekształciło się w ATSuite, platformę CPQ i fakturowania idealnie dopasowaną do subskrypcyjnych firm B2B. Po ponad sześciu latach pracy produkcyjnej jako usługa zarządzana pomagamy dziś firmom upraszczać działanie i rosnąć razem z naszą platformą."
+    "p-it-began-with-the": "ATSuite powstał z potrzeby zarządzania złożonymi operacjami telekomunikacyjnymi na dużą skalę i przekształcił się w konfigurowalną platformę dla subskrypcyjnych firm B2B."
   },
   "split-section": {
     "div-our-values": "NASZE WARTOŚCI",
@@ -52,13 +52,13 @@
     "p-senior-executive-with-": "Doświadczony menedżer z doświadczeniem na poziomie C-level (CCO, COO, CIO) w branży technologicznej, ubezpieczeniowej i aukcyjnej. Międzynarodowe przywództwo w Kopenhadze, Londynie, Nowym Jorku i San Francisco — z globalną perspektywą i wyczuciem operacyjnym.",
     "div-kj": "KJ",
     "div-cto": "CTO",
-    "h3-kristian-jacobsen": "Kristian Jacobsen",
+    "h3-kristian-jacobsen": "Kristian Hvid Jakobsen",
     "p-20-years-in-software": "Ponad 20 lat w branży software, z bogatym doświadczeniem w CPQ i fakturowaniu dla telekomunikacji. Doświadczona innowatorka prowadząca dynamiczny, elastyczny roadmap i rozwój ATSuite — z myślą o rozwiązaniu gotowym na przyszłość."
   },
   "cta-band-dark": {
     "div-book-a-meeting": "UMÓW SPOTKANIE",
     "h2-it-can-start-with": "Wszystko może zacząć się od rozmowy.",
-    "p-whether-you-need-sales": "Niezależnie od tego, czy potrzebujesz Sprzedaży, CPQ, Fakturowania, Zarządzania subskrypcjami czy rozwiązania all-in-one — nasz zespół jest do dyspozycji. Zbudowany na szerokiej wiedzy branżowej, z ekspertami gotowymi do rozmowy.",
+    "p-whether-you-need-sales": "Niezależnie od tego, czy potrzebujesz Sprzedaży, CPQ, Rozliczeń, Zarządzania subskrypcjami czy całej platformy — nasz zespół służy wsparciem. Zbudowane na głębokiej znajomości branży.",
     "a-contact-me": "Skontaktuj się ze mną",
     "a-see-the-platform": "Zobacz platformę"
   }

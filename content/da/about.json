@@ -6,15 +6,15 @@
     "og-description": "Den københavnske virksomhed bag ATSuite — en samlet platform til CPQ, fakturering og abonnementer for europæisk B2B SaaS og telekom.",
     "twitter-title": "Om Agree Technologies",
     "twitter-description": "Den københavnske virksomhed bag ATSuite — CPQ, fakturering og abonnementer for europæisk B2B SaaS og telekom.",
-    "alt": "Henrik Müller",
+    "alt": "Kenneth Andreasen",
     "alt-2": "Peter Reich",
-    "alt-3": "Kristian Jacobsen",
+    "alt-3": "Kristian Hvid Jakobsen",
     "alt-4": "Karina Buch"
   },
   "page-hero": {
     "div-our-journey": "VORES REJSE",
     "h1-built-from-a-real": "Bygget ud fra et reelt problem. I drift hos kunder i årevis.",
-    "p-it-began-with-the": "Det begyndte med muligheden for at løse et presserende behov. IPVision (i dag Dstny A/S) havde en velfungerende forretning, men manglede akut en moderne, driftssikker og skalerbar løsning til at håndtere hele sin telekomdrift. Med dyb telekomekspertise blev der udviklet en unik løsning — som siden blev til ATSuite, en CPQ- og faktureringsplatform, der passer perfekt til abonnementsbaserede B2B-forretninger. Mere end seks år i produktion som managed service senere hjælper vi i dag virksomheder med at strømline og vokse med vores platform."
+    "p-it-began-with-the": "ATSuite opstod ud af behovet for at håndtere kompleks telekomdrift i stor skala og har siden udviklet sig til en konfigurerbar platform for abonnementsbaserede B2B-virksomheder."
   },
   "split-section": {
     "div-our-values": "VORES VÆRDIER",
@@ -52,13 +52,13 @@
     "p-senior-executive-with-": "Erfaren topleder med C-level-erfaring (CCO, COO, CIO) på tværs af teknologi-, forsikrings- og auktionsbranchen. International ledelseserfaring fra København, London, New York og San Francisco — med globalt udsyn og stærk operationel sans.",
     "div-kj": "KJ",
     "div-cto": "CTO",
-    "h3-kristian-jacobsen": "Kristian Jacobsen",
+    "h3-kristian-jacobsen": "Kristian Hvid Jakobsen",
     "p-20-years-in-software": "20+ år i softwarebranchen med stor erfaring inden for telekom-CPQ og fakturering. En erfaren innovator, der leder ATSuites dynamiske og fleksible roadmap og udvikling — med fokus på at levere en fremtidssikret løsning til kunderne."
   },
   "cta-band-dark": {
     "div-book-a-meeting": "BOOK ET MØDE",
     "h2-it-can-start-with": "Det kan starte med en samtale.",
-    "p-whether-you-need-sales": "Uanset om I har brug for Salg, CPQ, Fakturering, Abonnementsstyring eller en samlet løsning — står vores team klar til at hjælpe. Bygget på solid brancheindsigt, med eksperter der er klar til dialog.",
+    "p-whether-you-need-sales": "Uanset om I har brug for Salg, CPQ, Fakturering, Abonnementsstyring eller hele platformen — vores team er klar til at hjælpe. Bygget på dyb brancheindsigt; eksperter klar til dialog.",
     "a-contact-me": "Kontakt mig",
     "a-see-the-platform": "Se platformen"
   }

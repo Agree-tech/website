@@ -88,7 +88,7 @@
   }
   .hv-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px 36px;
   }
   .hv {
@@ -132,22 +132,6 @@
     background: linear-gradient(180deg, rgba(6,182,212,0.25), transparent 30%);
     pointer-events: none;
     z-index: -1;
-  }
-  .mock-tab-row {
-    display: flex; gap: 6px; align-items: center;
-    padding: 4px 6px 14px;
-  }
-  .mock-tab-row .dot { width: 9px; height: 9px; border-radius: 50%; }
-  .mock-tab-row .d1 { background: #ef4444; } .mock-tab-row .d2 { background: #f59e0b; } .mock-tab-row .d3 { background: #22c55e; }
-  .mock-tab-row .url {
-    margin-left: 16px;
-    flex: 1;
-    background: rgba(255,255,255,0.06);
-    border-radius: 7px;
-    padding: 6px 12px;
-    font-family: var(--f-mono);
-    font-size: 11.5px;
-    color: rgba(255,255,255,0.6);
   }
   .mock-body {
     background: var(--white);
@@ -210,6 +194,23 @@
   .mock-float .val { font-size: 18px; font-weight: 600; color: var(--navy); font-family: var(--f-display); margin-top: 2px; letter-spacing: -0.02em;}
   .mock-float .delta { font-size: 12px; color: var(--green); font-family: var(--f-mono); margin-top: 4px; }
 
+  .mock-note {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.42);
+  }
+  .logos .lg-img {
+    display: block;
+    height: 34px;
+    width: auto;
+    max-width: 100%;
+    /* the supplied mark is dark blue; the strip is navy */
+    filter: brightness(0) invert(1);
+  }
   /* Logos */
   .logo-strip {
     background: var(--navy);
@@ -226,9 +227,10 @@
     color: rgba(255,255,255,0.4);
   }
   .logos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(48px, 9vw, 120px);
     align-items: center;
     opacity: 0.7;
   }
@@ -344,6 +346,23 @@
     flex: 1; background: var(--blue); border-radius: 2px;
     opacity: 0.85;
   }
+  .board-note {
+    margin-top: 16px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .q2c-boundary {
+    margin: 28px auto 0;
+    max-width: 760px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--slate);
+  }
 
   /* Modules */
   .modules {
@@ -409,7 +428,6 @@
     display: inline-flex; align-items: center; gap: 6px;
   }
   .mod .more:hover { gap: 10px; }
-
   /* Mod-specific visuals */
   .vis-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12.5px; border-bottom: 1px dashed var(--border-soft); }
   .vis-row:last-child { border: 0; }
@@ -432,6 +450,10 @@
   .vis-flow .node .n-l { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
   .vis-flow .node .n-v { font-family: var(--f-display); font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 2px; }
   .vis-flow .arr { color: var(--cyan); }
+
+
+  /* Mod-specific visuals */
+  .vis-row:last-child { border: 0; }
 
   /* Quote */
   .quote {
@@ -698,167 +720,23 @@
   }
   .cfo-arrow .pipe svg { width: 18px; height: 18px; }
 
-  /* Visibility dashboard */
-  .vis-board {
-    position: relative;
-    background: var(--navy);
-    color: white;
-    border-radius: var(--radius-lg);
-    padding: 36px 36px 32px;
-    overflow: hidden;
-    box-shadow: var(--shadow-pop);
-  }
-  .vis-board::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(600px 320px at 90% -20%, rgba(6,182,212,0.16), transparent 70%),
-      radial-gradient(500px 280px at 0% 120%, rgba(124,58,237,0.14), transparent 70%);
-    pointer-events: none;
-  }
-  .vis-board-head {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap; gap: 16px;
-    margin-bottom: 28px;
-  }
-  .vis-board-head .ttl {
-    font-family: var(--f-display);
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: white;
-  }
-  .vis-board-head .sub {
-    font-family: var(--f-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--cyan-light);
-    margin-top: 6px;
-  }
-  .vis-board-head .live {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(22,163,74,0.18);
-    color: #4ade80;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-family: var(--f-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .vis-board-head .live .pulse {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 0 0 rgba(74,222,128,0.5);
-    animation: pulse 1.8s ease-out infinite;
-  }
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(74,222,128,0.55); }
     70% { box-shadow: 0 0 0 9px rgba(74,222,128,0); }
     100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
   }
-  .vis-tiles {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-  }
-  .vis-tile {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 14px;
-    padding: 18px 18px 16px;
-    min-height: 152px;
-    display: flex; flex-direction: column;
-  }
-  .vis-tile .l {
-    font-family: var(--f-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-  }
-  .vis-tile .v {
-    font-family: var(--f-display);
-    font-size: 28px;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.02em;
-    margin-top: 6px;
-    line-height: 1;
-  }
-  .vis-tile .v small { font-size: 14px; color: var(--cyan-light); margin-left: 2px; font-weight: 500; }
-  .vis-tile .d {
-    font-family: var(--f-mono);
-    font-size: 11px;
-    color: #4ade80;
-    margin-top: 6px;
-  }
-  .vis-tile .d.neutral { color: var(--cyan-light); }
-  .vis-tile .spark {
-    margin-top: auto;
-    height: 36px;
-  }
-  .vis-tile .spark svg { width: 100%; height: 100%; display: block; }
-  .vis-tile .bars {
-    margin-top: auto;
-    display: flex; gap: 4px; align-items: flex-end; height: 36px;
-  }
-  .vis-tile .bars span {
-    flex: 1; background: var(--cyan); border-radius: 2px; opacity: 0.85;
-  }
-  .vis-tile .donut {
-    margin-top: auto;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .vis-tile .donut svg { width: 38px; height: 38px; }
-  .vis-tile .donut .lbl { font-family: var(--f-mono); font-size: 10.5px; color: rgba(255,255,255,0.6); line-height: 1.35; }
-  .vis-tile .donut .lbl b { color: white; font-weight: 500; }
-
-  .vis-foot {
-    position: relative;
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,0.09);
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
-    font-family: var(--f-mono);
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.55);
-  }
-  .vis-foot .stream {
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .vis-foot .stream .ev {
-    background: rgba(6,182,212,0.16);
-    color: var(--cyan-light);
-    padding: 3px 9px; border-radius: 999px;
-    font-size: 10.5px; letter-spacing: 0.1em;
-  }
-
-  @media (max-width: 1100px) {
-    .vis-tiles { grid-template-columns: repeat(3, 1fr); }
-  }
 
   @media (max-width: 1000px) {
     .hero-grid, .q2c-head, .quote-grid, .module-grid, .inn-grid { grid-template-columns: 1fr; gap: 40px; }
     .q2c-rail, .q2c-cards { grid-template-columns: repeat(5, 1fr); font-size: 11px; }
-    .logos { grid-template-columns: repeat(3, 1fr); }
     .stats { grid-template-columns: 1fr; }
     .mock-float { display: none; }
     .cfo-head { grid-template-columns: 1fr; gap: 32px; align-items: start; }
     .cfo-compare { grid-template-columns: 1fr; }
     .cfo-arrow { padding: 4px 0; transform: rotate(90deg); }
-    .vis-tiles { grid-template-columns: repeat(2, 1fr); }
     .hv-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
-    .vis-tiles { grid-template-columns: 1fr; }
     .hv-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -881,10 +759,6 @@
     </div>
 
     <div class="hero-mock">
-      <div class="mock-tab-row">
-        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
-        <div class="url">atsuite.app/quotes/Q-2046 · Enterprise renewal · FY26</div>
-      </div>
       <div class="mock-body">
         <div class="mock-head">
           <div>
@@ -906,23 +780,7 @@
           <div class="mock-btn alt">{{i18n:index.hero.div-edit-quote}}</div>
         </div>
       </div>
-      <!-- floating cards -->
-      <div class="mock-float mock-float-1">
-        <div class="ico" style="background:var(--green)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg>
-        </div>
-        <div class="label">{{i18n:index.hero.div-renewal-auto}}</div>
-        <div class="val">{{i18n:index.hero.div-2-4m-arr}}</div>
-        <div class="delta">{{i18n:index.hero.div-18-vs-last-year}}</div>
-      </div>
-      <div class="mock-float mock-float-2">
-        <div class="ico" style="background:var(--violet)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12l4-4 4 4 4-6 6 8"/></svg>
-        </div>
-        <div class="label">{{i18n:index.hero.div-forecast-accuracy}}</div>
-        <div class="val">98.7%</div>
-        <div class="delta" style="color:var(--cyan-light)">{{i18n:index.hero.div-predictive-90d}}</div>
-      </div>
+      <div class="mock-note">{{i18n:index.hero.div-illustrative}}</div>
     </div>
   </div>
 
@@ -930,49 +788,37 @@
   <div class="container">
     <div class="hero-values">
       <div class="hv-grid">
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 2"/></svg>
           </span>
           <div class="hv-text"><b>{{i18n:index.hero.b-6-years}}</b> {{i18n:index.hero.div-in-production}}</div>
         </div>
-        <div class="hv">
-          <span class="hv-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12l4 4L19 6"/></svg>
-          </span>
-          <div class="hv-text"><b>~100%</b> {{i18n:index.hero.div-billing-accuracy}}</div>
-        </div>
-        <div class="hv">
-          <span class="hv-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><ellipse cx="12" cy="12" rx="5" ry="10"/></svg>
-          </span>
-          <div class="hv-text"><b>{{i18n:index.hero.b-built-in-eu}}</b> {{i18n:index.hero.div-gdpr-native}}</div>
-        </div>
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 4-7 5 8"/></svg>
           </span>
           <div class="hv-text"><b>{{i18n:index.hero.b-real-time}}</b> {{i18n:index.hero.div-profitability}}</div>
         </div>
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l5 5 4-4 4 7 5-8"/></svg>
           </span>
           <div class="hv-text"><b>{{i18n:index.hero.b-lower-acpu}}</b> {{i18n:index.hero.div-through-automation}}</div>
         </div>
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
           </span>
           <div class="hv-text"><b>{{i18n:index.hero.b-faster}}</b> {{i18n:index.hero.div-time-to-cash}}</div>
         </div>
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14l4-4 4 3 4-7"/><path d="M15 6l3 4 3-5" stroke-dasharray="2 2"/></svg>
           </span>
           <div class="hv-text"><b>{{i18n:index.hero.b-predictive}}</b> {{i18n:index.hero.div-cash-flow}}</div>
         </div>
-        <div class="hv">
+<div class="hv">
           <span class="hv-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 22s8-3 8-12V5l-8-3-8 3v5c0 9 8 12 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
           </span>
@@ -988,11 +834,63 @@
       <div class="label">{{i18n:index.hero.div-trusted-by-leading-saa}}</div>
       <div class="logos">
         <div class="lg bold">{{i18n:index.hero.div-dstny}}</div>
-        <div class="lg serif">{{i18n:index.hero.div-telavox}}</div>
-        <div class="lg" style="font-weight:300; letter-spacing:0.04em;">{{i18n:index.hero.div-ipvision}}</div>
+        <img class="lg-img" src="assets/logo-cloudfarms.png" alt="{{i18n:index.hero.div-ipvision}}" width="360" height="96" />
       </div>
     </div>
   </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="container">
+    <div class="quote-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>{{i18n:index.quote.div-customer-cloudfarms}}</div>
+        <blockquote style="margin-top: 22px; font-size: clamp(22px, 2.2vw, 30px);">
+          {{i18n:index.quote.blockquote-before-atsuite-we-stru@span.em}}
+        </blockquote>
+        <div class="attr">
+          <div class="avatar">{{i18n:index.quote.div-jt}}</div>
+          <div class="who">{{i18n:index.quote.div-jens-toppenberg}}<small>{{i18n:index.quote.small-ceo-cloudfarms}}</small></div>
+        </div>
+      </div>
+      <div class="stats">
+<div class="stat">
+          <div class="v">4<small>{{i18n:index.quote.small-regions}}</small></div>
+          <div class="l">{{i18n:index.quote.div-global-operations-acro}}</div>
+        </div>
+<div class="stat">
+          <div class="v">1</div>
+          <div class="l">{{i18n:index.quote.div-unified-platform-repla}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-divider"></div>
+
+    <div class="quote-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>{{i18n:index.quote.div-customer-dstny-a-s}}</div>
+        <blockquote style="margin-top: 22px;">
+          {{i18n:index.quote.blockquote-with-atsuite-we-have@span.em}}
+        </blockquote>
+        <div class="attr">
+          <div class="avatar">{{i18n:index.quote.div-ct}}</div>
+          <div class="who">{{i18n:index.quote.div-carsten-thomsen}}<small>Dstny A/S</small></div>
+        </div>
+      </div>
+      <div class="stats">
+<div class="stat">
+          <div class="v">6+<small>yrs</small></div>
+          <div class="l">{{i18n:index.quote.div-billing-accuracy-acros}}</div>
+        </div>
+<div class="stat">
+          <div class="v">2019</div>
+          <div class="l">{{i18n:index.quote.div-in-production-at-dstny}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Q2C BOARD -->
@@ -1044,7 +942,7 @@
         </div>
         <div class="q2c-card green">
           <div class="ttl">{{i18n:index.q2c.div-arr-active}}</div>
-          <div class="num">€2.4M</div>
+          <div class="num">142</div>
           <div class="note">{{i18n:index.q2c.div-142-active-subs-2}}</div>
           <span class="pill" style="background:#DCFCE7;color:#15803D">{{i18n:index.q2c.span-healthy}}</span>
         </div>
@@ -1058,7 +956,7 @@
           </div>
         </div>
         <div class="q2c-card">
-          <div class="ttl">INV-7814</div>
+          <div class="ttl">Invoice</div>
           <div class="num">€18,470</div>
           <div class="note">{{i18n:index.q2c.div-issued-14-may-2026}}</div>
           <span class="pill" style="background:#DBEAFE;color:var(--blue)">{{i18n:index.q2c.span-auto-billed}}</span>
@@ -1074,6 +972,8 @@
         </div>
       </div>
     </div>
+    <div class="board-note">{{i18n:index.q2c.div-illustrative}}</div>
+    <p class="q2c-boundary">{{i18n:index.q2c.p-finance-boundary}}</p>
   </div>
 </section>
 
@@ -1102,7 +1002,7 @@
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-active-subs}}</span><span class="r">142</span></div>
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-renewing-this-month}}</span><span class="r">23 <span class="pill" style="margin-left:6px">{{i18n:index.modules.span-on-track}}</span></span></div>
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-add-ons-attached}}</span><span class="r">87</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index.modules.span-net-retention}}</span><span class="r" style="color:var(--green)">112%</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index.modules.span-net-retention}}</span><span class="r">47</span></div>
         </div>
         <a class="more" href="subscription.html">{{i18n:index.modules.a-subscription-managemen}} <span>→</span></a>
       </div>
@@ -1144,8 +1044,8 @@
         <p>{{i18n:index.modules.p-recurring-usage-based-}}</p>
         <div class="vis">
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-invoices-this-run}}</span><span class="r">1,284</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index.modules.span-billed}}</span><span class="r">€842,206.50</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index.modules.span-mediation-rate}}</span><span class="r" style="color:var(--green)">99.98%</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index.modules.span-billed}}</span><span class="r">€842,210</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index.modules.span-mediation-rate}}</span><span class="r">34,197</span></div>
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-exceptions}}</span><span class="r"><span class="pill" style="background:#FEF3C7;color:#B45309">{{i18n:index.modules.span-3-to-review}}</span></span></div>
         </div>
         <a class="more" href="billing.html">{{i18n:index.modules.a-billing-automation}} <span>→</span></a>
@@ -1164,7 +1064,7 @@
         <p>{{i18n:index.modules.p-an-always-on-process}}</p>
         <div class="vis">
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-workflows-live}}</span><span class="r">42</span></div>
-          <div class="vis-row"><span class="l">{{i18n:index.modules.span-triggered-today}}</span><span class="r">8,461</span></div>
+          <div class="vis-row"><span class="l">{{i18n:index.modules.span-triggered-today}}</span><span class="r">214</span></div>
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-avg-completion}}</span><span class="r">1.4s</span></div>
           <div class="vis-row"><span class="l">{{i18n:index.modules.span-status}}</span><span class="r"><span class="pill">{{i18n:index.modules.span-all-systems-normal}}</span></span></div>
         </div>
@@ -1172,6 +1072,7 @@
       </div>
 
     </div>
+    <div class="board-note">{{i18n:index.modules.div-illustrative}}</div>
   </div>
 </section>
 
@@ -1250,172 +1151,6 @@
         </ul>
       </div>
     </div>
-
-    <!-- Real-time visibility dashboard -->
-    <div class="vis-board">
-      <div class="vis-board-head">
-        <div>
-          <div class="ttl">{{i18n:index.cfo.div-real-time-revenue-visi}}</div>
-          <div class="sub">{{i18n:index.cfo.div-quote-subscription-usa}}</div>
-        </div>
-        <div class="live"><span class="pulse"></span>{{i18n:index.cfo.div-live-streaming}}</div>
-      </div>
-
-      <div class="vis-tiles">
-        <div class="vis-tile">
-          <div class="l">{{i18n:index.cfo.div-mrr-arr}}</div>
-          <div class="v">€2.4M<small>ARR</small></div>
-          <div class="d">{{i18n:index.cfo.div-18-4-yoy}}</div>
-          <div class="spark">
-            <svg viewBox="0 0 100 36" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="vg1" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.5"/>
-                  <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 28 L14 25 L28 22 L42 18 L56 14 L70 12 L84 8 L100 4" fill="none" stroke="#06B6D4" stroke-width="1.6"/>
-              <path d="M0 28 L14 25 L28 22 L42 18 L56 14 L70 12 L84 8 L100 4 L100 36 L0 36 Z" fill="url(#vg1)"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="vis-tile">
-          <div class="l">{{i18n:index.cfo.div-gross-margin}}</div>
-          <div class="v">68.2<small>%</small></div>
-          <div class="d">{{i18n:index.cfo.div-2-1-pts-qoq}}</div>
-          <div class="donut">
-            <svg viewBox="0 0 36 36">
-              <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.12)" stroke-width="4" fill="none"/>
-              <circle cx="18" cy="18" r="14" stroke="#4ade80" stroke-width="4" fill="none"
-                stroke-dasharray="60 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
-            </svg>
-            <div class="lbl"><b>€1.64M</b><br>{{i18n:index.cfo.div-contribution}}</div>
-          </div>
-        </div>
-
-        <div class="vis-tile">
-          <div class="l">{{i18n:index.cfo.div-discount-performance}}</div>
-          <div class="v">−6.4<small>%</small></div>
-          <div class="d neutral">{{i18n:index.cfo.div-vs-list-within-policy}}</div>
-          <div class="bars">
-            <span style="height:42%"></span>
-            <span style="height:58%"></span>
-            <span style="height:38%"></span>
-            <span style="height:66%"></span>
-            <span style="height:48%"></span>
-            <span style="height:72%"></span>
-            <span style="height:54%"></span>
-          </div>
-        </div>
-
-        <div class="vis-tile">
-          <div class="l">{{i18n:index.cfo.div-subscription-usage}}</div>
-          <div class="v">€186K<small>{{i18n:index.cfo.small-mo}}</small></div>
-          <div class="d">{{i18n:index.cfo.div-11-mom-142-active}}</div>
-          <div class="bars">
-            <span style="height:30%; background:var(--violet)"></span>
-            <span style="height:46%; background:var(--violet)"></span>
-            <span style="height:58%; background:var(--violet)"></span>
-            <span style="height:48%; background:var(--violet)"></span>
-            <span style="height:72%; background:var(--violet)"></span>
-            <span style="height:64%; background:var(--violet)"></span>
-            <span style="height:88%; background:var(--violet)"></span>
-          </div>
-        </div>
-
-        <div class="vis-tile">
-          <div class="l">{{i18n:index.cfo.div-renewal-indexation}}</div>
-          <div class="v">94<small>%</small></div>
-          <div class="d">{{i18n:index.cfo.div-23-renewing-cpi-auto}}</div>
-          <div class="donut">
-            <svg viewBox="0 0 36 36">
-              <circle cx="18" cy="18" r="14" stroke="rgba(255,255,255,0.12)" stroke-width="4" fill="none"/>
-              <circle cx="18" cy="18" r="14" stroke="#67E8F9" stroke-width="4" fill="none"
-                stroke-dasharray="82 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
-            </svg>
-            <div class="lbl"><b>{{i18n:index.cfo.b-3-1-pts}}</b><br>{{i18n:index.cfo.div-qoq}}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="vis-foot">
-        <div class="stream">
-          <span class="ev">{{i18n:index.cfo.span-usage-ingest}}</span>
-          {{i18n:index.cfo.div-8-461-events-minute}}
-        </div>
-        <div>{{i18n:index.cfo.div-run-14-may-2026}}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<section class="quote">
-  <div class="container">
-    <div class="quote-grid">
-      <div>
-        <div class="eyebrow"><span class="dot"></span>{{i18n:index.quote.div-customer-dstny-a-s}}</div>
-        <blockquote style="margin-top: 22px;">
-          {{i18n:index.quote.blockquote-with-atsuite-we-have@span.em}}
-        </blockquote>
-        <div class="attr">
-          <div class="avatar">{{i18n:index.quote.div-ct}}</div>
-          <div class="who">{{i18n:index.quote.div-carsten-thomsen}}<small>Dstny A/S</small></div>
-        </div>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <div class="v">~100<small>%</small></div>
-          <div class="l">{{i18n:index.quote.div-billing-accuracy-acros}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">2019</div>
-          <div class="l">{{i18n:index.quote.div-in-production-at-dstny}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">M+<small>{{i18n:index.cfo.small-mo}}</small></div>
-          <div class="l">{{i18n:index.quote.div-monthly-transactions-p}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">112<small>%</small></div>
-          <div class="l">{{i18n:index.quote.div-average-net-revenue-re}}</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="quote-divider"></div>
-
-    <div class="quote-grid">
-      <div>
-        <div class="eyebrow"><span class="dot"></span>{{i18n:index.quote.div-customer-cloudfarms}}</div>
-        <blockquote style="margin-top: 22px; font-size: clamp(22px, 2.2vw, 30px);">
-          {{i18n:index.quote.blockquote-before-atsuite-we-stru@span.em}}
-        </blockquote>
-        <div class="attr">
-          <div class="avatar">{{i18n:index.quote.div-jt}}</div>
-          <div class="who">{{i18n:index.quote.div-jens-toppenberg}}<small>{{i18n:index.quote.small-ceo-cloudfarms}}</small></div>
-        </div>
-      </div>
-      <div class="stats">
-        <div class="stat">
-          <div class="v">4<small>{{i18n:index.quote.small-regions}}</small></div>
-          <div class="l">{{i18n:index.quote.div-global-operations-acro}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">1</div>
-          <div class="l">{{i18n:index.quote.div-unified-platform-repla}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">100<small>%</small></div>
-          <div class="l">{{i18n:index.quote.div-lead-to-billing-fully}}</div>
-        </div>
-        <div class="stat">
-          <div class="v">0</div>
-          <div class="l">{{i18n:index.quote.div-manual-handoffs-across}}</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1443,7 +1178,6 @@
           <div class="t">{{i18n:index.innovate.div-revenue-forecast-q3}}</div>
           <div class="s">{{i18n:index.innovate.div-predictive-90d-horizon}}</div>
         </div>
-        <div class="pill">▲ 18.4%</div>
       </div>
       <div class="inn-chart">
         <svg viewBox="0 0 400 180" preserveAspectRatio="none">
@@ -1457,28 +1191,21 @@
                 fill="none" stroke="#06B6D4" stroke-width="2" />
           <path d="M0 140 L40 130 L80 132 L120 110 L160 96 L200 88 L240 70 L280 62 L320 45 L360 30 L400 22 L400 180 L0 180 Z"
                 fill="url(#lg)" />
-          <!-- Forecast dotted -->
-          <path d="M280 62 L320 45 L360 30 L400 22"
-                fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 4" />
-          <circle cx="280" cy="62" r="4" fill="#7C3AED"/>
-          <circle cx="400" cy="22" r="4" fill="#7C3AED"/>
         </svg>
       </div>
       <div class="inn-grid-row">
         <div class="inn-stat">
           <div class="l">{{i18n:index.innovate.div-arr}}</div>
-          <div class="v">€2.4M</div>
-          <div class="d">▲ 18.4%</div>
+          <div class="v">142</div>
         </div>
         <div class="inn-stat">
           <div class="l">{{i18n:index.innovate.div-renewals}}</div>
-          <div class="v">94%</div>
+          <div class="v">23</div>
           <div class="d">{{i18n:index.innovate.div-3-1-pts}}</div>
         </div>
         <div class="inn-stat">
           <div class="l">{{i18n:index.innovate.div-upsell}}</div>
-          <div class="v">€312K</div>
-          <div class="d">▲ 24%</div>
+          <div class="v">47</div>
         </div>
       </div>
     </div>
