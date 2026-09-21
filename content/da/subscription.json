@@ -9,10 +9,12 @@
   },
   "page-hero": {
     "div-solutions-subscription": "LØSNINGER · ABONNEMENTSSTYRING",
-    "h1-streamline-every-subsc": "Strømlin hvert abonnement, med forudsigelig omsætning.",
+    "h1-streamline-every-subsc": "Styr hvert abonnement fra aktivering til fornyelse og fakturering.",
     "p-atsuite-subscription-g": "ATSuite Subscription giver jer fuld kontrol over livscyklussen, indsigt i forbrug og personlig support. Automatiseret fakturering og fornyelse reducerer fejl og arbejdsbyrde — og jeres tilbagevendende omsætning forbliver stabil.",
     "a-schedule-a-demo": "Book en demo",
-    "a-see-the-platform": "Se platformen"
+    "a-see-the-platform": "Se platformen",
+    "alt-screenshot": "ATSuites abonnementsoversigt for én konto: hvert abonnement med status, faktureringsstatus, antal og løbende pris.",
+    "div-shot-caption": "ATSuite · Abonnementer — status, faktureringsstatus, antal og pris pr. linje · illustrative data"
   },
   "split-section-alt": {},
   "split-section": {
@@ -40,8 +42,8 @@
   },
   "cta-band-dark": {
     "div-your-benefits-today-an": "JERES FORDELE, I DAG OG I MORGEN",
-    "h2-elevate-operations-fin": "Løft abonnementsdriften og kunderelationerne.",
-    "p-an-indispensable-tool-": "Et uundværligt værktøj for enhver virksomhed, der skal lykkes med en abonnementsmodel.",
+    "h2-elevate-operations-fin": "Gør underskrevne aftaler til fakturerbare abonnementer — automatisk.",
+    "p-an-indispensable-tool-": "Giv salg, drift og økonomi ét pålideligt overblik over hvert abonnement, hver ændring og hver fornyelse.",
     "a-contact-us": "Kontakt os",
     "a-back-to-overview": "Tilbage til oversigten"
   }

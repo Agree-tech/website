@@ -10,20 +10,24 @@
   "page-hero": {
     "div-implementation": "IMPLEMENTERING",
     "h1-seamless-transition-ze": "En kontrolleret overgang fra spredte processer til ét samlet driftsflow.",
-    "p-implementing-a-new-cpq": "At udskifte tilbudsgivning og fakturering er et reelt projekt — ikke et skift. Vi kører det i synlige faser: afdækning, konfiguration, integration, migrering, validering og drift — hver med sine egne exitkriterier.",
+    "p-implementing-a-new-cpq": "At udskifte tilbudsgivning og fakturering er et reelt projekt — ikke et skift. Vi kører det i synlige faser: forretningsafdækning, løsningsdesign, integration og migrering, parallel validering, kontrolleret go-live og managed drift — hver med sine egne exitkriterier.",
     "a-schedule-a-call": "Book et møde"
   },
   "split-section": {
     "div-our-approach": "VORES TILGANG",
-    "h2-four-steps-one-outcome": "Fire trin. Ét resultat.",
-    "h3-proof-of-concept": "Proof of Concept",
-    "p-we-start-by-demonstrat": "Vi starter med at demonstrere platformens potentiale med et skræddersyet POC, så I selv ser, hvordan ATSuite dækker jeres behov.",
-    "h3-discovery-workshops": "Afdækkende workshops",
-    "p-in-depth-workshops-to": "Dybdegående workshops, der afdækker jeres nuværende processer og systematisk identificerer muligheder for optimering.",
-    "h3-implementation": "Implementering",
-    "p-our-team-works-closely": "Vores team arbejder tæt sammen med jer om en glidende, effektiv implementering — med minimal forstyrrelse af driften.",
-    "h3-operations": "Drift",
-    "p-ongoing-support-and-mo": "Løbende support og overvågning sikrer, at jeres nye system kører optimalt og bliver ved med at skabe værdi."
+    "h2-four-steps-one-outcome": "Seks faser. Ét resultat.",
+    "h3-business-discovery-and": "Forretningsafdækning og succeskriterier",
+    "p-we-map-the-commercial": "Vi kortlægger de kommercielle modeller, aftaler og faktureringsflows, I kører i dag, og aftaler de succeskriterier, projektet måles på.",
+    "h3-solution-design-and-co": "Løsningsdesign og konfiguration",
+    "p-data-model-pricing-rul": "Datamodel, prisregler, godkendelsesflows og workflows designes sammen med jeres teams og konfigureres i en tenant, I kan logge ind på fra de første uger.",
+    "h3-integration-and-data-m": "Integration og datamigrering",
+    "p-customers-agreements-s": "Kunder, aftaler, abonnementer og åbne saldi migreres; CRM, ERP og andre systemer forbindes via REST-API'et og de understøttede connectors.",
+    "h3-parallel-validation-an": "Parallel validering og accept",
+    "p-atsuite-runs-alongside": "ATSuite kører parallelt med jeres eksisterende fakturering i en eller flere kørsler, og hver faktura afstemmes mod det gamle system, før der skrives under.",
+    "h3-controlled-go-live": "Kontrolleret go-live",
+    "p-cut-over-is-scheduled": "Overgangen planlægges omkring en faktureringskørsel — med aftalte exitkriterier, en rollback-plan og vores team ved hånden.",
+    "h3-managed-operations-and": "Managed drift og løbende forbedring",
+    "p-we-host-monitor-and-op": "Vi hoster, overvåger og driver platformen, leverer opdateringer løbende og gennemgår konfigurationen med jer, efterhånden som jeres kommercielle modeller ændrer sig."
   },
   "split-section-alt": {
     "div-what-you-get": "DET FÅR I",

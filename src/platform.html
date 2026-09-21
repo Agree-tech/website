@@ -31,22 +31,24 @@
   .arch-cell.lead { background:linear-gradient(135deg, rgba(37,99,235,0.25), rgba(6,182,212,0.18)); border-color:rgba(6,182,212,0.4); }
   .arch-cell.lead .v { color:var(--cyan-light); }
   .arch-band { font-family:var(--f-mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin:14px 0 8px; text-align:center;}
-
-  .integrations { margin-top:80px; }
-  .integrations-head { text-align:center; max-width:680px; margin:0 auto 36px; }
-  .integrations-head .eyebrow { display:inline-flex; }
-  .integrations-head h3 { font-family:var(--f-display); font-weight:600; font-size:26px; color:var(--navy); letter-spacing:-0.01em; margin:14px 0 10px;}
-  .integrations-head p { color:var(--muted); font-size:15px; line-height:1.6; }
-  .integration-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .integration-cat { background:var(--white); border:1px solid var(--border-soft); border-radius:14px; padding:22px; transition:transform .2s ease, box-shadow .2s ease;}
-  .integration-cat:hover { transform:translateY(-2px); box-shadow:0 8px 20px -10px rgba(15,23,42,0.18);}
-  .integration-cat-label { font-family:var(--f-mono); font-size:11px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:8px;}
-  .integration-cat-label::before { content:""; width:6px; height:6px; border-radius:99px; background:var(--cyan);}
-  .integration-chips { display:flex; flex-wrap:wrap; gap:8px; }
-  .integration-chip { font-family:var(--f-display); font-weight:500; font-size:13px; color:var(--navy); background:var(--cloud); padding:6px 12px; border-radius:99px; border:1px solid var(--border-soft);}
-  .integration-foot { text-align:center; font-family:var(--f-mono); font-size:11px; color:var(--muted); letter-spacing:0.14em; margin-top:28px; text-transform:uppercase;}
-  @media (max-width:1000px) { .integration-grid { grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:600px) { .integration-grid { grid-template-columns:1fr; } }
+.app-shot { margin: 0; }
+.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+}
+.app-shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
 </style>
 </head>
 <body>
@@ -94,70 +96,6 @@
   </div>
 </section>
 
-<section class="split-section" id="integration">
-  <div class="container split-grid">
-    <div>
-      <div class="eyebrow"><span class="dot"></span>{{i18n:platform.integration.div-integration}}</div>
-      <h2 style="margin-top:18px">{{i18n:platform.integration.h2-api-driven-by-design}}</h2>
-      <p>{{i18n:platform.integration.p-being-api-driven-atsui}}</p>
-    </div>
-    <div class="mock-card">
-      <div class="head"><div><div class="ttl">{{i18n:platform.integration.div-api-v3}}</div><div class="sub">{{i18n:platform.integration.div-rest-webhooks}}</div></div><span style="background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono)">{{i18n:platform.integration.span-99-99-uptime}}</span></div>
-      <pre style="background:var(--navy-deep);color:#67E8F9;padding:18px;border-radius:10px;font-family:var(--f-mono);font-size:12.5px;margin:0;overflow:auto;line-height:1.6">POST /api/v3/quotes
-Authorization: Bearer ••••
-Content-Type: application/json
-
-{
-  "account": "acc_8f4j2",
-  "items": [
-    { "sku": "VOICE-PRO", "qty": 1200 }
-  ],
-  "term": "36m"
-}</pre>
-    </div>
-  </div>
-
-  <div class="container integrations">
-    <div class="integrations-head">
-      <div class="eyebrow"><span class="dot"></span>{{i18n:platform.integration.div-works-with-your-stack}}</div>
-      <h3>{{i18n:platform.integration.h3-talks-to-the-systems}}</h3>
-      <p>{{i18n:platform.integration.p-pre-built-connectors-a}}</p>
-    </div>
-    <div class="integration-grid">
-<div class="integration-cat">
-        <div class="integration-cat-label">{{i18n:platform.integration.div-erp-finance}}</div>
-        <div class="integration-chips">
-          <span class="integration-chip">{{i18n:platform.integration.span-sap}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-oracle-netsuite}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-microsoft-dynamics-365}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-sage}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-xero}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-quickbooks}}</span>
-        </div>
-      </div>
-<div class="integration-cat">
-        <div class="integration-cat-label">{{i18n:platform.integration.div-identity-sso}}</div>
-        <div class="integration-chips">
-          <span class="integration-chip">{{i18n:platform.integration.span-okta}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-microsoft-entra-id}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-auth0}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-google-workspace}}</span>
-        </div>
-      </div>
-<div class="integration-cat">
-        <div class="integration-cat-label">{{i18n:platform.integration.div-crm-sales}}</div>
-        <div class="integration-chips">
-          <span class="integration-chip">{{i18n:platform.integration.span-salesforce}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-hubspot}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-dynamics-365-sales}}</span>
-          <span class="integration-chip">{{i18n:platform.integration.span-pipedrive}}</span>
-        </div>
-      </div>
-    </div>
-    <p class="integration-foot">{{i18n:platform.integration.p-anything-else-via-rest}}</p>
-  </div>
-</section>
-
 <section class="split-section alt" id="data-model">
   <div class="container split-grid flip">
     <div>
@@ -176,6 +114,7 @@ Content-Type: application/json
         <div style="padding:10px 12px;background:#DBEAFE;border-radius:8px;font-family:var(--f-mono);color:var(--blue)">+ partner_ref<span style="color:var(--muted)"> {{i18n:platform.data-model.span-str}}</span></div>
       </div>
       <div style="margin-top:12px;font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.04em">{{i18n:platform.data-model.div-2-custom-fields-added}}</div>
+      <div style="margin-top:10px"><span class="illustrative-tag" style="color:var(--slate)">{{i18n:platform.data-model.div-illustrative}}</span></div>
     </div>
   </div>
 </section>
@@ -187,14 +126,11 @@ Content-Type: application/json
       <h2 style="margin-top:18px">{{i18n:platform.process.h2-built-in-automation-op}}</h2>
       <p>{{i18n:platform.process.p-atsuite-s-process-engi}}</p>
     </div>
-    <div class="mock-card" style="background:var(--mist)">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center">
-        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase">{{i18n:platform.process.div-event}}</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">{{i18n:platform.process.div-quote-signed}}</div></div>
-        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--cyan-hover);text-transform:uppercase">{{i18n:platform.process.div-rule}}</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">{{i18n:platform.process.div-if-amt-100k}}</div></div>
-        <div style="padding:14px 8px;background:white;border:1px solid var(--border-soft);border-radius:8px"><div style="font-family:var(--f-mono);font-size:10px;letter-spacing:0.14em;color:var(--green);text-transform:uppercase">{{i18n:platform.process.div-action}}</div><div style="margin-top:6px;color:var(--navy);font-weight:500;font-size:13px">{{i18n:platform.process.div-provision-notify}}</div></div>
-      </div>
-      <div style="margin-top:12px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.04em"><span>{{i18n:platform.process.span-42-active-workflows}}</span><span>{{i18n:platform.process.span-8-461-runs-today}}</span></div>
-    </div>
+    <figure class="app-shot">
+      <img src="assets/screens/atsuite-events.jpg" width="1511" height="540" loading="eager" fetchpriority="high" decoding="async"
+           alt="{{i18n:platform.process.alt-screenshot}}" />
+      <figcaption><span class="illustrative-tag">{{i18n:platform.process.div-shot-caption}}</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -206,7 +142,7 @@ Content-Type: application/json
       <p>{{i18n:platform.analytics.p-the-analytics-module-e}}</p>
     </div>
     <div class="mock-card">
-      <div class="head"><div><div class="ttl">{{i18n:platform.analytics.div-renewal-forecast}}</div><div class="sub">{{i18n:platform.analytics.div-94-predictive-accuracy}}</div></div></div>
+      <div class="head"><div><div class="ttl">{{i18n:platform.analytics.div-renewal-forecast}}</div><div class="sub"><span class="illustrative-tag">{{i18n:platform.analytics.div-94-predictive-accuracy}}</span></div></div></div>
       <svg viewBox="0 0 320 140" style="width:100%;height:auto">
         <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7C3AED" stop-opacity="0.3"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></linearGradient></defs>
         <path d="M0 110 L40 96 L80 88 L120 78 L160 60 L200 52 L240 38 L280 30 L320 18 L320 140 L0 140Z" fill="url(#g)"/>

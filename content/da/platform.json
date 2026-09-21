@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "ATSuite-platformen — integration, procesmotor & analyse",
-    "description": "Udforsk ATSuite-platformen: en konfigurerbar datamodel, hændelsesdrevet procesmotor, dokumenteret REST-API og driftsrapportering — leveret som managed service fra Europa.",
-    "og-title": "ATSuite-platformen — integration, procesmotor & analyse",
-    "og-description": "En udvidbar datamodel, hændelsesdrevet procesmotor, dybe integrationer og analyse — sikker, driftsstabil og bygget til at skalere.",
+    "title": "ATSuite-platformen — datamodel, procesmotor & analyse",
+    "description": "Udforsk ATSuite-platformen: en konfigurerbar datamodel, hændelsesdrevet procesmotor, driftsrapportering og fleksibel drift — leveret som managed service fra Europa.",
+    "og-title": "ATSuite-platformen — datamodel, procesmotor & analyse",
+    "og-description": "En udvidbar datamodel, hændelsesdrevet procesmotor, analyse og fleksibel drift — sikker, driftsstabil og bygget til at skalere.",
     "twitter-title": "ATSuite-platformen",
-    "twitter-description": "Udvidbar datamodel, hændelsesdrevet procesmotor, integrationer og analyse — sikker og bygget til at skalere."
+    "twitter-description": "Udvidbar datamodel, hændelsesdrevet procesmotor, analyse og fleksibel drift — sikker og bygget til at skalere."
   },
   "page-hero-dark": {
     "div-the-atsuite-platform": "ATSUITE-PLATFORMEN",
-    "h1-configure-launch-go": "Konfigurér. Lancér. Kør.",
+    "h1-configure-launch-go": "Konfigurér komplekse kommercielle processer uden at genopbygge hele jeres systemlandskab.",
     "p-a-comprehensive-platfo": "En konfigurerbar platform til kompleks B2B-drift. ATSuite er bygget på en moderne servicearkitektur og leveres som managed service fra europæiske datacentre, holdt løbende opdateret så intet opgraderingsprojekt stopper forretningen.",
     "a-speak-to-an-expert": "Tal med en ekspert",
     "a-how-implementation-wor": "Sådan foregår implementeringen",
@@ -44,39 +44,10 @@
     "div-on-premise": "Jeres infra",
     "div-your-infrastructure": "Efter aftale"
   },
-  "integration": {
-    "div-integration": "INTEGRATION",
-    "h2-api-driven-by-design": "API-drevet by design.",
-    "p-being-api-driven-atsui": "ATSuite er API-drevet hele vejen igennem: alle objekter, brugerfladen arbejder med, kan tilgås via et dokumenteret REST-API — med webhooks og en hændelsesstrøm til det, I hellere vil have skubbet end at spørge efter.",
-    "div-api-v3": "API · v3",
-    "div-rest-webhooks": "REST · WEBHOOKS",
-    "span-99-99-uptime": "Dokumenteret REST-API",
-    "div-works-with-your-stack": "VIRKER MED JERES STACK",
-    "h3-talks-to-the-systems": "Hvad ATSuite forbinder til i dag.",
-    "p-pre-built-connectors-a": "To forskellige ting, holdt bevidst adskilt. Nogle integrationer er bygget, leveret og understøttet som en del af produktet. Alt andet kan nås via REST-API og webhooks som en konfigurations- eller projektopgave — vi fortæller jer hvad der er hvad, inden I køber.",
-    "div-erp-finance": "Understøttede connectors",
-    "span-sap": "OIOUBL e-fakturering",
-    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
-    "span-microsoft-dynamics-365": "Betalingsservice",
-    "span-sage": "Fakturaeksport (CSV)",
-    "span-xero": "Fakturalevering på mail",
-    "span-quickbooks": "Stripe betalingslinks",
-    "div-crm-sales": "Integrér via API",
-    "span-salesforce": "ERP- og økonomisystemer",
-    "span-hubspot": "CRM- og salgsværktøjer",
-    "span-dynamics-365-sales": "Servicedesk og ITSM",
-    "span-pipedrive": "Datavarehuse og BI",
-    "div-identity-sso": "Identitet og adgang",
-    "span-okta": "SAML 2.0",
-    "span-microsoft-entra-id": "OpenID Connect",
-    "span-auth0": "Single sign-on",
-    "span-google-workspace": "Tofaktorgodkendelse",
-    "p-anything-else-via-rest": "Dette er integrationsmønstre — ikke færdige connectors. De leveres som konfigurations- eller projektopgave mod REST-API og webhooks."
-  },
   "data-model": {
     "div-extensible-data-model": "UDVIDBAR DATAMODEL",
     "h2-adaptable-to-diverse-b": "Tilpasser sig forskellige forretningsbehov.",
-    "p-a-highly-adaptable-dat": "En yderst fleksibel datamodel baner vejen for tilpasning til jeres forretning, integration med eksisterende systemer og udvidelse i takt med væksten. Fremsynet, fremtidssikret og i stand til at møde komplekse B2B-krav i konstant forandring.",
+    "p-a-highly-adaptable-dat": "En yderst fleksibel datamodel baner vejen for tilpasning til jeres forretning, integration med eksisterende systemer og udvidelse i takt med væksten.",
     "div-custom-entity-contract": "Brugerdefineret entitet · Kontrakt",
     "span-uuid": ": uuid",
     "span-months": ": months",
@@ -84,20 +55,15 @@
     "span-tier": ": tier",
     "span-enum": ": enum",
     "span-str": ": str",
-    "div-2-custom-fields-added": "▲ 2 BRUGERDEFINEREDE FELTER — TILFØJET PÅ 4 MIN., UDEN DEPLOYMENT"
+    "div-2-custom-fields-added": "▲ 2 BRUGERDEFINEREDE FELTER — TILFØJET PÅ 4 MIN., UDEN DEPLOYMENT",
+    "div-illustrative": "Illustrativt panel — ikke produktets brugerflade"
   },
   "process": {
     "div-process-engine": "PROCESMOTOR",
     "h2-built-in-automation-op": "Indbygget automatisering & optimering.",
-    "p-atsuite-s-process-engi": "ATSuites procesmotor er et stærkt værktøj til forretningseffektivitet — design, kør og optimér workflows gennem en intuitiv brugerflade. Fra salg og produktstyring til fakturering og kundesupport leveres hvert workflow automatiseret.",
-    "div-event": "HÆNDELSE",
-    "div-quote-signed": "Tilbud underskrevet",
-    "div-rule": "REGEL",
-    "div-if-amt-100k": "Hvis beløb > €100k",
-    "div-action": "HANDLING",
-    "div-provision-notify": "Opret + notificér",
-    "span-42-active-workflows": "42 AKTIVE WORKFLOWS",
-    "span-8-461-runs-today": "▲ 214 KØRSLER I DAG"
+    "p-atsuite-s-process-engi": "ATSuites procesmotor er et stærkt værktøj til forretningseffektivitet — design, kør og optimér workflows gennem en intuitiv brugerflade. Workflows kan konfigureres til at automatisere godkendelser, opgaver, ordrer og kundeopdateringer på tværs af hele omsætningsforløbet.",
+    "alt-screenshot": "ATSuites log over applikationsopgaver: workflows startet af abonnementshændelser, hver med nøgle, beskrivelse og status.",
+    "div-shot-caption": "ATSuite · Applikationsopgaver — workflows startet af abonnementshændelser · illustrative data"
   },
   "analytics": {
     "div-analytics": "ANALYSE",
@@ -124,7 +90,7 @@
   "cta-band-dark": {
     "div-innovate-with-agree-te": "INNOVÉR MED AGREE TECHNOLOGIES",
     "h2-continuous-innovation-": "Løbende innovation. Løbende levering.",
-    "p-cutting-edge-cloud-bas": "Cloudbaserede CPQ- og faktureringsløsninger i front for B2B-virksomheder — fleksible, skalerbare, sikre.",
+    "p-cutting-edge-cloud-bas": "Lancér nye prismodeller uden at genopbygge jeres økonomisystemer.",
     "a-talk-to-an-expert": "Tal med en ekspert",
     "a-how-implementation-wor": "Sådan foregår implementeringen"
   }

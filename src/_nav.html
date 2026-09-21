@@ -1,14 +1,18 @@
 <header class="topbar{{topbarDark}}">
   <nav class="nav" aria-label="{{i18n:nav.meta.aria-label}}">
     <a href="index.html" class="logo" aria-label="Agree Technologies">
-      <img src="assets/{{logoFile}}.png" alt="Agree Technologies" class="logo-img" />
+      <img src="assets/logo-mark-{{logoFile}}.png" alt="" class="logo-img" />
+      <span class="logo-text">Agree Technologies</span>
     </a>
     <div class="nav-links">
       <div class="nav-link" data-menu="solutions">{{i18n:nav.main.div-solutions}}
         <svg class="chev" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
       </div>
+      <div class="nav-link" data-menu="usecases">{{i18n:nav.main.div-business-use-cases}}
+        <svg class="chev" viewBox="0 0 12 12"><path d="M3 4.5L6 7.5L9 4.5"/></svg>
+      </div>
       <a class="nav-link" href="platform.html">{{i18n:nav.main.a-platform}}</a>
-      <a class="nav-link" href="implementation.html">{{i18n:nav.main.a-implementation}}</a>
+      <a class="nav-link" href="integrations.html">{{i18n:nav.main.a-implementation}}</a>
       <a class="nav-link" href="about.html">{{i18n:nav.main.a-about-us}}</a>
     </div>
     <div class="nav-spacer"></div>
@@ -44,6 +48,10 @@
         </div>
         <div><div class="mm-title">{{i18n:nav.mm-solutions.div-process-optimisation}}</div><div class="mm-sub">{{i18n:nav.mm-solutions.div-event-driven-workflow-}}</div></div>
       </a>
+    </div>
+  </div>
+  <div class="megamenu" id="mm-usecases" hidden>
+    <div class="mm-inner">
       <a class="mm-item" href="sales.html">
         <div class="mm-ico" style="background:#EDE9FE;color:#7C3AED">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>

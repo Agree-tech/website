@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Integracje — REST API, webhooki i konektory ATSuite",
+    "description": "Jak ATSuite łączy się z systemami, z których już korzystasz: udokumentowane REST API, webhooki i strumień zdarzeń oraz konektory dostarczane z produktem.",
+    "og-title": "Integracje — REST API, webhooki i konektory ATSuite",
+    "og-description": "Udokumentowane REST API, webhooki i strumień zdarzeń oraz konektory dostarczane z ATSuite.",
+    "twitter-title": "Integracje ATSuite",
+    "twitter-description": "Udokumentowane REST API, webhooki i strumień zdarzeń oraz konektory dostarczane z ATSuite."
+  },
+  "page-hero": {
+    "div-integrations": "INTEGRACJE",
+    "h1-connect-atsuite-to-the": "Połącz ATSuite z systemami, z których już korzystasz.",
+    "p-every-object-in-atsuit": "Każdy obiekt w ATSuite jest dostępny przez udokumentowane REST API, z webhookami i strumieniem zdarzeń dla tego, co ma być wypychane zamiast odpytywane. Część integracji jest dostarczana z produktem; pozostałe to zadanie konfiguracyjne lub projektowe.",
+    "a-talk-to-an-expert": "Porozmawiaj z ekspertem",
+    "a-see-the-platform": "Zobacz platformę"
+  },
+  "cta-band-dark": {
+    "div-build-on-the-api": "BUDUJ NA API",
+    "h2-tell-us-what-atsuite": "Powiedz nam, z czym ma rozmawiać ATSuite.",
+    "p-bring-your-erp-crm": "Przyjdź na 30-minutową rozmowę z listą swoich systemów ERP, CRM, dostawcy tożsamości i hurtowni danych. Powiemy, co jest dostarczane w produkcie, co jest konfiguracją, a co projektem.",
+    "a-talk-to-an-expert": "Porozmawiaj z ekspertem",
+    "a-how-implementation-wor": "Jak wygląda wdrożenie"
+  },
+  "integration": {
+    "div-integration": "REST API",
+    "h2-api-driven-by-design": "Oparte na API z założenia.",
+    "p-being-api-driven-atsui": "ATSuite jest w całości oparty na API: każdy obiekt, z którym pracuje interfejs, jest dostępny przez udokumentowane API REST — z webhookami i strumieniem zdarzeń dla tego, co wolisz otrzymywać niż odpytywać.",
+    "div-api-v3": "API · v3",
+    "div-rest-webhooks": "REST · WEBHOOKI",
+    "span-99-99-uptime": "Udokumentowane API REST",
+    "div-works-with-your-stack": "DZIAŁA Z TWOIM ŚRODOWISKIEM",
+    "h2-talks-to-the-systems": "Z czym ATSuite łączy się dzisiaj.",
+    "p-pre-built-connectors-a": "Dwie różne rzeczy, celowo rozdzielone. Część integracji jest zbudowana, dostarczana i wspierana w ramach produktu. Wszystko inne jest osiągalne przez API REST i webhooki jako zadanie konfiguracyjne lub projektowe — powiemy, co jest czym, zanim kupisz.",
+    "div-erp-finance": "Wspierane konektory",
+    "span-sap": "E-faktury OIOUBL",
+    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
+    "span-microsoft-dynamics-365": "Betalingsservice",
+    "span-sage": "Eksport faktur (CSV)",
+    "span-xero": "Dostarczanie faktur e-mailem",
+    "span-quickbooks": "Linki płatnicze Stripe",
+    "div-crm-sales": "Integracja przez API",
+    "span-salesforce": "Systemy ERP i księgowe",
+    "span-hubspot": "Narzędzia CRM i sprzedażowe",
+    "span-dynamics-365-sales": "Service desk i ITSM",
+    "span-pipedrive": "Hurtownie danych i BI",
+    "div-identity-sso": "Tożsamość i dostęp",
+    "span-okta": "SAML 2.0",
+    "span-microsoft-entra-id": "OpenID Connect",
+    "span-auth0": "Logowanie jednokrotne",
+    "span-google-workspace": "Uwierzytelnianie dwuskładnikowe",
+    "p-anything-else-via-rest": "To wzorce integracji, nie gotowe konektory — realizowane jako zadanie konfiguracyjne lub projektowe w oparciu o API REST i webhooki."
+  }
+}

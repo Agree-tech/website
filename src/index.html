@@ -42,17 +42,18 @@
   .hero-grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
     padding-bottom: 80px;
   }
   .hero h1 {
     color: var(--white);
-    font-size: clamp(48px, 6.4vw, 84px);
+    font-size: clamp(40px, 4.6vw, 64px);
     font-weight: 600;
     letter-spacing: -0.04em;
-    line-height: 0.98;
+    line-height: 1.02;
+    text-wrap: balance;
   }
   .hero h1 .accent {
     color: var(--cyan-light);
@@ -114,6 +115,25 @@
     line-height: 1.4;
   }
   .hv-text b { color: var(--white); font-weight: 500; }
+
+  .app-shot { margin: 0; }
+  .app-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: var(--shadow-pop);
+  }
+  .app-shot figcaption {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.78);
+  }
 
   /* Hero product mock */
   .hero-mock {
@@ -201,7 +221,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.42);
+    color: rgba(255,255,255,0.78);
   }
   .logos .lg-img {
     display: block;
@@ -353,7 +373,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--slate);
   }
   .q2c-boundary {
     margin: 28px auto 0;
@@ -568,7 +588,7 @@
   }
   .inn-vis-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
   .inn-vis-head .t { font-family: var(--f-display); font-size: 17px; color: white; font-weight: 500; }
-  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 3px; }
+  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.8); text-transform: uppercase; margin-top: 3px; }
   .inn-vis-head .pill {
     background: rgba(22,163,74,0.18); color: #4ade80;
     padding: 4px 10px; border-radius: 99px; font-size: 11px; font-family: var(--f-mono);
@@ -590,6 +610,53 @@
   .inn-stat .l { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
   .inn-stat .v { font-family: var(--f-display); font-size: 22px; color: white; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
   .inn-stat .d { font-family: var(--f-mono); font-size: 11px; color: #4ade80; margin-top: 4px; }
+
+  /* Audience — who ATSuite is for */
+  .audience {
+    padding: 110px 0;
+    background: white;
+    border-top: 1px solid var(--border-soft);
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .audience h2 { color: var(--navy); }
+  .fit-list { list-style: none; margin: 28px 0 0; padding: 0; }
+  .fit-list li {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 13px 0;
+    border-top: 1px solid var(--border-soft);
+    font-size: 16px; color: var(--slate); line-height: 1.5;
+  }
+  .fit-list li:last-child { border-bottom: 1px solid var(--border-soft); }
+  .fit-list .check {
+    flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%;
+    background: #DBEAFE; color: var(--blue);
+    display: grid; place-items: center; margin-top: 1px;
+  }
+  .fit-list .check svg { width: 12px; height: 12px; }
+  .roles-card {
+    background: var(--mist);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 32px;
+  }
+  .roles-card h3 { font-size: 22px; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 18px; }
+  .roles-head, .role-row {
+    display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: baseline;
+  }
+  .roles-head {
+    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .role-row { padding: 13px 0; border-bottom: 1px dashed var(--border-soft); font-size: 14.5px; color: var(--slate); line-height: 1.45; }
+  .role-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .role-row b { color: var(--navy); font-weight: 500; }
+  @media (max-width: 1000px) { .audience-grid { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .roles-head, .role-row { grid-template-columns: 1fr; gap: 4px; } }
 
   /* CTA close */
   .cta-band {
@@ -758,30 +825,11 @@
       </div>
     </div>
 
-    <div class="hero-mock">
-      <div class="mock-body">
-        <div class="mock-head">
-          <div>
-            <div class="ttl">{{i18n:index.hero.div-quote-q-2046}}</div>
-            <div class="sub">{{i18n:index.hero.div-northwind-telecom-rene}}</div>
-          </div>
-          <div class="pill">{{i18n:index.hero.div-approved}}</div>
-        </div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-subscription-voice-pro}}</span><span class="r">€186,400</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-add-on-recording-qa}}</span><span class="r">€24,000</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-usage-international-es}}</span><span class="r">€12,225</span></div>
-        <div class="mock-line"><span class="l">{{i18n:index.hero.span-multi-year-ramp-7}}</span><span class="r" style="color:var(--green)">−€16,030</span></div>
-        <div class="mock-total">
-          <span class="lbl">{{i18n:index.hero.span-annualised}}</span>
-          <span class="amt">€206,595</span>
-        </div>
-        <div class="mock-actions">
-          <div class="mock-btn">{{i18n:index.hero.div-send-to-customer}}</div>
-          <div class="mock-btn alt">{{i18n:index.hero.div-edit-quote}}</div>
-        </div>
-      </div>
-      <div class="mock-note">{{i18n:index.hero.div-illustrative}}</div>
-    </div>
+    <figure class="app-shot">
+      <img src="assets/screens/atsuite-tasks.jpg" width="1568" height="539" loading="eager" fetchpriority="high" decoding="async"
+           alt="{{i18n:index.hero.alt-screenshot}}" />
+      <figcaption><span class="illustrative-tag">{{i18n:index.hero.div-shot-caption}}</span></figcaption>
+    </figure>
   </div>
 
   <!-- VALUE STRIP — full-width below hero-grid -->
@@ -891,6 +939,33 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="container audience-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>{{i18n:index.audience.div-who-atsuite-is-for}}</div>
+      <h2 style="margin-top:18px">{{i18n:index.audience.h2-atsuite-is-built-for}}</h2>
+      <ul class="fit-list">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-customer-agreements-co}}</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-revenue-combines-recur}}</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-customer-subscription-}}</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-spreadsheet-controls-a}}</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-commercial-changes-mus}}</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{i18n:index.audience.li-existing-crm-and-erp}}</li>
+      </ul>
+    </div>
+    <div class="roles-card">
+      <h3>{{i18n:index.audience.h3-who-benefits-using-at}}</h3>
+      <div class="roles-head"><span>{{i18n:index.audience.span-role}}</span><span>{{i18n:index.audience.span-primary-value}}</span></div>
+      <div class="role-row"><b>{{i18n:index.audience.b-cfo}}</b><span>{{i18n:index.audience.td-more-reliable-billing}}</span></div>
+      <div class="role-row"><b>{{i18n:index.audience.b-coo}}</b><span>{{i18n:index.audience.td-fewer-manual-handoffs}}</span></div>
+      <div class="role-row"><b>{{i18n:index.audience.b-commercial-director}}</b><span>{{i18n:index.audience.td-faster-more-controlle}}</span></div>
+      <div class="role-row"><b>{{i18n:index.audience.b-billing-manager}}</b><span>{{i18n:index.audience.td-exceptions-identified}}</span></div>
+      <div class="role-row"><b>{{i18n:index.audience.b-it}}</b><span>{{i18n:index.audience.td-api-based-integration}}</span></div>
+    </div>
+  </div>
 </section>
 
 <!-- Q2C BOARD -->
@@ -972,7 +1047,7 @@
         </div>
       </div>
     </div>
-    <div class="board-note">{{i18n:index.q2c.div-illustrative}}</div>
+    <div class="board-note"><span class="illustrative-tag">{{i18n:index.q2c.div-illustrative}}</span></div>
     <p class="q2c-boundary">{{i18n:index.q2c.p-finance-boundary}}</p>
   </div>
 </section>
@@ -1072,7 +1147,7 @@
       </div>
 
     </div>
-    <div class="board-note">{{i18n:index.modules.div-illustrative}}</div>
+    <div class="board-note"><span class="illustrative-tag">{{i18n:index.modules.div-illustrative}}</span></div>
   </div>
 </section>
 
@@ -1176,7 +1251,7 @@
       <div class="inn-vis-head">
         <div>
           <div class="t">{{i18n:index.innovate.div-revenue-forecast-q3}}</div>
-          <div class="s">{{i18n:index.innovate.div-predictive-90d-horizon}}</div>
+          <div class="s"><span class="illustrative-tag">{{i18n:index.innovate.div-predictive-90d-horizon}}</span></div>
         </div>
       </div>
       <div class="inn-chart">

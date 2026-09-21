@@ -11,6 +11,7 @@
     const links = document.querySelectorAll('.nav-link[data-menu]');
     const menus = {
       solutions: document.getElementById('mm-solutions'),
+      usecases: document.getElementById('mm-usecases'),
     };
     let openKey = null;
     function open(key) {

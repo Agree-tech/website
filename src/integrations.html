@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{{i18n:integrations.meta.title}}</title>
+<meta name="description" content="{{i18n:integrations.meta.description}}" />
+<link rel="canonical" href="https://www.agree-tech.com/integrations.html" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Agree Technologies" />
+<meta property="og:title" content="{{i18n:integrations.meta.og-title}}" />
+<meta property="og:description" content="{{i18n:integrations.meta.og-description}}" />
+<meta property="og:url" content="https://www.agree-tech.com/integrations.html" />
+<meta property="og:image" content="https://www.agree-tech.com/assets/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{i18n:integrations.meta.twitter-title}}" />
+<meta name="twitter:description" content="{{i18n:integrations.meta.twitter-description}}" />
+<meta name="twitter:image" content="https://www.agree-tech.com/assets/og-default.png" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="shared.css" />
+<link rel="stylesheet" href="subpage.css" />
+<style>
+  .integrations-head { text-align:center; max-width:720px; margin:0 auto 36px; }
+  .integrations-head .eyebrow { display:inline-flex; }
+  .integrations-head h2 { font-family:var(--f-display); font-weight:600; font-size:clamp(28px,3vw,38px); color:var(--navy); letter-spacing:-0.015em; margin:14px 0 12px;}
+  .integrations-head p { color:var(--slate); font-size:15.5px; line-height:1.65; }
+  .integration-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .integration-cat { background:var(--white); border:1px solid var(--border-soft); border-radius:14px; padding:22px; transition:transform .2s ease, box-shadow .2s ease;}
+  .integration-cat:hover { transform:translateY(-2px); box-shadow:0 8px 20px -10px rgba(15,23,42,0.18);}
+  .integration-cat-label { font-family:var(--f-mono); font-size:11px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+  .integration-cat-label::before { content:""; width:6px; height:6px; border-radius:99px; background:var(--cyan);}
+  .integration-chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .integration-chip { font-family:var(--f-display); font-weight:500; font-size:13px; color:var(--navy); background:var(--cloud); padding:6px 12px; border-radius:99px; border:1px solid var(--border-soft);}
+  .integration-foot { text-align:center; font-family:var(--f-mono); font-size:11px; color:var(--muted); letter-spacing:0.14em; margin-top:28px; text-transform:uppercase;}
+  @media (max-width:1000px) { .integration-grid { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px) { .integration-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<script>window.AT_PAGE='integrations';</script>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="container" style="max-width:920px">
+    <div class="eyebrow"><span class="dot"></span>{{i18n:integrations.page-hero.div-integrations}}</div>
+    <h1 style="margin-top:18px">{{i18n:integrations.page-hero.h1-connect-atsuite-to-the}}</h1>
+    <p class="lede">{{i18n:integrations.page-hero.p-every-object-in-atsuit}}</p>
+    <div class="ctas"><a class="btn btn-blue btn-lg" href="contact.html">{{i18n:integrations.page-hero.a-talk-to-an-expert}}</a><a class="btn btn-ghost btn-lg" href="platform.html">{{i18n:integrations.page-hero.a-see-the-platform}}</a></div>
+  </div>
+</section>
+
+<section class="split-section" id="api">
+  <div class="container split-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>{{i18n:integrations.integration.div-integration}}</div>
+      <h2 style="margin-top:18px">{{i18n:integrations.integration.h2-api-driven-by-design}}</h2>
+      <p>{{i18n:integrations.integration.p-being-api-driven-atsui}}</p>
+    </div>
+    <div class="mock-card">
+      <div class="head"><div><div class="ttl">{{i18n:integrations.integration.div-api-v3}}</div><div class="sub">{{i18n:integrations.integration.div-rest-webhooks}}</div></div><span style="background:#DCFCE7;color:#15803D;padding:4px 10px;border-radius:99px;font-size:11px;font-family:var(--f-mono)">{{i18n:integrations.integration.span-99-99-uptime}}</span></div>
+      <pre style="background:var(--navy-deep);color:#67E8F9;padding:18px;border-radius:10px;font-family:var(--f-mono);font-size:12.5px;margin:0;overflow:auto;line-height:1.6">POST /api/v3/quotes
+Authorization: Bearer ••••
+Content-Type: application/json
+
+{
+  "account": "acc_8f4j2",
+  "items": [
+    { "sku": "VOICE-PRO", "qty": 1200 }
+  ],
+  "term": "36m"
+}</pre>
+    </div>
+  </div>
+</section>
+
+<section class="split-section alt" id="connectors">
+  <div class="container integrations">
+    <div class="integrations-head">
+      <div class="eyebrow"><span class="dot"></span>{{i18n:integrations.integration.div-works-with-your-stack}}</div>
+      <h2>{{i18n:integrations.integration.h2-talks-to-the-systems}}</h2>
+      <p>{{i18n:integrations.integration.p-pre-built-connectors-a}}</p>
+    </div>
+    <div class="integration-grid">
+      <div class="integration-cat">
+        <div class="integration-cat-label">{{i18n:integrations.integration.div-erp-finance}}</div>
+        <div class="integration-chips">
+          <span class="integration-chip">{{i18n:integrations.integration.span-sap}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-oracle-netsuite}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-microsoft-dynamics-365}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-sage}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-xero}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-quickbooks}}</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">{{i18n:integrations.integration.div-identity-sso}}</div>
+        <div class="integration-chips">
+          <span class="integration-chip">{{i18n:integrations.integration.span-okta}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-microsoft-entra-id}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-auth0}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-google-workspace}}</span>
+        </div>
+      </div>
+      <div class="integration-cat">
+        <div class="integration-cat-label">{{i18n:integrations.integration.div-crm-sales}}</div>
+        <div class="integration-chips">
+          <span class="integration-chip">{{i18n:integrations.integration.span-salesforce}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-hubspot}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-dynamics-365-sales}}</span>
+          <span class="integration-chip">{{i18n:integrations.integration.span-pipedrive}}</span>
+        </div>
+      </div>
+    </div>
+    <p class="integration-foot">{{i18n:integrations.integration.p-anything-else-via-rest}}</p>
+  </div>
+</section>
+
+<section class="cta-band-dark">
+  <div class="container">
+    <div class="eyebrow on-dark"><span class="dot"></span>{{i18n:integrations.cta-band-dark.div-build-on-the-api}}</div>
+    <h2 style="margin-top:18px">{{i18n:integrations.cta-band-dark.h2-tell-us-what-atsuite}}</h2>
+    <p>{{i18n:integrations.cta-band-dark.p-bring-your-erp-crm}}</p>
+    <div class="ctas">
+      <a class="btn btn-cyan btn-lg" href="contact.html">{{i18n:integrations.cta-band-dark.a-talk-to-an-expert}}</a>
+      <a class="btn btn-outline-dark btn-lg" href="implementation.html">{{i18n:integrations.cta-band-dark.a-how-implementation-wor}}</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-foot"></div>
+<script src="shared.js"></script>
+</body></html>

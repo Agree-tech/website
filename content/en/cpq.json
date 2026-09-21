@@ -10,7 +10,7 @@
   "page-hero": {
     "div-solutions-cpq": "SOLUTIONS · CPQ",
     "h1-quote-with-speed-confi": "Quote with speed, configure with precision.",
-    "p-an-automated-cpq-that": "An automated CPQ that simplifies pricing and quoting — generating consistent, precise, multi-language quotes that respond to customer inquiries in seconds, not days.",
+    "p-an-automated-cpq-that": "Configure complex products, apply customer-specific pricing and route exceptions for approval — then carry the approved commercial terms directly into subscription and billing.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-see-the-platform": "See the platform",
     "alt-screenshot": "An ATSuite quote: the opportunity stage bar from New through to Won, above an approved offer showing contract length, one-time and recurring price and profit, and a configured product line with its group, SKU, subscription type and quantity.",
@@ -27,7 +27,7 @@
     "p-adjust-pricing-ratings": "Adjust pricing, ratings, promotions and discounts across catalogues to respond to market demand strategically.",
     "div-03-turnaround": "03 · TURNAROUND",
     "h3-fast-quote-turnaround": "Fast quote turnaround",
-    "p-speed-up-quote-generat": "Speed up quote generation so your sales team responds to customer inquiries in minutes, not days.",
+    "p-speed-up-quote-generat": "Speed up quote generation so your sales team responds to customer enquiries in minutes, not days.",
     "div-04-efficiency": "04 · EFFICIENCY",
     "h3-increase-efficiency": "Increase efficiency",
     "p-automate-complex-prici": "Automate complex pricing and quoting workflows — reduce manual work and minimise errors.",
@@ -39,9 +39,9 @@
     "p-a-multilingual-product": "A multilingual product catalogue keeps your offerings accessible across European and global markets."
   },
   "split-section-alt": {
-    "div-the-transformative-pow": "THE TRANSFORMATIVE POWER OF CPQ",
+    "div-the-transformative-pow": "CPQ · WHAT CHANGES",
     "h2-free-your-sales-team": "Free your sales team to do what they do best — selling.",
-    "p-atsuite-revolutionises": "ATSuite revolutionises the sales process. By automating and optimising the crucial parts of quoting and contract generation, your team is free to focus on relationships and revenue — not paperwork.",
+    "p-atsuite-revolutionises": "ATSuite automates the parts of quoting and contract generation that consume sales time, so the team works on customers and revenue rather than paperwork.",
     "li-faster-more-consistent": "Faster, more consistent quotes — at any complexity",
     "li-approval-routing-align": "Approval routing aligned to your governance model",
     "li-direct-hand-off-to": "Direct hand-off to subscription & billing — no rekeying",

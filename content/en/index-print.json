@@ -51,7 +51,7 @@
   },
   "modules": {
     "div-atsuite-in-a-nutshell": "ATSUITE IN A NUTSHELL",
-    "h2-four-modules-one-reven": "Four modules. One revenue engine.",
+    "h2-four-modules-one-reven": "Four core capabilities. One platform.",
     "p-adopt-the-full-suite": "Adopt the full suite or deploy module by module — each layer works with the others, and with the systems you already run.",
     "span-01-subscription": "01 · SUBSCRIPTION",
     "h3-manage-every-subscript": "Manage every subscription lifecycle, effortlessly.",
@@ -91,7 +91,7 @@
     "span-avg-completion": "Avg. completion",
     "span-status": "Status",
     "span-all-systems-normal": "All systems normal",
-    "a-process-optimisation": "Process Optimisation",
+    "a-process-optimisation": "Process Automation",
     "div-illustrative": "Illustrative panels — not product UI"
   },
   "quote": {
@@ -104,8 +104,8 @@
   },
   "innovate": {
     "div-innovate": "INNOVATE",
-    "h2-unlock-your-earnings-p": "Unlock your earnings potential in the global B2B market.",
-    "p-we-continuously-add-ca": "We ship to ATSuite continuously — new billing models, deeper configuration, more of the workflow automated — so the platform you adopt today keeps earning its place tomorrow.",
+    "h2-unlock-your-earnings-p": "Launch new commercial models without adding operational complexity.",
+    "p-we-continuously-add-ca": "Continuous delivery lets you introduce new pricing, billing and workflow models without disruptive upgrade projects.",
     "li-advanced-cpq-billing-c": "New billing and pricing models, shipped continuously",
     "li-guided-selling-for-a": "Deeper configuration — more change without a release",
     "li-real-time-collaboratio": "More of the quote-to-invoice path automated end to end",
@@ -121,7 +121,7 @@
   },
   "cta-band": {
     "div-ready-when-you-are": "READY WHEN YOU ARE",
-    "h2-get-started-today-and": "Get started today and unlock your revenue.",
+    "h2-get-started-today-and": "Reduce manual billing controls.",
     "p-a-30-minute-discovery": "A 30-minute discovery call is all it takes to see how ATSuite fits into your stack.",
     "a-book-a-demo": "Book a demo",
     "a-how-implementation-wor": "How implementation works"

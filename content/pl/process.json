@@ -1,30 +1,24 @@
 {
   "meta": {
-    "title": "Optymalizacja procesów i automatyzacja workflow · Agree Technologies",
-    "description": "Optymalizacja procesów ATSuite wnosi automatyzację sterowaną zdarzeniami do revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
-    "og-title": "Optymalizacja procesów i automatyzacja workflow",
+    "title": "Automatyzacja procesów i workflow sterowane zdarzeniami · Agree Technologies",
+    "description": "Automatyzacja procesów ATSuite wnosi automatyzację sterowaną zdarzeniami do revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
+    "og-title": "Automatyzacja procesów i workflow sterowane zdarzeniami",
     "og-description": "Automatyzacja procesów sterowana zdarzeniami dla revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań.",
-    "twitter-title": "Optymalizacja procesów i automatyzacja workflow",
+    "twitter-title": "Automatyzacja procesów i workflow sterowane zdarzeniami",
     "twitter-description": "Automatyzacja procesów sterowana zdarzeniami dla revenue operations — orkiestruj quote-to-cash bez ręcznych przekazań."
   },
   "page-hero": {
-    "div-solutions-process-opti": "ROZWIĄZANIA · OPTYMALIZACJA PROCESÓW",
+    "div-solutions-process-opti": "ROZWIĄZANIA · AUTOMATYZACJA PROCESÓW",
     "h1-eliminate-manual-work-": "Zautomatyzuj przekazania, od których zależy Twój proces sprzedaży.",
     "p-atsuite-automates-manu": "ATSuite uruchamia silnik procesów na zdarzeniach, które Twoja firma już generuje. Potwierdzone zamówienie tworzy swoje subskrypcje; rozliczone zużycie staje się pozycjami i fakturą; gotowa faktura jest generowana, dostarczana i eksportowana do systemu księgowego — bez ręcznego przepisywania.",
     "a-schedule-a-demo": "Umów demo",
     "a-see-the-platform": "Zobacz platformę",
-    "b-quote-signed": "Zamówienie potwierdzone",
-    "small-event-cpq": "ZDARZENIE · SPRZEDAŻ",
-    "b-provision-service": "Subskrypcje utworzone",
-    "small-workflow-0-8s": "PRZEPŁYW · NA POZYCJĘ",
-    "b-generate-invoice": "Zużycie wycenione na pozycje",
-    "small-billing-day-1": "ROZLICZENIA · PRZEBIEG",
-    "b-notify-crm": "Faktura dostarczona",
-    "small-api-hubspot": "E-FAKTURA · E-MAIL · EKSPORT"
+    "alt-screenshot": "Definicja procesu w ATSuite: workflow akceptacji oferty jako diagram BPMN z wyróżnionym bieżącym krokiem działającej instancji.",
+    "div-shot-caption": "ATSuite · Silnik procesów — działający workflow akceptacji oferty · dane ilustracyjne"
   },
   "split-section": {
     "div-process-capabilities": "PROCESY · MOŻLIWOŚCI",
-    "h2-discover-the-process-m": "Poznaj funkcje zarządzania procesami.",
+    "h2-discover-the-process-m": "Automatyzuj zdarzenia i przekazania między umową, dostawą i fakturowaniem.",
     "div-workflows": "PRZEPŁYWY PRACY",
     "h3-create-workflows": "Twórz przepływy pracy",
     "p-use-the-process-tool": "Używaj narzędzia procesowego do automatyzacji zadań biznesowych — i rozwijaj je wraz ze wzrostem lub zmianami w firmie.",
@@ -46,7 +40,7 @@
   },
   "cta-band-dark": {
     "div-operational-efficiency": "ZARZĄDZANIE EFEKTYWNOŚCIĄ OPERACYJNĄ",
-    "h2-streamline-processes-r": "Uprość procesy. Ogranicz marnotrawstwo. Zwielokrotnij produktywność.",
+    "h2-streamline-processes-r": "Ogranicz opóźnienia, pracę ręczną i wyjątki operacyjne.",
     "p-by-leveraging-atsuite-": "Dzięki automatyzacji procesów w ATSuite ograniczasz opóźnienia, obniżasz koszty i lepiej wykorzystujesz zasoby — a zespoły mogą skupić się na pracy, która tworzy wartość.",
     "a-schedule-a-demo": "Umów demo",
     "a-back-to-overview": "Wróć do przeglądu",

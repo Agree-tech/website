@@ -22,14 +22,20 @@
 <link rel="stylesheet" href="shared.css" />
 <link rel="stylesheet" href="subpage.css" />
 <style>
-.imp-rail { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:64px;}
-.imp-rail::before { content:""; position:absolute; top:34px; left:6%; right:6%; height:2px; background:linear-gradient(90deg, var(--blue), var(--cyan)); border-radius:2px;}
-.imp-step { position:relative; text-align:left; padding:0 18px;}
-.imp-step .num-circle { width:68px; height:68px; border-radius:50%; background:white; border:2px solid var(--blue); color:var(--blue); display:grid; place-items:center; font-family:var(--f-display); font-weight:600; font-size:24px; margin:0 auto 22px; position:relative; z-index:1;}
-.imp-step h3 { font-size:20px; text-align:center; margin-bottom:10px;}
-.imp-step p { font-size:14px; color:var(--slate); text-align:center; line-height:1.55;}
-@media (max-width: 900px){ .imp-rail { grid-template-columns:1fr 1fr;} .imp-rail::before{display:none;}}
-@media (max-width: 540px){ .imp-rail { grid-template-columns:1fr;} }
+.imp-rail { display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative; margin-top:64px; counter-reset:step;}
+.imp-rail::before { content:""; position:absolute; top:28px; left:8%; right:8%; height:2px; background:linear-gradient(90deg, var(--blue), var(--cyan)); border-radius:2px;}
+.imp-step { position:relative; text-align:left; padding:0 10px;}
+.imp-step .num-circle { width:56px; height:56px; border-radius:50%; background:white; border:2px solid var(--blue); color:var(--blue); display:grid; place-items:center; font-family:var(--f-display); font-weight:600; font-size:20px; margin:0 auto 20px; position:relative; z-index:1;}
+.imp-step .num-circle::before { counter-increment:step; content:counter(step);}
+.imp-step:nth-child(2) .num-circle { border-color:var(--cyan); color:var(--cyan-hover);}
+.imp-step:nth-child(3) .num-circle { border-color:var(--violet); color:var(--violet);}
+.imp-step:nth-child(4) .num-circle { border-color:var(--green); color:var(--green);}
+.imp-step:nth-child(5) .num-circle { border-color:var(--navy); color:var(--navy);}
+.imp-step:nth-child(6) .num-circle { border-color:var(--cyan); color:var(--cyan-hover);}
+.imp-step h3 { font-size:17px; text-align:center; margin-bottom:10px; letter-spacing:-0.01em;}
+.imp-step p { font-size:13.5px; color:var(--slate); text-align:center; line-height:1.55;}
+@media (max-width: 1100px){ .imp-rail { grid-template-columns:repeat(3,1fr); row-gap:44px;} .imp-rail::before{display:none;}}
+@media (max-width: 640px){ .imp-rail { grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -53,24 +59,34 @@
     </div>
     <div class="imp-rail">
       <div class="imp-step">
-        <div class="num-circle">1</div>
-        <h3>{{i18n:implementation.split-section.h3-proof-of-concept}}</h3>
-        <p>{{i18n:implementation.split-section.p-we-start-by-demonstrat}}</p>
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-business-discovery-and}}</h3>
+        <p>{{i18n:implementation.split-section.p-we-map-the-commercial}}</p>
       </div>
       <div class="imp-step">
-        <div class="num-circle" style="border-color:var(--cyan);color:var(--cyan-hover)">2</div>
-        <h3>{{i18n:implementation.split-section.h3-discovery-workshops}}</h3>
-        <p>{{i18n:implementation.split-section.p-in-depth-workshops-to}}</p>
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-solution-design-and-co}}</h3>
+        <p>{{i18n:implementation.split-section.p-data-model-pricing-rul}}</p>
       </div>
       <div class="imp-step">
-        <div class="num-circle" style="border-color:var(--violet);color:var(--violet)">3</div>
-        <h3>{{i18n:implementation.split-section.h3-implementation}}</h3>
-        <p>{{i18n:implementation.split-section.p-our-team-works-closely}}</p>
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-integration-and-data-m}}</h3>
+        <p>{{i18n:implementation.split-section.p-customers-agreements-s}}</p>
       </div>
       <div class="imp-step">
-        <div class="num-circle" style="border-color:var(--green);color:var(--green)">4</div>
-        <h3>{{i18n:implementation.split-section.h3-operations}}</h3>
-        <p>{{i18n:implementation.split-section.p-ongoing-support-and-mo}}</p>
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-parallel-validation-an}}</h3>
+        <p>{{i18n:implementation.split-section.p-atsuite-runs-alongside}}</p>
+      </div>
+      <div class="imp-step">
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-controlled-go-live}}</h3>
+        <p>{{i18n:implementation.split-section.p-cut-over-is-scheduled}}</p>
+      </div>
+      <div class="imp-step">
+        <div class="num-circle"></div>
+        <h3>{{i18n:implementation.split-section.h3-managed-operations-and}}</h3>
+        <p>{{i18n:implementation.split-section.p-we-host-monitor-and-op}}</p>
       </div>
     </div>
   </div>

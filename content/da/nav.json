@@ -3,9 +3,10 @@
     "aria-label": "Primær"
   },
   "main": {
-    "div-solutions": "Løsninger",
+    "div-solutions": "Kernefunktioner",
+    "div-business-use-cases": "Anvendelsesområder",
     "a-platform": "Platform",
-    "a-implementation": "Implementering",
+    "a-implementation": "Integrationer",
     "a-about-us": "Om os",
     "a-talk-to-an-expert": "Tal med en ekspert",
     "a-book-a-demo": "Book en demo"
@@ -17,9 +18,9 @@
     "div-lifecycle-renewals-and": "Livscyklus, fornyelser og forbrugsanalyse.",
     "div-billing-automation": "Faktureringsautomatisering",
     "div-flexible-monetization-": "Fleksibel monetisering til B2B SaaS.",
-    "div-process-optimisation": "Procesoptimering",
+    "div-process-optimisation": "Procesautomatisering",
     "div-event-driven-workflow-": "Hændelsesdrevet workflowautomatisering.",
-    "div-sales": "Salg",
-    "div-pipeline-playbooks-and": "Pipeline, playbooks og godkendelser."
+    "div-sales": "Salgsdrift",
+    "div-pipeline-playbooks-and": "Fra salgsmulighed til godkendt aftale."
   }
 }

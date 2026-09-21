@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Platforma ATSuite — integracje, silnik procesów i analityka",
-    "description": "Poznaj platformę ATSuite: konfigurowalny model danych, silnik procesów sterowany zdarzeniami, udokumentowane API REST i raportowanie operacyjne — jako usługa zarządzana z Europy.",
-    "og-title": "Platforma ATSuite — integracje, silnik procesów i analityka",
-    "og-description": "Rozszerzalny model danych, silnik procesów sterowany zdarzeniami, głębokie integracje i analityka — bezpieczne, niezawodne i gotowe na skalę.",
+    "title": "Platforma ATSuite — model danych, silnik procesów i analityka",
+    "description": "Poznaj platformę ATSuite: konfigurowalny model danych, silnik procesów sterowany zdarzeniami, raportowanie operacyjne i elastyczne wdrożenie — jako usługa zarządzana z Europy.",
+    "og-title": "Platforma ATSuite — model danych, silnik procesów i analityka",
+    "og-description": "Rozszerzalny model danych, silnik procesów sterowany zdarzeniami, analityka i elastyczne wdrożenie — bezpieczne, niezawodne i gotowe na skalę.",
     "twitter-title": "Platforma ATSuite",
-    "twitter-description": "Rozszerzalny model danych, silnik procesów sterowany zdarzeniami, integracje i analityka — bezpieczne i gotowe na skalę."
+    "twitter-description": "Rozszerzalny model danych, silnik procesów sterowany zdarzeniami, analityka i elastyczne wdrożenie — bezpieczne i gotowe na skalę."
   },
   "page-hero-dark": {
     "div-the-atsuite-platform": "PLATFORMA ATSUITE",
-    "h1-configure-launch-go": "Konfiguruj. Uruchom. Działaj.",
+    "h1-configure-launch-go": "Konfiguruj złożone operacje handlowe bez przebudowy całego stosu technologicznego.",
     "p-a-comprehensive-platfo": "Konfigurowalna platforma dla złożonych operacji B2B. ATSuite opiera się na nowoczesnej architekturze usług i jest dostarczany jako usługa zarządzana z europejskich centrów danych, stale aktualizowany, więc żaden projekt aktualizacyjny nie zatrzyma firmy.",
     "a-speak-to-an-expert": "Porozmawiaj z ekspertem",
     "a-how-implementation-wor": "Jak przebiega wdrożenie",
@@ -44,39 +44,10 @@
     "div-on-premise": "Twoja infra",
     "div-your-infrastructure": "Na podstawie umowy"
   },
-  "integration": {
-    "div-integration": "INTEGRACJA",
-    "h2-api-driven-by-design": "Oparte na API z założenia.",
-    "p-being-api-driven-atsui": "ATSuite jest w całości oparty na API: każdy obiekt, z którym pracuje interfejs, jest dostępny przez udokumentowane API REST — z webhookami i strumieniem zdarzeń dla tego, co wolisz otrzymywać niż odpytywać.",
-    "div-api-v3": "API · v3",
-    "div-rest-webhooks": "REST · WEBHOOKI",
-    "span-99-99-uptime": "Udokumentowane API REST",
-    "div-works-with-your-stack": "DZIAŁA Z TWOIM ŚRODOWISKIEM",
-    "h3-talks-to-the-systems": "Z czym ATSuite łączy się dzisiaj.",
-    "p-pre-built-connectors-a": "Dwie różne rzeczy, celowo rozdzielone. Część integracji jest zbudowana, dostarczana i wspierana w ramach produktu. Wszystko inne jest osiągalne przez API REST i webhooki jako zadanie konfiguracyjne lub projektowe — powiemy, co jest czym, zanim kupisz.",
-    "div-erp-finance": "Wspierane konektory",
-    "span-sap": "E-faktury OIOUBL",
-    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
-    "span-microsoft-dynamics-365": "Betalingsservice",
-    "span-sage": "Eksport faktur (CSV)",
-    "span-xero": "Dostarczanie faktur e-mailem",
-    "span-quickbooks": "Linki płatnicze Stripe",
-    "div-crm-sales": "Integracja przez API",
-    "span-salesforce": "Systemy ERP i księgowe",
-    "span-hubspot": "Narzędzia CRM i sprzedażowe",
-    "span-dynamics-365-sales": "Service desk i ITSM",
-    "span-pipedrive": "Hurtownie danych i BI",
-    "div-identity-sso": "Tożsamość i dostęp",
-    "span-okta": "SAML 2.0",
-    "span-microsoft-entra-id": "OpenID Connect",
-    "span-auth0": "Logowanie jednokrotne",
-    "span-google-workspace": "Uwierzytelnianie dwuskładnikowe",
-    "p-anything-else-via-rest": "To wzorce integracji, nie gotowe konektory — realizowane jako zadanie konfiguracyjne lub projektowe w oparciu o API REST i webhooki."
-  },
   "data-model": {
     "div-extensible-data-model": "ROZSZERZALNY MODEL DANYCH",
     "h2-adaptable-to-diverse-b": "Dopasowany do różnorodnych potrzeb biznesowych.",
-    "p-a-highly-adaptable-dat": "Wysoce elastyczny model danych otwiera drogę do dopasowania do Twojej firmy, integracji z istniejącymi systemami i rozbudowy wraz ze wzrostem. Perspektywiczny, gotowy na przyszłość, zdolny sprostać złożonym i zmieniającym się wymaganiom B2B.",
+    "p-a-highly-adaptable-dat": "Wysoce elastyczny model danych otwiera drogę do dopasowania do Twojej firmy, integracji z istniejącymi systemami i rozbudowy wraz ze wzrostem.",
     "div-custom-entity-contract": "Encja własna · Umowa",
     "span-uuid": ": uuid",
     "span-months": ": months",
@@ -84,20 +55,15 @@
     "span-tier": ": tier",
     "span-enum": ": enum",
     "span-str": ": str",
-    "div-2-custom-fields-added": "▲ 2 POLA WŁASNE — DODANE W 4 MIN, BEZ WDROŻENIA"
+    "div-2-custom-fields-added": "▲ 2 POLA WŁASNE — DODANE W 4 MIN, BEZ WDROŻENIA",
+    "div-illustrative": "Panel ilustracyjny — nie interfejs produktu"
   },
   "process": {
     "div-process-engine": "SILNIK PROCESÓW",
     "h2-built-in-automation-op": "Wbudowana automatyzacja i optymalizacja.",
-    "p-atsuite-s-process-engi": "Silnik procesów ATSuite to potężne narzędzie efektywności biznesowej — projektuj, uruchamiaj i optymalizuj przepływy pracy w intuicyjnym interfejsie. Od sprzedaży i zarządzania produktem po fakturowanie i obsługę klienta, każdy proces działa automatycznie.",
-    "div-event": "ZDARZENIE",
-    "div-quote-signed": "Oferta podpisana",
-    "div-rule": "REGUŁA",
-    "div-if-amt-100k": "Jeśli kwota > €100k",
-    "div-action": "AKCJA",
-    "div-provision-notify": "Uruchom + powiadom",
-    "span-42-active-workflows": "42 AKTYWNE PRZEPŁYWY",
-    "span-8-461-runs-today": "▲ 214 URUCHOMIEŃ DZIŚ"
+    "p-atsuite-s-process-engi": "Silnik procesów ATSuite to potężne narzędzie efektywności biznesowej — projektuj, uruchamiaj i optymalizuj przepływy pracy w intuicyjnym interfejsie. Przepływy można skonfigurować tak, aby automatyzowały akceptacje, zadania, zamówienia i aktualizacje dla klientów w całym cyklu przychodowym.",
+    "alt-screenshot": "Dziennik zadań aplikacyjnych ATSuite: workflow uruchamiane przez zdarzenia subskrypcji, każde z kluczem, opisem i statusem.",
+    "div-shot-caption": "ATSuite · Zadania aplikacyjne — workflow uruchamiane przez zdarzenia subskrypcji · dane ilustracyjne"
   },
   "analytics": {
     "div-analytics": "ANALITYKA",
@@ -124,7 +90,7 @@
   "cta-band-dark": {
     "div-innovate-with-agree-te": "INNOWACJE Z AGREE TECHNOLOGIES",
     "h2-continuous-innovation-": "Ciągła innowacja. Ciągłe dostarczanie.",
-    "p-cutting-edge-cloud-bas": "Nowoczesne, chmurowe rozwiązania CPQ i fakturowania dla firm B2B — elastyczne, skalowalne, bezpieczne.",
+    "p-cutting-edge-cloud-bas": "Wprowadzaj nowe modele cenowe bez przebudowy systemów finansowych.",
     "a-talk-to-an-expert": "Porozmawiaj z ekspertem",
     "a-how-implementation-wor": "Jak przebiega wdrożenie"
   }

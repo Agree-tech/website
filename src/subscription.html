@@ -21,17 +21,47 @@
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="shared.css" />
 <link rel="stylesheet" href="subpage.css" />
+<style>
+.app-shot { margin: 0; }
+.app-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+}
+.app-shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+</style>
 </head>
 <body>
 <script>window.AT_PAGE='subscription';</script>
 <div id="site-nav"></div>
 
 <section class="page-hero">
-  <div class="container" style="max-width:880px;text-align:center">
-    <div class="eyebrow"><span class="dot" style="background:var(--green)"></span>{{i18n:subscription.page-hero.div-solutions-subscription}}</div>
-    <h1 style="margin-top:18px">{{i18n:subscription.page-hero.h1-streamline-every-subsc}}</h1>
-    <p class="lede" style="margin-inline:auto">{{i18n:subscription.page-hero.p-atsuite-subscription-g}}</p>
-    <div class="ctas" style="justify-content:center"><a class="btn btn-blue btn-lg" href="contact.html">{{i18n:subscription.page-hero.a-schedule-a-demo}}</a><a class="btn btn-ghost btn-lg" href="platform.html">{{i18n:subscription.page-hero.a-see-the-platform}} <span class="arr">→</span></a></div>
+  <div class="container page-hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot" style="background:var(--green)"></span>{{i18n:subscription.page-hero.div-solutions-subscription}}</div>
+      <h1>{{i18n:subscription.page-hero.h1-streamline-every-subsc}}</h1>
+      <p class="lede">{{i18n:subscription.page-hero.p-atsuite-subscription-g}}</p>
+      <div class="ctas">
+        <a class="btn btn-blue btn-lg" href="contact.html">{{i18n:subscription.page-hero.a-schedule-a-demo}}</a>
+        <a class="btn btn-ghost btn-lg" href="platform.html">{{i18n:subscription.page-hero.a-see-the-platform}} <span class="arr">→</span></a>
+      </div>
+    </div>
+    <figure class="app-shot">
+      <img src="assets/screens/atsuite-subscriptions.jpg" width="1485" height="812" loading="eager" fetchpriority="high" decoding="async"
+           alt="{{i18n:subscription.page-hero.alt-screenshot}}" />
+      <figcaption><span class="illustrative-tag">{{i18n:subscription.page-hero.div-shot-caption}}</span></figcaption>
+    </figure>
   </div>
 </section>
 

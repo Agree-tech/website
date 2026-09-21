@@ -9,8 +9,8 @@
   },
   "page-hero": {
     "div-solutions-sales": "SOLUTIONS · SALES",
-    "h1-grow-your-business-wit": "Grow your business with a guided sales path.",
-    "p-atsuite-automates-time": "ATSuite automates time-consuming manual processes and provides a customisable sales path to guide and support your team to win more deals.",
+    "h1-grow-your-business-wit": "Turn complex opportunities into approved, billable agreements.",
+    "p-atsuite-automates-time": "ATSuite guides sales teams from opportunity and product configuration to an approved agreement that can flow directly into subscription management, fulfilment and billing — without re-entering commercial data.",
     "a-request-a-demo": "Request a demo",
     "a-see-cpq": "See CPQ",
     "alt-screenshot": "The ATSuite pipeline board: opportunities across New, Customer Presentation, Proposal, Closing and Won, each column showing its weighted value.",
@@ -41,7 +41,7 @@
   "crm-integrations": {},
   "cta-band-dark": {
     "div-ready-to-ignite-a": "READY TO IGNITE A TRANSFORMATION?",
-    "h2-streamline-workflows-b": "Streamline workflows. Boost efficiency. Close more deals.",
+    "h2-streamline-workflows-b": "Maintain an audit trail from price approval to invoice data.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-back-to-overview": "Back to overview"
   }

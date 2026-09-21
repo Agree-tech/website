@@ -2,7 +2,7 @@
   <div class="container contact-grid">
     <div class="form-card">
       <div class="notice">
-        <b>{{slot:b-please-note}}</b> {{slot:div-we-only-reply-to}}
+        {{slot:div-we-only-reply-to}}
       </div>
       <template id="sent-message"><b>✓ {{slot:b-message-sent}}</b> {{slot:p-we-ve-received-your-mes}}</template>
       <form action="https://api.web3forms.com/submit" method="POST">
@@ -35,7 +35,7 @@
             <select name="interest">
               <option value="The full ATSuite">{{slot:option-the-full-atsuite}}</option><option value="CPQ">{{slot:option-cpq}}</option>
               <option value="Billing Automation">{{slot:option-billing-automation}}</option><option value="Subscription Management">{{slot:option-subscription-manage}}</option>
-              <option value="Process Optimisation">{{slot:option-process-optimisatio}}</option><option value="Sales">{{slot:option-sales}}</option>
+              <option value="Process Automation">{{slot:option-process-optimisatio}}</option><option value="Sales">{{slot:option-sales}}</option>
             </select>
           </div>
         </div>
@@ -44,6 +44,7 @@
           <input type="checkbox" name="consent" id="consent" value="yes" />
           <label for="consent" style="margin:0">{{slot:label-i-consent-to-receive}}</label>
         </div>
+        <p class="privacy-note">{{slot:p-we-handle-the-data}} <a href="privacy.html">{{slot:a-privacy-policy}}</a>.</p>
         <input type="hidden" name="redirect" value="https://agree-tech.com/contact.html?success=true">
         <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">{{slot:button-send-message}}</button></div>
       </form>

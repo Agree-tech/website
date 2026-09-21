@@ -9,8 +9,8 @@
   },
   "page-hero": {
     "div-solutions-sales": "LØSNINGER · SALG",
-    "h1-grow-your-business-wit": "Væk forretningen med en guidet salgsproces.",
-    "p-atsuite-automates-time": "ATSuite automatiserer tidskrævende manuelle processer og giver en tilpasselig salgsproces, der guider og støtter jeres team til at vinde flere handler.",
+    "h1-grow-your-business-wit": "Gør komplekse salgsmuligheder til godkendte, fakturerbare aftaler.",
+    "p-atsuite-automates-time": "ATSuite guider salgsteams fra salgsmulighed og produktkonfiguration til en godkendt aftale, der kan gå direkte videre til abonnementsstyring, levering og fakturering — uden at kommercielle data skal indtastes igen.",
     "a-request-a-demo": "Anmod om en demo",
     "a-see-cpq": "Se CPQ",
     "alt-screenshot": "ATSuites pipeline-tavle: salgsmuligheder fordelt på Ny, Kundepræsentation, Tilbud, Lukning og Vundet, hver kolonne med sin vægtede værdi.",
@@ -41,7 +41,7 @@
   "crm-integrations": {},
   "cta-band-dark": {
     "div-ready-to-ignite-a": "KLAR TIL AT SÆTTE GANG I EN FORANDRING?",
-    "h2-streamline-workflows-b": "Strømlin workflows. Øg effektiviteten. Luk flere handler.",
+    "h2-streamline-workflows-b": "Bevar et revisionsspor fra prisgodkendelse til fakturadata.",
     "a-schedule-a-demo": "Book en demo",
     "a-back-to-overview": "Tilbage til oversigten"
   }

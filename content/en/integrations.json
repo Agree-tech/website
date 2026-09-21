@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Integrations — ATSuite REST API, webhooks and connectors",
+    "description": "How ATSuite connects to the systems you already run: a documented REST API, webhooks and an event stream, plus the connectors that ship with the product.",
+    "og-title": "Integrations — ATSuite REST API, webhooks and connectors",
+    "og-description": "A documented REST API, webhooks and an event stream, plus the connectors that ship with ATSuite.",
+    "twitter-title": "ATSuite integrations",
+    "twitter-description": "A documented REST API, webhooks and an event stream, plus the connectors that ship with ATSuite."
+  },
+  "page-hero": {
+    "div-integrations": "INTEGRATIONS",
+    "h1-connect-atsuite-to-the": "Connect ATSuite to the systems you already run.",
+    "p-every-object-in-atsuit": "Every object in ATSuite is reachable over a documented REST API, with webhooks and an event stream for what you want pushed rather than polled. Some integrations ship with the product; the rest are a configuration or project task.",
+    "a-talk-to-an-expert": "Talk to an expert",
+    "a-see-the-platform": "See the platform"
+  },
+  "cta-band-dark": {
+    "div-build-on-the-api": "BUILD ON THE API",
+    "h2-tell-us-what-atsuite": "Tell us what ATSuite has to talk to.",
+    "p-bring-your-erp-crm": "Bring your ERP, CRM, identity provider and data warehouse to a 30-minute call. We will tell you what is shipped, what is configuration and what is a project.",
+    "a-talk-to-an-expert": "Talk to an expert",
+    "a-how-implementation-wor": "How implementation works"
+  },
+  "integration": {
+    "div-integration": "REST API",
+    "h2-api-driven-by-design": "API-driven, by design.",
+    "p-being-api-driven-atsui": "ATSuite is API-driven throughout: every object the UI works with is reachable over a documented REST API, with webhooks and an event stream for the things you want pushed to you rather than polled.",
+    "div-api-v3": "API · v3",
+    "div-rest-webhooks": "REST · WEBHOOKS",
+    "span-99-99-uptime": "Documented REST API",
+    "div-works-with-your-stack": "WORKS WITH YOUR STACK",
+    "h2-talks-to-the-systems": "What ATSuite connects to today.",
+    "p-pre-built-connectors-a": "Two different things, kept apart on purpose. Some integrations are built, shipped and supported as part of the product. Everything else is reachable through the REST API and webhooks as a configuration or project task — we will tell you which is which before you buy.",
+    "div-erp-finance": "Supported connectors",
+    "span-sap": "OIOUBL e-invoicing",
+    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
+    "span-microsoft-dynamics-365": "Betalingsservice",
+    "span-sage": "Invoice export (CSV)",
+    "span-xero": "Invoice email delivery",
+    "span-quickbooks": "Stripe payment links",
+    "div-crm-sales": "Integrate via API",
+    "span-salesforce": "ERP & accounting systems",
+    "span-hubspot": "CRM & sales tools",
+    "span-dynamics-365-sales": "Service desks & ITSM",
+    "span-pipedrive": "Data warehouses & BI",
+    "div-identity-sso": "Identity & access",
+    "span-okta": "SAML 2.0",
+    "span-microsoft-entra-id": "OpenID Connect",
+    "span-auth0": "Single sign-on",
+    "span-google-workspace": "Two-factor authentication",
+    "p-anything-else-via-rest": "These are integration patterns, not shipped connectors — delivered as a configuration or project task against the REST API and webhooks."
+  }
+}

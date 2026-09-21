@@ -1,30 +1,24 @@
 {
   "meta": {
-    "title": "Procesoptimering & workflowautomatisering · Agree Technologies",
-    "description": "ATSuite Procesoptimering bringer hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
-    "og-title": "Procesoptimering & workflowautomatisering",
+    "title": "Procesautomatisering & hændelsesdrevne workflows · Agree Technologies",
+    "description": "ATSuite Procesautomatisering bringer hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
+    "og-title": "Procesautomatisering & hændelsesdrevne workflows",
     "og-description": "Hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer.",
-    "twitter-title": "Procesoptimering & workflowautomatisering",
+    "twitter-title": "Procesautomatisering & hændelsesdrevne workflows",
     "twitter-description": "Hændelsesdrevet workflowautomatisering til revenue operations — orkestrer quote-to-cash uden manuelle overleveringer."
   },
   "page-hero": {
-    "div-solutions-process-opti": "LØSNINGER · PROCESOPTIMERING",
+    "div-solutions-process-opti": "LØSNINGER · PROCESAUTOMATISERING",
     "h1-eliminate-manual-work-": "Automatisér de overleveringer, jeres indtægtsproces afhænger af.",
     "p-atsuite-automates-manu": "ATSuite kører en procesmotor oven på de hændelser, jeres forretning allerede skaber. En bekræftet ordre opretter sine abonnementer; afregnet forbrug bliver til posteringer og en faktura; en færdig faktura bliver dannet, leveret og eksporteret til jeres økonomisystem — uden at nogen taster den om.",
     "a-schedule-a-demo": "Book en demo",
     "a-see-the-platform": "Se platformen",
-    "b-quote-signed": "Ordre bekræftet",
-    "small-event-cpq": "HÆNDELSE · SALG",
-    "b-provision-service": "Abonnementer oprettet",
-    "small-workflow-0-8s": "ARBEJDSGANG · PR. ORDRELINJE",
-    "b-generate-invoice": "Forbrug afregnet til poster",
-    "small-billing-day-1": "FAKTURERING · KØRSEL",
-    "b-notify-crm": "Faktura leveret",
-    "small-api-hubspot": "E-FAKTURA · MAIL · EKSPORT"
+    "alt-screenshot": "En ATSuite-procesdefinition: tilbudsgodkendelsen som BPMN-diagram, med den kørende instans' aktuelle trin fremhævet.",
+    "div-shot-caption": "ATSuite · Procesmotor — tilbudsgodkendelsen, mens den kører · illustrative data"
   },
   "split-section": {
     "div-process-capabilities": "PROCES · FUNKTIONER",
-    "h2-discover-the-process-m": "Se funktionerne til procesledelse.",
+    "h2-discover-the-process-m": "Automatisér hændelserne og overleveringerne mellem aftale, levering og fakturering.",
     "div-workflows": "WORKFLOWS",
     "h3-create-workflows": "Byg workflows",
     "p-use-the-process-tool": "Brug procesværktøjet til at automatisere forretningsopgaver — og forbedr dem løbende, efterhånden som forretningen vokser eller ændrer sig.",
@@ -46,7 +40,7 @@
   },
   "cta-band-dark": {
     "div-operational-efficiency": "STYRING AF OPERATIONEL EFFEKTIVITET",
-    "h2-streamline-processes-r": "Strømlin processer. Reducer spild. Løft produktiviteten.",
+    "h2-streamline-processes-r": "Reducér forsinkelser, manuelt arbejde og operationelle undtagelser.",
     "p-by-leveraging-atsuite-": "Med ATSuites workflowautomatisering minimerer du forsinkelser, sænker omkostningerne og optimerer ressourceudnyttelsen — så teams kan fokusere på værdiskabende arbejde.",
     "a-schedule-a-demo": "Book en demo",
     "a-back-to-overview": "Tilbage til oversigten",

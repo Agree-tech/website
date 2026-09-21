@@ -9,30 +9,11 @@
 {{/each}}      </div>
 {{/if}}    </div>
 
-    <div class="hero-mock">
-      <div class="mock-body">
-        <div class="mock-head">
-          <div>
-            <div class="ttl">{{slot:div-quote-q-2046}}</div>
-            <div class="sub">{{slot:div-northwind-telecom-rene}}</div>
-          </div>
-          <div class="pill">{{slot:div-approved}}</div>
-        </div>
-        <div class="mock-line"><span class="l">{{slot:span-subscription-voice-pro}}</span><span class="r">€186,400</span></div>
-        <div class="mock-line"><span class="l">{{slot:span-add-on-recording-qa}}</span><span class="r">€24,000</span></div>
-        <div class="mock-line"><span class="l">{{slot:span-usage-international-es}}</span><span class="r">€12,225</span></div>
-        <div class="mock-line"><span class="l">{{slot:span-multi-year-ramp-7}}</span><span class="r" style="color:var(--green)">−€16,030</span></div>
-        <div class="mock-total">
-          <span class="lbl">{{slot:span-annualised}}</span>
-          <span class="amt">€206,595</span>
-        </div>
-        <div class="mock-actions">
-          <div class="mock-btn">{{slot:div-send-to-customer}}</div>
-          <div class="mock-btn alt">{{slot:div-edit-quote}}</div>
-        </div>
-      </div>
-      <div class="mock-note">{{slot:div-illustrative}}</div>
-    </div>
+    <figure class="app-shot">
+      <img src="assets/screens/atsuite-tasks.jpg" width="1568" height="539" loading="eager" fetchpriority="high" decoding="async"
+           alt="{{slot:alt-screenshot}}" />
+      <figcaption><span class="illustrative-tag">{{slot:div-shot-caption}}</span></figcaption>
+    </figure>
   </div>
 
   <!-- VALUE STRIP — full-width below hero-grid -->

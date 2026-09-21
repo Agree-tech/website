@@ -1,30 +1,24 @@
 {
   "meta": {
-    "title": "Process Optimisation & Workflow Automation · Agree Technologies",
-    "description": "ATSuite Process Optimisation brings event-driven workflow automation to revenue operations — orchestrate quote-to-cash without manual handoffs.",
-    "og-title": "Process Optimisation & Workflow Automation",
+    "title": "Process Automation & Event-driven Workflows · Agree Technologies",
+    "description": "ATSuite Process Automation brings event-driven workflow automation to revenue operations — orchestrate quote-to-cash without manual handoffs.",
+    "og-title": "Process Automation & Event-driven Workflows",
     "og-description": "Event-driven workflow automation for revenue operations — orchestrate quote-to-cash without manual handoffs.",
-    "twitter-title": "Process Optimisation & Workflow Automation",
+    "twitter-title": "Process Automation & Event-driven Workflows",
     "twitter-description": "Event-driven workflow automation for revenue operations — orchestrate quote-to-cash without manual handoffs."
   },
   "page-hero": {
-    "div-solutions-process-opti": "SOLUTIONS · PROCESS OPTIMISATION",
+    "div-solutions-process-opti": "SOLUTIONS · PROCESS AUTOMATION",
     "h1-eliminate-manual-work-": "Automate the handoffs your revenue process depends on.",
     "p-atsuite-automates-manu": "ATSuite runs a process engine over the events your business already produces. A confirmed order creates its subscriptions; rated usage becomes charge lines and an invoice; a finished invoice is rendered, delivered and exported to your accounting system — without anyone re-keying it.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-see-the-platform": "See the platform",
-    "b-quote-signed": "Order confirmed",
-    "small-event-cpq": "EVENT · SALES",
-    "b-provision-service": "Subscriptions created",
-    "small-workflow-0-8s": "WORKFLOW · PER ORDER LINE",
-    "b-generate-invoice": "Usage rated to charges",
-    "small-billing-day-1": "BILLING · BILL RUN",
-    "b-notify-crm": "Invoice delivered",
-    "small-api-hubspot": "E-INVOICE · EMAIL · EXPORT"
+    "alt-screenshot": "An ATSuite process definition: the offer approval workflow as a BPMN diagram, with the running instance's current step highlighted.",
+    "div-shot-caption": "ATSuite · Process engine — the offer approval workflow, running · illustrative data"
   },
   "split-section": {
     "div-process-capabilities": "PROCESS · CAPABILITIES",
-    "h2-discover-the-process-m": "Discover the process management features.",
+    "h2-discover-the-process-m": "Automate the events and hand-offs between agreement, delivery and billing.",
     "div-workflows": "WORKFLOWS",
     "h3-create-workflows": "Create workflows",
     "p-use-the-process-tool": "Use the process tool to automate business tasks — and keep enhancing them as your business grows or changes.",
@@ -46,7 +40,7 @@
   },
   "cta-band-dark": {
     "div-operational-efficiency": "OPERATIONAL EFFICIENCY MANAGEMENT",
-    "h2-streamline-processes-r": "Streamline processes. Reduce waste. Compound productivity.",
+    "h2-streamline-processes-r": "Reduce delays, manual work and operational exceptions.",
     "p-by-leveraging-atsuite-": "By leveraging ATSuite workflow automation, you minimise delays, cut costs, and optimise resource utilisation — empowering teams to focus on value-driven work.",
     "a-schedule-a-demo": "Schedule a demo",
     "a-back-to-overview": "Back to overview",

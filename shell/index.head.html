@@ -42,17 +42,18 @@
   .hero-grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
     padding-bottom: 80px;
   }
   .hero h1 {
     color: var(--white);
-    font-size: clamp(48px, 6.4vw, 84px);
+    font-size: clamp(40px, 4.6vw, 64px);
     font-weight: 600;
     letter-spacing: -0.04em;
-    line-height: 0.98;
+    line-height: 1.02;
+    text-wrap: balance;
   }
   .hero h1 .accent {
     color: var(--cyan-light);
@@ -114,6 +115,25 @@
     line-height: 1.4;
   }
   .hv-text b { color: var(--white); font-weight: 500; }
+
+  .app-shot { margin: 0; }
+  .app-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: var(--shadow-pop);
+  }
+  .app-shot figcaption {
+    margin-top: 12px;
+    text-align: center;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.78);
+  }
 
   /* Hero product mock */
   .hero-mock {
@@ -201,7 +221,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.42);
+    color: rgba(255,255,255,0.78);
   }
   .logos .lg-img {
     display: block;
@@ -353,7 +373,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--slate);
   }
   .q2c-boundary {
     margin: 28px auto 0;
@@ -568,7 +588,7 @@
   }
   .inn-vis-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
   .inn-vis-head .t { font-family: var(--f-display); font-size: 17px; color: white; font-weight: 500; }
-  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 3px; }
+  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.8); text-transform: uppercase; margin-top: 3px; }
   .inn-vis-head .pill {
     background: rgba(22,163,74,0.18); color: #4ade80;
     padding: 4px 10px; border-radius: 99px; font-size: 11px; font-family: var(--f-mono);
@@ -590,6 +610,53 @@
   .inn-stat .l { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
   .inn-stat .v { font-family: var(--f-display); font-size: 22px; color: white; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
   .inn-stat .d { font-family: var(--f-mono); font-size: 11px; color: #4ade80; margin-top: 4px; }
+
+  /* Audience — who ATSuite is for */
+  .audience {
+    padding: 110px 0;
+    background: white;
+    border-top: 1px solid var(--border-soft);
+  }
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .audience h2 { color: var(--navy); }
+  .fit-list { list-style: none; margin: 28px 0 0; padding: 0; }
+  .fit-list li {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 13px 0;
+    border-top: 1px solid var(--border-soft);
+    font-size: 16px; color: var(--slate); line-height: 1.5;
+  }
+  .fit-list li:last-child { border-bottom: 1px solid var(--border-soft); }
+  .fit-list .check {
+    flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%;
+    background: #DBEAFE; color: var(--blue);
+    display: grid; place-items: center; margin-top: 1px;
+  }
+  .fit-list .check svg { width: 12px; height: 12px; }
+  .roles-card {
+    background: var(--mist);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 32px;
+  }
+  .roles-card h3 { font-size: 22px; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 18px; }
+  .roles-head, .role-row {
+    display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: baseline;
+  }
+  .roles-head {
+    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .role-row { padding: 13px 0; border-bottom: 1px dashed var(--border-soft); font-size: 14.5px; color: var(--slate); line-height: 1.45; }
+  .role-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .role-row b { color: var(--navy); font-weight: 500; }
+  @media (max-width: 1000px) { .audience-grid { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 520px) { .roles-head, .role-row { grid-template-columns: 1fr; gap: 4px; } }
 
   /* CTA close */
   .cta-band {

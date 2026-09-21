@@ -10,20 +10,24 @@
   "page-hero": {
     "div-implementation": "IMPLEMENTATION",
     "h1-seamless-transition-ze": "A controlled transition from fragmented processes to one operational flow.",
-    "p-implementing-a-new-cpq": "Replacing quoting and billing is a real programme of work, not a switch. We run it in stages you can see: discovery, configuration, integration, migration, validation and operations — each with its own exit criteria.",
+    "p-implementing-a-new-cpq": "Replacing quoting and billing is a real programme of work, not a switch. We run it in stages you can see: business discovery, solution design, integration and migration, parallel validation, controlled go-live and managed operations — each with its own exit criteria.",
     "a-schedule-a-call": "Schedule a call"
   },
   "split-section": {
     "div-our-approach": "OUR APPROACH",
-    "h2-four-steps-one-outcome": "Four steps. One outcome.",
-    "h3-proof-of-concept": "Proof of Concept",
-    "p-we-start-by-demonstrat": "We start by demonstrating the platform's potential with a tailored POC, so you see firsthand how ATSuite meets your needs.",
-    "h3-discovery-workshops": "Discovery Workshops",
-    "p-in-depth-workshops-to": "In-depth workshops to understand current processes and thoroughly identify opportunities for optimisation.",
-    "h3-implementation": "Implementation",
-    "p-our-team-works-closely": "Our team works closely with you to execute a smooth, efficient implementation — minimal disruption to your operations.",
-    "h3-operations": "Operations",
-    "p-ongoing-support-and-mo": "Ongoing support and monitoring ensure your new system runs at peak performance and continually delivers value."
+    "h2-four-steps-one-outcome": "Six stages. One outcome.",
+    "h3-business-discovery-and": "Business discovery and success criteria",
+    "p-we-map-the-commercial": "We map the commercial models, agreements and billing flows you run today, and agree the success criteria the programme is measured against.",
+    "h3-solution-design-and-co": "Solution design and configuration",
+    "p-data-model-pricing-rul": "Data model, pricing rules, approval routes and workflows are designed with your teams and configured in a tenant you can log in to from the first weeks.",
+    "h3-integration-and-data-m": "Integration and data migration",
+    "p-customers-agreements-s": "Customers, agreements, subscriptions and open balances are migrated; CRM, ERP and other systems are connected through the REST API and supported connectors.",
+    "h3-parallel-validation-an": "Parallel validation and acceptance",
+    "p-atsuite-runs-alongside": "ATSuite runs alongside your existing billing for one or more cycles, and every invoice is reconciled against the old system before sign-off.",
+    "h3-controlled-go-live": "Controlled go-live",
+    "p-cut-over-is-scheduled": "Cut-over is scheduled around a billing cycle, with agreed exit criteria, a rollback plan and our team on hand.",
+    "h3-managed-operations-and": "Managed operations and continuous improvement",
+    "p-we-host-monitor-and-op": "We host, monitor and operate the platform, ship updates continuously, and review the configuration with you as your commercial models change."
   },
   "split-section-alt": {
     "div-what-you-get": "WHAT YOU GET",

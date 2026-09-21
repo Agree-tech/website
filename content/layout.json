@@ -355,7 +355,6 @@
         "option-cpq": "option-cpq",
         "option-other": "option-other",
         "option-sales": "option-sales",
-        "b-please-note": "b-please-note",
         "label-country": "label-country",
         "label-message": "label-message",
         "label-website": "label-website",
@@ -391,7 +390,9 @@
         "div-agree-technologies-aps": "div-agree-technologies-aps",
         "label-i-consent-to-receive": "label-i-consent-to-receive",
         "option-process-optimisatio": "option-process-optimisatio",
-        "option-subscription-manage": "option-subscription-manage"
+        "option-subscription-manage": "option-subscription-manage",
+        "p-we-handle-the-data": "p-we-handle-the-data",
+        "a-privacy-policy": "a-privacy-policy"
       }
     }
   ],
@@ -600,17 +601,49 @@
       "component": "step-list",
       "section": "split-section",
       "lead": "\r\n\r\n",
+      "props": {
+        "steps": [
+          {
+            "slots": {
+              "heading": "h3-business-discovery-and",
+              "body": "p-we-map-the-commercial"
+            }
+          },
+          {
+            "slots": {
+              "heading": "h3-solution-design-and-co",
+              "body": "p-data-model-pricing-rul"
+            }
+          },
+          {
+            "slots": {
+              "heading": "h3-integration-and-data-m",
+              "body": "p-customers-agreements-s"
+            }
+          },
+          {
+            "slots": {
+              "heading": "h3-parallel-validation-an",
+              "body": "p-atsuite-runs-alongside"
+            }
+          },
+          {
+            "slots": {
+              "heading": "h3-controlled-go-live",
+              "body": "p-cut-over-is-scheduled"
+            }
+          },
+          {
+            "slots": {
+              "heading": "h3-managed-operations-and",
+              "body": "p-we-host-monitor-and-op"
+            }
+          }
+        ]
+      },
       "slots": {
-        "h3-operations": "h3-operations",
-        "div-our-approach": "div-our-approach",
-        "h3-implementation": "h3-implementation",
-        "h3-proof-of-concept": "h3-proof-of-concept",
-        "h3-discovery-workshops": "h3-discovery-workshops",
-        "p-in-depth-workshops-to": "p-in-depth-workshops-to",
-        "p-ongoing-support-and-mo": "p-ongoing-support-and-mo",
-        "p-our-team-works-closely": "p-our-team-works-closely",
-        "p-we-start-by-demonstrat": "p-we-start-by-demonstrat",
-        "h2-four-steps-one-outcome": "h2-four-steps-one-outcome"
+        "eyebrow": "div-our-approach",
+        "heading": "h2-four-steps-one-outcome"
       }
     },
     {
@@ -976,14 +1009,10 @@
         "b-lower-acpu": "b-lower-acpu",
         "b-predictive": "b-predictive",
         "div-2-4m-arr": "div-2-4m-arr",
-        "div-approved": "div-approved",
         "div-ipvision": "div-ipvision",
         "b-built-in-eu": "b-built-in-eu",
         "div-cash-flow": "div-cash-flow",
-        "div-edit-quote": "div-edit-quote",
         "div-gdpr-native": "div-gdpr-native",
-        "span-annualised": "span-annualised",
-        "div-quote-q-2046": "div-quote-q-2046",
         "div-renewal-auto": "div-renewal-auto",
         "div-time-to-cash": "div-time-to-cash",
         "div-in-production": "div-in-production",
@@ -993,17 +1022,13 @@
         "div-18-vs-last-year": "div-18-vs-last-year",
         "div-billing-accuracy": "div-billing-accuracy",
         "div-operational-risk": "div-operational-risk",
-        "div-send-to-customer": "div-send-to-customer",
         "div-forecast-accuracy": "div-forecast-accuracy",
         "div-through-automation": "div-through-automation",
-        "span-multi-year-ramp-7": "span-multi-year-ramp-7",
         "p-automate-the-entire-qu": "p-automate-the-entire-qu",
-        "span-add-on-recording-qa": "span-add-on-recording-qa",
         "div-atsuite-quote-to-reven": "div-atsuite-quote-to-reven",
-        "div-northwind-telecom-rene": "div-northwind-telecom-rene",
         "div-trusted-by-leading-saa": "div-trusted-by-leading-saa",
-        "span-subscription-voice-pro": "span-subscription-voice-pro",
-        "span-usage-international-es": "span-usage-international-es"
+        "alt-screenshot": "alt-screenshot",
+        "div-shot-caption": "div-shot-caption"
       }
     },
     {
@@ -1029,6 +1054,84 @@
         "div-unified-platform-repla": "div-unified-platform-repla",
         "blockquote-with-atsuite-we-have": "blockquote-with-atsuite-we-have",
         "blockquote-before-atsuite-we-stru": "blockquote-before-atsuite-we-stru"
+      }
+    },
+    {
+      "component": "audience-grid",
+      "section": "audience",
+      "lead": "\r\n\r\n<!-- AUDIENCE -->\r\n",
+      "props": {
+        "items": [
+          {
+            "slots": {
+              "text": "li-customer-agreements-co"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-revenue-combines-recur"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-customer-subscription-"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-spreadsheet-controls-a"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-commercial-changes-mus"
+            }
+          },
+          {
+            "slots": {
+              "text": "li-existing-crm-and-erp"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "slots": {
+              "term": "b-cfo",
+              "definition": "td-more-reliable-billing"
+            }
+          },
+          {
+            "slots": {
+              "term": "b-coo",
+              "definition": "td-fewer-manual-handoffs"
+            }
+          },
+          {
+            "slots": {
+              "term": "b-commercial-director",
+              "definition": "td-faster-more-controlle"
+            }
+          },
+          {
+            "slots": {
+              "term": "b-billing-manager",
+              "definition": "td-exceptions-identified"
+            }
+          },
+          {
+            "slots": {
+              "term": "b-it",
+              "definition": "td-api-based-integration"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-who-atsuite-is-for",
+        "heading": "h2-atsuite-is-built-for",
+        "rows-heading": "h3-who-benefits-using-at",
+        "col-role": "span-role",
+        "col-value": "span-primary-value"
       }
     },
     {
@@ -1260,6 +1363,124 @@
       }
     }
   ],
+  "integrations": [
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "links": [
+          {
+            "props": {
+              "href": "contact.html",
+              "variant": "btn-blue",
+              "large": true
+            },
+            "slots": {
+              "label": "a-talk-to-an-expert"
+            }
+          },
+          {
+            "props": {
+              "href": "platform.html",
+              "variant": "btn-ghost",
+              "large": true
+            },
+            "slots": {
+              "label": "a-see-the-platform"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "body": "p-every-object-in-atsuit",
+        "eyebrow": "div-integrations",
+        "heading": "h1-connect-atsuite-to-the"
+      }
+    },
+    {
+      "component": "split-prose",
+      "section": "integration",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": false,
+        "flip": false,
+        "idAttr": " id=\"api\"",
+        "dotStyle": "",
+        "visual": "integrations-api",
+        "paragraphs": [
+          {
+            "props": {
+              "style": ""
+            },
+            "slots": {
+              "text": "p-being-api-driven-atsui"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-integration",
+        "heading": "h2-api-driven-by-design"
+      }
+    },
+    {
+      "component": "stack-band",
+      "section": "integration",
+      "lead": "\r\n\r\n",
+      "props": {
+        "alt": true,
+        "idAttr": " id=\"connectors\"",
+        "dotStyle": "",
+        "visual": "integrations-stack"
+      },
+      "slots": {
+        "eyebrow": "div-works-with-your-stack",
+        "heading": "h2-talks-to-the-systems",
+        "body": "p-pre-built-connectors-a",
+        "foot": "p-anything-else-via-rest"
+      }
+    },
+    {
+      "component": "cta-band",
+      "section": "cta-band-dark",
+      "lead": "\r\n\r\n",
+      "props": {
+        "dark": true,
+        "narrow": false,
+        "bodyClass": "",
+        "links": [
+          {
+            "props": {
+              "href": "contact.html",
+              "variant": "btn-cyan",
+              "large": true
+            },
+            "slots": {
+              "label": "a-talk-to-an-expert"
+            }
+          },
+          {
+            "props": {
+              "href": "implementation.html",
+              "variant": "btn-outline-dark",
+              "large": true
+            },
+            "slots": {
+              "label": "a-how-implementation-wor"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "body": "p-bring-your-erp-crm",
+        "eyebrow": "div-build-on-the-api",
+        "heading": "h2-tell-us-what-atsuite"
+      }
+    }
+  ],
   "platform": [
     {
       "component": "page-hero-split",
@@ -1295,32 +1516,6 @@
         "body": "p-a-comprehensive-platfo",
         "eyebrow": "div-the-atsuite-platform",
         "heading": "h1-configure-launch-go"
-      }
-    },
-    {
-      "component": "split-prose",
-      "section": "integration",
-      "lead": "\r\n\r\n",
-      "props": {
-        "alt": false,
-        "flip": false,
-        "idAttr": " id=\"integration\"",
-        "dotStyle": "",
-        "visual": "platform-split-section",
-        "paragraphs": [
-          {
-            "props": {
-              "style": ""
-            },
-            "slots": {
-              "text": "p-being-api-driven-atsui"
-            }
-          }
-        ]
-      },
-      "slots": {
-        "eyebrow": "div-integration",
-        "heading": "h2-api-driven-by-design"
       }
     },
     {
@@ -1462,6 +1657,744 @@
         "body": "p-cutting-edge-cloud-bas",
         "eyebrow": "div-innovate-with-agree-te",
         "heading": "h2-continuous-innovation-"
+      }
+    }
+  ],
+  "privacy": [
+    {
+      "component": "page-hero",
+      "section": "page-hero",
+      "props": {
+        "containerStyle": "max-width:920px",
+        "ledeStyle": "",
+        "ctasStyle": "",
+        "links": []
+      },
+      "slots": {
+        "eyebrow": "div-legal",
+        "heading": "h1-privacy-policy-and-coo",
+        "body": "p-how-agree-technologies"
+      }
+    },
+    {
+      "component": "legal-prose",
+      "section": "cookies",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": " id=\"cookies\"",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-this-website-uses-cook"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-the-law-states-that"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-this-website-uses-diff"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-we-place-cookies"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-we-place-cookies-on"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-cookies",
+        "heading": "h2-cookie-policy"
+      }
+    },
+    {
+      "component": "legal-prose",
+      "section": "cookies",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": "",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "li"
+            },
+            "slots": {
+              "text": "li-creation-of-profile"
+            }
+          },
+          {
+            "props": {
+              "tag": "li"
+            },
+            "slots": {
+              "text": "li-cookie-settings"
+            }
+          },
+          {
+            "props": {
+              "tag": "li"
+            },
+            "slots": {
+              "text": "li-statistics-and-improve"
+            }
+          },
+          {
+            "props": {
+              "tag": "li"
+            },
+            "slots": {
+              "text": "li-marketing"
+            }
+          }
+        ],
+        "list": true
+      },
+      "slots": {}
+    },
+    {
+      "component": "legal-prose",
+      "section": "cookies",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": "",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-we-place-cookies-on-2"
+            }
+          },
+          {
+            "props": {
+              "tag": "h4"
+            },
+            "slots": {
+              "text": "h4-google"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-you-visit-agree"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-also-share-informat"
+            }
+          },
+          {
+            "props": {
+              "tag": "h4"
+            },
+            "slots": {
+              "text": "h4-linkedin"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-you-visit-agree-2"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-we-obtain-your-consent"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-before-we-place-cookie"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-this-is-how-long"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-cookies-delete-themsel"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-how-to-delete-cookies"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-if-you-do-not"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-your-consent-applies-t"
+            }
+          }
+        ]
+      },
+      "slots": {}
+    },
+    {
+      "component": "legal-prose",
+      "section": "policy",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": " id=\"privacy\"",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-process-your-person"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-1-contact-information"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-agree-technologies-is-"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-agree-technologies-aps"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-2-processing-of-person"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-we-ask-you"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-use-data-about"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-you-visit-agree"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-the-legal-basis-for"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-when-you-sign-up"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-the-purpose-is-to"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-3-recipients-of-person"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-information-about-your"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-information-can-be-lef"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-these-companies-are-da"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-the-data-processors-ma"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-personal-data",
+        "heading": "h2-privacy-policy"
+      }
+    },
+    {
+      "component": "legal-prose",
+      "section": "policy",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": "",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-4-we-only-process"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-only-process-data"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-only-collect-proces"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-5-we-delete-your"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-delete-your-persona"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-general-inquiries-are-"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-6-we-obtain-your"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-obtain-your-consent"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-your-consent-is-volunt"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-7-we-do-not"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-if-we-pass-on"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-do-not-obtain"
+            }
+          }
+        ]
+      },
+      "slots": {}
+    },
+    {
+      "component": "legal-prose",
+      "section": "rights",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": " id=\"your-rights\"",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-in-order-to-create"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-1-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-are-entitled-at"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-have-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-2-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-have-the-right-2"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-3-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-in-certain-cases-you"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-to-the-extent-that"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-4-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-in-certain-cases-you-2"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-5-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-in-certain-cases-you-3"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-6-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-have-the-right-3"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-also-have-the"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-7-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-have-the-right-4"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-8-8-the-right"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-you-have-the-right-5"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-your-rights",
+        "heading": "h2-8-your-rights"
+      }
+    },
+    {
+      "component": "legal-prose",
+      "section": "security",
+      "lead": "\r\n\r\n",
+      "props": {
+        "idAttr": " id=\"security\"",
+        "alt": false,
+        "items": [
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-we-have-implemented-ap"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-only-employees-who-hav"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-10-deletion-of-persona"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-information-collected-"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-information-collected--2"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-information-collected--3"
+            }
+          },
+          {
+            "props": {
+              "tag": "h3"
+            },
+            "slots": {
+              "text": "h3-11-changes-in-the"
+            }
+          },
+          {
+            "props": {
+              "tag": "p"
+            },
+            "slots": {
+              "text": "p-if-the-privacy-policy"
+            }
+          }
+        ]
+      },
+      "slots": {
+        "eyebrow": "div-security-and-deletion",
+        "heading": "h2-9-security"
       }
     }
   ],
@@ -1778,13 +2711,12 @@
   ],
   "subscription": [
     {
-      "component": "page-hero",
+      "component": "page-hero-split",
       "section": "page-hero",
       "props": {
-        "containerStyle": "max-width:880px;text-align:center",
-        "ledeStyle": " style=\"margin-inline:auto\"",
-        "ctasStyle": " style=\"justify-content:center\"",
+        "dark": false,
         "dotStyle": " style=\"background:var(--green)\"",
+        "visual": "subscription-hero",
         "links": [
           {
             "props": {

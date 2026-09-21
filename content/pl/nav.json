@@ -3,9 +3,10 @@
     "aria-label": "Główna"
   },
   "main": {
-    "div-solutions": "Rozwiązania",
+    "div-solutions": "Kluczowe możliwości",
+    "div-business-use-cases": "Zastosowania biznesowe",
     "a-platform": "Platforma",
-    "a-implementation": "Wdrożenie",
+    "a-implementation": "Integracje",
     "a-about-us": "O nas",
     "a-talk-to-an-expert": "Porozmawiaj z ekspertem",
     "a-book-a-demo": "Umów się"
@@ -17,9 +18,9 @@
     "div-lifecycle-renewals-and": "Cykl życia, odnowienia i analiza zużycia.",
     "div-billing-automation": "Automatyzacja fakturowania",
     "div-flexible-monetization-": "Elastyczna monetyzacja dla B2B SaaS.",
-    "div-process-optimisation": "Optymalizacja procesów",
+    "div-process-optimisation": "Automatyzacja procesów",
     "div-event-driven-workflow-": "Automatyzacja procesów sterowana zdarzeniami.",
-    "div-sales": "Sprzedaż",
-    "div-pipeline-playbooks-and": "Pipeline, playbooki i akceptacje."
+    "div-sales": "Operacje sprzedażowe",
+    "div-pipeline-playbooks-and": "Od szansy sprzedaży do zatwierdzonej umowy."
   }
 }

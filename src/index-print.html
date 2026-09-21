@@ -68,10 +68,11 @@
   }
   .hero h1 {
     color: var(--white);
-    font-size: clamp(48px, 6.4vw, 84px);
+    font-size: clamp(40px, 4.6vw, 64px);
     font-weight: 600;
     letter-spacing: -0.04em;
-    line-height: 0.98;
+    line-height: 1.02;
+    text-wrap: balance;
   }
   .hero h1 .accent {
     color: var(--cyan-light);
@@ -184,7 +185,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.42);
+    color: rgba(255,255,255,0.78);
   }
   .logos .lg-img {
     display: block;
@@ -336,7 +337,7 @@
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--slate);
   }
   .q2c-boundary {
     margin: 28px auto 0;
@@ -543,7 +544,7 @@
   }
   .inn-vis-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
   .inn-vis-head .t { font-family: var(--f-display); font-size: 17px; color: white; font-weight: 500; }
-  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 3px; }
+  .inn-vis-head .s { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.8); text-transform: uppercase; margin-top: 3px; }
   .inn-vis-head .pill {
     background: rgba(22,163,74,0.18); color: #4ade80;
     padding: 4px 10px; border-radius: 99px; font-size: 11px; font-family: var(--f-mono);
@@ -724,7 +725,7 @@
         </div>
       </div>
     </div>
-    <div class="board-note">{{i18n:index-print.q2c.div-illustrative}}</div>
+    <div class="board-note"><span class="illustrative-tag">{{i18n:index-print.q2c.div-illustrative}}</span></div>
     <p class="q2c-boundary">{{i18n:index-print.q2c.p-finance-boundary}}</p>
   </div>
 </section>
@@ -824,7 +825,7 @@
       </div>
 
     </div>
-    <div class="board-note">{{i18n:index-print.modules.div-illustrative}}</div>
+    <div class="board-note"><span class="illustrative-tag">{{i18n:index-print.modules.div-illustrative}}</span></div>
   </div>
 </section>
 
@@ -876,7 +877,7 @@
       <div class="inn-vis-head">
         <div>
           <div class="t">{{i18n:index-print.innovate.div-revenue-forecast-q3}}</div>
-          <div class="s">{{i18n:index-print.innovate.div-predictive-90d-horizon}}</div>
+          <div class="s"><span class="illustrative-tag">{{i18n:index-print.innovate.div-predictive-90d-horizon}}</span></div>
         </div>
       </div>
       <div class="inn-chart">

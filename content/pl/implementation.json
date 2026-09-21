@@ -10,20 +10,24 @@
   "page-hero": {
     "div-implementation": "WDROŻENIE",
     "h1-seamless-transition-ze": "Kontrolowane przejście od rozproszonych procesów do jednego przepływu operacyjnego.",
-    "p-implementing-a-new-cpq": "Wymiana ofertowania i rozliczeń to realny program prac, a nie przełącznik. Prowadzimy go w widocznych etapach: analiza, konfiguracja, integracja, migracja, walidacja i utrzymanie — każdy z własnymi kryteriami zakończenia.",
+    "p-implementing-a-new-cpq": "Wymiana ofertowania i rozliczeń to realny program prac, a nie przełącznik. Prowadzimy go w widocznych etapach: analiza biznesowa, projekt rozwiązania, integracja i migracja, walidacja równoległa, kontrolowane uruchomienie i zarządzane utrzymanie — każdy z własnymi kryteriami zakończenia.",
     "a-schedule-a-call": "Umów rozmowę"
   },
   "split-section": {
     "div-our-approach": "NASZE PODEJŚCIE",
-    "h2-four-steps-one-outcome": "Cztery kroki. Jeden efekt.",
-    "h3-proof-of-concept": "Proof of Concept",
-    "p-we-start-by-demonstrat": "Zaczynamy od pokazania możliwości platformy w dopasowanym POC, żebyście z pierwszej ręki zobaczyli, jak ATSuite odpowiada na Wasze potrzeby.",
-    "h3-discovery-workshops": "Warsztaty rozpoznawcze",
-    "p-in-depth-workshops-to": "Pogłębione warsztaty, które pozwalają zrozumieć obecne procesy i rzetelnie wskazać możliwości optymalizacji.",
-    "h3-implementation": "Wdrożenie",
-    "p-our-team-works-closely": "Nasz zespół pracuje z Wami blisko, aby wdrożenie przebiegło płynnie i sprawnie — przy minimalnych zakłóceniach działalności.",
-    "h3-operations": "Utrzymanie",
-    "p-ongoing-support-and-mo": "Stałe wsparcie i monitoring sprawiają, że nowy system działa z pełną wydajnością i nieprzerwanie dostarcza wartość."
+    "h2-four-steps-one-outcome": "Sześć etapów. Jeden efekt.",
+    "h3-business-discovery-and": "Analiza biznesowa i kryteria sukcesu",
+    "p-we-map-the-commercial": "Mapujemy modele komercyjne, umowy i przepływy rozliczeniowe, które dziś prowadzicie, i uzgadniamy kryteria sukcesu, według których oceniany jest program.",
+    "h3-solution-design-and-co": "Projekt rozwiązania i konfiguracja",
+    "p-data-model-pricing-rul": "Model danych, reguły cenowe, ścieżki akceptacji i przepływy pracy projektujemy z Waszymi zespołami i konfigurujemy w środowisku, do którego możecie się logować od pierwszych tygodni.",
+    "h3-integration-and-data-m": "Integracja i migracja danych",
+    "p-customers-agreements-s": "Migrujemy klientów, umowy, subskrypcje i otwarte salda; CRM, ERP i inne systemy łączymy przez REST API i wspierane konektory.",
+    "h3-parallel-validation-an": "Walidacja równoległa i akceptacja",
+    "p-atsuite-runs-alongside": "ATSuite działa równolegle z dotychczasowym fakturowaniem przez jeden lub więcej cykli, a każda faktura jest uzgadniana ze starym systemem przed odbiorem.",
+    "h3-controlled-go-live": "Kontrolowane uruchomienie",
+    "p-cut-over-is-scheduled": "Przełączenie planujemy wokół cyklu rozliczeniowego — z uzgodnionymi kryteriami zakończenia, planem wycofania i naszym zespołem na miejscu.",
+    "h3-managed-operations-and": "Zarządzane utrzymanie i ciągłe doskonalenie",
+    "p-we-host-monitor-and-op": "Hostujemy, monitorujemy i utrzymujemy platformę, na bieżąco dostarczamy aktualizacje i wspólnie z Wami przeglądamy konfigurację, gdy zmieniają się Wasze modele komercyjne."
   },
   "split-section-alt": {
     "div-what-you-get": "CO OTRZYMUJESZ",

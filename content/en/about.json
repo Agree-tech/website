@@ -13,7 +13,7 @@
   },
   "page-hero": {
     "div-our-journey": "OUR JOURNEY",
-    "h1-built-from-a-real": "Built from a real problem. Trusted in production for years.",
+    "h1-built-from-a-real": "Built from a real problem. Trusted in production for years",
     "p-it-began-with-the": "ATSuite originated in the need to manage complex telecom operations at scale and has since evolved into a configurable platform for B2B subscription businesses."
   },
   "split-section": {
@@ -53,7 +53,7 @@
     "div-kj": "KJ",
     "div-cto": "CTO",
     "h3-kristian-jacobsen": "Kristian Hvid Jakobsen",
-    "p-20-years-in-software": "20+ years in software with extensive experience in Telecom CPQ and Billing. A senior innovator leading the dynamic, flexible ATSuite roadmap and development — committed to delivering a future-proven solution to customers."
+    "p-20-years-in-software": "20+ years in software with extensive experience in Telecom CPQ and Billing. A senior innovator leading the ATSuite roadmap and development."
   },
   "cta-band-dark": {
     "div-book-a-meeting": "BOOK A MEETING",

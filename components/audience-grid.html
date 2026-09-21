@@ -1,0 +1,16 @@
+<section class="audience">
+  <div class="container audience-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>{{slot:eyebrow}}</div>
+      <h2 style="margin-top:18px">{{slot:heading}}</h2>
+      <ul class="fit-list">
+{{#each items}}        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l4 4L19 6"/></svg></span>{{slot:text}}</li>
+{{/each}}      </ul>
+    </div>
+    <div class="roles-card">
+      <h3>{{slot:rows-heading}}</h3>
+      <div class="roles-head"><span>{{slot:col-role}}</span><span>{{slot:col-value}}</span></div>
+{{#each rows}}      <div class="role-row"><b>{{slot:term}}</b><span>{{slot:definition}}</span></div>
+{{/each}}    </div>
+  </div>
+</section>

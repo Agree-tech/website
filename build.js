@@ -113,7 +113,7 @@ function renderLangSwitcher(locale, pageFile) {
 function renderNav(navTemplate, { onDark }, pageFile, locale) {
   let nav = navTemplate
     .replace('{{topbarDark}}', onDark ? ' on-dark' : '')
-    .replace('{{logoFile}}', onDark ? 'logo-white' : 'logo-black')
+    .replace('{{logoFile}}', onDark ? 'white' : 'black')
     .replace('{{btnSecondary}}', onDark ? 'btn-outline-dark' : 'btn-ghost')
     .replace('{{btnPrimary}}', onDark ? 'btn-cyan' : 'btn-primary')
     .replace('{{langSwitcher}}', renderLangSwitcher(locale, pageFile));
@@ -343,6 +343,10 @@ function writeRootRedirect() {
     .filter((p) => p !== 'index.html')
     .map((p) => `/${p}  /${def.code}/${p}  301!`);
   lines.unshift(`/  /${def.code}/  302!`);
+
+  // The policy lived at /privacy-policy/ on the old site, and cookie banners
+  // and email footers still point there.
+  lines.push(`/privacy-policy  /${def.code}/privacy.html  301!`);
   fs.writeFileSync(path.join(DIST, '_redirects'), lines.join('\n') + '\n', 'utf8');
 }
 

@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Integrationer — ATSuite REST API, webhooks og connectorer",
+    "description": "Sådan forbinder ATSuite til de systemer, I allerede kører: et dokumenteret REST API, webhooks og en event-strøm samt de connectorer, der følger med produktet.",
+    "og-title": "Integrationer — ATSuite REST API, webhooks og connectorer",
+    "og-description": "Et dokumenteret REST API, webhooks og en event-strøm samt de connectorer, der følger med ATSuite.",
+    "twitter-title": "ATSuite-integrationer",
+    "twitter-description": "Et dokumenteret REST API, webhooks og en event-strøm samt de connectorer, der følger med ATSuite."
+  },
+  "page-hero": {
+    "div-integrations": "INTEGRATIONER",
+    "h1-connect-atsuite-to-the": "Forbind ATSuite med de systemer, I allerede kører.",
+    "p-every-object-in-atsuit": "Alle objekter i ATSuite kan tilgås via et dokumenteret REST API, med webhooks og en event-strøm til det, I hellere vil have skubbet ud end at skulle hente. Nogle integrationer følger med produktet; resten er en konfigurations- eller projektopgave.",
+    "a-talk-to-an-expert": "Tal med en ekspert",
+    "a-see-the-platform": "Se platformen"
+  },
+  "cta-band-dark": {
+    "div-build-on-the-api": "BYG PÅ API",
+    "h2-tell-us-what-atsuite": "Fortæl os, hvad ATSuite skal tale med.",
+    "p-bring-your-erp-crm": "Tag jeres ERP, CRM, identitetsudbyder og datawarehouse med til en samtale på 30 minutter. Så fortæller vi, hvad der følger med, hvad der er konfiguration, og hvad der er et projekt.",
+    "a-talk-to-an-expert": "Tal med en ekspert",
+    "a-how-implementation-wor": "Sådan foregår implementeringen"
+  },
+  "integration": {
+    "div-integration": "REST-API",
+    "h2-api-driven-by-design": "API-drevet by design.",
+    "p-being-api-driven-atsui": "ATSuite er API-drevet hele vejen igennem: alle objekter, brugerfladen arbejder med, kan tilgås via et dokumenteret REST-API — med webhooks og en hændelsesstrøm til det, I hellere vil have skubbet end at spørge efter.",
+    "div-api-v3": "API · v3",
+    "div-rest-webhooks": "REST · WEBHOOKS",
+    "span-99-99-uptime": "Dokumenteret REST-API",
+    "div-works-with-your-stack": "VIRKER MED JERES STACK",
+    "h2-talks-to-the-systems": "Hvad ATSuite forbinder til i dag.",
+    "p-pre-built-connectors-a": "To forskellige ting, holdt bevidst adskilt. Nogle integrationer er bygget, leveret og understøttet som en del af produktet. Alt andet kan nås via REST-API og webhooks som en konfigurations- eller projektopgave — vi fortæller jer hvad der er hvad, inden I køber.",
+    "div-erp-finance": "Understøttede connectors",
+    "span-sap": "OIOUBL e-fakturering",
+    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
+    "span-microsoft-dynamics-365": "Betalingsservice",
+    "span-sage": "Fakturaeksport (CSV)",
+    "span-xero": "Fakturalevering på mail",
+    "span-quickbooks": "Stripe betalingslinks",
+    "div-crm-sales": "Integrér via API",
+    "span-salesforce": "ERP- og økonomisystemer",
+    "span-hubspot": "CRM- og salgsværktøjer",
+    "span-dynamics-365-sales": "Servicedesk og ITSM",
+    "span-pipedrive": "Datavarehuse og BI",
+    "div-identity-sso": "Identitet og adgang",
+    "span-okta": "SAML 2.0",
+    "span-microsoft-entra-id": "OpenID Connect",
+    "span-auth0": "Single sign-on",
+    "span-google-workspace": "Tofaktorgodkendelse",
+    "p-anything-else-via-rest": "Dette er integrationsmønstre — ikke færdige connectors. De leveres som konfigurations- eller projektopgave mod REST-API og webhooks."
+  }
+}

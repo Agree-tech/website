@@ -9,8 +9,8 @@
   },
   "page-hero": {
     "div-solutions-sales": "ROZWIĄZANIA · SPRZEDAŻ",
-    "h1-grow-your-business-wit": "Rozwijaj firmę dzięki prowadzonej ścieżce sprzedaży.",
-    "p-atsuite-automates-time": "ATSuite automatyzuje czasochłonne procesy ręczne i udostępnia konfigurowalną ścieżkę sprzedaży, która prowadzi i wspiera Twój zespół w wygrywaniu większej liczby transakcji.",
+    "h1-grow-your-business-wit": "Zamieniaj złożone szanse sprzedaży w zatwierdzone, rozliczane umowy.",
+    "p-atsuite-automates-time": "ATSuite prowadzi zespoły sprzedaży od szansy sprzedaży i konfiguracji produktu do zatwierdzonej umowy, która może trafić bezpośrednio do zarządzania subskrypcjami, realizacji i fakturowania — bez ponownego wprowadzania danych handlowych.",
     "a-request-a-demo": "Poproś o demo",
     "a-see-cpq": "Zobacz CPQ",
     "alt-screenshot": "Tablica lejka sprzedaży w ATSuite: szanse w etapach Nowa, Prezentacja, Oferta, Zamykanie i Wygrana, każda kolumna z wartością ważoną.",
@@ -41,7 +41,7 @@
   "crm-integrations": {},
   "cta-band-dark": {
     "div-ready-to-ignite-a": "GOTOWI NA PRAWDZIWĄ ZMIANĘ?",
-    "h2-streamline-workflows-b": "Uprość procesy. Zwiększ efektywność. Zamykaj więcej transakcji.",
+    "h2-streamline-workflows-b": "Zachowaj ścieżkę audytu od zatwierdzenia ceny do danych faktury.",
     "a-schedule-a-demo": "Umów demo",
     "a-back-to-overview": "Wróć do przeglądu"
   }

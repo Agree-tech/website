@@ -27,6 +27,7 @@ const LOCALES = ['en', 'da', 'pl']
 const LABELS = {
   index: 'Homepage',
   platform: 'Platform',
+  integrations: 'Integrations',
   cpq: 'CPQ',
   billing: 'Billing automation',
   subscription: 'Subscription management',
@@ -35,6 +36,7 @@ const LABELS = {
   implementation: 'Implementation',
   about: 'About us',
   contact: 'Contact',
+  privacy: 'Privacy policy and cookies',
   'index-print': 'Homepage — print version',
 }
 

@@ -9,10 +9,12 @@
   },
   "page-hero": {
     "div-solutions-subscription": "SOLUTIONS · SUBSCRIPTION MANAGEMENT",
-    "h1-streamline-every-subsc": "Streamline every subscription, with predictable revenue.",
+    "h1-streamline-every-subsc": "Control every subscription from activation to renewal and billing.",
     "p-atsuite-subscription-g": "ATSuite Subscription gives you full lifecycle control, usage insights and personalised support. Automated billing and renewals reduce errors and workload — and your recurring revenue stays consistent.",
     "a-schedule-a-demo": "Schedule a demo",
-    "a-see-the-platform": "See the platform"
+    "a-see-the-platform": "See the platform",
+    "alt-screenshot": "The ATSuite subscriptions view for one account: each subscription with its status, billing status, quantity and recurring price.",
+    "div-shot-caption": "ATSuite · Subscriptions — status, billing status, quantity and price per line · illustrative data"
   },
   "split-section-alt": {},
   "split-section": {
@@ -40,8 +42,8 @@
   },
   "cta-band-dark": {
     "div-your-benefits-today-an": "YOUR BENEFITS, TODAY AND TOMORROW",
-    "h2-elevate-operations-fin": "Elevate subscription operations and customer relationships.",
-    "p-an-indispensable-tool-": "An indispensable tool for any business excelling in a subscription model.",
+    "h2-elevate-operations-fin": "Turn signed agreements into billable subscriptions automatically.",
+    "p-an-indispensable-tool-": "Give commercial, operational and finance teams one reliable view of every subscription, change and renewal.",
     "a-contact-us": "Contact us",
     "a-back-to-overview": "Back to overview"
   }

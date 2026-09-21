@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "ATSuite Platform — Integration, Process Engine & Analytics",
-    "description": "Explore the ATSuite platform: a configurable data model, event-driven process engine, documented REST API and operational reporting — delivered as a managed service from Europe.",
-    "og-title": "ATSuite Platform — Integration, Process Engine & Analytics",
-    "og-description": "An extensible data model, event-driven process engine, deep integrations, and analytics — secure, reliable, and built to scale.",
+    "title": "ATSuite Platform — Data Model, Process Engine & Analytics",
+    "description": "Explore the ATSuite platform: a configurable data model, event-driven process engine, operational reporting and flexible deployment — delivered as a managed service from Europe.",
+    "og-title": "ATSuite Platform — Data Model, Process Engine & Analytics",
+    "og-description": "An extensible data model, event-driven process engine, analytics and flexible deployment — secure, reliable, and built to scale.",
     "twitter-title": "ATSuite Platform",
-    "twitter-description": "Extensible data model, event-driven process engine, integrations, and analytics — secure and built to scale."
+    "twitter-description": "Extensible data model, event-driven process engine, analytics and flexible deployment — secure and built to scale."
   },
   "page-hero-dark": {
     "div-the-atsuite-platform": "THE ATSUITE PLATFORM",
-    "h1-configure-launch-go": "Configure. Launch. Go.",
+    "h1-configure-launch-go": "Configure complex commercial operations without rebuilding your entire stack.",
     "p-a-comprehensive-platfo": "A configurable platform for complex B2B operations. ATSuite is built on a modern service architecture and delivered as a managed service from European data centres, kept continuously up to date so no upgrade project ever stops your business.",
     "a-speak-to-an-expert": "Speak to an expert",
     "a-how-implementation-wor": "How implementation works",
@@ -44,39 +44,10 @@
     "div-on-premise": "Your infra",
     "div-your-infrastructure": "By agreement"
   },
-  "integration": {
-    "div-integration": "INTEGRATION",
-    "h2-api-driven-by-design": "API-driven, by design.",
-    "p-being-api-driven-atsui": "ATSuite is API-driven throughout: every object the UI works with is reachable over a documented REST API, with webhooks and an event stream for the things you want pushed to you rather than polled.",
-    "div-api-v3": "API · v3",
-    "div-rest-webhooks": "REST · WEBHOOKS",
-    "span-99-99-uptime": "Documented REST API",
-    "div-works-with-your-stack": "WORKS WITH YOUR STACK",
-    "h3-talks-to-the-systems": "What ATSuite connects to today.",
-    "p-pre-built-connectors-a": "Two different things, kept apart on purpose. Some integrations are built, shipped and supported as part of the product. Everything else is reachable through the REST API and webhooks as a configuration or project task — we will tell you which is which before you buy.",
-    "div-erp-finance": "Supported connectors",
-    "span-sap": "OIOUBL e-invoicing",
-    "span-oracle-netsuite": "EAN / NemHandel (SFTP)",
-    "span-microsoft-dynamics-365": "Betalingsservice",
-    "span-sage": "Invoice export (CSV)",
-    "span-xero": "Invoice email delivery",
-    "span-quickbooks": "Stripe payment links",
-    "div-crm-sales": "Integrate via API",
-    "span-salesforce": "ERP & accounting systems",
-    "span-hubspot": "CRM & sales tools",
-    "span-dynamics-365-sales": "Service desks & ITSM",
-    "span-pipedrive": "Data warehouses & BI",
-    "div-identity-sso": "Identity & access",
-    "span-okta": "SAML 2.0",
-    "span-microsoft-entra-id": "OpenID Connect",
-    "span-auth0": "Single sign-on",
-    "span-google-workspace": "Two-factor authentication",
-    "p-anything-else-via-rest": "These are integration patterns, not shipped connectors — delivered as a configuration or project task against the REST API and webhooks."
-  },
   "data-model": {
     "div-extensible-data-model": "EXTENSIBLE DATA MODEL",
     "h2-adaptable-to-diverse-b": "Adaptable to diverse business requirements.",
-    "p-a-highly-adaptable-dat": "A highly adaptable data model paves the way for customising to your business, integrating with existing systems, and expanding in tandem with growth. Forward-thinking, future-proof, capable of meeting intricate, evolving B2B demands.",
+    "p-a-highly-adaptable-dat": "A highly adaptable data model paves the way for customising to your business, integrating with existing systems, and expanding in tandem with growth.",
     "div-custom-entity-contract": "Custom entity · Contract",
     "span-uuid": ": uuid",
     "span-months": ": months",
@@ -84,20 +55,15 @@
     "span-tier": ": tier",
     "span-enum": ": enum",
     "span-str": ": str",
-    "div-2-custom-fields-added": "▲ 2 CUSTOM FIELDS — ADDED IN 4 MIN, NO DEPLOYMENT"
+    "div-2-custom-fields-added": "▲ 2 CUSTOM FIELDS — ADDED IN 4 MIN, NO DEPLOYMENT",
+    "div-illustrative": "Illustrative panel — not product UI"
   },
   "process": {
     "div-process-engine": "PROCESS ENGINE",
     "h2-built-in-automation-op": "Built-in automation & optimisation.",
-    "p-atsuite-s-process-engi": "ATSuite's process engine is a powerful tool for business efficiency — design, execute and optimise workflows through an intuitive interface. From sales and product management to billing and customer support, every workflow ships automated.",
-    "div-event": "EVENT",
-    "div-quote-signed": "Quote signed",
-    "div-rule": "RULE",
-    "div-if-amt-100k": "If amt > €100k",
-    "div-action": "ACTION",
-    "div-provision-notify": "Provision + notify",
-    "span-42-active-workflows": "42 ACTIVE WORKFLOWS",
-    "span-8-461-runs-today": "▲ 214 RUNS TODAY"
+    "p-atsuite-s-process-engi": "ATSuite's process engine is a powerful tool for business efficiency — design, execute and optimise workflows through an intuitive interface. Workflows can be configured to automate approvals, tasks, orders and customer updates across the revenue lifecycle.",
+    "alt-screenshot": "The ATSuite application-task log: workflows started from subscription events, each with its key, description and status.",
+    "div-shot-caption": "ATSuite · Application tasks — workflows started from subscription events · illustrative data"
   },
   "analytics": {
     "div-analytics": "ANALYTICS",
@@ -124,7 +90,7 @@
   "cta-band-dark": {
     "div-innovate-with-agree-te": "INNOVATE WITH AGREE TECHNOLOGIES",
     "h2-continuous-innovation-": "Continuous innovation. Continuous delivery.",
-    "p-cutting-edge-cloud-bas": "Cutting-edge cloud-based CPQ and billing solutions for B2B enterprises — flexible, scalable, secure.",
+    "p-cutting-edge-cloud-bas": "Launch new pricing models without rebuilding your finance stack.",
     "a-talk-to-an-expert": "Talk to an expert",
     "a-how-implementation-wor": "How implementation works"
   }

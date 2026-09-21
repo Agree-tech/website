@@ -1,0 +1,11 @@
+<section class="split-section{{#if alt}} alt{{/if}}"{{prop:idAttr}}>
+  <div class="container integrations">
+    <div class="integrations-head">
+      <div class="eyebrow"><span class="dot"{{prop:dotStyle}}></span>{{slot:eyebrow}}</div>
+      <h2>{{slot:heading}}</h2>
+      <p>{{slot:body}}</p>
+    </div>
+    {{include:visual}}
+{{#if foot}}    <p class="integration-foot">{{slot:foot}}</p>
+{{/if}}  </div>
+</section>

@@ -9,10 +9,12 @@
   },
   "page-hero": {
     "div-solutions-subscription": "ROZWIĄZANIA · ZARZĄDZANIE SUBSKRYPCJAMI",
-    "h1-streamline-every-subsc": "Uporządkuj każdą subskrypcję i zyskaj przewidywalne przychody.",
+    "h1-streamline-every-subsc": "Kontroluj każdą subskrypcję od aktywacji po odnowienie i fakturowanie.",
     "p-atsuite-subscription-g": "ATSuite Subscription daje pełną kontrolę nad cyklem życia, wgląd w zużycie i spersonalizowane wsparcie. Automatyczne fakturowanie i odnowienia ograniczają błędy i nakład pracy — a przychody cykliczne pozostają stabilne.",
     "a-schedule-a-demo": "Umów demo",
-    "a-see-the-platform": "Zobacz platformę"
+    "a-see-the-platform": "Zobacz platformę",
+    "alt-screenshot": "Widok subskrypcji ATSuite dla jednego konta: każda subskrypcja ze statusem, statusem rozliczenia, ilością i ceną cykliczną.",
+    "div-shot-caption": "ATSuite · Subskrypcje — status, status rozliczenia, ilość i cena w każdej linii · dane ilustracyjne"
   },
   "split-section-alt": {},
   "split-section": {
@@ -40,8 +42,8 @@
   },
   "cta-band-dark": {
     "div-your-benefits-today-an": "TWOJE KORZYŚCI, DZIŚ I JUTRO",
-    "h2-elevate-operations-fin": "Podnieś jakość obsługi subskrypcji i relacji z klientami.",
-    "p-an-indispensable-tool-": "Niezbędne narzędzie dla każdej firmy, która chce odnieść sukces w modelu subskrypcyjnym.",
+    "h2-elevate-operations-fin": "Zamieniaj podpisane umowy w rozliczane subskrypcje — automatycznie.",
+    "p-an-indispensable-tool-": "Daj zespołom handlowym, operacyjnym i finansowym jeden wiarygodny obraz każdej subskrypcji, zmiany i odnowienia.",
     "a-contact-us": "Skontaktuj się z nami",
     "a-back-to-overview": "Wróć do przeglądu"
   }

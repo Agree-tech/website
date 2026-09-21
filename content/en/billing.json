@@ -18,7 +18,7 @@
   },
   "split-section": {
     "div-billing-capabilities": "BILLING · CAPABILITIES",
-    "h2-discover-the-billing-c": "Discover the billing capabilities of ATSuite.",
+    "h2-discover-the-billing-c": "Designed to handle complex B2B billing.",
     "div-models": "MODELS",
     "h3-flexible-billing-model": "Flexible billing models",
     "p-usage-based-tiered-one": "Usage-based, tiered, one-time and agreement-based — ATSuite adapts to your business logic, whether you bill for consumption, projects or fixed-price services.",
@@ -55,7 +55,7 @@
   },
   "cta-band-dark": {
     "div-ready-for-a-billing": "READY FOR A BILLING UPGRADE?",
-    "h2-modernise-your-billing": "Modernise your billing with ATSuite.",
+    "h2-modernise-your-billing": "Identify billing exceptions before the bill run.",
     "p-walk-through-a-real": "Walk through a real bill-run on real data in 30 minutes.",
     "a-book-a-demo": "Book a demo",
     "a-back-to-overview": "Back to overview"

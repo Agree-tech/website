@@ -10,7 +10,7 @@
   "page-hero": {
     "div-solutions-cpq": "ROZWIĄZANIA · CPQ",
     "h1-quote-with-speed-confi": "Ofertuj szybko, konfiguruj precyzyjnie.",
-    "p-an-automated-cpq-that": "Zautomatyzowany CPQ, który upraszcza wycenę i ofertowanie — generuje spójne, precyzyjne, wielojęzyczne oferty odpowiadające na zapytania klientów w sekundy, a nie w dni.",
+    "p-an-automated-cpq-that": "Konfiguruj złożone produkty, stosuj ceny indywidualne dla klienta i kieruj wyjątki do akceptacji — a następnie przenoś zatwierdzone warunki handlowe bezpośrednio do subskrypcji i fakturowania.",
     "a-schedule-a-demo": "Umów demo",
     "a-see-the-platform": "Zobacz platformę",
     "alt-screenshot": "Oferta w ATSuite: pasek etapów szansy od Nowej do Wygranej, nad zatwierdzoną ofertą z długością umowy, ceną jednorazową i cykliczną oraz marżą, i skonfigurowaną pozycją produktu z grupą, SKU, typem subskrypcji i ilością.",
@@ -39,9 +39,9 @@
     "p-a-multilingual-product": "Wielojęzyczny katalog produktów sprawia, że Twoja oferta pozostaje dostępna na rynkach europejskich i globalnych."
   },
   "split-section-alt": {
-    "div-the-transformative-pow": "PRZEŁOMOWA SIŁA CPQ",
+    "div-the-transformative-pow": "CPQ · CO SIĘ ZMIENIA",
     "h2-free-your-sales-team": "Daj zespołowi sprzedaży robić to, co potrafi najlepiej — sprzedawać.",
-    "p-atsuite-revolutionises": "ATSuite zmienia proces sprzedaży. Automatyzując i optymalizując kluczowe elementy ofertowania i tworzenia umów, uwalnia zespół, by skupił się na relacjach i przychodach — a nie na papierologii.",
+    "p-atsuite-revolutionises": "ATSuite automatyzuje te elementy ofertowania i tworzenia umów, które pochłaniają czas sprzedaży, dzięki czemu zespół zajmuje się klientami i przychodami, a nie papierologią.",
     "li-faster-more-consistent": "Szybsze i bardziej spójne oferty — przy dowolnej złożoności",
     "li-approval-routing-align": "Ścieżki akceptacji dopasowane do Twojego modelu nadzoru",
     "li-direct-hand-off-to": "Bezpośrednie przekazanie do subskrypcji i fakturowania — bez przepisywania danych",

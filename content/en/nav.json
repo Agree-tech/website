@@ -3,9 +3,10 @@
     "aria-label": "Primary"
   },
   "main": {
-    "div-solutions": "Solutions",
+    "div-solutions": "Core capabilities",
+    "div-business-use-cases": "Business use cases",
     "a-platform": "Platform",
-    "a-implementation": "Implementation",
+    "a-implementation": "Integrations",
     "a-about-us": "About us",
     "a-talk-to-an-expert": "Talk to an expert",
     "a-book-a-demo": "Book a demo"
@@ -17,9 +18,9 @@
     "div-lifecycle-renewals-and": "Lifecycle, renewals, and usage analytics.",
     "div-billing-automation": "Billing Automation",
     "div-flexible-monetization-": "Flexible monetisation for B2B SaaS.",
-    "div-process-optimisation": "Process Optimisation",
+    "div-process-optimisation": "Process Automation",
     "div-event-driven-workflow-": "Event-driven workflow automation.",
-    "div-sales": "Sales",
-    "div-pipeline-playbooks-and": "Pipeline, playbooks, and approvals."
+    "div-sales": "Sales operations",
+    "div-pipeline-playbooks-and": "From opportunity to approved agreement."
   }
 }

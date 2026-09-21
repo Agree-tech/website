@@ -10,7 +10,7 @@
   "page-hero": {
     "div-solutions-cpq": "LØSNINGER · CPQ",
     "h1-quote-with-speed-confi": "Tilbudsgiv hurtigt, konfigurér præcist.",
-    "p-an-automated-cpq-that": "En automatiseret CPQ, der forenkler prissætning og tilbudsgivning — og danner ensartede, præcise tilbud på flere sprog, som besvarer kundehenvendelser på sekunder frem for dage.",
+    "p-an-automated-cpq-that": "Konfigurér komplekse produkter, anvend kundespecifikke priser og send undtagelser til godkendelse — og før derefter de godkendte kommercielle vilkår direkte videre til abonnement og fakturering.",
     "a-schedule-a-demo": "Book en demo",
     "a-see-the-platform": "Se platformen",
     "alt-screenshot": "Et ATSuite-tilbud: salgsforløbets faser fra Ny til Vundet, over et godkendt tilbud med kontraktlængde, engangs- og løbende pris og avance, samt en konfigureret produktlinje med gruppe, SKU, abonnementstype og antal.",
@@ -39,9 +39,9 @@
     "p-a-multilingual-product": "Et flersproget produktkatalog sikrer, at jeres udbud er tilgængeligt på tværs af europæiske og globale markeder."
   },
   "split-section-alt": {
-    "div-the-transformative-pow": "CPQ'S FORVANDLENDE KRAFT",
+    "div-the-transformative-pow": "CPQ · HVAD DER ÆNDRER SIG",
     "h2-free-your-sales-team": "Giv jeres salgsteam frihed til det, de er bedst til — at sælge.",
-    "p-atsuite-revolutionises": "ATSuite forvandler salgsprocessen. Ved at automatisere og optimere de afgørende dele af tilbudsgivning og kontraktgenerering får jeres team frihed til at fokusere på relationer og omsætning — ikke papirarbejde.",
+    "p-atsuite-revolutionises": "ATSuite automatiserer de dele af tilbudsgivning og kontraktgenerering, der æder salgsteamets tid, så teamet arbejder med kunder og omsætning frem for papirarbejde.",
     "li-faster-more-consistent": "Hurtigere og mere ensartede tilbud — uanset kompleksitet",
     "li-approval-routing-align": "Godkendelsesflow tilpasset jeres governance-model",
     "li-direct-hand-off-to": "Direkte overlevering til abonnement & fakturering — uden genindtastning",

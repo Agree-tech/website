@@ -1,0 +1,9 @@
+<section class="legal-block{{#if heading}} legal-start{{/if}}{{#if alt}} alt{{/if}}"{{prop:idAttr}}>
+  <div class="container legal">
+{{#if eyebrow}}    <div class="eyebrow"><span class="dot"></span>{{slot:eyebrow}}</div>
+{{/if}}{{#if heading}}    <h2 class="legal-title">{{slot:heading}}</h2>
+{{/if}}{{#if list}}    <ul class="legal-bullets">
+{{/if}}{{#each items}}    <{{prop:tag}}>{{slot:text}}</{{prop:tag}}>
+{{/each}}{{#if list}}    </ul>
+{{/if}}  </div>
+</section>
