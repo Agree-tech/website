@@ -181,6 +181,18 @@ function localizeUrls(html, locale, pageFile, localesForPage, indexable) {
     (_, p) => `<meta property="og:url" content="${intoLocale(p)}" />`
   );
 
+  // Web3Forms sends the browser back here after a successful submission, and
+  // the value has to be an absolute URL — a relative path that worked in every
+  // locale is not an option. Left as authored it named the English page on the
+  // apex domain, so a Danish or Polish visitor who submitted the form was
+  // dropped into English after two redirect hops (apex -> www, then
+  // /contact.html -> /en/contact.html). Rewriting it per locale lands them on
+  // their own page, first time.
+  out = out.replace(
+    /<input type="hidden" name="redirect" value="[^"]*"\s*\/?>/,
+    `<input type="hidden" name="redirect" value="${SITE}/${locale.code}/contact.html?success=true">`
+  );
+
   const alternates = localesForPage
     .map(
       (l) =>
@@ -199,11 +211,25 @@ function localizeUrls(html, locale, pageFile, localesForPage, indexable) {
   return out;
 }
 
+/**
+ * Pages that do not get _head.html — no consent banner, no analytics.
+ *
+ * index-print.html is a print artefact, noindex and kept out of the sitemap.
+ * Measuring it would pollute the property with page views nobody asked for,
+ * and a cookie banner over something built to be printed is just noise.
+ */
+const NO_HEAD_PARTIAL = new Set(['index-print.html']);
+
 /** The page template with nav, footer and JSON-LD inlined; placeholders intact. */
 function compose(html, partials, pageFile, locale) {
   const config = readPageConfig(html);
 
   let out = html;
+  // Straight after <head>, not before </head>: Cookiebot's auto-blocker only
+  // governs scripts it sees after itself, so it has to be first on the page.
+  if (partials.head && !NO_HEAD_PARTIAL.has(pageFile)) {
+    out = out.replace('<head>', `<head>\n${partials.head}`);
+  }
   out = out.replace('</head>', `${partials.jsonld}\n</head>`);
   out = out.replace(
     '<div id="site-nav"></div>',
@@ -310,6 +336,39 @@ function writeSitemap(pages, indexable) {
 }
 
 /**
+ * The WordPress slugs, mapped to the page that now carries their subject.
+ *
+ * The three subscription URLs collapse onto one page because the new site has
+ * one subscription page; that was a deliberate call, not an accident of the
+ * mapping. /hubspot-leads-landing-page and /contact-3 were both lead-capture
+ * pages, so they land on contact.
+ */
+const WORDPRESS_URLS = {
+  '/hubspot-leads-landing-page': 'contact.html',
+  '/contact-3': 'contact.html',
+  '/benefits-of-billing-automation': 'billing.html',
+  '/subscription-management-platform-b2b': 'subscription.html',
+  '/what-is-subscription-management-for-saas-teams': 'subscription.html',
+  '/b2b-subscription-management-solutions-agree-technologies-solution': 'subscription.html',
+  '/cpq-software-european-businesses': 'cpq.html',
+  '/process-optimization-tools-agree-technologies-2': 'process.html',
+  '/new-platform': 'platform.html',
+  '/about-agree-technologies-b2b-cpq-billing': 'about.html',
+  '/implementation': 'implementation.html',
+  // The policy lived here, and cookie banners and email footers still point at
+  // it — this one will keep receiving traffic long after the others stop.
+  '/privacy-policy': 'privacy.html',
+};
+
+/** Rank Math wrote these; build.js writes /sitemap.xml instead. */
+const LEGACY_SITEMAPS = [
+  '/sitemap_index.xml',
+  '/page-sitemap.xml',
+  '/video-sitemap.xml',
+  '/local-sitemap.xml',
+];
+
+/**
  * A static redirect, not JavaScript language sniffing — crawlers handle a
  * meta refresh and a 302 predictably.
  *
@@ -344,9 +403,24 @@ function writeRootRedirect() {
     .map((p) => `/${p}  /${def.code}/${p}  301!`);
   lines.unshift(`/  /${def.code}/  302!`);
 
-  // The policy lived at /privacy-policy/ on the old site, and cookie banners
-  // and email footers still point there.
-  lines.push(`/privacy-policy  /${def.code}/privacy.html  301!`);
+  // Every URL the WordPress site had indexed, from its Rank Math page-sitemap
+  // read on 22 Sep 2026. These are slugs no page here will ever have again, so
+  // without this each one is a 404 on cutover day and whatever ranking it held
+  // is discarded. Written without a trailing slash on purpose: Netlify matches
+  // both forms from the slashless rule (verified against the deploy preview —
+  // /privacy-policy and /privacy-policy/ both 301), so one line covers both.
+  //
+  // The old site was English-only, so they all land in the default locale.
+  for (const [slug, page] of Object.entries(WORDPRESS_URLS)) {
+    lines.push(`${slug}  /${def.code}/${page}  301!`);
+  }
+
+  // Rank Math's sitemaps. Nothing of ours serves these paths, and a 404 on a
+  // sitemap Google has on file is a needless error in Search Console.
+  for (const stale of LEGACY_SITEMAPS) {
+    lines.push(`${stale}  /sitemap.xml  301!`);
+  }
+
   fs.writeFileSync(path.join(DIST, '_redirects'), lines.join('\n') + '\n', 'utf8');
 }
 
@@ -395,6 +469,7 @@ async function build() {
     nav: loadPartial('_nav.html'),
     foot: loadPartial('_foot.html'),
     jsonld: loadPartial('_jsonld.html'),
+    head: loadPartial('_head.html'),
   };
 
   const pages = listPages();
@@ -548,6 +623,7 @@ async function renderOne({ page, locale: code, doc }) {
     nav: loadPartial('_nav.html'),
     foot: loadPartial('_foot.html'),
     jsonld: loadPartial('_jsonld.html'),
+    head: loadPartial('_head.html'),
   };
 
   const layout = FROM_BLOCKS

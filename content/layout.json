@@ -1744,7 +1744,7 @@
               "tag": "li"
             },
             "slots": {
-              "text": "li-creation-of-profile"
+              "text": "li-necessary-functions-th"
             }
           },
           {
@@ -1768,7 +1768,7 @@
               "tag": "li"
             },
             "slots": {
-              "text": "li-marketing"
+              "text": "li-protecting-our-forms-a"
             }
           }
         ],
@@ -1821,7 +1821,7 @@
               "tag": "h4"
             },
             "slots": {
-              "text": "h4-linkedin"
+              "text": "h4-hcaptcha"
             }
           },
           {

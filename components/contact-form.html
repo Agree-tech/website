@@ -46,6 +46,19 @@
         </div>
         <p class="privacy-note">{{slot:p-we-handle-the-data}} <a href="privacy.html">{{slot:a-privacy-policy}}</a>.</p>
         <input type="hidden" name="redirect" value="https://agree-tech.com/contact.html?success=true">
+        <!--
+          Spam protection. The access key above is public — it has to be, it is
+          in the shipped HTML — so without a captcha the Web3Forms endpoint can
+          be posted to directly. data-captcha="true" tells web3forms/client/script.js
+          to render hCaptcha with Web3Forms' own shared sitekey, so there is no
+          key of ours to manage and nothing to configure in their dashboard;
+          the widget posts h-captcha-response and they verify it server-side.
+          Turnstile would be the better choice — it sets no tracking cookies —
+          but it is a Web3Forms PRO feature. See MIGRATION-PLAN.md §3.1.
+          Cookiebot must classify this as Necessary or the form is dead until a
+          visitor accepts the banner (MIGRATION-PLAN.md, C6).
+        -->
+        <div class="h-captcha" data-captcha="true"></div>
         <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">{{slot:button-send-message}}</button></div>
       </form>
     </div>

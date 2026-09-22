@@ -1,0 +1,70 @@
+<!--
+  Everything that must appear in the <head> of every page, injected by build.js
+  immediately after <head> so it is the first thing the browser executes.
+
+  Placement is not cosmetic. Cookiebot's automatic blocking works by rewriting
+  script tags it encounters *after* itself; anything above it loads unblocked.
+  So this partial goes at the top of the head, not the bottom, and the order
+  inside it is Cookiebot first, analytics second.
+
+  The one script deliberately exempted is the captcha on the contact page — it
+  carries data-cookieconsent="ignore" in shell/contact.head.html and
+  src/contact.html. Spam protection on a form the visitor chose to use is
+  necessary, not consent-gated, and if it were blocked the form would be
+  unsubmittable until somebody accepted the banner — failing silently, which is
+  the worst way for a contact form to break.
+
+  Not injected into index-print.html: it is noindex, it is a print artefact,
+  and it has no business running analytics or showing a consent banner.
+-->
+
+<!--
+  Search Console ownership. Two tags because the WordPress site had two plugins
+  each adding their own, and either one proves ownership. They are reproduced
+  here so verification does not lapse in the window between DNS cutover and
+  Google's next check. The durable verification is the DNS TXT record
+  (MIGRATION-PLAN.md G2) — these are the belt to its braces, and can be deleted
+  once the DNS record has been verified for a month.
+-->
+<meta name="google-site-verification" content="sys3vnHMWMvZ1TZn-PVWAnu9H2g23P8L4WhxRUI_M6s" />
+<meta name="google-site-verification" content="-YoCNooMN1yzkB9FCzlLpvmViutkd2bVRROL4R2SsrI" />
+
+<!--
+  Consent manager. Same domain group (CBID) the WordPress site used, so the
+  banner, styling and cookie declaration carry over unchanged.
+
+  data-blockingmode="auto" is what makes consent legally meaningful here: it
+  holds back the analytics tags below until the visitor accepts, rather than
+  firing them and asking afterwards. data-implementation="wp" from the old site
+  is deliberately dropped — that flag is for the WordPress plugin.
+
+  After go-live the domain needs re-scanning in Cookiebot so the cookie
+  declaration describes this site rather than the WordPress one.
+-->
+<script
+  id="Cookiebot"
+  src="https://consent.cookiebot.com/uc.js"
+  data-cbid="d308660e-f6c7-4a86-a313-12360c962166"
+  data-blockingmode="auto"
+  type="text/javascript"
+></script>
+
+<!--
+  GA4. Same measurement ID as the WordPress property, which is the whole point:
+  the property is attached to the domain rather than to WordPress, so keeping
+  the ID keeps the history unbroken across cutover.
+
+  There is no hand-written Consent Mode snippet here on purpose. Cookiebot's
+  auto-blocker already prevents both of these tags from running before consent,
+  which is what the law requires; adding a second source of consent defaults
+  would mean two systems racing to set the same values. If Google's modelled
+  measurement is ever wanted, enable Consent Mode in the Cookiebot dashboard —
+  a setting, not a code change.
+-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-J8MP9W1XGZ');
+</script>

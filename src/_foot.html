@@ -33,6 +33,16 @@
         <a href="implementation.html">{{i18n:foot.main.a-implementation}}</a>
         <a href="contact.html">{{i18n:foot.main.a-contact}}</a>
         <a href="privacy.html">{{i18n:foot.main.a-privacy-policy}}</a>
+        <!--
+          Withdrawing consent has to be as easy as giving it, so the banner
+          needs a way back. Cookiebot.renew() reopens it.
+
+          The href is a real fallback, not a placeholder: index-print.html does
+          not load Cookiebot at all, and on any page where the script failed to
+          load window.Cookiebot is undefined — in both cases this degrades to
+          the cookie section of the privacy policy instead of throwing.
+        -->
+        <a href="privacy.html#cookies" onclick="if (window.Cookiebot) { Cookiebot.renew(); return false; }">{{i18n:foot.main.a-cookie-settings}}</a>
       </div>
     </div>
     <div class="foot-bottom">

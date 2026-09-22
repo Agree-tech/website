@@ -17,7 +17,6 @@
 <meta name="twitter:title" content="{{i18n:contact.meta.twitter-title}}" />
 <meta name="twitter:description" content="{{i18n:contact.meta.twitter-description}}" />
 <meta name="twitter:image" content="https://www.agree-tech.com/assets/og-default.png" />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="shared.css" />
 <link rel="stylesheet" href="subpage.css" />
@@ -53,8 +52,18 @@
 .info-row p { color:rgba(255,255,255,0.65); font-size:13.5px; margin-top:3px;}
 .notice { background:#FEF3C7; border:1px solid #FDE68A; color:#92400E; padding:14px 16px; border-radius:10px; font-size:13.5px; line-height:1.55; margin-bottom:24px;}
 .notice b { color:#78350F;}
+/* The hCaptcha iframe is a fixed 303px and will not shrink, so the container
+   scrolls rather than pushing the form card wider than a narrow screen. */
+.h-captcha { margin-top:18px; max-width:100%; overflow-x:auto;}
 @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;} }
 </style>
+<!-- Renders the .h-captcha widget in the form below and posts its response
+     with the submission. Only this page has a form, so it is not in _head.html.
+     data-cookieconsent="ignore" exempts it from Cookiebot auto-blocking: spam
+     protection on a form the visitor chose to use is necessary, not consent-
+     gated, and blocking it would leave the form silently unsubmittable until
+     somebody accepted the banner. -->
+<script src="https://web3forms.com/client/script.js" async defer data-cookieconsent="ignore"></script>
 </head>
 <body>
 <script>window.AT_PAGE='contact';</script>
@@ -116,6 +125,19 @@
         </div>
         <p class="privacy-note">{{i18n:contact.split-section.p-we-handle-the-data}} <a href="privacy.html">{{i18n:contact.split-section.a-privacy-policy}}</a>.</p>
         <input type="hidden" name="redirect" value="https://agree-tech.com/contact.html?success=true">
+        <!--
+          Spam protection. The access key above is public — it has to be, it is
+          in the shipped HTML — so without a captcha the Web3Forms endpoint can
+          be posted to directly. data-captcha="true" tells web3forms/client/script.js
+          to render hCaptcha with Web3Forms' own shared sitekey, so there is no
+          key of ours to manage and nothing to configure in their dashboard;
+          the widget posts h-captcha-response and they verify it server-side.
+          Turnstile would be the better choice — it sets no tracking cookies —
+          but it is a Web3Forms PRO feature. See MIGRATION-PLAN.md §3.1.
+          Cookiebot must classify this as Necessary or the form is dead until a
+          visitor accepts the banner (MIGRATION-PLAN.md, C6).
+        -->
+        <div class="h-captcha" data-captcha="true"></div>
         <div style="margin-top:22px"><button class="btn btn-blue btn-lg" type="submit" style="width:100%">{{i18n:contact.split-section.button-send-message}}</button></div>
       </form>
     </div>
