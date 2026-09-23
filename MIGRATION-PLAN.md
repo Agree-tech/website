@@ -692,7 +692,18 @@ The redirect now points at `integrations.html` as the nearest subject match. Tha
 does not preserve the page: anyone arriving from a HubSpot-partner search lands somewhere that never
 says HubSpot.
 
-**D5 — worth a decision before cutover, and it is a business one:**
+**D5 — DECIDED 23 Sep: option (b).** Implemented as a prose sentence, *not* by restoring the
+vendor name to the connector chip — that chip sits under *Integrate via API*, whose own caption says
+these are patterns and not shipped connectors, and every sibling chip is a category. Naming a vendor
+there is precisely what Q3/Q6 removed. `integration.p-anything-else-via-rest` now ends *"Agree
+Technologies is an official HubSpot Solutions Partner."* in all three locales; `span-hubspot` still
+reads *CRM & sales tools*. Key sets unchanged, so no CMS migration.
+
+**Still needs confirming:** that the partnership is current. The only source is Agree's own
+WordPress page. If it has lapsed, the new site now carries exactly the kind of unverified claim the
+CFO review existed to remove — the same check the privacy copy got, and it has not been done here.
+
+The options as they stood:
 
 | | |
 |---|---|

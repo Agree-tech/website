@@ -48,6 +48,6 @@
     "span-microsoft-entra-id": "OpenID Connect",
     "span-auth0": "Single sign-on",
     "span-google-workspace": "Two-factor authentication",
-    "p-anything-else-via-rest": "These are integration patterns, not shipped connectors — delivered as a configuration or project task against the REST API and webhooks."
+    "p-anything-else-via-rest": "These are integration patterns, not shipped connectors — delivered as a configuration or project task against the REST API and webhooks. Agree Technologies is an official HubSpot Solutions Partner."
   }
 }
