@@ -30,17 +30,15 @@ of the property; twelve unredirected URLs discard whatever ranking they hold; an
 claiming ad cookies and LinkedIn sharing on a site that sets no cookies is a compliance problem in
 its own right — one that is *created*, not merely inherited, the moment the new site goes live.
 
-**Sequencing that matters:** G2 (DNS verification) must happen **before** cutover, not after.
-C1 (self-host fonts) must happen **before** C2 (Cookiebot), or the banner blocks your typography.
+**Sequencing that matters:** C4 (force a Cookiebot rescan) must happen **before** C7 (embed the
+cookie declaration), or the page renders the WordPress cookie list under the new policy text.
 
-> ### ⚠ The two steps that must not be skipped
+> ### ⚠ The step that must not be skipped
 >
-> Everything else in this plan announces its own failure. These two fail **silently**, look
-> completely normal in a browser, and are expensive to discover late.
+> ~~**G2**~~ — **done and verified 23 Sep.** See §2.1.
 >
-> **G2 — verify Search Console by DNS *while WordPress is still up*.** Both current verifications
-> are plugin-injected meta tags. They die with the install and take property access with them. This
-> is the only step in the plan that does not roll back.
+> One silent failure is left. Everything else in this plan announces its own failure; this one looks
+> completely normal in a browser and is expensive to discover late.
 >
 > **G7 — at cutover, make `agree-tech.com` the Netlify *primary domain*, then trigger a fresh
 > deploy, then `curl -I` and confirm `x-robots-tag: noindex` is gone.** Adding the domain as an
@@ -84,8 +82,18 @@ old install in a hurry.
 | reCAPTCHA v3 site key | `6Lf0wLMqAAAAADVs8PQbK_yHinMDtgKGrkDcgV-z` | Advanced Google reCAPTCHA |
 | Web3Forms access key | `07b59940-9095-4781-b372-7adf5cbe4570` | already on the new site, `components/contact-form.html:12` |
 
-Two Search Console verifications exist because two plugins each added one. **Either** proves
-ownership — but both vanish with WordPress, which is why G2 replaces them with DNS.
+Two Search Console verifications exist because two plugins each added one.
+
+**Corrected 23 Sep, after G2.** A DNS lookup showed `sys3vnHMWMvZ...` was *already* published as a TXT
+record on the apex as well as being injected as a meta tag — so that verification would probably have
+survived WordPress being removed, and the original framing here (that both would vanish) overstated
+the risk. G2 was still the right move: a **Domain** property verified by DNS covers every subdomain
+and protocol and depends on no plugin. The apex now publishes two verification tokens:
+
+```
+google-site-verification=TD-5HnlimAlQ8GCUmGWVAEFpAglln33Wly35dXH6AxU   (Domain property, added 23 Sep)
+google-site-verification=sys3vnHMWMvZ1TZn-PVWAnu9H2g23P8L4WhxRUI_M6s   (pre-existing)
+```
 
 ### 2.2 The 13 indexed URLs
 
@@ -366,7 +374,7 @@ need a second pair of eyes; it is also the cheapest one to get right.
 | # | Blocker | Status | Blocks |
 |---|---|---|---|
 | **B1** | Cloudflare account | **Closed — not needed.** Account and widget created (`0x4AAAAAAE_1DbCPMrqi8Wot`), then Turnstile turned out to be Web3Forms PRO. Widget parked, costs nothing; hCaptcha needs no account, no keys, no dashboard. | — |
-| **B2** | Registrar (one.com) DNS access | **Available.** Nothing to chase — but G2 should still be done early, not on cutover day. | G2, §5 |
+| **B2** | Registrar (one.com) DNS access | **Closed.** G2 completed and verified 23 Sep. | — |
 | **B3** | Which legacy URLs fold onto `subscription.html` | **Answered: all of them.** Note there are **three**, not four — `/subscription-management-platform-b2b/`, `/what-is-subscription-management-for-saas-teams/`, `/b2b-subscription-management-solutions-agree-technologies-solution/`. If a fourth was intended, say which and R1 changes. R2 is closed; no Search Console lookup needed. | R1 |
 | **B4** | Cookiebot plan | **Answered 23 Sep — aliases are available.** Karina's Domains & Aliases screen lists `www.agree-tech.com` with an **Aliases** column (currently 0), which the free tier does not offer. So runbook step 9 runs as written, before DNS moves, at no extra cost. Same screen shows **Pages 24** (the WordPress count; the new site is 37, still within limits) and **Scan frequency: Monthly** — which is why C4 must be a *manual* rescan, not a wait. | closed |
 | **B5** | GA4 retention | **Answered 23 Sep.** The property has *two* settings, not one: **Event data 2 months** (the default) and **User data 14 months** with *Reset on new user activity* ON — so the user-level clock runs from the visitor's **last** visit. Both are now stated in all three locales. Also caught a second stale claim this exposed: the deletion section said data was kept *1 year*. | closed |
