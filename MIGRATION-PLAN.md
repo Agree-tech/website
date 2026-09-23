@@ -640,8 +640,23 @@ and returned with the tag's JavaScript. That is why it appears in no HTML — no
 the new site — and why the admin screens for *linked accounts* show nothing.
 
 **Where to remove it:** Tag Manager → the **"Google tags"** tab (beside "Accounts") → open the tag
-for `agree-tech.com` → **Destinations** → remove `AW-17054781647`. Reachable equivalently via
-GA4 → Admin → Data streams → the web stream → *Configure tag settings*.
+for `agree-tech.com` → **Destinations**. Reachable equivalently via GA4 → Admin → Data streams →
+the web stream → *Configure tag settings*.
+
+**It cannot simply be deleted** (confirmed 23 Sep). Google answers with *"To remove a destination,
+you must assign it to another Google tag"* — a destination is not allowed to be orphaned. So it is
+detached by **moving** it, not deleting it: choose **Create a new Google tag**, name it something
+self-explanatory such as *"Unused — parked Google Ads destination"*, and never install it on a site.
+`AW-17054781647` then hangs off a tag that is on no page, and stops firing. The Ads account and its
+conversion setup are untouched.
+
+Do **not** move it onto `GT-KD7DXG73`: that tag is live on the WordPress site, so the destination
+would keep firing there until cutover.
+
+**Verification is independent of any dashboard:** re-run
+`curl "https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ"` and confirm `AW-17054781647` no
+longer appears. That response is the authority — the admin screens are what hid this in the first
+place.
 
 **If it cannot be removed** — a dormant or agency-held Ads account is plausible — the compliance
 position is still sound: our Consent Mode defaults deny `ad_storage`, `ad_user_data` and
