@@ -50,21 +50,50 @@
 ></script>
 
 <!--
+  Google Consent Mode v2 defaults — DENIED until the visitor says otherwise.
+
+  This block must run, always, before anything Google loads, which is why it
+  carries data-cookieconsent="ignore": that is Cookiebot's own marker for
+  "never block this", and it is the markup Google and Cookiebot both document
+  for the consent-mode defaults themselves. Blocking the thing that denies
+  consent would be exactly backwards.
+-->
+<script data-cookieconsent="ignore">
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+</script>
+
+<!--
   GA4. Same measurement ID as the WordPress property, which is the whole point:
   the property is attached to the domain rather than to WordPress, so keeping
   the ID keeps the history unbroken across cutover.
 
-  There is no hand-written Consent Mode snippet here on purpose. Cookiebot's
-  auto-blocker already prevents both of these tags from running before consent,
-  which is what the law requires; adding a second source of consent defaults
-  would mean two systems racing to set the same values. If Google's modelled
-  measurement is ever wanted, enable Consent Mode in the Cookiebot dashboard —
-  a setting, not a code change.
+  Both tags below are blocked MANUALLY — type="text/plain" plus
+  data-cookieconsent="statistics" — not left to Cookiebot's automatic blocker.
+  Tested against the deploy preview on 23 Sep, auto-blocking did NOT hold these
+  back: gtag kept its real src and text/javascript type and executed while
+  Cookiebot reported hasResponse=false, so google_tag_manager was live before
+  anyone had been asked. Auto-blocking derives from Cookiebot's scan of the
+  live domain, which is still the WordPress site, so it cannot be relied on
+  here — and arguably not after cutover either.
+
+  Manual marking does not depend on any scan. Cookiebot rewrites these back to
+  executable script once statistics consent is given. If Cookiebot fails to
+  load entirely they simply never run, which is the safe direction to fail in.
 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
+<script type="text/plain" data-cookieconsent="statistics"
+        async src="https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ"></script>
+<script type="text/plain" data-cookieconsent="statistics">
   gtag('js', new Date());
   gtag('config', 'G-J8MP9W1XGZ');
 </script>
