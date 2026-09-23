@@ -591,7 +591,7 @@ off on the assumption that it is stale.
 
 | # | Item |
 |---|---|
-| **C9** | **Decided 23 Sep: option (a) — Agree does not run Google Ads, so unlink it.** The approved policy sentence then stays true and no copy reopens. Karina to remove the link in GA4, then this must be **re-verified in a browser** — the same check that found it. Until the tag stops firing, the policy is inaccurate. See §8.4a. |
+| **C9** | **Closed 23 Sep — disclosed, not removed.** Google will not delete a tag destination, only reassign it (§8.4b); parking `AW-17054781647` on a throwaway tag was judged not worth doing. The policy now describes the link instead. Four values × 3 locales changed, key sets unchanged, so no CMS migration. **These four need Karina's re-approval** — they moved after her sign-off, and are ruled in amber on the review page. |
 
 Carrying the measurement ID forward preserved more than the history: it preserved an integration
 nobody had mentioned. Worth auditing the property for other links — Google Signals, Search Ads 360,
@@ -874,3 +874,26 @@ captcha does.
 | **N2** | **Three key names now misdescribe their content.** `cookies.h4-linkedin` carries the hCaptcha disclosure; `cookies.li-creation-of-profile` and `cookies.li-marketing` carry the two purposes that replaced profiling and marketing. Values are correct and key names never render — but the CMS derives its field labels from them, so Karina would see a field labelled *LinkedIn* containing hCaptcha text. | Renaming changes the key set, which forces `npm run generate` + a Payload migration on the Hetzner box. That is phase-5 work needing its own go. |
 | ~~N3~~ | **Closed 23 Sep.** Both retention periods are now concrete: event data 2 months, user data 14 months from the last visit. Answering B5 also exposed a *second* stale claim — the deletion section still said *1 year* — which named none of the words the earlier sweep grepped for and so had survived it. | — |
 | **N4** | Danish and Polish legal copy was written here, not by a translator. | **D4** sends it to Karina for review; the Danish in particular deserves a native read before publish. |
+
+---
+
+## 9. The advertising disclosure — what changed after approval
+
+C9 ended as disclosure rather than removal, so four paragraphs moved after Karina had already
+approved the policy. What changed, and why each one had to:
+
+| Key | Change |
+|---|---|
+| `cookies.p-when-you-visit-agree` | Dropped *"We do not use Google Analytics for advertising, and Google's advertising features are not enabled"* — false while the Ads destination exists. Replaced with the link, the fact that no campaigns run today, and that nothing reaches Google Ads unless marketing cookies are accepted. |
+| `cookies.li-necessary-functions-th` | Spam protection folded in here, which is where it already sat in the consent configuration. |
+| `cookies.li-protecting-our-forms-a` | Became the advertising purpose. With a real Marketing category in play, a purposes list with no marketing entry was the inaccuracy. |
+| `policy.p-the-data-processors-ma` | Google is now *"website statistics and advertising measurement"*. |
+
+The four listed purposes now map onto the four categories the Cookiebot banner actually offers —
+Necessary, Preferences, Statistics, Marketing — instead of describing a site with no advertising at
+all.
+
+**The compliance position did not change, only the honesty of the description.** Consent Mode
+defaults deny `ad_storage`, `ad_user_data` and `ad_personalization`; the gtag tags are manually
+blocked until statistics consent; Cookiebot gates the marketing category. Nothing reaches Google Ads
+unless a visitor opts in. What was wrong was the sentence, not the behaviour.
