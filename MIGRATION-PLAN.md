@@ -589,11 +589,31 @@ off on the assumption that it is stale.
 
 | # | Item |
 |---|---|
-| **C9** | Either **(a)** unlink Google Ads / disable ad features on the GA4 property — the policy sentence then becomes true and no copy changes; or **(b)** keep it and **disclose Google Ads in the policy**, which reopens that paragraph for Karina's re-approval. Whether Agree runs Google Ads is a business fact, not an engineering one. |
+| **C9** | **Decided 23 Sep: option (a) — Agree does not run Google Ads, so unlink it.** The approved policy sentence then stays true and no copy reopens. Karina to remove the link in GA4, then this must be **re-verified in a browser** — the same check that found it. Until the tag stops firing, the policy is inaccurate. See §8.4a. |
 
 Carrying the measurement ID forward preserved more than the history: it preserved an integration
 nobody had mentioned. Worth auditing the property for other links — Google Signals, Search Ads 360,
 Merchant Center — before cutover.
+
+
+#### 8.4a How to unlink it, and why it needs checking twice
+
+`AW-17054781647` is not in our markup, so it is switched off in Google, not in this repository. It
+reaches the page through the Google tag that `gtag/js?id=G-J8MP9W1XGZ` loads, and there are two
+places that can attach it. Check both — removing one while the other still holds the link leaves the
+tag firing, and the symptom is invisible without opening a browser.
+
+1. **GA4 → Admin → Product links → Google Ads links.** Remove the linked account.
+2. **GA4 → Admin → Data streams → the web stream → Configure tag settings.** Open the Google tag and
+   look for linked destinations / "Configure your domains". Remove `AW-17054781647` if listed.
+
+Then re-verify, because a dashboard saying "unlinked" is not evidence the tag stopped: load a page,
+accept statistics, and confirm no request to `google.com/ccm/collect` carrying `tid=AW-...` is made.
+That is exactly how the link was found in the first place — the GA4 admin screens never mentioned it.
+
+While in the property, audit for the same class of thing: **Google Signals**, Search Ads 360, and any
+other product link. Each one can attach a destination to the same measurement ID without appearing
+anywhere in the site's code, and the policy claims none of them are active.
 
 ### 8.5 Netlify Pretty URLs rewrites the served HTML — R5
 
@@ -604,7 +624,7 @@ broken, and canonicals plus the sitemap both name the `.html` form, so search en
 
 | # | Item |
 |---|---|
-| **R5** | Low priority. Consider turning Pretty URLs off in the Netlify dashboard: the site is built with explicit `.html` URLs, a `.html` sitemap and a `.html` redirect table, so the rewrite serves every page at two working URLs for no benefit — and it quietly defeats byte-comparison against `dist/`, which this repo otherwise relies on (`verify:parity`, `baseline.sha256`). |
+| **R5** | **Done 23 Sep** in `netlify.toml` rather than the dashboard, so the setting travels with the branch like the rest of the build config. `pretty_urls = false` stops the rewriting; the css/js flags are pinned so a future change to Netlify's defaults cannot start bundling stylesheets that are already final. Verified: the served page now carries `href="privacy.html#cookies"` exactly as built, and a diff of served against `dist/` is **6 lines** — all of it Netlify's own injected comment and its `/.netlify/scripts/hud` script. That HUD script loads on every page and was not previously in our inventory of what runs on the site; it is same-origin and functional rather than tracking, so it does not change the consent position. |
 
 ### 8.1 Left deliberately undone
 
