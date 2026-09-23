@@ -617,6 +617,45 @@ While in the property, audit for the same class of thing: **Google Signals**, Se
 other product link. Each one can attach a destination to the same measurement ID without appearing
 anywhere in the site's code, and the policy claims none of them are active.
 
+
+#### 8.4b Located it: a Google tag *destination*, not an account link (23 Sep)
+
+Karina checked **Admin → Product links → Google Ads links** ("no accounts linked to the
+organisation") and **Tag Manager → Accounts**, and both were empty. They would be: the link is not an
+Ads account link and it is not in any container's tags.
+
+Fetching what Google itself serves for our measurement ID settles it:
+
+```
+curl "https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ"
+
+G-J8MP9W1XGZ    x23    the GA4 property
+AW-17054781647   x7    the Google Ads destination
+GT-KD7DXG73      x1    known Google tag, also on the WordPress site
+GT-WFM3G28J      x1    a fourth tag ID, not previously seen anywhere
+```
+
+`AW-17054781647` is a **destination attached to the Google tag**, held in Google's own configuration
+and returned with the tag's JavaScript. That is why it appears in no HTML — not on WordPress, not on
+the new site — and why the admin screens for *linked accounts* show nothing.
+
+**Where to remove it:** Tag Manager → the **"Google tags"** tab (beside "Accounts") → open the tag
+for `agree-tech.com` → **Destinations** → remove `AW-17054781647`. Reachable equivalently via
+GA4 → Admin → Data streams → the web stream → *Configure tag settings*.
+
+**If it cannot be removed** — a dormant or agency-held Ads account is plausible — the compliance
+position is still sound: our Consent Mode defaults deny `ad_storage`, `ad_user_data` and
+`ad_personalization`, and Cookiebot gates the marketing category, so the tag fires only on explicit
+marketing consent. What would then be wrong is the *policy sentence*, and the fix moves to amending
+it rather than chasing the tag.
+
+**Also surfaced, and not yet accounted for anywhere:**
+
+| ID | Where it lives | Status |
+|---|---|---|
+| `GTM-KL3J9HVP` | Tag Manager container, loaded by the **WordPress** site; **not** carried to the new site | Nobody has said what is inside it. If it holds LinkedIn Insight, HubSpot tracking or similar, that tracking stops at cutover — which may be correct, but should be a decision rather than a side effect. |
+| `GT-WFM3G28J` | returned in the gtag config; origin unknown | Worth identifying while in the Google tags screen. |
+
 ### 8.5 Netlify Pretty URLs rewrites the served HTML — R5
 
 The bytes Netlify serves are not the bytes `build.js` produces. Its asset optimisation strips
