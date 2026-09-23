@@ -716,6 +716,20 @@ and Netlify rebuilds.
 Still developer work with or without GTM: new pages and URLs, redirects, structured data,
 robots.txt, the sitemap, page speed.
 
+**Caveat added 23 Sep: nobody has used the CMS yet.** The SEO fields above exist and generate
+correctly, but the editing flow has never been exercised from an editor's seat, so marketing's
+SEO independence is a capability rather than a demonstrated fact. The GTM decision does not depend
+on it — GTM cannot do SEO whether the CMS works or not — but the two should not be argued as one.
+
+Two consequences worth recording:
+
+- **N2 loses its urgency.** It was deferred partly because an editor would meet a field labelled
+  *LinkedIn* holding hCaptcha text. With no editors, there is nobody to mislead; it can wait for
+  whenever the CMS is adopted.
+- **Nothing on the cutover path touches the CMS.** Netlify builds from `content/` in git via
+  `build:blocks`, never from Payload (netlify.toml says so explicitly), and that path has been
+  exercised repeatedly. The CMS being unused, and unmigrated, cannot affect the switchover.
+
 So the trade is narrower than it first looks — and the one capability being given up is the one that
 put two undisclosed integrations on the site in the first place. If it is wanted later it should be
 a deliberate decision: GTM added with Cookiebot blocking designed in from the start, and a standing
