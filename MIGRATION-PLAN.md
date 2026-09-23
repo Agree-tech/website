@@ -1,6 +1,6 @@
 # WordPress → static migration — Plan
 
-Status: **§8 build work committed as `519c0b3` and live on the Netlify preview · N1 and N2 applied · B4 and B5 closed 23 Sep · C3, C4, G2, G4, G6, G7 remain dashboard or cutover steps**
+Status: **§8 build work committed as `519c0b3` and live on the Netlify preview · N1 and N2 applied · B4, B5 closed and the privacy copy approved 23 Sep · C3, C4, G2, G4, G6, G7 remain dashboard or cutover steps**
 Drafted: 2026-09-22
 Updated: 2026-09-22 — blocker answers from Adam; D2 revised to hCaptcha after Turnstile turned out to be Web3Forms PRO; **G7** found while verifying B6; then §8 applied.
 Source: Karina, 22 Sep — *"we have spam protection on the old website as well as cookies (a subscription)
@@ -57,7 +57,7 @@ C1 (self-host fonts) must happen **before** C2 (Cookiebot), or the banner blocks
 | D1 | Analytics and cookies | **GA4 + Cookiebot.** Carry `G-J8MP9W1XGZ` and the existing Cookiebot account across | Karina keeps the same dashboard with unbroken history. The site gains a consent banner and a third-party script on every page. Nothing new to buy. |
 | D2 | Spam protection | ~~Cloudflare Turnstile~~ → **hCaptcha** (revised 22 Sep) | **Turnstile is a Web3Forms PRO feature**, discovered after the Cloudflare widget was already created. On the free tier hCaptcha is the only captcha that works — and it is zero-config, needing no keys and no dashboard access. It does set cookies, so it must be declared in Cookiebot (C6). See §3.1. |
 | D3 | Hosting at cutover | **Netlify** | Not really open — `cms/src/lib/publish.ts:10` already builds the publish pipeline on push-triggers-build, deliberately, *"so the CMS being down can never take the site down"*. See §2.3. |
-| D4 | Privacy + cookie copy | **Drafted here, Karina (or counsel) reviews before publish** | P1–P3 produce diffs against `content/{en,da,pl}/privacy.json`; nobody merges them unreviewed. |
+| D4 | Privacy + cookie copy | **Drafted here → APPROVED by Karina, 23 Sep** | P1–P3 closed. 62 paragraphs across `content/{en,da,pl}/privacy.json`, committed in `519c0b3` and `498e176` and live on the preview. Approval landed before anything reached the public domain, which is what mattered. |
 
 **Rejected, and why it is worth recording:** keeping reCAPTCHA v3 was the only captcha option that
 costs money *and* makes the cookie problem worse — reCAPTCHA is a Web3Forms **PRO** feature, and it
@@ -484,6 +484,28 @@ verification, not as the mechanism.
 before consent, which is the legal requirement. A second source of consent defaults would race with
 Cookiebot's own. If Google's modelled measurement is wanted, C3 is a dashboard toggle — not a code
 change. This narrows C3 rather than skipping it.
+
+### 8.2 One gap the approved copy leaves open — C7
+
+The approved policy describes cookies **in prose**: the categories placed, the two partners, the
+retention. What it does not carry is a **list of the actual cookies** — name, provider, purpose,
+expiry — which is what regulators and Cookiebot's own guidance expect a cookie policy to show, and
+the one part nobody can keep accurate by hand.
+
+Cookiebot generates exactly that table and keeps it current from its scans. It is one script tag on
+the privacy page:
+
+```html
+<script id="CookieDeclaration"
+        src="https://consent.cookiebot.com/d308660e-f6c7-4a86-a313-12360c962166/cd.js"
+        type="text/javascript" async></script>
+```
+
+| # | Item |
+|---|---|
+| **C7** | Embed the declaration at the end of the cookies section of `src/privacy.html` and its `shell`/`components` counterparts. It **adds to** the approved text rather than changing it, so it does not reopen D4 — but it does put a third-party script on the page, and it will render the *WordPress* cookie list until **C4** forces a rescan. Sequence it after C4, or on cutover day alongside it. |
+
+Not done unasked: it changes what the approved page renders.
 
 ### 8.1 Left deliberately undone
 
