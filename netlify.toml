@@ -21,3 +21,36 @@
   # Pinned so a Netlify default bump cannot change the output. build.js has no
   # dependencies; it only needs fs.cpSync (Node 16.7+).
   NODE_VERSION = "22"
+
+# Serve exactly what build.js produced.
+#
+# Netlify's post-processing was rewriting the HTML on the way out: it stripped
+# .html from internal links and re-serialised the markup, so a footer link
+# built as href="privacy.html#cookies" arrived as href='privacy#cookies'.
+# Nothing broke — both URLs returned 200 — but it meant every page answered at
+# two working URLs for no benefit, and, more importantly, the bytes served were
+# no longer the bytes built.
+#
+# This repository leans on that equality: tools/verify-parity.js and
+# tools/baseline.sha256 both compare rendered output byte for byte, and
+# build.js goes out of its way not to normalise line endings. A post-processor
+# quietly editing the result defeats all of it — and defeats it silently, which
+# is the part worth avoiding.
+#
+# pretty_urls is the setting that did the rewriting. The css/js flags are set
+# rather than left to Netlify's defaults so that a future change to those
+# defaults cannot start bundling hand-written stylesheets that are already
+# final. Images are untouched: assets/ ships pre-optimised.
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = false
+
+[build.processing.css]
+  bundle = false
+  minify = false
+
+[build.processing.js]
+  bundle = false
+  minify = false
