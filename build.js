@@ -355,7 +355,13 @@ function writeSitemap(pages, indexable) {
  * pages, so they land on contact.
  */
 const WORDPRESS_URLS = {
-  '/hubspot-leads-landing-page': 'contact.html',
+  // Not a stale slug: on WordPress this is a full landing page titled "Official
+  // HubSpot Solutions Partner for B2B SaaS Success", built around "Streamline
+  // CPQ & Billing — Seamlessly Inside HubSpot", with two lead-capture forms.
+  // The new site has no HubSpot page and does not name HubSpot anywhere, so
+  // integrations.html is the nearest subject match rather than an equivalent.
+  // See MIGRATION-PLAN.md §8.7 — this redirect does not replace the page.
+  '/hubspot-leads-landing-page': 'integrations.html',
   '/contact-3': 'contact.html',
   '/benefits-of-billing-automation': 'billing.html',
   '/subscription-management-platform-b2b': 'subscription.html',

@@ -422,6 +422,8 @@ Ordered so that nothing irreversible happens before the reversible checks pass.
     recoverable from a live install.
 15. G4 submit the new sitemap; G5 remove the dead ones.
 16. C4 **force** a re-scan in Cookiebot (the schedule is monthly — do not wait for it); point the declaration at the new privacy page.
+16a. **S4 — change the Web3Forms delivery address from `ak@agree-tech.com` to `info@agree-tech.com`.**
+    Silent if missed: the form still succeeds, the leads just go to one person.
 17. G6 annotate the date in GA4.
 
 **T-plus:**
@@ -667,6 +669,58 @@ from Agree Technologies"*. If those opt-ins are worked in Brevo, then Brevo proc
 collected through this website and belongs in the processor list beside Netlify, Web3Forms, hCaptcha
 and Google — the same omission as C9, found the same way. Needs a yes/no from Karina before it is
 either added to the policy or dismissed.
+
+### 8.7 Cutover deletes a HubSpot partner page — D5
+
+`/hubspot-leads-landing-page/` was assumed to be a dead campaign slug and redirected to the contact
+page. It is not dead. Fetched from the live site on 23 Sep:
+
+- **Title:** *Official HubSpot Solutions Partner for B2B SaaS Success*
+- **H1:** *Streamline CPQ & Billing — Seamlessly Inside HubSpot*
+- *ATSuite by Agree Technologies, a HubSpot Solution Partner*
+- Two lead-capture forms; 30+ mentions of HubSpot
+
+So Agree presents itself as an official HubSpot Solutions Partner, on a dedicated page, targeting
+what is plainly a commercial keyword. **The new site does not mention HubSpot anywhere.**
+
+It is absent by decision, not oversight. The CFO review asked (Q3, Q6) which of the 26 named
+connectors were real, on the grounds that *"a logo/name list implies production-ready
+integrations"*; the HubSpot chip on the integrations page was genericised as a result and now reads
+*CRM & sales tools* — the key is still `integration.span-hubspot`, which is how the history shows.
+
+The redirect now points at `integrations.html` as the nearest subject match. That limits the 404 but
+does not preserve the page: anyone arriving from a HubSpot-partner search lands somewhere that never
+says HubSpot.
+
+**D5 — worth a decision before cutover, and it is a business one:**
+
+| | |
+|---|---|
+| (a) | **Rebuild a HubSpot page** on the new site. Needs the partner facts and the real integration tier — the same evidence Q6 asked for and never got. |
+| (b) | **Name HubSpot again on the integrations page.** The CFO review genericised it because the *integration tier* was unverified. Official partner status is a different, verifiable claim, and stating it is not the thing the review objected to. Cheapest option that keeps the keyword. |
+| (c) | **Accept the loss.** Redirect stands, the partner positioning disappears from the website. |
+
+Nothing has been added to the site: naming HubSpot again would reverse a deliberate CFO-review
+decision, and that is not a call to make inside a migration.
+
+### 8.8 Where the leads actually go — S4
+
+Confirmed 23 Sep: the Web3Forms access key in `components/contact-form.html` currently delivers to
+**`ak@agree-tech.com`** — one person's address, set for testing. On the live site it must be
+**`info@agree-tech.com`**, the shared inbox the contact page already advertises.
+
+| # | Item |
+|---|---|
+| **S4** | Change the delivery address to `info@agree-tech.com` at `app.web3forms.com` → the form → Settings, **on cutover day**. This is a dashboard setting, not code: nothing in the repository or in a deploy will change it, and nothing will warn anyone it is wrong. |
+
+Two properties of this failure make it worth a runbook line of its own. It is **silent** — the form
+keeps returning its success message, so the site looks perfectly healthy. And it is **lossy in the
+one direction that matters**: a lead-generation form quietly delivering to a personal mailbox is
+how enquiries go unanswered for a fortnight before anybody notices.
+
+Verify after changing it by submitting the form on production and confirming the mail arrives at
+`info@` — the same end-to-end check as runbook step 9, which needs a human anyway because the
+captcha does.
 
 ### 8.1 Left deliberately undone
 
