@@ -488,10 +488,35 @@ exemption and is also how they mark up Google's consent-mode tags. The form ther
 broken by a forgotten dashboard setting. The dashboard check in runbook step 9 stays as
 verification, not as the mechanism.
 
-**No hand-written Consent Mode snippet.** Cookiebot's auto-blocker already stops gtag from running
-before consent, which is the legal requirement. A second source of consent defaults would race with
-Cookiebot's own. If Google's modelled measurement is wanted, C3 is a dashboard toggle — not a code
-change. This narrows C3 rather than skipping it.
+**~~No hand-written Consent Mode snippet.~~ REVERSED 23 Sep — the reasoning was wrong.**
+
+The original claim here was that Cookiebot's auto-blocker already stopped gtag before consent, so
+Consent Mode would be redundant. Tested in a browser against the deploy preview, it does not:
+
+```
+gtag tag   src=https://www.googletagmanager.com/gtag/js?id=G-J8MP9W1XGZ   type=text/javascript
+globals    google_tag_manager, google_tag_data, dataLayer(5)
+Cookiebot  hasResponse=false   consent.statistics=false
+```
+
+GA4 loaded and ran with nobody asked — precisely what the banner exists to prevent. Auto-blocking is
+driven by Cookiebot's scan of the live domain, which is still WordPress, so it had no rule for these
+tags; and after cutover it would still be one scan away from silently un-blocking.
+
+Fixed in `f4fa98e` with two independent mechanisms, neither depending on a scan:
+
+1. **Consent Mode v2 defaults, all denied**, carrying `data-cookieconsent="ignore"` so the block that
+   *denies* consent can never itself be blocked.
+2. **Manual blocking** on both gtag tags — `type="text/plain" data-cookieconsent="statistics"`.
+   Cookiebot restores them on consent. If Cookiebot never loads they never run, which is the safe
+   direction to fail in.
+
+Re-tested on the preview: `type=text/plain`, `google_tag_manager` undefined, defaults denied, while
+the captcha still rendered and the banner still showed. **C3 is therefore done in code, not deferred
+to a dashboard toggle.**
+
+The general lesson, worth keeping: *auto-blocking was assumed rather than observed.* Everything in
+this plan that depends on a third party behaving a certain way needs the same browser check.
 
 ### 8.2 One gap the approved copy leaves open — C7
 
@@ -514,6 +539,29 @@ the privacy page:
 | **C7** | Embed the declaration at the end of the cookies section of `src/privacy.html` and its `shell`/`components` counterparts. It **adds to** the approved text rather than changing it, so it does not reopen D4 — but it does put a third-party script on the page, and it will render the *WordPress* cookie list until **C4** forces a rescan. Sequence it after C4, or on cutover day alongside it. |
 
 Not done unasked: it changes what the approved page renders.
+
+### 8.3 The banner copy still describes WordPress — C8
+
+Seen on the preview, 23 Sep. The consent banner itself reads:
+
+> *"We use cookies to personalise content and ads, to provide social media features and to analyse
+> our traffic. We also share information about your use of our site with our social media,
+> advertising and analytics partners…"*
+
+and offers four categories: Necessary, **Preferences**, Statistics, **Marketing**.
+
+None of that is true of the new site, and it now contradicts the privacy policy Karina approved on
+the same day — the banner would be the *first* thing a visitor reads, asserting exactly the claims
+the policy was rewritten to remove.
+
+Two different fixes, and it matters which is which:
+
+| # | Item |
+|---|---|
+| **C8a** | The **intro text** is configured copy in the Cookiebot dashboard, not scan output — a rescan will not touch it. Someone has to edit it, in each language the banner serves. Suggested English: *"We use cookies to remember your choice, to protect our contact form from automated abuse, and to measure how the site is used. We do not use cookies for advertising and we do not share your browsing data with social media or advertising networks."* |
+| **C8b** | The **Preferences and Marketing categories** are scan-derived. **C4**'s rescan should drop them once the scan sees the new site. Verify after the rescan; if they persist, they are configured and need turning off. |
+
+C8a is Karina's to do and can be done today — it does not depend on cutover.
 
 ### 8.1 Left deliberately undone
 
