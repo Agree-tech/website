@@ -563,6 +563,49 @@ Two different fixes, and it matters which is which:
 
 C8a is Karina's to do and can be done today — it does not depend on cutover.
 
+### 8.4 The GA4 property is linked to a Google Ads account — C9
+
+Found in the browser on 23 Sep, immediately after granting consent. Alongside the expected GA4 hit,
+the page sent:
+
+```
+POST https://www.google.com/ccm/collect?...&tid=AW-17054781647&en=page_view...&npa=0&gcs=G111
+```
+
+`AW-17054781647` is a **Google Ads** tag. It appears nowhere in our markup, nowhere in
+`window.dataLayer`, and is not a container we load — all three verified in the page. `gtag.js`
+fetches it on its own because the GA4 property **G-J8MP9W1XGZ has a linked Google Ads account**,
+and that link travelled with the measurement ID we deliberately carried over to preserve history.
+
+It is consent-gated and fired only after *Allow all* (`gcs=G111`), so this is **not** a consent
+violation. It is an **accuracy** problem, and it lands on copy approved the same day:
+
+> *"We do not use Google Analytics for advertising, and Google's advertising features are not enabled."*
+> — `content/en/privacy.json`, `cookies.p-when-you-visit-agree`
+
+That sentence is false while the Ads link is active. It also means **C8b was wrong**: the Cookiebot
+*Marketing* category is justified, not a leftover of the WordPress scan, and must not be switched
+off on the assumption that it is stale.
+
+| # | Item |
+|---|---|
+| **C9** | Either **(a)** unlink Google Ads / disable ad features on the GA4 property — the policy sentence then becomes true and no copy changes; or **(b)** keep it and **disclose Google Ads in the policy**, which reopens that paragraph for Karina's re-approval. Whether Agree runs Google Ads is a business fact, not an engineering one. |
+
+Carrying the measurement ID forward preserved more than the history: it preserved an integration
+nobody had mentioned. Worth auditing the property for other links — Google Signals, Search Ads 360,
+Merchant Center — before cutover.
+
+### 8.5 Netlify Pretty URLs rewrites the served HTML — R5
+
+The bytes Netlify serves are not the bytes `build.js` produces. Its asset optimisation strips
+`.html` from internal links and re-quotes attributes: built `href="privacy.html#cookies"` is served
+as `href='privacy#cookies'`. Both `/en/privacy` and `/en/privacy.html` return **200**, so nothing is
+broken, and canonicals plus the sitemap both name the `.html` form, so search engines resolve it.
+
+| # | Item |
+|---|---|
+| **R5** | Low priority. Consider turning Pretty URLs off in the Netlify dashboard: the site is built with explicit `.html` URLs, a `.html` sitemap and a `.html` redirect table, so the rewrite serves every page at two working URLs for no benefit — and it quietly defeats byte-comparison against `dist/`, which this repo otherwise relies on (`verify:parity`, `baseline.sha256`). |
+
 ### 8.1 Left deliberately undone
 
 | # | Item | Why |
