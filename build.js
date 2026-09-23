@@ -100,9 +100,20 @@ function readPageConfig(html) {
   return { page: pageMatch ? pageMatch[1] : '', onDark: Boolean(darkMatch) };
 }
 
-/** Links to the current page in every other locale. */
+/**
+ * Links to the current page in every other locale *that has one*.
+ *
+ * The filter mirrors the one the hreflang set already applies: a page in
+ * DEFAULT_LOCALE_ONLY is only ever written to the default locale's directory,
+ * so offering DA and PL for it pointed at two files that are never built.
+ * index-print.html is noindex and robots-disallowed, which is why two dead
+ * links in its nav went unnoticed.
+ */
 function renderLangSwitcher(locale, pageFile) {
-  const items = LOCALES.map((l) =>
+  const available = DEFAULT_LOCALE_ONLY.has(pageFile)
+    ? LOCALES.filter((l) => l.isDefault)
+    : LOCALES;
+  const items = available.map((l) =>
     l.code === locale.code
       ? `<span class="lang-current" aria-current="true">${l.code.toUpperCase()}</span>`
       : `<a class="lang-link" href="/${l.code}/${pageFile}" hreflang="${l.lang}" lang="${l.lang}">${l.code.toUpperCase()}</a>`
