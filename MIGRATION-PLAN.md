@@ -653,8 +653,50 @@ it rather than chasing the tag.
 
 | ID | Where it lives | Status |
 |---|---|---|
-| `GTM-KL3J9HVP` | Tag Manager container, loaded by the **WordPress** site; **not** carried to the new site | Nobody has said what is inside it. If it holds LinkedIn Insight, HubSpot tracking or similar, that tracking stops at cutover — which may be correct, but should be a decision rather than a side effect. |
+| `GTM-KL3J9HVP` | Tag Manager container, loaded by the **WordPress** site; **not** carried to the new site | **Answered — see §8.4c.** Contains only the GA4 tag and Google Ads conversion tracking. Deliberately not carried over. |
 | `GT-WFM3G28J` | returned in the gtag config; origin unknown | Worth identifying while in the Google tags screen. |
+
+
+#### 8.4c What is actually inside GTM-KL3J9HVP, and why it is not on the new site
+
+Fair challenge: it is the only container Agree has, so its absence needed explaining. The honest
+answer is that it was **not a decision** — G-J8MP9W1XGZ was carried over to preserve Analytics
+history, "the Google dashboard" was read as Analytics plus Search Console, and a separate Tag
+Manager container never entered the reasoning. `GT-KD7DXG73` was logged in §2.1 and passed over too.
+
+Its contents are public, so this did not need guessing —
+`curl "https://www.googletagmanager.com/gtm.js?id=GTM-KL3J9HVP"`:
+
+| Tag type | Count | What it is |
+|---|---|---|
+| `__googtag`, `__module_gtag` | 5, 2 | Google tag / GA4 configuration |
+| `__awct` | 1 | **Google Ads Conversion Tracking** |
+| `__gclidw` | 1 | **Conversion Linker** — stores the Google Ads click ID; required by the above |
+| `__html` | **0** | no custom HTML tags, so nothing arbitrary is hiding in it |
+
+The only external ID referenced inside is `G-J8MP9W1XGZ`. No LinkedIn Insight, no Meta pixel, no
+Hotjar, no HubSpot.
+
+So the container holds exactly two things: **the GA4 tag the new site already loads directly**, and
+**Google Ads conversion tracking** — which also explains the `AW-17054781647` destination in §8.4b.
+"Google Ads are not active" is true of the *spend*; the *tracking* was configured.
+
+**Decision: do not carry it over.** Three reasons, in order of weight:
+
+1. Nothing is lost. Its only functioning tag is GA4, loaded directly and with the same measurement
+   ID, so history and reporting are unaffected.
+2. Its remaining tags are Ads conversion tracking, which D5/C9 decided against — adding the
+   container back would reintroduce precisely what Karina is being asked to remove, and would make
+   the approved privacy policy false again.
+3. A container is a channel for tags to reach production without passing through the repository,
+   code review, or the privacy policy. Today produced two separate cases of exactly that
+   (`AW-17054781647`, `GT-WFM3G28J`). Re-opening that channel during a migration whose whole theme
+   has been *undocumented integrations* is the wrong moment.
+
+**The real cost, stated plainly:** marketing loses the ability to add a tracking tag without a
+developer. That is a genuine capability, not a trivial one. If it is wanted later it should be a
+deliberate decision — GTM added with Cookiebot blocking designed in from the start, and a rule that
+anything added to it gets reflected in the privacy policy.
 
 ### 8.5 Netlify Pretty URLs rewrites the served HTML — R5
 
