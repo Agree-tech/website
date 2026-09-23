@@ -693,10 +693,33 @@ So the container holds exactly two things: **the GA4 tag the new site already lo
    (`AW-17054781647`, `GT-WFM3G28J`). Re-opening that channel during a migration whose whole theme
    has been *undocumented integrations* is the wrong moment.
 
-**The real cost, stated plainly:** marketing loses the ability to add a tracking tag without a
-developer. That is a genuine capability, not a trivial one. If it is wanted later it should be a
-deliberate decision — GTM added with Cookiebot blocking designed in from the start, and a rule that
-anything added to it gets reflected in the privacy policy.
+**The real cost, stated plainly:** marketing loses the ability to add a **third-party tracking
+script** — LinkedIn Insight, a Meta pixel, Hotjar, a chat widget — without a developer. That is the
+whole of it.
+
+**It is not an SEO cost, which is the assumption worth heading off.** GTM cannot meaningfully change
+titles, meta descriptions, headings, copy, internal links, canonicals, hreflang, the sitemap or page
+speed; injecting JSON-LD through a custom HTML tag is a workaround, not a way to run SEO. The CMS
+already owns that surface, deliberately and with better results, because it changes the HTML Google
+crawls rather than injecting it client-side afterwards:
+
+```
+admin: { group: "Page titles and descriptions" }
+title       -> "Browser tab and search result title"    ~50-60 characters
+description -> "Search result description"              ~150-160 characters
+localized: true
+```
+
+Per page, per language, alongside body copy, headings and image alt text. Publishing commits to git
+and Netlify rebuilds.
+
+Still developer work with or without GTM: new pages and URLs, redirects, structured data,
+robots.txt, the sitemap, page speed.
+
+So the trade is narrower than it first looks — and the one capability being given up is the one that
+put two undisclosed integrations on the site in the first place. If it is wanted later it should be
+a deliberate decision: GTM added with Cookiebot blocking designed in from the start, and a standing
+rule that anything added to it is reflected in the privacy policy.
 
 ### 8.5 Netlify Pretty URLs rewrites the served HTML — R5
 
