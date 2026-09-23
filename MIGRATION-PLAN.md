@@ -55,7 +55,7 @@ cookie declaration), or the page renders the WordPress cookie list under the new
 | D1 | Analytics and cookies | **GA4 + Cookiebot.** Carry `G-J8MP9W1XGZ` and the existing Cookiebot account across | Karina keeps the same dashboard with unbroken history. The site gains a consent banner and a third-party script on every page. Nothing new to buy. |
 | D2 | Spam protection | ~~Cloudflare Turnstile~~ → **hCaptcha** (revised 22 Sep) | **Turnstile is a Web3Forms PRO feature**, discovered after the Cloudflare widget was already created. On the free tier hCaptcha is the only captcha that works — and it is zero-config, needing no keys and no dashboard access. It does set cookies, so it must be declared in Cookiebot (C6). See §3.1. |
 | D3 | Hosting at cutover | **Netlify** | Not really open — `cms/src/lib/publish.ts:10` already builds the publish pipeline on push-triggers-build, deliberately, *"so the CMS being down can never take the site down"*. See §2.3. |
-| D4 | Privacy + cookie copy | **Drafted here → APPROVED by Karina, 23 Sep** | P1–P3 closed. 62 paragraphs across `content/{en,da,pl}/privacy.json`, committed in `519c0b3` and `498e176` and live on the preview. Approval landed before anything reached the public domain, which is what mattered. |
+| D4 | Privacy + cookie copy | **APPROVED IN FULL — Karina, 23 Sep** | Signed off twice: the 62-paragraph rewrite in the morning, then the four paragraphs that moved when C9 ended as disclosure rather than removal. Committed in `519c0b3`, `498e176` and `d408a0f`; live on the preview. P1–P3 and §9 all closed. |
 
 **Rejected, and why it is worth recording:** keeping reCAPTCHA v3 was the only captcha option that
 costs money *and* makes the cookie problem worse — reCAPTCHA is a Web3Forms **PRO** feature, and it
@@ -591,7 +591,7 @@ off on the assumption that it is stale.
 
 | # | Item |
 |---|---|
-| **C9** | **Closed 23 Sep — disclosed, not removed.** Google will not delete a tag destination, only reassign it (§8.4b); parking `AW-17054781647` on a throwaway tag was judged not worth doing. The policy now describes the link instead. Four values × 3 locales changed, key sets unchanged, so no CMS migration. **These four need Karina's re-approval** — they moved after her sign-off, and are ruled in amber on the review page. |
+| **C9** | **Closed 23 Sep — disclosed, not removed.** Google will not delete a tag destination, only reassign it (§8.4b); parking `AW-17054781647` on a throwaway tag was judged not worth doing. The policy now describes the link instead. Four values × 3 locales changed, key sets unchanged, so no CMS migration. Re-approved by Karina the same day. |
 
 Carrying the measurement ID forward preserved more than the history: it preserved an integration
 nobody had mentioned. Worth auditing the property for other links — Google Signals, Search Ads 360,
