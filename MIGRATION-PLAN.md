@@ -626,6 +626,48 @@ broken, and canonicals plus the sitemap both name the `.html` form, so search en
 |---|---|
 | **R5** | **Done 23 Sep** in `netlify.toml` rather than the dashboard, so the setting travels with the branch like the rest of the build config. `pretty_urls = false` stops the rewriting; the css/js flags are pinned so a future change to Netlify's defaults cannot start bundling stylesheets that are already final. Verified: the served page now carries `href="privacy.html#cookies"` exactly as built, and a diff of served against `dist/` is **6 lines** — all of it Netlify's own injected comment and its `/.netlify/scripts/hud` script. That HUD script loads on every page and was not previously in our inventory of what runs on the site; it is same-origin and functional rather than tracking, so it does not change the consent position. |
 
+### 8.6 What else lives on this domain — D1, and why "point DNS at Netlify" is the wrong instruction
+
+Looked up 23 Sep, because the runbook said "repoint DNS" without ever asking what else that DNS
+carries. It carries a great deal:
+
+| Record | Value | What breaks if it is lost |
+|---|---|---|
+| `NS` | `ns01.one.com`, `ns02.one.com` | everything below |
+| `MX` | `smtp.google.com` | **all company email** — Agree is on Google Workspace |
+| `TXT` | `google-site-verification=TD-5Hnl…` | the Search Console property just verified (G2) |
+| `TXT` | `google-site-verification=sys3vn…` | the legacy Search Console verification |
+| `TXT` | `atlassian-domain-verification=…` | Atlassian/Jira domain ownership |
+| `TXT` | `brevo-code:229b8166…` | **Brevo** domain authentication |
+| `TXT` `_dmarc` | `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com` | DMARC reporting |
+| `A` apex / `A` www | `46.30.215.88` | the website — **this is the only thing cutover should touch** |
+| `AAAA` www | `2a02:2350:5:111:c0:f076:39ff:71ba` | see below |
+
+**D1 — the instruction must be "edit the A and AAAA records", never "change the nameservers".**
+Moving `agree-tech.com` onto Netlify DNS would hand Netlify an empty zone: email stops that minute,
+both Search Console verifications die, Atlassian and Brevo lose domain authentication. Website
+downtime is recoverable in an afternoon; silently dropping the company's mail is not. The nameservers
+stay at one.com and only the website records change.
+
+**D2 — the AAAA record is the trap inside the trap.** `www` answers on both IPv4 and IPv6 today.
+Update the `A` and forget the `AAAA` and every IPv6 visitor keeps reaching the WordPress site, while
+everyone on IPv4 sees the new one — the same domain serving two different sites depending on the
+visitor's network, with nothing in Netlify or Search Console reporting it. Either point the `AAAA` at
+Netlify too or delete it.
+
+**D3 — there is no SPF record at all.** No `v=spf1` on the apex, despite Google Workspace sending
+mail and Brevo authenticated against the domain. That is a pre-existing deliverability gap, not a
+migration one, and it is outside this plan's scope — but it was found while inventorying the zone and
+somebody should own it.
+
+**D4 — Brevo is a data processor the approved policy does not name.** `brevo-code` and a DMARC
+report address pointing at Brevo say the platform is set up for this domain. Brevo is an email
+marketing tool; the contact form carries an opt-in reading *"I consent to receive marketing material
+from Agree Technologies"*. If those opt-ins are worked in Brevo, then Brevo processes personal data
+collected through this website and belongs in the processor list beside Netlify, Web3Forms, hCaptcha
+and Google — the same omission as C9, found the same way. Needs a yes/no from Karina before it is
+either added to the policy or dismissed.
+
 ### 8.1 Left deliberately undone
 
 | # | Item | Why |
