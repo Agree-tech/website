@@ -1,6 +1,6 @@
 # WordPress → static migration — Plan
 
-Status: **build work applied in the working tree, uncommitted, not pushed · S1–S3, C1, C2, C5, C6, G1, G3, R1, G5, P1–P3 done · C3, C4, G2, G4, G6, G7 are dashboard or cutover steps · B4, B5 still need a lookup**
+Status: **§8 build work committed as `519c0b3` and live on the Netlify preview · N1 and N2 applied · B4 and B5 closed 23 Sep · C3, C4, G2, G4, G6, G7 remain dashboard or cutover steps**
 Drafted: 2026-09-22
 Updated: 2026-09-22 — blocker answers from Adam; D2 revised to hCaptcha after Turnstile turned out to be Web3Forms PRO; **G7** found while verifying B6; then §8 applied.
 Source: Karina, 22 Sep — *"we have spam protection on the old website as well as cookies (a subscription)
@@ -196,7 +196,7 @@ keeps the form working before anyone answers the banner.
 | **C1** | **Self-host the fonts first.** Every head shell loads Geist + JetBrains Mono from `fonts.googleapis.com` / `fonts.gstatic.com`. Download the woff2 files to `assets/fonts/`, add `@font-face` to `styles.css`, drop the `<link>`. Faster, removes the last unconsented Google call — and *prevents Cookiebot's auto-blocker from blocking the stylesheet and rendering the whole site in a fallback face until the visitor accepts.* Do this before C2. |
 | **C2** | Add Cookiebot to the head, **first script on the page**, before anything it must block: `<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d308660e-f6c7-4a86-a313-12360c962166" data-blockingmode="auto"></script>`. Drop `data-implementation="wp"` — that flag is for the WordPress plugin. |
 | **C3** | Enable **Google Consent Mode v2** in the Cookiebot dashboard so GA4 (G1) receives `denied` defaults before any consent and upgrades on accept. Without it GA4 fires unconditionally and the banner is theatre. |
-| **C4** | Re-scan the domain in Cookiebot after go-live so the cookie declaration table reflects the *new* site — it currently describes WordPress. Point the declaration at the privacy page (P1). |
+| **C4** | **Manually re-scan** the domain in Cookiebot after go-live so the cookie declaration table reflects the *new* site — it currently describes WordPress, listing advertising and LinkedIn cookies that no longer exist. Scan frequency is **Monthly** (seen 23 Sep), so waiting for the automatic scan would leave a declaration contradicting the rewritten policy for weeks. Force it on cutover day. Point the declaration at the privacy page (P1). |
 | **C5** | Add a **"Cookie settings"** link to `src/_foot.html` (calling `Cookiebot.renew()`), in all three locales. Withdrawing consent must be as easy as giving it; the old policy already promises this (`content/en/privacy.json:20`) and the new footer has no such link. |
 | **C6** | **Classify hCaptcha as *Necessary*** in the Cookiebot cookie declaration, and confirm the auto-blocker does not hold back `hcaptcha.com` / `web3forms.com/client/script.js`. Spam protection on a form the visitor chose to use is necessary, not consent-gated — and if it *were* gated, the form would be dead until someone clicked Accept. This is a **dashboard setting, no redeploy**, which is what makes the free path in §5 viable. |
 
@@ -368,8 +368,8 @@ need a second pair of eyes; it is also the cheapest one to get right.
 | **B1** | Cloudflare account | **Closed — not needed.** Account and widget created (`0x4AAAAAAE_1DbCPMrqi8Wot`), then Turnstile turned out to be Web3Forms PRO. Widget parked, costs nothing; hCaptcha needs no account, no keys, no dashboard. | — |
 | **B2** | Registrar (one.com) DNS access | **Available.** Nothing to chase — but G2 should still be done early, not on cutover day. | G2, §5 |
 | **B3** | Which legacy URLs fold onto `subscription.html` | **Answered: all of them.** Note there are **three**, not four — `/subscription-management-platform-b2b/`, `/what-is-subscription-management-for-saas-teams/`, `/b2b-subscription-management-solutions-agree-technologies-solution/`. If a fourth was intended, say which and R1 changes. R2 is closed; no Search Console lookup needed. | R1 |
-| **B4** | Cookiebot plan | **Open, no longer blocking.** Capacity fits even the free tier, and we are not buying a plan. If the existing subscription happens to include **domain aliases** we test before cutover; if not, straight after, because the fix (C6) is a dashboard toggle. Worth asking Karina — it is free if the answer is yes. | §5 step 9 |
-| **B5** | GA4 retention | **Open, but bounded.** Only 2 or 14 months is possible; the policy's "26 months" is wrong either way. Read it at Admin → Data Settings → Data Retention. | P1 |
+| **B4** | Cookiebot plan | **Answered 23 Sep — aliases are available.** Karina's Domains & Aliases screen lists `www.agree-tech.com` with an **Aliases** column (currently 0), which the free tier does not offer. So runbook step 9 runs as written, before DNS moves, at no extra cost. Same screen shows **Pages 24** (the WordPress count; the new site is 37, still within limits) and **Scan frequency: Monthly** — which is why C4 must be a *manual* rescan, not a wait. | closed |
+| **B5** | GA4 retention | **Answered 23 Sep.** The property has *two* settings, not one: **Event data 2 months** (the default) and **User data 14 months** with *Reset on new user activity* ON — so the user-level clock runs from the visitor's **last** visit. Both are now stated in all three locales. Also caught a second stale claim this exposed: the deletion section said data was kept *1 year*. | closed |
 | **B6** | Netlify site | **Exists and is healthy** — `agree-tech.netlify.app`, correctly `noindex`ed, redirects behaving. Raised **G7**: the noindex must be switched off deliberately at cutover. | §5 |
 
 ---
@@ -413,7 +413,7 @@ Ordered so that nothing irreversible happens before the reversible checks pass.
 14. **Do not decommission WordPress.** Leave it reachable until step 18 passes. §2.1 is only
     recoverable from a live install.
 15. G4 submit the new sitemap; G5 remove the dead ones.
-16. C4 re-scan in Cookiebot; point the declaration at the new privacy page.
+16. C4 **force** a re-scan in Cookiebot (the schedule is monthly — do not wait for it); point the declaration at the new privacy page.
 17. G6 annotate the date in GA4.
 
 **T-plus:**
@@ -491,5 +491,5 @@ change. This narrows C3 rather than skipping it.
 |---|---|---|
 | **N1** | **The contact form's success redirect is English-only.** `<input name="redirect" value="https://agree-tech.com/contact.html?success=true">` sends every visitor to the English contact page, so a Danish or Polish visitor who submits the form is dropped into English — and via two hops, apex → www → `/en/`. Pre-existing, not caused by this work, but the locale split is what made it wrong. Fixing it means making the value locale-aware in `build.js`. | Needs a decision, and it is a behaviour change rather than a migration step. |
 | **N2** | **Three key names now misdescribe their content.** `cookies.h4-linkedin` carries the hCaptcha disclosure; `cookies.li-creation-of-profile` and `cookies.li-marketing` carry the two purposes that replaced profiling and marketing. Values are correct and key names never render — but the CMS derives its field labels from them, so Karina would see a field labelled *LinkedIn* containing hCaptcha text. | Renaming changes the key set, which forces `npm run generate` + a Payload migration on the Hetzner box. That is phase-5 work needing its own go. |
-| **N3** | **The GA4 retention period is stated without a number**, as "the period configured in our Google Analytics property". True whether the answer is 2 or 14 months. | Blocked on **B5**. Replace with the concrete figure once Karina answers — GDPR transparency prefers a stated period. |
+| ~~N3~~ | **Closed 23 Sep.** Both retention periods are now concrete: event data 2 months, user data 14 months from the last visit. Answering B5 also exposed a *second* stale claim — the deletion section still said *1 year* — which named none of the words the earlier sweep grepped for and so had survived it. | — |
 | **N4** | Danish and Polish legal copy was written here, not by a translator. | **D4** sends it to Karina for review; the Danish in particular deserves a native read before publish. |
