@@ -1,7 +1,12 @@
 # Netlify build settings live here rather than in the site UI, so each branch
-# carries the configuration it actually needs. main is still flat HTML with no
-# build step and no dist/ directory — it must not inherit these settings, which
-# is why this file stays on the feature branch until cutover.
+# carries the configuration it actually needs.
+#
+# As of 2026-09-24 payload IS the production branch: Netlify builds it, and the
+# live site will be whatever payload holds at cutover. There is no merge into
+# main planned and none is needed. main is still the old flat HTML with no build
+# step and no dist/ directory, which is exactly why this file must not be on it
+# — not, as this comment said until today, because it is waiting to be merged.
+# Rollback is DNS (see MIGRATION-PLAN.md section 6), never a branch switch.
 
 [build]
   # --from-blocks composes each page from components/ in the order
