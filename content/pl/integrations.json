@@ -48,6 +48,6 @@
     "span-microsoft-entra-id": "OpenID Connect",
     "span-auth0": "Logowanie jednokrotne",
     "span-google-workspace": "Uwierzytelnianie dwuskładnikowe",
-    "p-anything-else-via-rest": "To wzorce integracji, nie gotowe konektory — realizowane jako zadanie konfiguracyjne lub projektowe w oparciu o API REST i webhooki. Agree Technologies jest oficjalnym partnerem HubSpot Solutions."
+    "p-anything-else-via-rest": "To wzorce integracji, nie gotowe konektory — realizowane jako zadanie konfiguracyjne lub projektowe w oparciu o API REST i webhooki."
   }
 }

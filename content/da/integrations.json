@@ -48,6 +48,6 @@
     "span-microsoft-entra-id": "OpenID Connect",
     "span-auth0": "Single sign-on",
     "span-google-workspace": "Tofaktorgodkendelse",
-    "p-anything-else-via-rest": "Dette er integrationsmønstre — ikke færdige connectors. De leveres som konfigurations- eller projektopgave mod REST-API og webhooks. Agree Technologies er officiel HubSpot Solutions Partner."
+    "p-anything-else-via-rest": "Dette er integrationsmønstre — ikke færdige connectors. De leveres som konfigurations- eller projektopgave mod REST-API og webhooks."
   }
 }
