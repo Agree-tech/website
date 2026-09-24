@@ -58,7 +58,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 .split-grid.flip > div:first-child { order: 2; }
 .split-grid h2 { font-size: clamp(32px, 3.4vw, 44px); margin-bottom: 18px; }
