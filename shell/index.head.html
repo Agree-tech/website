@@ -640,6 +640,8 @@
     border: 1px solid var(--border-soft);
     border-radius: 22px;
     padding: 32px;
+    /* sit the card just under the headline, not level with the eyebrow */
+    margin-top: 40px;
   }
   .roles-card h3 { font-size: 22px; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 18px; }
   .roles-head, .role-row {
@@ -652,7 +654,7 @@
   .role-row { padding: 13px 0; border-bottom: 1px dashed var(--border-soft); font-size: 14.5px; color: var(--slate); line-height: 1.45; }
   .role-row:last-child { border-bottom: 0; padding-bottom: 0; }
   .role-row b { color: var(--navy); font-weight: 500; }
-  @media (max-width: 1000px) { .audience-grid { grid-template-columns: 1fr; gap: 40px; } }
+  @media (max-width: 1000px) { .audience-grid { grid-template-columns: 1fr; gap: 40px; } .roles-card { margin-top: 0; } }
   @media (max-width: 520px) { .roles-head, .role-row { grid-template-columns: 1fr; gap: 4px; } }
 
   /* CTA close */

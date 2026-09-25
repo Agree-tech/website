@@ -28,6 +28,8 @@
   gap: 60px;
   align-items: center;
 }
+/* lift the hero visual up beside the headline instead of centring it in the hero */
+.page-hero-grid > .app-shot { align-self: start; margin-top: 40px; }
 .page-hero h1 { font-size: clamp(40px, 5.2vw, 68px); margin-top: 18px; }
 .page-hero .lede { font-size: 19px; color: var(--slate); margin-top: 22px; max-width: 560px; line-height: 1.55; }
 .page-hero .ctas { margin-top: 36px; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -61,6 +63,8 @@
   align-items: start;
 }
 .split-grid.flip > div:first-child { order: 2; }
+/* drop the visual column just under the headline, not level with the eyebrow */
+.split-grid > :nth-child(2) { margin-top: 40px; }
 .split-grid h2 { font-size: clamp(32px, 3.4vw, 44px); margin-bottom: 18px; }
 .split-grid p { color: var(--slate); font-size: 16px; line-height: 1.6; }
 .split-grid ul { margin: 22px 0 0; padding: 0; list-style: none; }
@@ -102,7 +106,9 @@
 
 @media (max-width: 1000px) {
   .page-hero-grid, .split-grid { grid-template-columns: 1fr; gap: 40px; }
+  .page-hero-grid > .app-shot { margin-top: 0; }
   .split-grid.flip > div:first-child { order: 0; }
+  .split-grid > :nth-child(2) { margin-top: 0; }
   .feat-grid-3 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
